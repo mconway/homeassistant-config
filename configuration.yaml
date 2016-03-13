@@ -1,0 +1,132 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Conways
+  # Location required to calculate the time the sun rises and sets
+  latitude: ***REMOVED***
+  longitude: ***REMOVED***
+  # C for Celcius, F for Fahrenheit
+  temperature_unit: F
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Los_Angeles
+
+http:
+  api_password: ***REMOVED***
+
+# Allows you to issue voice commands from the frontend
+conversation:
+
+# Checks for available updates
+updater:
+
+# Track the sun
+sun:
+
+# Enables support for tracking state changes over time.
+history:
+
+# Discover some devices automatically
+discovery:
+
+# Enables the frontend
+frontend:
+
+# View all events in a logbook
+logbook:
+
+media_player:
+  platform: plex
+
+thermostat:
+  platform: radiotherm
+  host: 
+    - ***REMOVED***
+  hold_temp: False
+
+sensor:
+  - platform: speedtest
+    minute: 30
+    hour:
+      - 0
+      - 6
+      - 12
+      - 18
+      - 21
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+  - platform: mqtt
+    state_topic: "owntracks/goibniu/Goibniu"
+    name: "Goibniu"
+    unit_of_measurement: "%"
+    value_template: '{{value_json.batt }}'
+  - platform: forecast
+    api_key: ***REMOVED***
+    monitored_conditions:
+      - summary
+#      - icon
+      - nearest_storm_distance
+#      - nearest_storm_bearing
+      - precip_type
+#      - precip_intensity
+      - precip_probability
+      - temperature
+#      - apparent_temperature
+#      - dew_point
+      - wind_speed
+      - wind_bearing
+      - cloud_cover
+      - humidity
+      - pressure
+#      - visibility
+#      - ozone
+
+device_tracker:
+  - platform: asuswrt
+    host: ***REMOVED***
+    username: ***REMOVED***
+    password: ***REMOVED***
+  - platform: owntracks
+
+input_select:
+  who_cooks:
+    name: Who cooks today
+    options:
+     - Mary
+     - Michael
+    initial: Mary
+    icon: mdi:panda
+
+mqtt:
+  broker: ***REMOVED***32
+  port: 1883
+  client_id: pi-home-assistant
+  keepalive: 60
+  username: ha-pi
+  password: ***REMOVED***
+  #certificate: /home/paulus/dev/addtrustexternalcaroot.crt
+  #protocol: 3.1
+
+
+notify:
+  name: wb_slack
+  platform: slack
+  api_key: ***REMOVED***
+  default_channel: '#home-automation'
+
+group:
+  office:
+    view: yes
+    entities: device_tracker.goibniu_goibniu
+
+automation:
+  trigger:
+    platform: state
+    entity_id: device_tracker.goibniu_goibniu
+    # Optional
+    from: 'not_home'
+    to: 'home'
+  action:
+    service: notify.wb_slack
+    data:
+      message: Welcome Home!

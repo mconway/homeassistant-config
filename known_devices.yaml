@@ -1,0 +1,105 @@
+
+lugus:
+  name: Lugus
+  mac: 2C:41:38:BC:4E:B7
+  picture: 
+  track: no
+  hide_if_away: no
+
+taranis:
+  name: taranis
+  mac: 54:04:A6:49:9E:8F
+  picture: 
+  track: no
+  hide_if_away: no
+
+aibell:
+  name: Aibell
+  mac: 5C:51:4F:26:51:BF
+  picture: 
+  track: no
+  hide_if_away: no
+
+raspberrypi:
+  name: raspberrypi
+  mac: 80:1F:02:D3:C1:A2
+  picture: 
+  track: no
+  hide_if_away: no
+
+android1b27fe99b8b39bc3:
+  name: Mary
+  mac: EC:1F:72:14:94:A7
+  picture: 
+  track: yes
+  hide_if_away: no
+
+#android8069fa1e004161a7:
+#  name: Michael
+#  mac: EC:1F:72:29:C4:2E
+#  picture: https://s.gravatar.com/avatar/ef1a4493091228f8246996d96435d37e?s=80
+#  track: yes
+#  hide_if_away: no
+
+np12g2d0036416:
+  name: NP-12G2D0036416
+  mac: B8:3E:59:0E:28:C5
+  picture: 
+  track: no
+  hide_if_away: no
+
+beansidhe:
+  name: BeanSidhe
+  mac: 4C:0B:BE:19:07:5E
+  picture: 
+  track: no
+  hide_if_away: no
+
+thermostat5e30f4:
+  name: thermostat-5E-30-F4
+  mac: 44:A7:CF:5E:30:F4
+  picture: 
+  track: no
+  hide_if_away: no
+
+xboxsystemos:
+  name: Xbox-SystemOS
+  mac: 30:59:B7:4B:65:7D
+  picture: 
+  track: no
+  hide_if_away: no
+
+kindled683bed7e:
+  name: kindle-d683bed7e
+  mac: 74:75:48:7B:F6:7C
+  picture: 
+  track: no
+  hide_if_away: no
+
+camulos:
+  name: Camulos
+  mac: 6C:62:6D:E9:9C:42
+  picture: 
+  track: no
+  hide_if_away: no
+
+kindle836d4dc5b:
+  name: kindle-836d4dc5b
+  mac: 0C:47:C9:E2:91:90
+  picture: 
+  track: no 
+  hide_if_away: no
+
+goibniu_goibniu:
+  name: Michael
+  mac: EC:1F:72:29:C4:2E
+  picture: https://s.gravatar.com/avatar/ef1a4493091228f8246996d96435d37e?s=80
+  track: yes
+  hide_if_away: no
+
+raspberrypi:
+  name: raspberrypi
+  mac: B8:27:EB:A0:A7:11
+  picture: 
+  track: yes
+  hide_if_away: no
