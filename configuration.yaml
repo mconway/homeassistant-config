@@ -5,9 +5,43 @@ homeassistant:
   latitude: ***REMOVED***
   longitude: ***REMOVED***
   # C for Celcius, F for Fahrenheit
-  temperature_unit: F
+  unit_system: imperial 
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/Los_Angeles
+  customize:
+    device_tracker.aibell:
+      hidden: true
+    device_tracker.beansidhe:
+      hidden: true
+    device_tracker.camulos:
+      hidden: true
+    device_tracker.damara:
+      hidden: true
+    device_tracker.lugus:
+      hidden: true
+    device_tracker.taranis:
+      hidden: true
+    sensor.aibell:
+      icon: mdi:laptop
+    sensor.beansidhe:
+      icon: mdi:tablet
+    sensor.camulos:
+      icon: mdi:desktop-tower
+    sensor.damara:
+      icon: mdi:tablet
+    sensor.lugus:
+      icon: mdi:printer
+    sensor.taranis:
+      icon: mdi:server
+    sensor.speedtest_ping:
+      friendly_name: 'Ping'
+      icon: mdi:speedometer
+    sensor.speedtest_download:
+      friendly_name: 'Download'
+      icon: mdi:speedometer
+    sensor.speedtest_upload:
+      friendly_name: 'Upload'
+      icon: mdi:speedometer
 
 http:
   api_password: ***REMOVED***
@@ -43,6 +77,56 @@ thermostat:
   hold_temp: False
 
 sensor:
+  - platform: template
+    sensors:
+      aibell:
+        friendly_name: 'Aibell'
+        value_template: >-
+          {%- if is_state("device_tracker.aibell", "home") %}
+            Online
+          {% else %}
+            Offline
+          {%- endif %}
+      beansidhe:
+        friendly_name: 'BeanSidhe'
+        value_template: >-
+          {%- if is_state("device_tracker.beansidhe", "home") %}
+            Online
+          {% else %}
+            Offline
+          {%- endif %}
+      camulos:
+        friendly_name: 'Camulos'
+        value_template: >-
+          {%- if is_state("device_tracker.camulos", "home") %}
+            Online
+          {% else %}
+            Offline
+          {%- endif %}
+      damara:
+        friendly_name: 'Damara'
+        value_template: >-
+          {%- if is_state("device_tracker.damara", "home") %}
+            Online
+          {% else %}
+            Offline
+          {%- endif %}
+      lugus:
+        friendly_name: 'Lugus'
+        value_template: >-
+          {%- if is_state("device_tracker.lugus", "home") %}
+            Online
+          {% else %}
+            Offline
+          {%- endif %}
+      taranis:
+        friendly_name: 'Taranis'
+        value_template: >-
+          {%- if is_state("device_tracker.taranis", "home") %}
+            Online
+          {% else %}
+            Offline
+          {%- endif %}
   - platform: speedtest
     minute: 30
     hour:
@@ -98,7 +182,7 @@ input_select:
     icon: mdi:panda
 
 mqtt:
-  broker: ***REMOVED***32
+  broker: ***REMOVED***17
   port: 1883
   client_id: pi-home-assistant
   keepalive: 60
@@ -115,9 +199,23 @@ notify:
   default_channel: '#home-automation'
 
 group:
-  office:
-    view: yes
-    entities: device_tracker.goibniu_goibniu
+  Office:
+    - device_tracker.goibniu_goibniu
+    - device_tracker.goibniu
+    - device_tracker.np12g2d0036416
+    - device_tracker.android8069fa1e004161a7
+    - sensor.camulos
+    - sensor.lugus
+    - sensor.taranis
+  Internet:
+    - device_tracker.dagda
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+  Devices:
+    - sensor.aibell
+    - sensor.beansidhe
+    - sensor.damara
 
 automation:
   trigger:
