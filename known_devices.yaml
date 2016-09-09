@@ -1,4 +1,3 @@
-
 lugus:
   name: Lugus
   mac: 2C:41:38:BC:4E:B7
@@ -76,13 +75,6 @@ taranis:
   track: yes
   hide_if_away: no
 
-android8069fa1e004161a7:
-  name: Michael
-  mac: EC:1F:72:29:C4:2E
-  picture: 
-  track: yes
-  hide_if_away: no
-
 kindle836d4dc5b:
   name: kindle-836d4dc5b
   mac: 0C:47:C9:E2:91:90
@@ -107,6 +99,13 @@ damara:
 aibell:
   name: Aibell
   mac: 5C:51:4F:26:51:BF
+  picture: 
+  track: yes
+  hide_if_away: no
+
+goibniu_goibniu:
+  name: Michael
+  mac: EC:1F:72:29:C4:2E
   picture: 
   track: yes
   hide_if_away: no
