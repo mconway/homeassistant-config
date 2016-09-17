@@ -139,6 +139,8 @@ sensor:
       - ping
       - download
       - upload
+  - platform: fastdotcom
+    minute: 5
   - platform: mqtt
     state_topic: "owntracks/goibniu/Goibniu"
     name: "Goibniu"
