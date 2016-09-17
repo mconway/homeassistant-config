@@ -139,8 +139,6 @@ sensor:
       - ping
       - download
       - upload
-  - platform: fastdotcom
-    minute: 5
   - platform: mqtt
     state_topic: "owntracks/goibniu/Goibniu"
     name: "Goibniu"
@@ -150,28 +148,23 @@ sensor:
     api_key: ***REMOVED***
     monitored_conditions:
       - summary
-#      - icon
-      - nearest_storm_distance
-#      - nearest_storm_bearing
+      - icon
       - precip_type
-#      - precip_intensity
+      - precip_intensity
       - precip_probability
       - temperature
-#      - apparent_temperature
-#      - dew_point
+      - apparent_temperature
       - wind_speed
       - wind_bearing
       - cloud_cover
       - humidity
-      - pressure
-#      - visibility
-#      - ozone
 
 device_tracker:
   - platform: asuswrt
     host: ***REMOVED***
     username: ***REMOVED***
     password: ***REMOVED***
+    protocol: telnet
   - platform: owntracks
 
 input_select:
