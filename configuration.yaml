@@ -54,23 +54,24 @@ notify:
   default_channel: '#home-automation'
 
 automation:
-  - trigger:
+  - alias: Welcome Home
+    trigger:
       platform: state
       entity_id: device_tracker.goibniu_goibniu
       from: 'not_home'
       to: 'home'
-      action:
+    action:
       service: notify.wb_slack
       data:
         message: Welcome Home!
-    alias: Update notifications
-  - trigger:
+  - alias: Update notifications
+    trigger:
       platform: state
       entity_id: updater.updater
-      action:
+    action:
       service: notify.wb_slack
-    data:
-      message: 'There is a new Home Assistant release available.'
+      data:
+        message: 'There is a new Home Assistant release available.'
 
 ##########################################################################
 #                               Includes                                ##
