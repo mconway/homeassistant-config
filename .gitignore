@@ -2,3 +2,4 @@
 home-assistant.db
 home-assistant.log
 lib/
+secrets.yaml

@@ -1,0 +1,81 @@
+- platform: template
+  sensors:
+    aibell:
+      friendly_name: 'Aibell'
+      value_template: >-
+        {%- if is_state("device_tracker.aibell", "home") %}
+          Online
+        {% else %}
+          Offline
+        {%- endif %}
+    beansidhe:
+      friendly_name: 'BeanSidhe'
+      value_template: >-
+        {%- if is_state("device_tracker.beansidhe", "home") %}
+          Online
+        {% else %}
+          Offline
+        {%- endif %}
+    camulos:
+      friendly_name: 'Camulos'
+      value_template: >-
+        {%- if is_state("device_tracker.camulos", "home") %}
+          Online
+        {% else %}
+          Offline
+        {%- endif %}
+    damara:
+      friendly_name: 'Damara'
+      value_template: >-
+        {%- if is_state("device_tracker.damara", "home") %}
+          Online
+        {% else %}
+          Offline
+        {%- endif %}
+    lugus:
+      friendly_name: 'Lugus'
+      value_template: >-
+        {%- if is_state("device_tracker.lugus", "home") %}
+          Online
+        {% else %}
+          Offline
+        {%- endif %}
+    taranis:
+      friendly_name: 'Taranis'
+      value_template: >-
+        {%- if is_state("device_tracker.taranis", "home") %}
+          Online
+        {% else %}
+          Offline
+        {%- endif %}
+- platform: speedtest
+  minute: 30
+  hour:
+    - 0
+    - 6
+    - 12
+    - 18
+    - 21
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+- platform: mqtt
+  state_topic: "owntracks/goibniu/Goibniu"
+  name: "Goibniu"
+  unit_of_measurement: "%"
+  value_template: '{{value_json.batt }}'
+- platform: forecast
+  api_key: !secret forecast_api_key
+  monitored_conditions:
+    - summary
+    - icon
+    - precip_type
+    - precip_intensity
+    - precip_probability
+    - temperature
+    - apparent_temperature
+    - wind_speed
+    - wind_bearing
+    - cloud_cover
+    - humidity

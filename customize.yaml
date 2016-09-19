@@ -1,0 +1,33 @@
+device_tracker.aibell:
+    hidden: true
+device_tracker.beansidhe:
+    hidden: true
+device_tracker.camulos:
+    hidden: true
+device_tracker.damara:
+    hidden: true
+device_tracker.lugus:
+    hidden: true
+device_tracker.taranis:
+    hidden: true
+sensor.aibell:
+    icon: mdi:laptop
+sensor.beansidhe:
+    icon: mdi:tablet
+sensor.camulos:
+    icon: mdi:desktop-tower
+sensor.damara:
+    icon: mdi:tablet
+sensor.lugus:
+    icon: mdi:printer
+sensor.taranis:
+    icon: mdi:server
+sensor.speedtest_ping:
+    friendly_name: 'Ping'
+    icon: mdi:speedometer
+sensor.speedtest_download:
+    friendly_name: 'Download'
+    icon: mdi:speedometer
+sensor.speedtest_upload:
+    friendly_name: 'Upload'
+    icon: mdi:speedometer

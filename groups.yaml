@@ -1,0 +1,17 @@
+Office:
+  - device_tracker.goibniu_goibniu
+  - device_tracker.goibniu
+  - device_tracker.np12g2d0036416
+  - device_tracker.android8069fa1e004161a7
+  - sensor.camulos
+  - sensor.lugus
+  - sensor.taranis
+Internet:
+  - device_tracker.dagda
+  - sensor.speedtest_download
+  - sensor.speedtest_upload
+  - sensor.speedtest_ping
+Devices:
+  - sensor.aibell
+  - sensor.beansidhe
+  - sensor.damara
