@@ -77,6 +77,7 @@ automation:
 #                               Includes                                ##
 ##########################################################################
 sensor: !include sensors.yaml
+cover: !include cover.yaml
 group: !include groups.yaml
 
 ##########################################################################
