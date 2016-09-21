@@ -54,16 +54,16 @@ notify:
   default_channel: '#home-automation'
 
 automation:
-  - alias: Welcome Home
+  - alias: Michael's Presence
     trigger:
       platform: state
       entity_id: device_tracker.goibniu_goibniu
-      from: 'not_home'
-      to: 'home'
+   #   from: 'not_home'
+   #   to: 'home'
     action:
       service: notify.wb_slack
       data:
-        message: Welcome Home!
+        message: Michael is {{ state(device_tracker.goibniu_goibniu) }}
   - alias: Update notifications
     trigger:
       platform: state
