@@ -15,3 +15,5 @@ Devices:
   - sensor.aibell
   - sensor.beansidhe
   - sensor.damara
+Controls:
+  - input_boolean.garage_door

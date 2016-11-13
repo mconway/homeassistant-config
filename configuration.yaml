@@ -30,14 +30,19 @@ device_tracker:
     protocol: telnet
   - platform: owntracks
 
-input_select:
-  who_cooks:
-    name: Who cooks today
-    options:
-     - Mary
-     - Michael
-    initial: Mary
-    icon: mdi:panda
+#input_select:
+#  who_cooks:
+#    name: Who cooks today
+#    options:
+#     - Mary
+#     - Michael
+#    initial: Mary
+#    icon: mdi:panda
+
+input_boolean:
+  garage_door:
+    name: Garage Door
+    icon: mdi:home-variant
 
 mqtt:
   broker: ***REMOVED***17
@@ -72,6 +77,17 @@ automation:
       service: notify.wb_slack
       data:
         message: 'There is a new Home Assistant release available.'
+  - alias: Garage Door
+    trigger:
+      platform: state
+      entity_id: input_boolean.garage_door
+    action:
+      - service: cover.open_cover
+        data:
+          entity_id: cover.garage_door 
+      - service: notify.wb_slack
+        data:
+          message: Triggering Garage Door
 
 ##########################################################################
 #                               Includes                                ##
