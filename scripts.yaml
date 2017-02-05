@@ -1,1 +1,2 @@
 restart_ha: !include scripts/restart_ha.yaml
+reload_config: !include scripts/reload_config.yaml

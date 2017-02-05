@@ -1,0 +1,9 @@
+sequence:
+- event: LOGBOOK_ENTRY
+  event_data:
+    name: EVENT
+    message: "Reloading Home Assistant Core Config"
+- service: notify.wbslack
+  data:
+    message: "Reloading Home Assistant Core Config" #at {{ states('sensor.date__time') }}
+- service: homeassistant/reload_core_config

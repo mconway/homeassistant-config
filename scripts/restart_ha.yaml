@@ -6,4 +6,4 @@ sequence:
 - service: notify.wbslack
   data:
     message: "Restarting Home Assistant" #at {{ states('sensor.date__time') }}
-- service: shell_command.restart_ha
+- service: homeassistant/restart
