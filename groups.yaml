@@ -3,11 +3,11 @@
 ###############################################################
 
 officetab:
-    name: Office
-    icon: mdi:monitor
-    view: yes
-    entities:
-      - group.office_devices
+  name: Office
+  icon: mdi:monitor
+  view: yes
+  entities:
+    - group.office_devices
 environmentalstab:
   name: Information
   icon: mdi:tree
@@ -24,12 +24,13 @@ garagetab:
     - media_player.roku_2_xd__12g2d0036416
 configtab:
   name: Config
-  icon: mdi:gear
+  icon: mdi:settings
   view: yes
   entities:
     - script.restart_ha
     - script.reload_config
     - group.systeminfo
+    - group.all_automations
 
 ###############################################################
 ###### Groups 
@@ -47,34 +48,46 @@ office_devices:
       - sensor.taranis
       - camera.raspberry_pi_camera
 internet:
-  - device_tracker.dagda
-  - sensor.speedtest_download
-  - sensor.speedtest_upload
-  - sensor.speedtest_ping
+  name: Internet
+  view: no
+  entities:
+    - device_tracker.dagda
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
 devices:
-  - sensor.aibell
-  - sensor.beansidhe
-  - sensor.damara
-  - device_tracker.xboxsystemos
-  - device_tracker.thermostat5e30f4
-  - device_tracker.wii
+  name: Devices
+  view: no
+  entities:
+    - sensor.aibell
+    - sensor.beansidhe
+    - sensor.damara
+    - device_tracker.xboxsystemos
+    - device_tracker.thermostat5e30f4
+    - device_tracker.wii
 people:
-  - device_tracker.kindled683bed7e
-  - device_tracker.kindle836d4dc5b
-  - device_tracker.android1b27fe99b8b39bc3
-  - device_tracker.goibniu_goibniu
+  name: People
+  view: no
+  entities:
+    - device_tracker.kindled683bed7e
+    - device_tracker.kindle836d4dc5b
+    - device_tracker.android1b27fe99b8b39bc3
+    - device_tracker.goibniu_goibniu
 weather:
-  - sensor.dark_sky_summary
-  - sensor.dark_sky_precip
-  - sensor.dark_sky_precip_type
-  - sensor.dark_sky_precip_intensity
-  - sensor.dark_sky_precip_probability
-  - sensor.dark_sky_temperature
-  - sensor.dark_sky_apparent_temperature
-  - sensor.dark_sky_wind_speed
-  - sensor.dark_sky_wind_bearing
-  - sensor.dark_sky_cloud_cover
-  - sensor.dark_sky_humidity
+  name: Weather
+  view: no
+  entities:
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_precip
+    - sensor.dark_sky_precip_type
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_wind_bearing
+    - sensor.dark_sky_cloud_cover
+    - sensor.dark_sky_humidity
 systeminfo:
   name: System Information
   view: no
