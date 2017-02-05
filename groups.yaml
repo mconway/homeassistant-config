@@ -1,10 +1,19 @@
 Office:
-  - device_tracker.goibniu
-  - device_tracker.np12g2d0036416
-  - sensor.camulos
-  - sensor.lugus
-  - sensor.maponos
-  - sensor.taranis
+    name: Office
+    view: yes
+    entities:
+      - device_tracker.goibniu
+      - device_tracker.np12g2d0036416
+      - sensor.camulos
+      - sensor.lugus
+      - sensor.maponos
+      - sensor.taranis
+Data:
+  name: Information
+  view: yes
+  entities:
+    - group.weather
+    - group.internet
 Internet:
   - device_tracker.dagda
   - sensor.speedtest_download
