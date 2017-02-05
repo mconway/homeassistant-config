@@ -1,153 +1,195 @@
-lugus:
-  name: Lugus
-  mac: 2C:41:38:BC:4E:B7
-  picture: 
-  track: yes
-  hide_if_away: no
-
 beansidhe:
   name: BeanSidhe
   mac: 4C:0B:BE:19:07:5E
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 kindled683bed7e:
-  name: kindle-d683bed7e
+  name: Aiden's Kindle
   mac: 74:75:48:7B:F6:7C
   picture: 
-  track: no
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 b827eba0a711:
-  name: b827eba0a711
+  name: Raspberry Pi 1
   mac: B8:27:EB:A0:A7:11
   picture: 
-  track: no
-  hide_if_away: no
+  track: false
+  hide_if_away: false
 
 kindlecd6d51eed:
-  name: kindle-cd6d51eed
+  name: Unknown Kindle
   mac: 74:75:48:79:F1:BE
   picture: 
-  track: no
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 camulos:
   name: Camulos
   mac: 6C:62:6D:E9:9C:42
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 raspberrypi:
-  name: raspberrypi
+  name: Fand
   mac: 80:1F:02:D3:C1:A2
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 xboxsystemos:
   name: XboxOne
   mac: 30:59:B7:4B:65:7D
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 thermostat5e30f4:
   name: Thermostat
   mac: 44:A7:CF:5E:30:F4
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 np12g2d0036416:
   name: Roku
   mac: B8:3E:59:0E:28:C5
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 taranis:
   name: Taranis
   mac: 54:04:A6:49:9E:8F
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 kindle836d4dc5b:
-  name: kindle-836d4dc5b
+  name: Lilly's Kindle
   mac: 0C:47:C9:E2:91:90
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 android1b27fe99b8b39bc3:
-  name: android-1b27fe99b8b39bc3
+  name: Mary's Phone
   mac: EC:1F:72:14:94:A7
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 damara:
   name: Damara
   mac: 4C:0B:BE:0D:20:7C
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 aibell:
   name: Aibell
   mac: 5C:51:4F:26:51:BF
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 goibniu_goibniu:
   name: Michael
   mac: EC:1F:72:29:C4:2E
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 wii:
   name: Wii
   mac: 00:24:F3:DA:0C:35
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 goibniu:
   name: Goibniu
   mac: DC:3E:F8:F4:78:6C
   picture: 
-  track: yes
-  hide_if_away: no
+  track: false
+  hide_if_away: false
 
 sb108417760457:
   name: SB108417760457
   mac: 98:5F:D3:38:80:66
   picture: 
-  track: yes
-  hide_if_away: no
+  track: false
+  hide_if_away: false
 
-lugus_2:
+lugus:
   name: Lugus
   mac: 2C:41:38:BC:B8:71
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 maponos:
   name: Maponos
   mac: 68:1C:A2:04:FB:D1
   picture: 
-  track: yes
-  hide_if_away: no
+  track: true
+  hide_if_away: false
 
 b827eb53f288:
+  name: Unkown Device
   hide_if_away: false
   mac: B8:27:EB:53:F2:88
-  name: b827eb53f288
+  picture:
+  track: true
+
+sirhc:
+  hide_if_away: false
+  mac: D8:1D:72:36:A0:9E
+  name: Sirhc
+  picture:
+  track: false
+
+katiese:
+  hide_if_away: false
+  mac: A4:F1:E8:2D:4C:BC
+  name: Katie-SE
+  picture:
+  track: false
+
+donn:
+  hide_if_away: false
+  mac: 88:12:4E:04:D3:A9
+  name: Donn
+  picture:
+  track: false
+
+android60445b0c1cf0ce73:
+  hide_if_away: false
+  mac: 2C:60:0C:09:56:F3
+  name: android-60445b0c1cf0ce73
+  picture:
+  track: true
+
+kindlee586deb83:
+  hide_if_away: false
+  mac: 88:71:E5:0E:B6:08
+  name: kindle-e586deb83
+  picture:
+  track: true
+
+hpf521f3:
+  hide_if_away: false
+  mac: EC:8E:B5:F5:21:F3
+  name: HPF521F3
+  picture:
+  track: true
+
+maponos_2:
+  hide_if_away: false
+  mac: BC:AE:C5:70:9D:74
+  name: Maponos
   picture:
   track: true

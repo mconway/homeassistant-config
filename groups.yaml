@@ -1,10 +1,9 @@
 Office:
-  - device_tracker.goibniu_goibniu
   - device_tracker.goibniu
   - device_tracker.np12g2d0036416
-  - device_tracker.android8069fa1e004161a7
   - sensor.camulos
   - sensor.lugus
+  - sensor.maponos
   - sensor.taranis
 Internet:
   - device_tracker.dagda
@@ -15,5 +14,25 @@ Devices:
   - sensor.aibell
   - sensor.beansidhe
   - sensor.damara
+  - device_tracker.xboxsystemos
+  - device_tracker.thermostat5e30f4
+  - device_tracker.wii
 Controls:
-  - input_boolean.garage_door
+#  -cover.garage_door
+People:
+  - device_tracker.kindled683bed7e
+  - device_tracker.kindle836d4dc5b
+  - device_tracker.android1b27fe99b8b39bc3
+  - device_tracker.goibniu_goibniu
+Weather:
+  - sensor.dark_sky_summary
+  - sensor.dark_sky_precip
+  - sensor.dark_sky_precip_type
+  - sensor.dark_sky_precip_intensity
+  - sensor.dark_sky_precip_probability
+  - sensor.dark_sky_temperature
+  - sensor.dark_sky_apparent_temperature
+  - sensor.dark_sky_wind_speed
+  - sensor.dark_sky_wind_bearing
+  - sensor.dark_sky_cloud_cover
+  - sensor.dark_sky_humidity

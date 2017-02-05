@@ -4,6 +4,7 @@ homeassistant:
   # Location required to calculate the time the sun rises and sets
   latitude: !secret home_latitude
   longitude: !secret home_longitude
+  elevation: 1276
   # C for Celcius, F for Fahrenheit
   unit_system: imperial 
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -15,6 +16,18 @@ http:
 
 media_player:
   platform: plex
+
+camera:
+    platform: rpi_camera
+    name: Raspberry Pi Camera
+    image_width: 640
+    image_height: 480
+    image_quality: 7
+    image_rotation: 0
+    timelapse: 1000
+    horizontal_flip: 0
+    vertical_flip: 0
+    file_path: /tmp/image.jpg
 
 climate:
   platform: radiotherm
@@ -30,27 +43,17 @@ device_tracker:
     protocol: telnet
   - platform: owntracks
 
-#input_select:
-#  who_cooks:
-#    name: Who cooks today
-#    options:
-#     - Mary
-#     - Michael
-#    initial: Mary
-#    icon: mdi:panda
-
-input_boolean:
-  garage_door:
-    name: Garage Door
-    icon: mdi:home-variant
-
 mqtt:
-  broker: ***REMOVED***17
+  broker: ***REMOVED***
   port: 1883
-  client_id: pi-home-assistant
+  client_id: ha-fand
   keepalive: 60
   username: !secret mqtt_username
   password: !secret mqtt_password
+
+mqtt_eventstream:
+  publish_topic: home/master
+  subscribe_topic: home/slave
 
 notify:
   name: wb_slack
@@ -68,7 +71,7 @@ automation:
     action:
       service: notify.wb_slack
       data:
-        message: Michael is {{ states("device_tracker.goibniu_goibniu") }}
+        message: ':house: Michael is {{ states("device_tracker.goibniu_goibniu") }}'
   - alias: Update notifications
     trigger:
       platform: state
@@ -80,20 +83,25 @@ automation:
   - alias: Garage Door
     trigger:
       platform: state
-      entity_id: input_boolean.garage_door
+      entity_id: cover.garage_door
     action:
-      - service: cover.open_cover
-        data:
-          entity_id: cover.garage_door 
       - service: notify.wb_slack
         data:
-          message: Triggering Garage Door
+          message: ':parking: Garage Door {{ states("cover.garage_door") }}'
+  - alias: Start Up
+    trigger:
+      platform: event
+      event_type: homeassistant_start
+    action:
+      - service: notify.wb_slack
+        data:
+        message: ':white_check_mark: Home Assistant is now Running. Bishop is online. :robot_face:'
 
 ##########################################################################
 #                               Includes                                ##
 ##########################################################################
 sensor: !include sensors.yaml
-cover: !include cover.yaml
+#cover: !include cover.yaml
 group: !include groups.yaml
 
 ##########################################################################

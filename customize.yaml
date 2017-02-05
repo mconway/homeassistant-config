@@ -8,6 +8,8 @@ device_tracker.damara:
     hidden: true
 device_tracker.lugus:
     hidden: true
+device_tracker.maponos:
+    hidden: true
 device_tracker.taranis:
     hidden: true
 sensor.aibell:
@@ -31,3 +33,23 @@ sensor.speedtest_download:
 sensor.speedtest_upload:
     friendly_name: 'Upload'
     icon: mdi:speedometer
+sensor.dark_sky_summary:
+    friendly_name: 'Summary'
+sensor.dark_sky_precip:
+    friendly_name: 'Precipitation'
+sensor.dark_sky_precip_intensity:
+    friendly_name: 'Precipitation Amount'
+sensor.dark_sky_precip_probability:
+    friendly_name: 'Precipitation Chance'
+sensor.dark_sky_temperature:
+    friendly_name: 'Temperature'
+sensor.dark_sky_apparent_temperature:
+    friendly_name: 'Feels Like'
+sensor.dark_sky_wind_bearing:
+    friendly_name: 'Wind Bearing'
+sensor.dark_sky_cloud_cover:
+    friendly_name: 'Cloud Cover'
+sensor.dark_sky_humidity:
+    friendly_name: 'Humidity'
+sensor.dark_sky_wind_speed:
+    friendly_name: 'Wind Speed'
