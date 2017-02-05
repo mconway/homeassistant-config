@@ -85,3 +85,14 @@
     - wind_speed
     - wind_bearing
     - humidity
+- platform: systemmonitor
+  resources:
+    - type: disk_free
+      arg: /
+    - type: memory_free
+    - type: processor_use
+    - type: last_boot
+    - type: since_last_boot
+- platform: time_date
+  display_options:
+    - time

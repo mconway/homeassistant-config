@@ -131,13 +131,6 @@ lugus:
   track: true
   hide_if_away: false
 
-maponos:
-  name: Maponos
-  mac: 68:1C:A2:04:FB:D1
-  picture: 
-  track: true
-  hide_if_away: false
-
 b827eb53f288:
   name: Unkown Device
   hide_if_away: false
@@ -187,7 +180,7 @@ hpf521f3:
   picture:
   track: true
 
-maponos_2:
+maponos:
   hide_if_away: false
   mac: BC:AE:C5:70:9D:74
   name: Maponos

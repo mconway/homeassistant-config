@@ -1,39 +1,61 @@
-Office:
+###############################################################
+###### Views
+###############################################################
+
+officetab:
     name: Office
+    icon: mdi:monitor
     view: yes
     entities:
+      - group.office_devices
+environmentalstab:
+  name: Information
+  icon: mdi:tree
+  view: yes
+  entities:
+    - group.weather
+    - group.internet
+garagetab:
+  name: Garage
+  icon: mdi:garage
+  view: yes
+  entities:
+    - cover.garage_door
+    - media_player.roku_2_xd__12g2d0036416
+
+###############################################################
+###### Groups 
+###############################################################
+
+office_devices:
+  name: Devices
+  view: no
+  entities:
       - device_tracker.goibniu
       - device_tracker.np12g2d0036416
       - sensor.camulos
       - sensor.lugus
       - sensor.maponos
       - sensor.taranis
-Data:
-  name: Information
-  view: yes
-  entities:
-    - group.weather
-    - group.internet
-Internet:
+      - camera.raspberry_pi_camera
+internet:
   - device_tracker.dagda
   - sensor.speedtest_download
   - sensor.speedtest_upload
   - sensor.speedtest_ping
-Devices:
+devices:
   - sensor.aibell
   - sensor.beansidhe
   - sensor.damara
   - device_tracker.xboxsystemos
   - device_tracker.thermostat5e30f4
   - device_tracker.wii
-Controls:
-#  -cover.garage_door
-People:
+people:
   - device_tracker.kindled683bed7e
   - device_tracker.kindle836d4dc5b
   - device_tracker.android1b27fe99b8b39bc3
   - device_tracker.goibniu_goibniu
-Weather:
+weather:
   - sensor.dark_sky_summary
   - sensor.dark_sky_precip
   - sensor.dark_sky_precip_type
