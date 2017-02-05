@@ -6,4 +6,4 @@ sequence:
 - service: notify.wbslack
   data:
     message: "Reloading Home Assistant Core Config" #at {{ states('sensor.date__time') }}
-- service: homeassistant/reload_core_config
+- service: homeassistant.reload_core_config
