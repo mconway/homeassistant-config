@@ -22,6 +22,14 @@ garagetab:
   entities:
     - cover.garage_door
     - media_player.roku_2_xd__12g2d0036416
+configtab:
+  name: Config
+  icon: mdi:gear
+  view: yes
+  entities:
+    - script.restart_ha
+    - script.reload_config
+    - group.systeminfo
 
 ###############################################################
 ###### Groups 
@@ -67,3 +75,12 @@ weather:
   - sensor.dark_sky_wind_bearing
   - sensor.dark_sky_cloud_cover
   - sensor.dark_sky_humidity
+systeminfo:
+  name: System Information
+  view: no
+  entities:
+    - sensor.ram_free
+    - sensor.disk_free_
+    - sensor.last_boot
+    - sensor.since_last_boot
+    - sensor.cpu_use
