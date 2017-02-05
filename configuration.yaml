@@ -66,8 +66,6 @@ automation:
     trigger:
       platform: state
       entity_id: device_tracker.goibniu_goibniu
-   #   from: 'not_home'
-   #   to: 'home'
     action:
       service: notify.wb_slack
       data:
@@ -95,7 +93,7 @@ automation:
     action:
       - service: notify.wb_slack
         data:
-        message: ':white_check_mark: Home Assistant is now Running. Bishop is online. :robot_face:'
+          message: ':white_check_mark: Home Assistant is now Running. <br /> Bishop is online. :robot_face:'
 
 ##########################################################################
 #                               Includes                                ##
