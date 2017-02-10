@@ -1,0 +1,3 @@
+alias: Change Garage Icon
+sequence:
+- service: rest_command.garage_icon
