@@ -93,7 +93,7 @@ automation:
     action:
       - service: notify.wb_slack
         data:
-          message: ':white_check_mark: Home Assistant is now Running. \nBishop is online. :robot_face:'
+          message: ":white_check_mark: Home Assistant is now Running.\nBishop is online. :robot_face:"
 
 ##########################################################################
 #                               Includes                                ##
