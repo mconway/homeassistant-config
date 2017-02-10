@@ -97,5 +97,3 @@ systeminfo:
     - sensor.last_boot
     - sensor.since_last_boot
     - sensor.cpu_use
-all_automations:
-  hidden: false
