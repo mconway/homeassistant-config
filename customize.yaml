@@ -42,4 +42,5 @@
 - entity_id: sensor.dark_sky_wind_spee
   friendly_name: 'Wind Speed'
 - entity_id: group.all_automations
+  friendly_name: 'Automations'
   hidden: false
