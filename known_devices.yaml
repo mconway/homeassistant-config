@@ -126,7 +126,7 @@ sb108417760457:
 
 lugus:
   name: Lugus
-  mac: 2C:41:38:BC:B8:71
+  mac: EC:8E:B5:F5:21:F3
   picture: 
   track: true
   hide_if_away: false
@@ -170,13 +170,6 @@ kindlee586deb83:
   hide_if_away: false
   mac: 88:71:E5:0E:B6:08
   name: kindle-e586deb83
-  picture:
-  track: true
-
-hpf521f3:
-  hide_if_away: false
-  mac: EC:8E:B5:F5:21:F3
-  name: HPF521F3
   picture:
   track: true
 
