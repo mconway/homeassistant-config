@@ -1,3 +1,7 @@
 alias: Change Garage Icon
 sequence:
+- event: LOGBOOK_ENTRY
+  event_data:
+    name: EVENT
+    message: "Setting Garage Group Icon"
 - service: rest_command.garage_icon
