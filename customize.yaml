@@ -39,11 +39,11 @@
   friendly_name: 'Cloud Cover'
 - entity_id: sensor.dark_sky_humidity
   friendly_name: 'Humidity'
-- entity_id: sensor.dark_sky_wind_spee
+- entity_id: sensor.dark_sky_wind_speed
   friendly_name: 'Wind Speed'
 - entity_id: sensor.dark_sky_icon
   hidden: true
-- entity_id: sensor.dark_sky_wind_pressure
+- entity_id: sensor.dark_sky_pressure
   hidden: true
 - entity_id: group.all_automations
   friendly_name: 'Automations'
