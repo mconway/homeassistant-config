@@ -58,7 +58,7 @@
         {%- endif %}
     home:
       friendly_name: "Home Temp"
-      value_template: {{ states.climate.home.attributes.current_temperature }}
+      value_template: {{ states.climate.home.attributes['current_temperature'] }}
         
 - platform: speedtest
   minute: 30
