@@ -29,6 +29,7 @@ configtab:
   entities:
     - script.restart_ha
     - script.reload_config
+    - script.change_garage_icon
     - group.systeminfo
     - group.all_automations
 

@@ -6,5 +6,5 @@ sequence:
     message: "Restarting Home Assistant"
 - service: notify.wb_slack
   data:
-    message: "Restarting Home Assistant" #at {{ states('sensor.date__time') }}
+    message: ":warning: Restarting Home Assistant" #at {{ states('sensor.date__time') }}
 - service: homeassistant.restart
