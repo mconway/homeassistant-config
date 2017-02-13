@@ -56,6 +56,10 @@
         {% else %}
           Offline
         {%- endif %}
+    home:
+      friendly_name: "Home Temp"
+      value_template: {{ states.climate.home.attributes.current_temperature }}
+        
 - platform: speedtest
   minute: 30
   hour:
@@ -85,6 +89,8 @@
     - wind_speed
     - wind_bearing
     - humidity
+    - icon
+    - pressure
 - platform: systemmonitor
   resources:
     - type: disk_free

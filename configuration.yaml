@@ -115,6 +115,7 @@ script: !include scripts.yaml
 conversation:
 updater:
 sun:
+moon:
 history:
 discovery:
 frontend:
