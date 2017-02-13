@@ -41,6 +41,15 @@
   friendly_name: 'Humidity'
 - entity_id: sensor.dark_sky_wind_spee
   friendly_name: 'Wind Speed'
+- entity_id: sensor.dark_sky_icon
+  hidden: true
+- entity_id: sensor.dark_sky_wind_pressure
+  hidden: true
 - entity_id: group.all_automations
   friendly_name: 'Automations'
   hidden: false
+- entity_id: group.all_scripts
+  friendly_name: 'Scripts'
+  hidden: false
+- entity_id: sensor.home
+  hidden: true

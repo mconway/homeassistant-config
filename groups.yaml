@@ -27,9 +27,7 @@ configtab:
   icon: mdi:settings
   view: yes
   entities:
-    - script.restart_ha
-    - script.reload_config
-    - script.change_garage_icon
+    - group.all_scripts
     - group.systeminfo
     - group.all_automations
 
