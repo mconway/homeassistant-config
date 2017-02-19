@@ -72,7 +72,7 @@ rest_command:
 #                               Includes                                ##
 ##########################################################################
 sensor: !include sensors.yaml
-automation: automation.yaml
+automation: !include automation.yaml
 #cover: !include cover.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
