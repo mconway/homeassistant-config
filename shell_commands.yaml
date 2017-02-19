@@ -1,1 +1,1 @@
-set_master_garage_state: python3 ~/.homeassistant/commands/garagedoor.py
+set_master_garage_state: '~/.homeassistant/commands/garagedoor.py'
