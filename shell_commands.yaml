@@ -1,0 +1,1 @@
+set_master_garage_state: python3 commands/garagedoor.py
