@@ -20,7 +20,7 @@
     entity_id: cover.garage_door
   action:
     - service: notify.wb_slack
-      data:
+      data_template:
         message: ':parking: The garage door is {{ trigger.to_state.state }}'
 - alias: Start Up
   trigger:
