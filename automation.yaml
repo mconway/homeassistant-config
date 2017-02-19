@@ -5,7 +5,7 @@
   action:
     service: notify.wb_slack
     data:
-    message: ':house: Michael is {{ states("device_tracker.goibniu_goibniu") }}'
+      message: ':house: Michael is {{ states("device_tracker.goibniu_goibniu") }}'
 - alias: Update notifications
   trigger:
     platform: state
@@ -13,14 +13,14 @@
   action:
     service: notify.wb_slack
     data:
-    message: 'There is a new Home Assistant release available.'
+      message: 'There is a new Home Assistant release available.'
 - alias: Garage Door
   trigger:
     platform: state
     entity_id: cover.garage_door
   action:
     - service: notify.wb_slack
-    data:
+      data:
         message: ':parking: Garage Door {{ states("cover.garage_door") }}'
 - alias: Start Up
   trigger:
@@ -28,5 +28,5 @@
     event_type: homeassistant_start
   action:
     - service: notify.wb_slack
-    data:
+      data:
         message: ":white_check_mark: Home Assistant is now Running.\n@bishop is online. :robot_face:"
