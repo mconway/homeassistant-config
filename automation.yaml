@@ -20,8 +20,8 @@
     topic: cover/garage_door
   action:
     - service: notify.wb_slack
-    data:
-      message: ':car: Garage Door MQTT packet received'
+      data:
+        message: ':car: Garage Door MQTT packet received'
 - alias: Garage Door
   trigger:
     platform: state
