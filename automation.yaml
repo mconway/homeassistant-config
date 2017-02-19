@@ -14,14 +14,6 @@
     service: notify.wb_slack
     data:
       message: 'There is a new Home Assistant release available.'
-- alias: Garage Door Triggered
-  trigger: 
-    platform: mqtt
-    topic: cover/garage_door
-  action:
-    - service: notify.wb_slack
-      data:
-        message: ':car: Garage Door MQTT packet received'
 - alias: Garage Door
   trigger:
     platform: state
@@ -29,7 +21,7 @@
   action:
     - service: notify.wb_slack
       data:
-        message: ':parking: Garage Door {{ states("cover.garage_door") }}'
+        message: ':parking: The garage door is {{ trigger.to_state.state }}'
 - alias: Start Up
   trigger:
     platform: event
