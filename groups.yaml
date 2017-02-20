@@ -46,7 +46,6 @@ office_devices:
   view: no
   entities:
       - device_tracker.goibniu
-      - device_tracker.np12g2d0036416
       - sensor.camulos
       - sensor.lugus
       - sensor.maponos

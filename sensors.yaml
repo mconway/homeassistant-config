@@ -68,7 +68,7 @@
     roku:
       friendly_name: Roku
       value_template: >-
-        {% if is_state("device_tracker.roku", "home") %}
+        {% if is_state("device_tracker.np12g2d0036416", "home") %}
           Online
         {% else %}
           Offline
