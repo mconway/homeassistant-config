@@ -76,6 +76,8 @@ weather:
   name: Weather
   view: no
   entities:
+    - sun.sun
+    - sensor.moon
     - sensor.dark_sky_summary
     - sensor.dark_sky_precip
     - sensor.dark_sky_precip_type
