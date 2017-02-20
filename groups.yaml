@@ -13,6 +13,7 @@ environmentalstab:
   icon: mdi:tree
   view: yes
   entities:
+    - group.today
     - group.weather
     - group.internet
 garagetab:
@@ -98,3 +99,9 @@ systeminfo:
     - sensor.last_boot
     - sensor.since_last_boot
     - sensor.cpu_use
+today:
+  name: today
+  view: no
+  entities:
+    - sensor.date
+    - sensor.time
