@@ -67,6 +67,16 @@ rest_command:
     method: post
     payload: '{"attributes": {"entity_id": ["cover.garage_door", "media_player.roku_2_xd__12g2d0036416"], "friendly_name": "Garage", "hidden": true, "icon": "mdi:garage-open", "order": 3, "view": true}, "entity_id": "group.garagetab", "last_changed": "2017-02-08T12:56:03.848224+00:00", "last_updated":"2017-02-08T23:35:14.887961+00:00", "state": "open"}'
 
+alert:
+  garage_door:
+    name: Garage is closed
+    entity_id: cover.garage_door
+    state: 'closed'
+    repeat: 5
+    can_acknowledge: true
+    notifiers:
+      - wb_slack
+
 
 ##########################################################################
 #                               Includes                                ##
