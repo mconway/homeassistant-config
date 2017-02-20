@@ -22,6 +22,7 @@ garagetab:
   view: yes
   entities:
     - cover.garage_door
+    - group.garage_devices
     - media_player.roku_2_xd__12g2d0036416
 configtab:
   name: Config
@@ -35,7 +36,11 @@ configtab:
 ###############################################################
 ###### Groups 
 ###############################################################
-
+garage_devices:
+  name: Devices
+  view: no
+  entities:
+    - sensor.roku
 office_devices:
   name: Devices
   view: no

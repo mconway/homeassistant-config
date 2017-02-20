@@ -65,6 +65,14 @@
     home:
       friendly_name: "Home Temp"
       value_template: '{{ states.climate.home.attributes["current_temperature"] }}'
+    roku:
+      friendly_name: Roku
+      value_template: >-
+        {% if is_state("device_tracker.roku", "home") %}
+          Online
+        {% else %}
+          Offline
+        {%- endif %}
         
 - platform: speedtest
   minute: 30
