@@ -100,7 +100,7 @@ systeminfo:
     - sensor.since_last_boot
     - sensor.cpu_use
 today:
-  name: today
+  name: Today
   view: no
   entities:
     - sensor.date
