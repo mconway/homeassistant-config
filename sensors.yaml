@@ -78,11 +78,11 @@
     - ping
     - download
     - upload
-- platform: mqtt
-  state_topic: "owntracks/goibniu/Goibniu"
-  name: "Goibniu"
-  unit_of_measurement: "%"
-  value_template: '{{value_json.batt }}'
+#- platform: mqtt#
+#  state_topic: "owntracks/goibniu/Goibniu"
+#  name: "Goibniu"
+#  unit_of_measurement: "%"
+#  value_template: '{{value_json.batt }}'
 - platform: darksky
   api_key: !secret forecast_api_key
   monitored_conditions:
