@@ -1,3 +1,4 @@
 restart_ha: !include scripts/restart_ha.yaml
 reload_config: !include scripts/reload_config.yaml
 change_garage_icon: !include scripts/change_garage_icon.yaml
+update_config: !include scripts/update_config.yaml
