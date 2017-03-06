@@ -61,6 +61,12 @@
           Online
         {% else %}
           Offline
+        {%- endif %}      
+      icon_template: >-
+        {%- if is_state("device_tracker.taranis", "home") %}
+          mdi:power
+        {% else %}
+          mdi:power-plug-off
         {%- endif %}
     home:
       friendly_name: "Home Temp"
