@@ -1,0 +1,11 @@
+alias: Update Configs
+sequence:
+- event: LOGBOOK_ENTRY
+  event_data:
+    name: EVENT
+    message: "Updating config and restarting HomeAssistant"
+- service: notify.wb_slack
+  data:
+    message: ":recycle: Pulling latest configuration files from git repo" #at {{ states('sensor.date__time') }}
+- service: shell_command.update_configs_from_repo
+- service: script.restart_ha
