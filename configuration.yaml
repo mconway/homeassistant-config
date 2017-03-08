@@ -36,19 +36,19 @@ camera:
 climate:
   platform: radiotherm
   host: 
-    - ***REMOVED***
+    - !secret thermostat_ip
   hold_temp: False
 
 device_tracker:
   - platform: asuswrt
-    host: ***REMOVED***
+    host: !secret router_ip
     username: !secret asus_username
     password: !secret asus_password
     protocol: telnet
   - platform: owntracks
 
 mqtt:
-  broker: ***REMOVED***
+  broker: fand
   port: 1883
   client_id: ha-fand
   keepalive: 60
@@ -67,7 +67,7 @@ notify:
 
 rest_command:
   garage_icon:
-    url: 'http://***REMOVED***:8123/api/states/group.garagetab'
+    url: 'http://fand:8123/api/states/group.garagetab'
     method: post
     payload: '{"attributes": {"entity_id": ["cover.garage_door", "media_player.roku_2_xd__12g2d0036416"], "friendly_name": "Garage", "hidden": true, "icon": "mdi:garage-open", "order": 3, "view": true}, "entity_id": "group.garagetab", "last_changed": "2017-02-08T12:56:03.848224+00:00", "last_updated":"2017-02-08T23:35:14.887961+00:00", "state": "open"}'
 
