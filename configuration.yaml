@@ -35,8 +35,7 @@ camera:
 
 climate:
   platform: radiotherm
-  host: 
-    - !secret thermostat_ip
+  host: !secret thermostat_ip
   hold_temp: False
 
 device_tracker:
