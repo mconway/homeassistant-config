@@ -1,2 +1,2 @@
 set_master_garage_state: '/srv/homeassistant/.homeassistant/commands/garagedoor.py'
-update_configs_from_repo: 'cd /srv/homeassistant/.homeassistant && git pull origin master > /srv/homeassistant/.homeassistant/command.log'
+update_configs_from_repo: 'cd /config && git pull origin master > /config/command.log'
