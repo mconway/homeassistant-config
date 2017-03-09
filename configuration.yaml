@@ -37,7 +37,7 @@ camera:
     mjpeg_url: http://fand:8081
 
 zoneminder:
-  host: taranis:1443
+  host: taranis:32768
 
 climate:
   platform: radiotherm
