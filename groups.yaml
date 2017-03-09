@@ -32,6 +32,15 @@ configtab:
     - group.all_scripts
     - group.systeminfo
     - group.all_automations
+default_view:
+  view: yes
+  name: Home
+  icon: mdi:house
+  entities:
+    - sensor.date
+    - sun.sun
+    - sensor.moon
+    - device_tracker.goibniu_goibniu
 
 ###############################################################
 ###### Groups 
