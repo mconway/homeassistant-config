@@ -68,10 +68,10 @@ rest_command:
 
 alert:
   garage_door:
-    name: Garage is closed
+    name: Garage has been open since {{ states.cover.garage_door.last_changed }}
     entity_id: cover.garage_door
-    state: 'closed'
-    repeat: 5
+    state: 'open'
+    repeat: 30
     can_acknowledge: true
     notifiers:
       - wb_slack
