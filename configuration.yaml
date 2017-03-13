@@ -28,6 +28,7 @@ camera:
 
 zoneminder:
   host: !secret zoneminder_url
+  ssl: True
 
 climate:
   platform: radiotherm
