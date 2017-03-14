@@ -124,3 +124,5 @@
     - time
     - date
 - platform: moon
+- platform: zoneminder
+  include_archived: false
