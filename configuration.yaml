@@ -23,8 +23,6 @@ media_player:
 
 camera:
   - platform: zoneminder
-  - platform: mjpeg
-    mjpeg_url: http://fand:8081
 
 zoneminder:
   host: !secret zoneminder_url
