@@ -33,7 +33,7 @@ cameras:
     - sensor.fand_events
     - camera.fand
     - camera.garage
-    - camera.watcher1
+    - group.camera_watcher1
 configtab:
   name: Config
   icon: mdi:settings
@@ -129,3 +129,10 @@ today:
   entities:
     - sensor.date
     - sensor.time
+camera_watcher1:
+  name: Watcher 1
+  view: now
+  entities:
+    - sensor.watcher1_status
+    - sensor.watcher1_events
+    - camera_watcher1
