@@ -135,4 +135,4 @@ camera_watcher1:
   entities:
     - sensor.watcher1_status
     - sensor.watcher1_events
-    - camera_watcher1
+    - camera.watcher1
