@@ -29,8 +29,11 @@ cameras:
   icon: mdi:camcorder
   view: yes
   entities:
+    - sensor.fand_status
+    - sensor.fand_events
     - camera.fand
     - camera.garage
+    - camera.watcher1
 configtab:
   name: Config
   icon: mdi:settings
