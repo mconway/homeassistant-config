@@ -131,7 +131,7 @@ today:
     - sensor.time
 camera_watcher1:
   name: Watcher 1
-  view: now
+  view: no
   entities:
     - sensor.watcher1_status
     - sensor.watcher1_events
