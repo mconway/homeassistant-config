@@ -94,6 +94,15 @@ automation:
       - service: notify.wb_slack
         data:
           message: ':white_check_mark: Home Assistant is now Running. \nBishop is online. :robot_face:'
+  - alias: Front Porch Motion
+    trigger: 
+      platform: state
+      entity_id: sensor.watcher1_events
+    action:
+      - service: notify.wb_slack
+        data: 
+          message: 'New motion event on Front Porch'
+
 
 ##########################################################################
 #                               Includes                                ##
