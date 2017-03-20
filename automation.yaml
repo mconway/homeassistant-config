@@ -46,4 +46,4 @@
   action:
     - service: notify.wb_slack
       data: 
-        message: 'New motion event at Front Door'
+        message: ':door: New motion event at Front Door'
