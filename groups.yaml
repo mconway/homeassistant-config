@@ -33,7 +33,7 @@ cameras:
     - sensor.fand_events
     - camera.fand
     - camera.garage
-    - group.camera_watcher1
+    - group.camera_frontporchnorth
 configtab:
   name: Config
   icon: mdi:settings
@@ -129,10 +129,10 @@ today:
   entities:
     - sensor.date
     - sensor.time
-camera_watcher1:
-  name: Watcher 1
+camera_frontporchnorth:
+  name: Front Porch North
   view: no
   entities:
-    - sensor.watcher1_status
-    - sensor.watcher1_events
-    - camera.watcher1
+    - sensor.frontporchnorth_status
+    - sensor.frontporchnorth_events
+    - camera.frontporchnorth

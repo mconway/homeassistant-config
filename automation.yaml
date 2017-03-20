@@ -34,7 +34,7 @@
 - alias: Front Porch Motion
   trigger: 
     platform: state
-    entity_id: sensor.watcher1_events
+    entity_id: sensor.frontporchnorth_events
   action:
     - service: notify.wb_slack
       data: 
