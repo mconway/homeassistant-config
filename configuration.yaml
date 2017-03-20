@@ -61,48 +61,6 @@ notify:
   api_key: !secret slack_api_key
   default_channel: '#home-automation'
 
-automation:
-  - alias: Michael's Presence
-    trigger:
-      platform: state
-      entity_id: device_tracker.goibniu_goibniu
-    action:
-      service: notify.wb_slack
-      data:
-        message: ':house: Michael is {{ states("device_tracker.goibniu_goibniu") }}'
-  - alias: Update notifications
-    trigger:
-      platform: state
-      entity_id: updater.updater
-    action:
-      service: notify.wb_slack
-      data:
-        message: 'There is a new Home Assistant release available.'
-  - alias: Garage Door
-    trigger:
-      platform: state
-      entity_id: cover.garage_door
-    action:
-      - service: notify.wb_slack
-        data:
-          message: ':parking: Garage Door {{ states("cover.garage_door") }}'
-  - alias: Start Up
-    trigger:
-      platform: event
-      event_type: homeassistant_start
-    action:
-      - service: notify.wb_slack
-        data:
-          message: ':white_check_mark: Home Assistant is now Running. \nBishop is online. :robot_face:'
-  - alias: Front Porch Motion
-    trigger: 
-      platform: state
-      entity_id: sensor.watcher1_events
-    action:
-      - service: notify.wb_slack
-        data: 
-          message: 'New motion event on Front Porch'
-
 rest_command:
   garage_icon:
     url: 'http://fand:8123/api/states/group.garagetab'
