@@ -1,0 +1,3 @@
+set_master_garage_state: '/config/commands/garagedoor.py'
+update_configs_from_repo: 'cd /config && git pull origin master > /config/command.log'
+test: 'ls -lah / > /config/ls.txt'

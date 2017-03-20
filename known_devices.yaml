@@ -126,14 +126,7 @@ sb108417760457:
 
 lugus:
   name: Lugus
-  mac: 2C:41:38:BC:B8:71
-  picture: 
-  track: true
-  hide_if_away: false
-
-maponos:
-  name: Maponos
-  mac: 68:1C:A2:04:FB:D1
+  mac: EC:8E:B5:F5:21:F3
   picture: 
   track: true
   hide_if_away: false
@@ -180,14 +173,7 @@ kindlee586deb83:
   picture:
   track: true
 
-hpf521f3:
-  hide_if_away: false
-  mac: EC:8E:B5:F5:21:F3
-  name: HPF521F3
-  picture:
-  track: true
-
-maponos_2:
+maponos:
   hide_if_away: false
   mac: BC:AE:C5:70:9D:74
   name: Maponos

@@ -1,47 +1,138 @@
-Office:
-    name: Office
-    view: yes
-    entities:
+###############################################################
+###### Views
+###############################################################
+
+officetab:
+  name: Office
+  icon: mdi:monitor
+  view: yes
+  entities:
+    - group.office_devices
+environmentalstab:
+  name: Information
+  icon: mdi:tree
+  view: yes
+  entities:
+    - group.today
+    - group.weather
+    - group.internet
+garagetab:
+  name: Garage
+  icon: mdi:garage
+  view: yes
+  entities:
+    - cover.garage_door
+    - group.garage_devices
+    - media_player.roku_2_xd__12g2d0036416
+cameras:
+  name: Cameras
+  icon: mdi:camcorder
+  view: yes
+  entities:
+    - sensor.fand_status
+    - sensor.fand_events
+    - camera.fand
+    - camera.garage
+    - group.camera_watcher1
+configtab:
+  name: Config
+  icon: mdi:settings
+  view: yes
+  entities:
+    - group.all_scripts
+    - group.systeminfo
+    - group.all_automations
+default_view:
+  view: yes
+  name: Home
+  icon: mdi:house
+  entities:
+    - sensor.date
+    - sun.sun
+    - sensor.moon
+    - device_tracker.goibniu_goibniu
+
+###############################################################
+###### Groups 
+###############################################################
+garage_devices:
+  name: Devices
+  view: no
+  entities:
+    - sensor.roku
+office_devices:
+  name: Devices
+  view: no
+  entities:
       - device_tracker.goibniu
-      - device_tracker.np12g2d0036416
       - sensor.camulos
       - sensor.lugus
       - sensor.maponos
       - sensor.taranis
-Data:
-  name: Information
-  view: yes
+      - camera.raspberry_pi_camera
+internet:
+  name: Internet
+  view: no
   entities:
-    - group.weather
-    - group.internet
-Internet:
-  - device_tracker.dagda
-  - sensor.speedtest_download
-  - sensor.speedtest_upload
-  - sensor.speedtest_ping
-Devices:
-  - sensor.aibell
-  - sensor.beansidhe
-  - sensor.damara
-  - device_tracker.xboxsystemos
-  - device_tracker.thermostat5e30f4
-  - device_tracker.wii
-Controls:
-#  -cover.garage_door
-People:
-  - device_tracker.kindled683bed7e
-  - device_tracker.kindle836d4dc5b
-  - device_tracker.android1b27fe99b8b39bc3
-  - device_tracker.goibniu_goibniu
-Weather:
-  - sensor.dark_sky_summary
-  - sensor.dark_sky_precip
-  - sensor.dark_sky_precip_type
-  - sensor.dark_sky_precip_intensity
-  - sensor.dark_sky_precip_probability
-  - sensor.dark_sky_temperature
-  - sensor.dark_sky_apparent_temperature
-  - sensor.dark_sky_wind_speed
-  - sensor.dark_sky_wind_bearing
-  - sensor.dark_sky_cloud_cover
-  - sensor.dark_sky_humidity
+    - device_tracker.dagda
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+devices:
+  name: Devices
+  view: no
+  entities:
+    - sensor.aibell
+    - sensor.beansidhe
+    - sensor.damara
+    - device_tracker.xboxsystemos
+    - device_tracker.thermostat5e30f4
+    - device_tracker.wii
+people:
+  name: People
+  view: no
+  entities:
+    - device_tracker.kindled683bed7e
+    - device_tracker.kindle836d4dc5b
+    - device_tracker.android1b27fe99b8b39bc3
+    - device_tracker.goibniu_goibniu
+weather:
+  name: Weather
+  view: no
+  entities:
+    - sun.sun
+    - sensor.moon
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_precip
+    - sensor.dark_sky_precip_type
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_wind_bearing
+    - sensor.dark_sky_cloud_cover
+    - sensor.dark_sky_humidity
+
+systeminfo:
+  name: System Information
+  view: no
+  entities:
+    - sensor.ram_free
+    - sensor.disk_free_
+    - sensor.last_boot
+    - sensor.since_last_boot
+    - sensor.cpu_use
+today:
+  name: Today
+  view: no
+  entities:
+    - sensor.date
+    - sensor.time
+camera_watcher1:
+  name: Watcher 1
+  view: no
+  entities:
+    - sensor.watcher1_status
+    - sensor.watcher1_events
+    - camera.watcher1

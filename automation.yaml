@@ -1,0 +1,33 @@
+- alias: Michael's Presence
+  trigger:
+    platform: state
+    entity_id: device_tracker.goibniu_goibniu
+  action:
+    service: notify.wb_slack
+    data:
+      message: ':house: Michael is {{ states("device_tracker.goibniu_goibniu") }}'
+- alias: Update notifications
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.wb_slack
+    data:
+      message: 'There is a new Home Assistant release available.'
+- alias: Garage Door
+  trigger:
+    platform: state
+    entity_id: cover.garage_door
+  action:
+    - service: notify.wb_slack
+      data_template:
+        message: ':parking: The garage door is {{ trigger.to_state.state }}'
+    - service: shell_command.set_master_garage_state
+- alias: Start Up
+  trigger:
+    platform: event
+    event_type: homeassistant_start
+  action:
+    - service: notify.wb_slack
+      data:
+        message: ":white_check_mark: Home Assistant is now Running.\n@bishop is online. :robot_face:"
