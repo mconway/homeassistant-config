@@ -1,4 +1,4 @@
 set_master_garage_state: '/config/commands/garagedoor.py'
 update_configs_from_repo: 'cd /config && git pull origin master > /config/command.log'
 test: 'ls -lah / > /config/ls.txt'
-get_latest_zm_event: '/config/commands/zoneminder_events.py --from-ha=True'
+get_latest_zm_event: '/config/commands/zoneminder_events.py --fromha=True'

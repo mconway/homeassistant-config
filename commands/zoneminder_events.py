@@ -10,11 +10,6 @@ except Exception as e:
 def main():
     try:
         args = get_args()
-        url = args.host + '/zm/index.php'
-        username = args.username
-        password = args.password
-        slack_key = args.key
-        view = args.view
 
         if bool(args.fromha):
             import yaml
@@ -23,6 +18,12 @@ def main():
             username = secrets['zm_username']
             password = secrets['zm_password']
             slack_key = secrets['slack_api_key']
+        else:
+            url = args.host + '/zm/index.php'
+            username = args.username
+            password = args.password
+            slack_key = args.key
+            view = args.view
 
         data = {"username": username, "password": password, "view": view, "action": "login"}
         session = requests.Session()
