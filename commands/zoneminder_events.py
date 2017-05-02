@@ -10,7 +10,8 @@ except Exception as e:
 def main():
     try:
         args = get_args()
-
+        view = args.view
+        
         if bool(args.fromha):
             import yaml
             secrets = yaml.load(open("/srv/homeassistant/.homeassistant/secrets.yaml"))
@@ -23,7 +24,7 @@ def main():
             username = args.username
             password = args.password
             slack_key = args.key
-            view = args.view
+
 
         data = {"username": username, "password": password, "view": view, "action": "login"}
         session = requests.Session()
