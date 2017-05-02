@@ -14,7 +14,7 @@ def main():
 
         if bool(args.fromha):
             import yaml
-            secrets = yaml.load(open("/srv/homeassistant/.homeassistant/secrets.yaml"))
+            secrets = yaml.load(open("/config/secrets.yaml"))
             host = "https://" + secrets['zoneminder_url']
             username = secrets['zm_username']
             password = secrets['zm_password']

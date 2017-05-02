@@ -4,7 +4,7 @@ try:
     import yaml
     import syslog
     syslog.syslog("CUSTOM COMMAND: Getting Garage Door Status")
-    secrets = yaml.load(open("/srv/homeassistant/.homeassistant/secrets.yaml"))
+    secrets = yaml.load(open("/config/secrets.yaml"))
 
     group_url = "http://fand:8123/api/states/group.garagetab"
     door_url = "http://raspberrypi:8123/api/states/cover.garage_door"
