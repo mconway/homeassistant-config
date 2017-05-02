@@ -35,10 +35,11 @@
   trigger: 
     platform: state
     entity_id: sensor.frontporchnorth_events
+  condition:
+    condition: template
+    value_template: '{{ trigger.from_state.state < trigger.to_state.state }}'
   action:
-    - service: notify.wb_slack
-      data_template: 
-        message: 'New motion event on Front Porch (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }}'
+    - service: shell_command.get_latest_zm_event
 - alias: Front Door Motion
   trigger: 
     platform: state

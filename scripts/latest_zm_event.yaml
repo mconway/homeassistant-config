@@ -1,0 +1,7 @@
+alias: Latest Zoneminder Event
+sequence:
+- event: LOGBOOK_ENTRY
+  event_data:
+    name: EVENT
+    message: "New Zoneminder Event - Getting info"
+- service: shell_command.get_latest_zm_event
