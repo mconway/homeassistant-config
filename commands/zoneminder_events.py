@@ -35,7 +35,7 @@ def main():
             exit(1)
         else:
             response = session.get(host + '/zm/api/events.json')
-            jsonData = json.loads(response.content)
+            jsonData = response.json()
             events = sorted(jsonData['events'], key=lambda event: event['Event']['Id'], reverse=True)
             msg = "New event %s from %s: Frames - %d/%d @ %s for %s seconds. Score - %d" % (events[0]['Event']['Id'], events[0]['Event']['MonitorId'], int(events[0]['Event']['AlarmFrames']), int(events[0]['Event']['Frames']), events[0]['Event']['StartTime'], events[0]['Event']['Length'], int(events[0]['Event']['AvgScore']))
             print(msg)
