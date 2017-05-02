@@ -11,16 +11,16 @@ def main():
     try:
         args = get_args()
         view = args.view
-        
+
         if bool(args.fromha):
             import yaml
             secrets = yaml.load(open("/srv/homeassistant/.homeassistant/secrets.yaml"))
-            url = "https://" + secrets['zoneminder_url'] + '/zm/index.php'
+            host = "https://" + secrets['zoneminder_url']
             username = secrets['zm_username']
             password = secrets['zm_password']
             slack_key = secrets['slack_api_key']
         else:
-            url = args.host + '/zm/index.php'
+            host = args.host
             username = args.username
             password = args.password
             slack_key = args.key
@@ -28,13 +28,13 @@ def main():
 
         data = {"username": username, "password": password, "view": view, "action": "login"}
         session = requests.Session()
-        request = session.post(url, params=data)
+        request = session.post(host + '/zm/index.php', params=data)
         response = request.content
         if response == b"null":
             print("Server is Offline")
             exit(1)
         else:
-            response = session.get(args.host + '/zm/api/events.json')
+            response = session.get(host + '/zm/api/events.json')
             jsonData = json.loads(response.content)
             events = sorted(jsonData['events'], key=lambda event: event['Event']['Id'], reverse=True)
             msg = "New event %s from %s: Frames - %d/%d @ %s for %s seconds. Score - %d" % (events[0]['Event']['Id'], events[0]['Event']['MonitorId'], int(events[0]['Event']['AlarmFrames']), int(events[0]['Event']['Frames']), events[0]['Event']['StartTime'], events[0]['Event']['Length'], int(events[0]['Event']['AvgScore']))
