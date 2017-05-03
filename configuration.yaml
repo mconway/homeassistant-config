@@ -30,6 +30,8 @@ zoneminder:
   username: !secret zm_username
   password: !secret zm_password
 
+tradfri:
+
 climate:
   platform: radiotherm
   host: !secret thermostat_ip
