@@ -79,6 +79,8 @@ alert:
     notifiers:
       - wb_slack
 
+recorder:
+  db_url: !database_url
 
 ##########################################################################
 #                               Includes                                ##
