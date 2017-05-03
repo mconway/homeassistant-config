@@ -80,7 +80,7 @@ alert:
       - wb_slack
 
 recorder:
-  db_url: !database_url
+  db_url: !secret database_url
 
 ##########################################################################
 #                               Includes                                ##
