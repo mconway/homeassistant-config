@@ -25,8 +25,8 @@
     - service: shell_command.set_master_garage_state
 - alias: Start Up
   trigger:
-    platform: event
-    event_type: homeassistant_start
+    platform: homeassistant
+    event: start
   action:
     - service: notify.wb_slack
       data:
