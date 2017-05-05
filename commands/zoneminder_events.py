@@ -37,9 +37,24 @@ def main():
             response = session.get(host + '/zm/api/events.json')
             jsonData = response.json()
             events = sorted(jsonData['events'], key=lambda event: event['Event']['Id'], reverse=True)
-            msg = "New event %s from %s: Frames - %d/%d @ %s for %s seconds. Score - %d" % (events[0]['Event']['Id'], events[0]['Event']['MonitorId'], int(events[0]['Event']['AlarmFrames']), int(events[0]['Event']['Frames']), events[0]['Event']['StartTime'], events[0]['Event']['Length'], int(events[0]['Event']['AvgScore']))
+            
+            frameResponse = session.get("%s/zm/api/events/%s.json" % (host, events[0]['Event']['Id']))
+            event = frameResponse.json()['event']
+            frames = event['Frame']
+
+            frame = None
+            for i, f in enumerate(frames):
+                if(f['Type'] == 'Alarm'):
+                    frame = f
+                    break
+
+            frameUrl = "%s/zm/%s%s-capture.jpg" % (host, event['Event']['BasePath'], frame['FrameId'].zfill(5))
+
+            msg = "New event %s from %s: Frames - %d/%d @ %s for %s seconds. Score - %d\n%s" % (event['Event']['Id'], event['Event']['MonitorId'], int(event['Event']['AlarmFrames']), int(event['Event']['Frames']), event['Event']['StartTime'], event['Event']['Length'], int(event['Event']['AvgScore']), frameUrl)
             print(msg)
-            slack_message(msg, slack_key)
+
+            if(args.key != None):
+                slack_message(msg, slack_key)
     except Exception as e:
         print("Error " + e)
 
