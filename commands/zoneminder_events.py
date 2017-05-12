@@ -53,7 +53,7 @@ def main():
             msg = "New event %s from %s: Frames - %d/%d @ %s for %s seconds. Score - %d\n%s" % (event['Event']['Id'], event['Event']['MonitorId'], int(event['Event']['AlarmFrames']), int(event['Event']['Frames']), event['Event']['StartTime'], event['Event']['Length'], int(event['Event']['AvgScore']), frameUrl)
             print(msg)
 
-            if(args.key != None):
+            if(slack_key != None):
                 slack_message(msg, slack_key)
     except Exception as e:
         print("Error " + e)
