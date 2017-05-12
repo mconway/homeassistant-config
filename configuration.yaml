@@ -83,7 +83,6 @@ recorder:
   db_url: !secret database_url
 
 emulated_hue:
-  type: alexa
 
 ##########################################################################
 #                               Includes                                ##
