@@ -127,6 +127,6 @@
 - platform: zoneminder
   include_archived: false
 - platform: steam_online
-  api_key: !secrets steam_api_key
+  api_key: !secret steam_api_key
   accounts:
-    - !secrets mike_steam_id
+    - !secret mike_steam_id
