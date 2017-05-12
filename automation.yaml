@@ -73,7 +73,7 @@
 - alias: Restore Office Lighting
   trigger:
     platform: template
-    value_template: '{{ tates.sensor.steam_76561197993153035.attributes.Game == "None" }}'
+    value_template: '{{ states.sensor.steam_76561197993153035.attributes.Game == "None" }}'
   condition:
     condition: and
     conditions:
