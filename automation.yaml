@@ -54,3 +54,30 @@
     after: '00:00:00'
   action:
     service: light.turn_off
+- alias: Game Mood Lighting
+  trigger:
+    platform: state
+    entity_id: sensor.steam_76561197993153035
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: '{{ states.sensor.steam_76561197993153035.attributes.Game != "None"}}'
+      - condition: template
+        value_template: '{{ states.light.office_floor_lamp.state != "off"}}'
+    action:
+      service: light.turn_on
+      entity_id: light.office_floor_lamp
+      data:
+        brightness: 75
+- alias: Restore Office Lighting
+  trigger:
+    platform: state
+    entity_id: sensor.steam_76561197993153035
+    value_template: '{{ state.attributes.Game }}'
+    to: 'None'
+  action:
+    service: light.turn_on
+    entity_id: light.office_floor_lamp
+    data:
+      brightness: 75
