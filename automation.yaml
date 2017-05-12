@@ -51,8 +51,6 @@
 - alias: Lights Out At Midnight
   trigger:
     platform: time
-    hour: 00
-    minutes: 00
-    seconds: 00
+    after: '00:00:00'
   action:
     service: light.turn_off
