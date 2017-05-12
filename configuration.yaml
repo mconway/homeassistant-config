@@ -84,7 +84,6 @@ recorder:
 
 emulated_hue:
   type: alexa
-  listen_port: 80
 
 ##########################################################################
 #                               Includes                                ##
