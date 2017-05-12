@@ -48,3 +48,11 @@
     - service: notify.wb_slack
       data_template: 
         message: ':door: New motion event at Front Door (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }}'
+- alias: Lights Out At Midnight
+  trigger:
+    platform: time
+    hour: 00
+    minutes: 00
+    seconds: 00
+  action:
+    service: light.turn_off
