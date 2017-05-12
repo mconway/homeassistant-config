@@ -83,6 +83,10 @@ recorder:
   db_url: !secret database_url
 
 emulated_hue:
+  exposed_domains:
+    - light
+    - cover
+    - script
 
 ##########################################################################
 #                               Includes                                ##

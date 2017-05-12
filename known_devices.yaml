@@ -179,3 +179,27 @@ maponos:
   name: Maponos
   picture:
   track: true
+
+amc020z5z78lq0tfj7:
+  hide_if_away: false
+  mac: 9C:8E:CD:08:EA:2B
+  name: AMC020Z5Z78LQ0TFJ7
+  picture:
+  track: false
+  vendor: Amcrest Technologies
+
+gwb072bf279e35:
+  hide_if_away: false
+  mac: B0:72:BF:27:9E:35
+  name: GW-B072BF279E35
+  picture:
+  track: false
+  vendor: Murata Manufacturing Co., Ltd.
+
+fn9cvf2t:
+  hide_if_away: false
+  mac: 34:F3:9A:BE:40:10
+  name: FN9CVF2-T
+  picture:
+  track: false
+  vendor: unknown
