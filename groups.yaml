@@ -70,6 +70,7 @@ office_devices:
       - sensor.maponos
       - sensor.taranis
       - camera.raspberry_pi_camera
+      - light.office_floor_lamp
 internet:
   name: Internet
   view: no
