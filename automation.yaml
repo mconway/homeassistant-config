@@ -72,12 +72,17 @@
       brightness: 75
 - alias: Restore Office Lighting
   trigger:
-    platform: state
-    entity_id: sensor.steam_76561197993153035
-    value_template: '{{ state.attributes.Game }}'
-    to: 'None'
+    platform: template
+    value_template: '{{ tates.sensor.steam_76561197993153035.attributes.Game == "None" }}'
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: '{{ states.light.office_floor_lamp.state != "off"}}'
+      - condition: template
+        value_template: '{{ states.light.office_floor_lamp.attributes.brightness <= 150}}'
   action:
     service: light.turn_on
     entity_id: light.office_floor_lamp
     data:
-      brightness: 75
+      brightness: 175
