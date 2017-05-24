@@ -1,4 +1,5 @@
-- alias: Michael's Presence
+- id: presence_michael
+  alias: Michael's Presence
   trigger:
     platform: state
     entity_id: device_tracker.goibniu_goibniu
@@ -6,7 +7,8 @@
     service: notify.wb_slack
     data:
       message: ':house: Michael is {{ states("device_tracker.goibniu_goibniu") }}'
-- alias: Update notifications
+- id: update_notifications
+  alias: Update notifications
   trigger:
     platform: state
     entity_id: updater.updater
@@ -14,7 +16,8 @@
     service: notify.wb_slack
     data:
       message: 'There is a new Home Assistant release available.'
-- alias: Garage Door
+- id: garage_door_notification
+  alias: Garage Door
   trigger:
     platform: state
     entity_id: cover.garage_door
@@ -23,7 +26,8 @@
       data_template:
         message: ':parking: The garage door is {{ trigger.to_state.state }}'
     - service: shell_command.set_master_garage_state
-- alias: Start Up
+- id: startup_notification
+  alias: Start Up
   trigger:
     platform: homeassistant
     event: start
@@ -31,7 +35,8 @@
     - service: notify.wb_slack
       data:
         message: ":white_check_mark: Home Assistant is now Running.\n@bishop is online. :robot_face:"
-- alias: Front Porch Motion
+- id: front_porch_motion_notifications
+  alias: Front Porch Motion
   trigger: 
     platform: state
     entity_id: sensor.frontporchnorth_events
@@ -40,7 +45,8 @@
     value_template: '{{ trigger.from_state.state < trigger.to_state.state }}'
   action:
     - service: shell_command.get_latest_zm_event
-- alias: Front Door Motion
+- id: front_door_motion_notification
+  alias: Front Door Motion
   trigger: 
     platform: state
     entity_id: sensor.fand_events
@@ -48,13 +54,15 @@
     - service: notify.wb_slack
       data_template: 
         message: ':door: New motion event at Front Door (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }}'
-- alias: Lights Out At Midnight
+- id: lights_off_midnight
+  alias: Lights Out At Midnight
   trigger:
     platform: time
     after: '00:00:00'
   action:
     service: light.turn_off
-- alias: Game Mood Lighting
+- id: game_mood_lighting
+  alias: Game Mood Lighting
   trigger:
     platform: state
     entity_id: sensor.steam_76561197993153035
@@ -70,7 +78,8 @@
     entity_id: light.office_floor_lamp
     data:
       brightness: 75
-- alias: Restore Office Lighting
+- id: restore_office_lighting
+  alias: Restore Office Lighting
   trigger:
     platform: template
     value_template: '{{ states.sensor.steam_76561197993153035.attributes.Game == "None" }}'
