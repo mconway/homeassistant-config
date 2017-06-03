@@ -24,11 +24,11 @@ media_player:
 camera:
   - platform: zoneminder
 
-zoneminder:
-  host: !secret zoneminder_url
-  ssl: True
-  username: !secret zm_username
-  password: !secret zm_password
+#zoneminder:
+  #host: !secret zoneminder_url
+  #ssl: True
+  #username: !secret zm_username
+  #password: !secret zm_password
 
 tradfri:
 

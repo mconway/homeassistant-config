@@ -124,8 +124,8 @@
     - time
     - date
 - platform: moon
-- platform: zoneminder
-  include_archived: false
+#- platform: zoneminder
+  #include_archived: false
 - platform: steam_online
   api_key: !secret steam_api_key
   accounts:
