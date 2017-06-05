@@ -18,6 +18,9 @@ homeassistant:
 http:
   api_password: !secret api_password
 
+media_player:
+  platform: plex
+
 camera:
   - platform: zoneminder
 
