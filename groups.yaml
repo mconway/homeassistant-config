@@ -72,7 +72,7 @@ office_devices:
 office_lights:
   name: Lights
   view: no
-  enitities:
+  entities:
   - light.office_floor_lamp
 internet:
   name: Internet
