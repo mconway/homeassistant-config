@@ -24,7 +24,7 @@ garagetab:
     - cover.garage_door
     - group.garage_devices
     - media_player.roku_2_xd__12g2d0036416
-cameras:
+cameratab:
   name: Cameras
   icon: mdi:camcorder
   view: yes
@@ -69,8 +69,11 @@ office_devices:
       - sensor.lugus
       - sensor.maponos
       - sensor.taranis
-      - camera.raspberry_pi_camera
-      - light.office_floor_lamp
+office_lights:
+  name: Lights
+  view: no
+  enitities:
+  - light.office_floor_lamp
 internet:
   name: Internet
   view: no
@@ -114,7 +117,6 @@ weather:
     - sensor.dark_sky_wind_bearing
     - sensor.dark_sky_cloud_cover
     - sensor.dark_sky_humidity
-
 systeminfo:
   name: System Information
   view: no
