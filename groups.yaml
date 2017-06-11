@@ -8,6 +8,7 @@ officetab:
   view: yes
   entities:
     - group.office_devices
+    - group.office_lights
 environmentalstab:
   name: Information
   icon: mdi:tree
