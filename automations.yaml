@@ -7,6 +7,24 @@
     service: notify.wb_slack
     data:
       message: ':house: Michael is {{ states("device_tracker.goibniu_goibniu") }}'
+- id: presence_mary
+  alias: Mary's Presence
+  trigger:
+    platform: state
+    entity_id: device_tracker.android1b27fe99b8b39bc3
+  action:
+    service: notify.wb_slack
+    data:
+      message: ':house: Mary is {{ states("device_tracker.android1b27fe99b8b39bc3") }}'
+- id: presence_people
+  alias: Presence
+  trigger:
+    platform: state
+    entity_id: group.people
+  action:
+    service: notify.wb_slack
+    data:
+      message: ':house: Someone is {{ states("group.people") }}'
 - id: update_notifications
   alias: Update notifications
   trigger:
