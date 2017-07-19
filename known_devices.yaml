@@ -159,13 +159,6 @@ donn:
   picture:
   track: false
 
-android60445b0c1cf0ce73:
-  hide_if_away: false
-  mac: 2C:60:0C:09:56:F3
-  name: android-60445b0c1cf0ce73
-  picture:
-  track: true
-
 kindlee586deb83:
   hide_if_away: false
   mac: 88:71:E5:0E:B6:08

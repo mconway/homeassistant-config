@@ -97,8 +97,6 @@ people:
   name: People
   view: no
   entities:
-    - device_tracker.kindled683bed7e
-    - device_tracker.kindle836d4dc5b
     - device_tracker.android1b27fe99b8b39bc3
     - device_tracker.goibniu_goibniu
 weather:
