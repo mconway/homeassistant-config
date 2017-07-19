@@ -110,3 +110,4 @@ discovery:
 frontend:
 logbook:
 config:
+python_script:
