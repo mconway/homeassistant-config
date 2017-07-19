@@ -196,3 +196,20 @@ fn9cvf2t:
   picture:
   track: false
   vendor: unknown
+tap7013014s:
+  hide_if_away: false
+  icon:
+  mac: 50:F5:DA:6C:15:E8
+  name: Tap-7013014S
+  picture:
+  track: true
+  vendor: Amazon Technologies Inc.
+
+desktoptfs4790:
+  hide_if_away: false
+  icon:
+  mac: B8:86:87:73:FA:DA
+  name: DESKTOP-TFS4790
+  picture:
+  track: true
+  vendor: Liteon Technology Corporation
