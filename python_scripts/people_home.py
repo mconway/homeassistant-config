@@ -1,5 +1,5 @@
 home = 0
-for entity_id in hass.states.entity_ids('device_tracker'):
+for entity_id in hass.states.entity_ids('group.people'):
     state = hass.states.get(entity_id)
     if state.state == 'home':
         home = home + 1
