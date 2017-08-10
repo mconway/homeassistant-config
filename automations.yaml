@@ -76,7 +76,7 @@
   alias: Lights Out At Midnight
   trigger:
     platform: time
-     at: '00:00:00'
+    at: '00:00:00'
   action:
     service: light.turn_off
 - id: game_mood_lighting
