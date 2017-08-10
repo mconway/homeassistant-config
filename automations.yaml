@@ -138,7 +138,7 @@
         brightness: 100
         color_temp: 2200
     - service: notify.wb_slack
-        data_template: 
+      data_template: 
         message: ':bulb: Michael's Side (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }}'
 - id: michaels_side_light_temp_morning
   alias: Michaels Morning Light Temp
@@ -156,7 +156,7 @@
         brightness: 100
         color_temp: 2700
     - service: notify.wb_slack
-        data_template: 
+      data_template: 
         message: ':bulb: Michael's Side (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }}'
 - id: michaels_side_light_temp_day
   alias: Michaels Day Light Temp
@@ -174,5 +174,5 @@
         brightness: 100
         color_temp: 4000
     - service: notify.wb_slack
-        data_template: 
+      data_template: 
         message: ':bulb: Michael's Side (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }}'
