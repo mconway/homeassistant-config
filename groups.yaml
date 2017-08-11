@@ -168,13 +168,14 @@ master_bedroom:
   name: Master Bedroom
   view: no
   entities:
-    - light.back_room
+    - light.master_bedroom
     - light.marys_side
     - light.michaels_side
 kids_bedroom:
   name: Kid's Bedrooms
   view: no
   entities:
+    - light.kids_rooms
     - light.aidens_room
     - light.lillys_room
 office_people:
