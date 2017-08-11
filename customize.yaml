@@ -53,11 +53,12 @@ sensor.home:
   hidden: true
 light.office_floor_lamp:
   custom_ui_state_card: custom-ui
-  state_card_mode: break-slider-toggle
+  state_card_mode: single-line
   stretch_slider: true
+  extra_data_template: ${brightness_pct!=0}% / ${kelvin}K
   hide_control: false
   show_last_changed: true
   extra_badge:
     entity_id: light.office_floor_lamp
-    attribute: kelvin
-    unit: K
+    attribute: brightness_pct
+    unit: "%"
