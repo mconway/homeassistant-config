@@ -58,7 +58,7 @@ mqtt_eventstream:
   subscribe_topic: home/slave
 
 notify:
-  name: wb_slack
+  name: slack
   platform: slack
   api_key: !secret slack_api_key
   default_channel: '#home-automation'
@@ -77,7 +77,7 @@ alert:
     repeat: 30
     can_acknowledge: true
     notifiers:
-      - wb_slack
+      - slack
 
 recorder:
   db_url: !secret database_url

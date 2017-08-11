@@ -4,7 +4,7 @@
     platform: state
     entity_id: device_tracker.goibniu_goibniu
   action:
-    service: notify.wb_slack
+    service: notify.slack
     data:
       message: ':house: Michael is {{ states("device_tracker.goibniu_goibniu") }}'
 - id: presence_mary
@@ -13,7 +13,7 @@
     platform: state
     entity_id: device_tracker.android1b27fe99b8b39bc3
   action:
-    service: notify.wb_slack
+    service: notify.slack
     data:
       message: ':house: Mary is {{ states("device_tracker.android1b27fe99b8b39bc3") }}'
 - id: presence_people
@@ -22,7 +22,7 @@
     platform: state
     entity_id: group.people
   action:
-    service: notify.wb_slack
+    service: notify.slack
     data:
       message: ':house: Someone is {{ states("group.people") }}'
 - id: update_notifications
@@ -31,7 +31,7 @@
     platform: state
     entity_id: updater.updater
   action:
-    service: notify.wb_slack
+    service: notify.slack
     data:
       message: 'There is a new Home Assistant release available.'
 - id: garage_door_notification
@@ -40,7 +40,7 @@
     platform: state
     entity_id: cover.garage_door
   action:
-    - service: notify.wb_slack
+    - service: notify.slack
       data_template:
         message: ':parking: The garage door is {{ trigger.to_state.state }}'
     - service: shell_command.set_master_garage_state
@@ -50,7 +50,7 @@
     platform: homeassistant
     event: start
   action:
-    - service: notify.wb_slack
+    - service: notify.slack
       data:
         message: ":white_check_mark: Home Assistant is now Running.\n@bishop is online. :robot_face:"
 - id: front_porch_motion_notifications
@@ -69,7 +69,7 @@
     platform: state
     entity_id: sensor.fand_events
   action:
-    - service: notify.wb_slack
+    - service: notify.slack
       data_template: 
         message: ':door: New motion event at Front Door (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }}'
 - id: lights_off_midnight
@@ -138,7 +138,7 @@
       data:
         brightness_pct: 50
         kelvin: 2200
-    - service: notify.wb_slack
+    - service: notify.slack
       data_template: 
         message: ':bulb: Michaels Side Night (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }})'
 - id: michaels_side_light_temp_morning
@@ -157,7 +157,7 @@
       data:
         brightness_pct: 60
         kelvin: 2700
-    - service: notify.wb_slack
+    - service: notify.slack
       data_template: 
         message: ':bulb: Michaels Side Morning (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }})'
 - id: michaels_side_light_temp_day
@@ -176,6 +176,6 @@
       data:
         brightness_pct: 80
         kelvin: 4000
-    - service: notify.wb_slack
+    - service: notify.slack
       data_template: 
         message: ':bulb: Michaels Side Day (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }})'
