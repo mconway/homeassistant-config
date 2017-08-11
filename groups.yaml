@@ -11,7 +11,7 @@ officetab:
     - group.office_lights
 bedroomstab:
   name: Bedrooms
-  icon: mdi:bed
+  icon: mdi:hotel
   view: yes
   entities:
     - group.master_bedroom
