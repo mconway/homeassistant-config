@@ -168,8 +168,8 @@
     to: 'on'
   condition:
     condition: time
-    after: '06:00:00'
-    before: '11:00:00'
+    after: '11:00:00'
+    before: '17:00:00'
   action:
     - service: light.turn_on
       entity_id: light.michaels_side
