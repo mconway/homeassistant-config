@@ -127,6 +127,7 @@
   alias: Michaels Night Light Temp
   trigger:
     platform: state
+    entity_id: light.michaels_side
     to: 'on'
   condition:
     condition: time
@@ -144,6 +145,7 @@
   alias: Michaels Morning Light Temp
   trigger:
     platform: state
+    entity_id: light.michaels_side
     to: 'on'
   condition:
     condition: time
@@ -162,6 +164,7 @@
   alias: Michaels Day Light Temp
   trigger:
     platform: state
+    entity_id: light.michaels_side
     to: 'on'
   condition:
     condition: time
