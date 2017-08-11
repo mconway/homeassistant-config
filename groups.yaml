@@ -9,6 +9,13 @@ officetab:
   entities:
     - group.office_devices
     - group.office_lights
+bedroomstab:
+  name: Bedrooms
+  icon: mdi:bed
+  view: yes
+  entities:
+    - group.master_bedroom
+    - group.kids_bedroom
 environmentalstab:
   name: Information
   icon: mdi:tree
@@ -74,6 +81,7 @@ office_lights:
   name: Lights
   view: no
   entities:
+  - light.office
   - light.office_floor_lamp
 internet:
   name: Internet
@@ -138,3 +146,28 @@ camera_frontporchnorth:
     - sensor.frontporchnorth_status
     - sensor.frontporchnorth_events
     - camera.frontporchnorth
+master_bedroom:
+  name: Master Bedroom
+  view: no
+  entities:
+    - light.back_room
+    - light.marys_side
+    - light.michaels_side
+kids_bedroom:
+  name: Kid's Bedrooms
+  view: no
+  entities:
+    - light.aidens_room
+    - light.lillys_room
+office_people:
+  name: People
+  view: no
+  entities:
+    - sensor.steam_76561197993153035
+back_room_lights:
+  name: Back Room Lights
+  view: no
+  entities:
+    - light.back_room
+    - light.back_room_1
+    - light.back_room_2
