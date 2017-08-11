@@ -58,6 +58,5 @@ light.office_floor_lamp:
   hide_control: false
   show_last_changed: true
   extra_badge:
-    entity_id: light.office_floor_lamp
     attribute: brightness_pct
     unit: "%"
