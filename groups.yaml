@@ -11,13 +11,14 @@ officetab:
     - group.office_lights
 bedroomstab:
   name: Bedrooms
+  icon: mdi:hotel
   view: yes
   entities:
     - group.master_bedroom
     - group.kids_bedroom
 environmentalstab:
   name: Information
-  icon: mdi:tree
+  icon: mdi:information
   view: yes
   entities:
     - group.today
