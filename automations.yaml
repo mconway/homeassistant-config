@@ -136,8 +136,8 @@
     - service: light.turn_on
       entity_id: light.michaels_side
       data:
-        brightness: 100
-        color_temp: 2200
+        brightness_pct: 50
+        kelvin: 2200
     - service: notify.wb_slack
       data_template: 
         message: ':bulb: Michaels Side Night (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }})'
@@ -155,8 +155,8 @@
     - service: light.turn_on
       entity_id: light.michaels_side
       data:
-        brightness: 100
-        color_temp: 2700
+        brightness_pct: 60
+        kelvin: 2700
     - service: notify.wb_slack
       data_template: 
         message: ':bulb: Michaels Side Morning (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }})'
@@ -174,8 +174,8 @@
     - service: light.turn_on
       entity_id: light.michaels_side
       data:
-        brightness: 100
-        color_temp: 4000
+        brightness_pct: 80
+        kelvin: 4000
     - service: notify.wb_slack
       data_template: 
         message: ':bulb: Michaels Side Day (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }})'
