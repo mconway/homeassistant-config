@@ -51,3 +51,9 @@ group.all_scripts:
   hidden: false
 sensor.home:
   hidden: true
+light.back_room_1:
+  custom_ui_state_card: custom-ui
+  state_card_mode: single-line
+  stretch_slider: true
+  hide_control: false
+  show_last_changed: true
