@@ -7,8 +7,7 @@ backroomtab:
   view: yes
   entities:
     - group.back_room_lights
-    - sensor.wii
-    - sensor.xboxone
+    - group.back_room_devices
 officetab:
   name: Office
   icon: mdi:monitor
@@ -199,3 +198,9 @@ back_room_lights:
     - light.back_room
     - light.back_room_1
     - light.back_room_2
+back_room_devices:
+  name: Devices
+  view: no
+  entities:
+    - sensor.wii
+    - sensor.xbox
