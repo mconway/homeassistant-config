@@ -79,9 +79,16 @@
         {% else %}
           Offline
         {%- endif %}
+    wii:
+      friendly_name: "Wii"
+      value_template: >-
+        {%- if is_state("device_tracker.wii", "home") %}
+          Online
+        {% else %}
+          Offline
+        {%- endif %} 
     xboxone:
       friendly_name: "Xbox One"
-      icon: mdi:xbox
       value_template: >-
         {%- if is_state("device_tracker.xboxsystemos", "home") %}
           Online

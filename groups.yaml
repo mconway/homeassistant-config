@@ -7,8 +7,8 @@ backroomtab:
   view: yes
   entities:
     - group.back_room_lights
-    - device_tracker.wii
-    - device_tracker.xboxsystemos
+    - sensor.wii
+    - sensor.xboxone
 officetab:
   name: Office
   icon: mdi:monitor
