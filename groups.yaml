@@ -1,14 +1,23 @@
 ###############################################################
 ###### Views
 ###############################################################
-
+backroomtab:
+  name: Back Room
+  icon: mdi:sofa
+  view: yes
+  entities:
+    - group.back_room_lights
+    - device_tracker.wii
+    - device_tracker.xboxsystemos
 officetab:
   name: Office
   icon: mdi:monitor
   view: yes
   entities:
+    - group.office_people
     - group.office_devices
     - group.office_lights
+    - group.camera_fand
 bedroomstab:
   name: Bedrooms
   icon: mdi:hotel
@@ -32,6 +41,7 @@ garagetab:
     - cover.garage_door
     - group.garage_devices
     - media_player.roku_2_xd__12g2d0036416
+    - group.camera_garage
 cameratab:
   name: Cameras
   icon: mdi:camcorder
@@ -47,6 +57,7 @@ configtab:
     - group.all_scripts
     - group.systeminfo
     - group.all_automations
+    - mqtt_eventstream.initialized
 #default_view:
 #  view: yes
 #  name: Home
@@ -95,9 +106,7 @@ devices:
     - sensor.aibell
     - sensor.beansidhe
     - sensor.damara
-    - device_tracker.xboxsystemos
     - device_tracker.thermostat5e30f4
-    - device_tracker.wii
 people:
   name: People
   view: no
@@ -143,7 +152,7 @@ camera_frontporchnorth:
     - sensor.frontporchnorth_status
     - sensor.frontporchnorth_events
     - camera.frontporchnorth
-camera_Garage:
+camera_garage:
   name: Garage
   view: no
   entities:
