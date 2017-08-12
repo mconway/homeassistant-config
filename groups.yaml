@@ -203,4 +203,4 @@ back_room_devices:
   view: no
   entities:
     - sensor.wii
-    - sensor.xbox
+    - sensor.xboxone
