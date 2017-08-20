@@ -11,6 +11,6 @@ light.*:
     max: 255
     off_when_min: true
 switch.program*:
-  icon: code-braces
+  icon: mdi:code-braces
 switch.zone*:
-  icon: water
+  icon: mdi:water
