@@ -55,3 +55,5 @@ group.all_scripts:
   hidden: false
 sensor.home:
   hidden: true
+group.irrigation_unused:
+  hidden: true

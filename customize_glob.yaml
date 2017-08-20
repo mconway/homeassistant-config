@@ -10,3 +10,7 @@ light.*:
     min: 0
     max: 255
     off_when_min: true
+switch.program*:
+  icon: code-braces
+switch.zone*:
+  icon: water
