@@ -209,7 +209,7 @@ irrigation:
   name: Irrigation
   view: no
   icon: mdi:water-pump
-  devices:
+  entities:
     - switch.program_morning
     - switch.program_midday
     - switch.program_evening
@@ -219,7 +219,7 @@ irrigation:
 irrigation_unused:
   name: Unused Irrigation Zones
   view: no
-  devices:
+  entities:
     - switch.zone_zone_4
     - switch.zone_zone_5
     - switch.zone_zone_6
