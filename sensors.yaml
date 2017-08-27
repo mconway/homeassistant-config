@@ -130,3 +130,14 @@
   api_key: !secret steam_api_key
   accounts:
     - !secret mike_steam_id
+- platform: apcupsd
+  resources:
+    - model
+    - status
+    - linev
+    - loadpct
+    - numxfers
+    - bcharge
+    - timeleft
+    - battv
+    - tonbatt
