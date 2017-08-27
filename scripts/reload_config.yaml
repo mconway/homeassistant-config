@@ -4,7 +4,7 @@ sequence:
   event_data:
     name: EVENT
     message: "Reloading Home Assistant Core Config"
-- service: notify.wb_slack
+- service: notify.slack
   data:
     message: ":recycle: Reloading Home Assistant Core Config" #at {{ states('sensor.date__time') }}
 - service: homeassistant.reload_core_config

@@ -43,6 +43,10 @@ sensor.dark_sky_icon:
   hidden: true
 sensor.dark_sky_pressure:
   hidden: true
+sensor.wii:
+  icon: mdi:wii
+sensor.xboxone:
+  icon: mdi:xbox
 group.all_automations:
   friendly_name: Automations
   hidden: false
@@ -50,4 +54,6 @@ group.all_scripts:
   friendly_name: Scripts
   hidden: false
 sensor.home:
+  hidden: true
+group.irrigation_unused:
   hidden: true
