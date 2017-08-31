@@ -1,0 +1,11 @@
+alias: Upgrade HomeAssistant
+sequence:
+- event: LOGBOOK_ENTRY
+  event_data:
+    name: EVENT
+    message: "Upgrading and restarting Home Assistant"
+- service: notify.slack
+  data:
+    message: ":arrow_up: Upgrading Home Assistant"
+- service: shell_command.upgrade_ha
+- service: script.restart_ha
