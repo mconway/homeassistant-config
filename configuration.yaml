@@ -56,10 +56,13 @@ mqtt_eventstream:
   subscribe_topic: home/slave
 
 notify:
-  name: slack
-  platform: slack
-  api_key: !secret slack_api_key
-  default_channel: '#home-automation'
+  - platform: slack
+    name: slack
+    api_key: !secret slack_api_key
+    default_channel: '#home-automation'
+  - platform: kodi
+    name: kodi
+    host: taranis
 
 rest_command:
   garage_icon:
