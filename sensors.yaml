@@ -161,3 +161,4 @@
     api_key: !secret airvisual_api_key
     monitored_conditions:
       - us
+- platform: season
