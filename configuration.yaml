@@ -102,6 +102,7 @@ emulated_hue:
 
 alarm_control_panel:
   - platform: manual_mqtt
+    name: House Alarm
     state_topic: home/alarm
     command_topic: home/alarm/set
 

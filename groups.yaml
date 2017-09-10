@@ -1,6 +1,12 @@
 ###############################################################
 ###### Views
 ###############################################################
+alarmtab:
+  name: Alarm
+  icon: mdi:shield-outline
+  view: yes
+  entities:
+    - alarm_control_panel.house_alarm
 backroomtab:
   name: Back Room
   icon: mdi:sofa
@@ -248,3 +254,8 @@ air_quality:
     - sensor.us_air_quality_index
     - sensor.us_air_pollution_level
     - sensor.us_main_pollutant
+alarm_panel:
+  name: Control
+  view: no
+  entities:
+    - alarm_control_panel.house_alarm
