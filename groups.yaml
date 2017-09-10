@@ -244,7 +244,7 @@ ups_monitor:
 air_quality:
   name: Air Quality
   view: no
-  enitities:
+  entities:
     - sensor.us_air_quality_index
     - sensor.us_air_pollution_level
     - sensor.us_main_pollutant
