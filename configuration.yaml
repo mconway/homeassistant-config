@@ -19,6 +19,7 @@ http:
 frontend:
   extra_html_url:
     - /local/custom_ui/state-card-custom-ui.html
+  themes:
 
 media_player:
   platform: plex
