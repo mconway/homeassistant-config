@@ -31,6 +31,7 @@ environmentalstab:
   entities:
     - group.today
     - group.weather
+    - group.air_quality
     - group.internet
     - group.ups_monitor
 garagetab:
@@ -239,3 +240,10 @@ ups_monitor:
     - sensor.ups_time_left
     - sensor.ups_battery_voltage
     - sensor.ups_time_on_battery
+air_quality:
+  name: Air Quality
+  view: no
+  enitities:
+    - sensor.us_air_quality_index
+    - sensor.us_air_pollution_level
+    - sensor.us_main_pollutant
