@@ -100,7 +100,10 @@ emulated_hue:
     - script
     - climate
 
-apcupsd:
+alarm_control_panel:
+  - platform: manual_mqtt
+    state_topic: home/alarm
+    command_topic: home/alarm/set
 
 ##########################################################################
 #                               Includes                                ##
@@ -124,3 +127,4 @@ discovery:
 logbook:
 config:
 python_script:
+apcupsd:
