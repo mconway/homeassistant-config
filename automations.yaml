@@ -221,3 +221,13 @@
     - service: notify.slack
       data_template: 
         message: ':alarm_clock: Michaels Alarm 3'
+  - id: ui_day_mode
+    alias: 'Set light theme for the day'
+    initial_state: True
+    trigger:
+      - platform: sun
+        event: 'sunrise'
+    action:
+      - service: frontend.set_theme
+        data:
+          name: default
