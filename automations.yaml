@@ -231,3 +231,13 @@
     - service: frontend.set_theme
       data:
         name: default
+- id: ui_night_mode
+  alias: 'Set dark theme for the night'
+  initial_state: True
+  trigger:
+    - platform: sun
+      event: 'sunset'
+  action:
+    - service: frontend.set_theme
+      data:
+        name: darkred
