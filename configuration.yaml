@@ -57,10 +57,13 @@ device_tracker:
 mqtt:
   broker: fand
   port: 1883
-  client_id: ha-fand
+  client_id: ha-host
   keepalive: 60
   username: !secret mqtt_username
   password: !secret mqtt_password
+  birth_message:
+    topic: "hass/status"
+    payload: "online"
 
 mqtt_eventstream:
   publish_topic: home/master
@@ -112,7 +115,7 @@ alarm_control_panel:
 ##########################################################################
 sensor: !include sensors.yaml
 automation: !include automations.yaml
-#cover: !include cover.yaml
+cover: !include cover.yaml
 switch: !include switch.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
