@@ -6,7 +6,8 @@ alarmtab:
   icon: mdi:shield-outline
   view: yes
   entities:
-    - alarm_control_panel.house_alarm
+    - alarm_control_panel.house
+    - group.alarm_panel
 backroomtab:
   name: Back Room
   icon: mdi:sofa
@@ -258,4 +259,4 @@ alarm_panel:
   name: Control
   view: no
   entities:
-    - alarm_control_panel.house_alarm
+    - alarm_control_panel.house
