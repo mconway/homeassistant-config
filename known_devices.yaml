@@ -19,13 +19,6 @@ b827eba0a711:
   track: false
   hide_if_away: false
 
-kindlecd6d51eed:
-  name: Unknown Kindle
-  mac: 74:75:48:79:F1:BE
-  picture: 
-  track: true
-  hide_if_away: false
-
 camulos:
   name: Camulos
   mac: 6C:62:6D:E9:9C:42
@@ -57,13 +50,6 @@ thermostat5e30f4:
 np12g2d0036416:
   name: Roku
   mac: B8:3E:59:0E:28:C5
-  picture: 
-  track: true
-  hide_if_away: false
-
-taranis:
-  name: Taranis
-  mac: 54:04:A6:49:9E:8F
   picture: 
   track: true
   hide_if_away: false
@@ -110,33 +96,12 @@ wii:
   track: true
   hide_if_away: false
 
-goibniu:
-  name: Goibniu
-  mac: DC:3E:F8:F4:78:6C
-  picture: 
-  track: false
-  hide_if_away: false
-
-sb108417760457:
-  name: SB108417760457
-  mac: 98:5F:D3:38:80:66
-  picture: 
-  track: false
-  hide_if_away: false
-
 lugus:
   name: Lugus
   mac: EC:8E:B5:F5:21:F3
   picture: 
   track: true
   hide_if_away: false
-
-b827eb53f288:
-  name: Unkown Device
-  hide_if_away: false
-  mac: B8:27:EB:53:F2:88
-  picture:
-  track: true
 
 sirhc:
   hide_if_away: false
@@ -159,13 +124,6 @@ donn:
   picture:
   track: false
 
-kindlee586deb83:
-  hide_if_away: false
-  mac: 88:71:E5:0E:B6:08
-  name: kindle-e586deb83
-  picture:
-  track: true
-
 maponos:
   hide_if_away: false
   mac: BC:AE:C5:70:9D:74
@@ -176,7 +134,7 @@ maponos:
 amc020z5z78lq0tfj7:
   hide_if_away: false
   mac: 9C:8E:CD:08:EA:2B
-  name: AMC020Z5Z78LQ0TFJ7
+  name: Front Porch North Cam
   picture:
   track: false
   vendor: Amcrest Technologies
@@ -184,7 +142,7 @@ amc020z5z78lq0tfj7:
 gwb072bf279e35:
   hide_if_away: false
   mac: B0:72:BF:27:9E:35
-  name: GW-B072BF279E35
+  name: Tradfri Gateway
   picture:
   track: false
   vendor: Murata Manufacturing Co., Ltd.
@@ -196,43 +154,17 @@ fn9cvf2t:
   picture:
   track: false
   vendor: unknown
+
 tap7013014s:
   hide_if_away: false
   icon:
   mac: 50:F5:DA:6C:15:E8
-  name: Tap-7013014S
+  name: Amazon tap
   picture:
   track: true
   vendor: Amazon Technologies Inc.
 
-desktoptfs4790:
-  hide_if_away: false
-  icon:
-  mac: B8:86:87:73:FA:DA
-  name: DESKTOP-TFS4790
-  picture:
-  track: true
-  vendor: Liteon Technology Corporation
-
-android40e42cc178e8164e:
-  hide_if_away: false
-  icon:
-  mac: 2C:60:0C:09:55:F9
-  name: android-40e42cc178e8164e
-  picture:
-  track: true
-  vendor: QUANTA COMPUTER INC.
-
-desktop26mcqi3:
-  hide_if_away: false
-  icon:
-  mac: 30:9C:23:09:1B:FE
-  name: DESKTOP-26MCQI3
-  picture:
-  track: true
-  vendor: unknown
-
-taranis_2:
+taranis:
   hide_if_away: false
   icon:
   mac: 60:45:CB:64:32:7C
@@ -240,24 +172,6 @@ taranis_2:
   picture:
   track: true
   vendor: ASUSTek COMPUTER INC.
-
-desktophe410on:
-  hide_if_away: false
-  icon:
-  mac: 70:54:D2:0D:B0:F5
-  name: DESKTOP-HE410ON
-  picture:
-  track: true
-  vendor: PEGATRON CORPORATION
-
-android34f1ae123944e8f2:
-  hide_if_away: false
-  icon:
-  mac: 58:67:1A:11:5C:6E
-  name: android-34f1ae123944e8f2
-  picture:
-  track: true
-  vendor: unknown
 
 rainmachine:
   hide_if_away: false
@@ -267,24 +181,6 @@ rainmachine:
   picture:
   track: true
   vendor: ShenZhen MovingComm Technology Co., Limited
-
-031731660953t:
-  hide_if_away: false
-  icon:
-  mac: 98:5F:D3:42:80:0E
-  name: 031731660953-T
-  picture:
-  track: true
-  vendor: Microsoft Corporation
-
-staceysiphone:
-  hide_if_away: false
-  icon:
-  mac: A4:F1:E8:2B:71:6E
-  name: Staceys-iPhone
-  picture:
-  track: true
-  vendor: Apple, Inc.
 
 desktophe410on_2:
   hide_if_away: false

@@ -53,6 +53,7 @@ device_tracker:
     username: !secret asus_username
     password: !secret asus_password
     protocol: telnet
+    track_new_devices: False
   - platform: owntracks
 
 mqtt:
