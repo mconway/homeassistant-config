@@ -246,14 +246,14 @@
     - platform: state
       entity_id: cover.garage_door
       to: 'open'
-      # Light for testing purposes
-    - platform: state
-      entity_id: light.office
-      to: 'on'
   condition:
     - condition: state
       entity_id: alarm_control_panel.house
       state: armed_away
   action:
-    service: alarm_control_panel.alarm_trigger
-    entity_id: alarm_control_panel.house
+    - service: alarm_control_panel.alarm_trigger
+      entity_id: alarm_control_panel.house
+    - service: persistent_notification.create
+      data:
+        message: "Alarm was triggered at {{ trigger.to_state.last_changed }}!"
+        title: "Alarm Triggered!"
