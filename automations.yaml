@@ -241,3 +241,19 @@
     - service: frontend.set_theme
       data:
         name: darkred
+- alias: 'Trigger alarm while armed away'
+  trigger:
+    - platform: state
+      entity_id: cover.garage_door
+      to: 'open'
+      # Light for testing purposes
+    - platform: state
+      entity_id: light.office
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.house
+      state: armed_away
+  action:
+    service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.house
