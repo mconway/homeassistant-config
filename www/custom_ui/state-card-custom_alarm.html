@@ -36,7 +36,7 @@
 				line-height: 40px
 			}
 
-			.nam[in-dialog],
+			.name[in-dialog],
 			:host([secondary-line]) .name {
 				line-height: 20px
 			}
@@ -74,14 +74,14 @@
 			<paper-button-group>
 				<paper-button style="background-color:#4CAF50; color: #FFFFFF;" on-tap='handleDisarmTap' hidden$='[[!disarmButtonVisible]]'>Disarm</paper-button>
 				<paper-button style="background-color:#673AB7; color: #FFFFFF;" on-tap='handleStayTap' hidden$='[[!armStayButtonVisible]]'>
-					Arm Stay </paper-button>
+				Arm Stay </paper-button>
 				<paper-button style="background-color:#F44336; color: #FFFFFF;" on-tap='handleAwayTap' hidden$='[[!armAwayButtonVisible]]'>Arm Away</paper-button>
-				</pper-button-group>
+			</paper-button-group>
 		</div>
 	</template>
 </dom-module>
 <script>
-	Polymr({
+	Polymer({
 		is: 'state-card-custom_alarm',
 		properties: {
 			hass: {
