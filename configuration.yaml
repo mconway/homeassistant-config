@@ -88,7 +88,7 @@ rest_command:
 
 alert:
   garage_door:
-    name: Garage has been open since {{ states.cover.garage_door.last_changed }}
+    name: Garage has been open since {{ as_timestamp(states.cover.garage_door.last_changed) | timestamp_custom('%D %-I:%M %P') }}
     entity_id: cover.garage_door
     state: 'open'
     repeat: 30
