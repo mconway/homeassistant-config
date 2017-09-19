@@ -97,7 +97,7 @@ alert:
       - slack
   alarm:
     name: Alarm was triggered at {{ states.alarm_control_panel.house.last_changed }}!
-    entity_id: cover.garage_door
+    entity_id: alarm_control_panel.house
     state: 'triggered'
     repeat: 5
     can_acknowledge: true
