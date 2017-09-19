@@ -260,5 +260,5 @@
       entity_id: alarm_control_panel.house
     - service: persistent_notification.create
       data_template:
-        message: "Alarm was triggered at {{ strptime(trigger.to_state.last_changed, '%D %-I:%M %P') }}!"
+        message: "Alarm was triggered at {{ as_timestamp(trigger.to_state.last_changed) | timestamp_custom('%D %-I:%M %P') }}!"
         title: "Alarm Triggered!"

@@ -96,7 +96,7 @@ alert:
     notifiers:
       - slack
   alarm:
-    name: Alarm was triggered at {{ states.alarm_control_panel.house.last_changed }}!
+    name: ":rotating_light: Alarm was triggered at {{ as_timestamp(states.alarm_control_panel.house.last_changed) | timestamp_custom('%D %-I:%M %P') }}!"
     entity_id: alarm_control_panel.house
     state: 'triggered'
     repeat: 5
