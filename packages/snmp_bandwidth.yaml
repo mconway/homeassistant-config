@@ -31,16 +31,17 @@ sensor:
     name: 'WAN Traffic Out'
     entity_id: sensor.internet_speed_out
 
-#automation:
-#  - alias: Monitor Traffic In
-#    trigger:
-#      platform: state
-#      entity_id: sensor.snmp_wan_in
-#    action:
-#      - service: input_slider.select_value
-#        data_template:
-#          entity_id: input_slider.internet_traffic_delta_in
-#          value: '{{ ((trigger.to_state.state | int - trigger.from_state.state | int) * 8 ) / ( as_timestamp(trigger.to_state.last_updated) - as_timestamp(trigger.from_state.last_updated) ) }}'
+automation:
+  - id: snmp_monitor_traffic_in
+    alias: Monitor Traffic In
+    trigger:
+      platform: state
+      entity_id: sensor.snmp_wan_in
+    action:
+      - service: input_slider.select_value
+        data_template:
+          entity_id: input_slider.internet_traffic_delta_in
+          value: '{{ ((trigger.to_state.state | int - trigger.from_state.state | int) * 8 ) / ( as_timestamp(trigger.to_state.last_updated) - as_timestamp(trigger.from_state.last_updated) ) }}'
 #  
 #  - alias: Monitor Traffic Out
 #    trigger:
