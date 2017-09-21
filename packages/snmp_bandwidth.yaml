@@ -54,10 +54,10 @@ automation:
           entity_id: input_slider.internet_traffic_delta_out
           value: '{{ ((trigger.to_state.state | int - trigger.from_state.state | int) * 8 ) / ( as_timestamp(trigger.to_state.last_updated) - as_timestamp(trigger.from_state.last_updated) ) }}'
 
-#customize:
-#  sensor.download_speed_mean:
-#    friendly_name: 'Speedtest Download Average'
-#    icon: mdi:speedometer
+customize:
+  sensor.download_speed_mean:
+    friendly_name: 'Speedtest Download Average'
+    icon: mdi:speedometer
 
 #  sensor.upload_speed_mean:
 #    friendly_name: 'Spedtest Upload Average'
