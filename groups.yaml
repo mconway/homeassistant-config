@@ -40,6 +40,7 @@ environmentalstab:
     - group.weather
     - group.air_quality
     - group.internet
+    - group.snmp_monitor
     - group.ups_monitor
 garagetab:
   name: Garage
