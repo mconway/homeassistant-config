@@ -12,6 +12,7 @@ homeassistant:
   customize: !include customize.yaml
   customize_domain: {}
   customize_glob: !include customize_glob.yaml
+  packages: !include_dir_named packages
 
 http:
   api_password: !secret api_password
@@ -130,8 +131,6 @@ switch: !include switch.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
 shell_command: !include shell_commands.yaml
-packages:
-  snmp_bandwidth: !include packages/snmp_bandwidth.yaml
 
 ##########################################################################
 ##                               Enables                                ##
