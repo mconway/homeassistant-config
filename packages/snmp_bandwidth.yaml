@@ -31,6 +31,19 @@ sensor:
     name: 'WAN Traffic Out'
     entity_id: sensor.internet_speed_out
 
+input_slider:
+  internet_traffic_delta_in:
+    name: "Traffic IN Delta"
+    initial: 0
+    min: 0
+    max: 1000000000000
+
+  internet_traffic_delta_out:
+    name: "Traffic OUT Delta"
+    initial: 0
+    min: 0
+    max: 1000000000000
+
 automation:
   - id: snmp_monitor_traffic_in
     alias: Monitor Traffic In
