@@ -280,11 +280,11 @@
   alias: 'Disarm alarm when someone is home'
   trigger:
     - platform: state
-      entitiy_id: group.people
+      entity_id: group.people
       to: 'home'
   action:
     - service: notify.slack
       data:
-        message: "Arming Alarm - no one is home."
-    - service: alarm_control_panel.alarm_arm_away
+        message: "Disarming Alarm - Someone is home"
+    - service: alarm_control_panel.disarm
       entity_id: alarm_control_panel.house      
