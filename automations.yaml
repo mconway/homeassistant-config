@@ -262,3 +262,29 @@
       data_template:
         message: "Alarm was triggered at {{ as_timestamp(trigger.to_state.last_changed) | timestamp_custom('%D %-I:%M %P') }}!"
         title: "Alarm Triggered!"
+- id: alarm_arm_away
+  alias: 'Arm alarm when no one home'
+  trigger:
+    platform: state
+    entity_id: group.people
+    to: 'not_home'
+    for:
+      minutes: 5
+  action:
+    - service: notify.slack
+      data:
+        message: 'Arming Alarm - no one is home.'
+    - service: alarm_control_panel.alarm_arm_away
+      entity_id: alarm_control_panel.house
+- id: alarm_disarm_home
+  alias: 'Disarm alarm when someone is home'
+  trigger:
+    platform: state
+    entity_id: group.people
+    to: 'home'
+  action:
+    - service: notify.slack
+      data:
+        message: 'Disarming Alarm - Someone is home'
+    - service: alarm_control_panel.disarm
+      entity_id: alarm_control_panel.house
