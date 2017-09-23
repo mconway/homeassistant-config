@@ -256,8 +256,3 @@ air_quality:
     - sensor.us_air_quality_index
     - sensor.us_air_pollution_level
     - sensor.us_main_pollutant
-alarm_panel:
-  name: Control
-  view: no
-  entities:
-    - alarm_control_panel.house
