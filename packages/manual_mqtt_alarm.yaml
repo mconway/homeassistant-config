@@ -57,7 +57,7 @@ automation:
           title: "Alarm Triggered!"
 group:
   alarm_panel:
-  name: Control
-  view: no
-  entities:
-    - alarm_control_panel.house
+    name: Control
+    view: no
+    entities:
+      - alarm_control_panel.house
