@@ -282,6 +282,15 @@
     platform: state
     entity_id: group.people
     to: 'home'
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: alarm_control_panel.house
+        state: 'pending'
+      - condition: state
+        entity_id: alarm_control_panel.house
+        state: 'armed_away'
   action:
     - service: notify.slack
       data:
