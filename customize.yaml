@@ -60,19 +60,3 @@ group.irrigation_unused:
 alarm_control_panel.house:
   custom_ui_state_card: state-card-custom-ui
   state_card_custom_ui_secondary: state-card-custom_alarm
-
-sensor.download_speed_mean:
-  friendly_name: 'SNMP Download Average'
-  icon: mdi:speedometer
-sensor.upload_speed_mean:
-  friendly_name: 'SNMP Upload Average'
-  icon: mdi:speedometer
-sensor.ping_time_mean:
-  friendly_name: 'SNMP Ping Average'
-  icon: mdi:clock-fast
-sensor.wan_traffic_in_mean:
-  friendly_name: 'WAN Download Average'
-  icon: mdi:download
-sensor.wan_traffic_out_mean:
-  friendly_name: 'WAN Upload Average'
-  icon: mdi:upload

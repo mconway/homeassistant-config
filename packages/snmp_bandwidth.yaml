@@ -1,3 +1,21 @@
+homeassistant:
+  customize:
+    sensor.download_speed_mean:
+      friendly_name: 'SNMP Download Average'
+      icon: mdi:speedometer
+    sensor.upload_speed_mean:
+      friendly_name: 'SNMP Upload Average'
+      icon: mdi:speedometer
+    sensor.ping_time_mean:
+      friendly_name: 'SNMP Ping Average'
+      icon: mdi:clock-fast
+    sensor.wan_traffic_in_mean:
+      friendly_name: 'WAN Download Average'
+      icon: mdi:download
+    sensor.wan_traffic_out_mean:
+      friendly_name: 'WAN Upload Average'
+      icon: mdi:upload
+
 sensor:
   - platform: snmp
     name: snmp_wan_in
@@ -82,24 +100,3 @@ group:
     entities:
       - sensor.snmp_wan_in
       - sensor.snmp_wan_out
-
-#customize:
-#  sensor.download_speed_mean:
-#    friendly_name: 'Speedtest Download Average'
-#    icon: mdi:speedometer
-
-#  sensor.upload_speed_mean:
-#    friendly_name: 'Spedtest Upload Average'
-#    icon: mdi:speedometer
-
-#  sensor.ping_time_mean:
-#    friendly_name: 'Speedtest Ping Average'
-#    icon: mdi:clock-fast
-
-#  sensor.wan_traffic_in_mean:
-#    friendly_name: 'WAN Download Average'
-#    icon: mdi:download
-
-#  sensor.wan_traffic_out_mean:
-#    friendly_name: 'WAN Upload Average'
-#    icon: mdi:upload
