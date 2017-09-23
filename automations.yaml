@@ -288,3 +288,19 @@
         message: 'Disarming Alarm - Someone is home'
     - service: alarm_control_panel.disarm
       entity_id: alarm_control_panel.house
+- id: office_light_on_at_dusk
+  alias: 'Turn on the office light at dusk'
+  trigger:
+    - platform: sun
+      event: sunset
+      offest: '-01:00:00'
+  condition:
+    - condition: state
+      entity_id: light.office
+      state: 'off'
+    - condition: state
+      entity_id: sensor.camulos
+      state: 'Online'
+  action:
+    service: light.turn_on
+    entity_id: light.office
