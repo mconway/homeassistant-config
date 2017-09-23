@@ -12,14 +12,14 @@ sensor:
   - platform: template
     sensors:
         internet_speed_in:
-          friendly_name: 'Internet Speed'
+          friendly_name: 'Internet Speed IN'
           value_template: '{{ ((states.input_slider.internet_traffic_delta_in.state | float ) / 1000000 ) | round(2) }}'
           unit_of_measurement: 'Mbps'
 
   - platform: template
     sensors:
         internet_speed_out:
-          friendly_name: 'Internet Speed'
+          friendly_name: 'Internet Speed OUT'
           value_template: '{{ ((states.input_slider.internet_traffic_delta_out.state | float ) / 1000000 ) | round(2) }}'
           unit_of_measurement: 'Mbps'
 
