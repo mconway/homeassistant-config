@@ -60,7 +60,7 @@ def main():
 
 def slack_message(msg, key):
     client = Slacker(key)
-    resp = client.chat.post_message("#home-automation", msg, as_user=True)
+    resp = client.chat.post_message("#zoneminder", msg, as_user=True)
     print(resp)
 
 def get_args():
