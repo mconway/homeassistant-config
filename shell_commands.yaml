@@ -1,5 +1,4 @@
 set_master_garage_state: 'python3 /config/commands/garagedoor.py'
 update_configs_from_repo: 'cd /config && git pull origin master > /config/command.log'
 test: 'ls -lah / > /config/ls.txt'
-get_latest_zm_event: 'python3 /config/commands/zoneminder_events.py --fromha=True'
 upgrade_ha: 'bash /config/commands/update_ha.sh'

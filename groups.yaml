@@ -157,34 +157,6 @@ today:
   entities:
     - sensor.date
     - sensor.time
-camera_frontporchnorth:
-  name: Front Porch North
-  view: no
-  entities:
-    - sensor.frontporchnorth_status
-    - sensor.frontporchnorth_events
-    - camera.frontporchnorth
-camera_garage:
-  name: Garage
-  view: no
-  entities:
-    - sensor.garage_status
-    - sensor.garage_events
-    - camera.garage
-camera_fand:
-  name: Fand
-  view: no
-  entities:
-    - sensor.fand_status
-    - sensor.fand_events
-    - camera.fand
-camera_corb:
-  name: Corb
-  view: no
-  entities:
-    - sensor.corb_status
-    - sensor.corb_events
-    - camera.corb
 master_bedroom:
   name: Master Bedroom
   view: no
