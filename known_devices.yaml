@@ -182,11 +182,11 @@ rainmachine:
   track: true
   vendor: ShenZhen MovingComm Technology Co., Limited
 
-desktophe410on_2:
+nodens:
   hide_if_away: false
   icon:
   mac: 68:94:23:BD:B0:93
-  name: DESKTOP-HE410ON
+  name: Nodens
   picture:
   track: true
   vendor: unknown

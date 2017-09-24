@@ -9,7 +9,7 @@ sensor.damara:
 sensor.lugus:
   icon: 'mdi:printer'
 sensor.taranis:
-  icon: 'mdi:server'
+  icon: 'mdi:linux'
 sensor.speedtest_ping:
   friendly_name: Ping
   icon: 'mdi:speedometer'
@@ -43,6 +43,8 @@ sensor.dark_sky_icon:
   hidden: true
 sensor.dark_sky_pressure:
   hidden: true
+sensor.season:
+  icon: mdi:leaf
 sensor.wii:
   icon: mdi:wii
 sensor.xboxone:

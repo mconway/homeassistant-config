@@ -54,6 +54,20 @@
         {% else %}
           mdi:power-plug-off
         {%- endif %}
+    nodens:
+      friendly_name: 'Nodens'
+      value_template: >-
+        {%- if is_state("device_tracker.nodens", "home") %}
+          Online
+        {% else %}
+          Offline
+        {%- endif %}
+      icon_template: >-
+        {%- if is_state("device_tracker.nodens", "home") %}
+          mdi:power
+        {% else %}
+          mdi:power-plug-off
+        {%- endif %}
     taranis:
       friendly_name: 'Taranis'
       value_template: >-
