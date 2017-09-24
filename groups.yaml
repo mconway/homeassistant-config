@@ -94,6 +94,7 @@ office_devices:
       - sensor.camulos
       - sensor.lugus
       - sensor.maponos
+      - sensor.nodens
       - sensor.taranis
 office_lights:
   name: Lights
