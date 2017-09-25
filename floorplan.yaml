@@ -1,0 +1,15 @@
+name: Floorplan
+image: /local/custom_ui/floorplan/floorplan.svg
+stylesheet: /local/custom_ui/floorplan/floorplan.css
+hide_app_toolbar:
+groups:
+  - name: Lights
+    entities:
+      - light.back_room_1
+      - light.back_room_2
+      - light.office
+    states:
+      - state: 'on'
+        class: 'light-on'
+      - state: 'off'
+        class: 'light-off'
