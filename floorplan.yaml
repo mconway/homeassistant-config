@@ -14,14 +14,14 @@ groups:
       - state: 'off'
         class: 'light-off'
   - name: Cameras
-      entities:
-        - camera.frontporchnorth
-      states:
-        - state: 'idle'
-          class: 'camera-idle'
+    entities:
+      - camera.frontporchnorth
+    states:
+      - state: 'idle'
+        class: 'camera-idle'
   - name: Alarm Panel
     entities:
-        - alarm_control_panel.house
+      - alarm_control_panel.house
     states:
       - state: 'armed_away'
         class: 'alarm-armed'
