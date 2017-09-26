@@ -7,7 +7,7 @@ groups:
     entities:
       - light.back_room_1
       - light.back_room_2
-      - light.office
+      - light.office_floor_lamp
     states:
       - state: 'on'
         class: 'light-on'
