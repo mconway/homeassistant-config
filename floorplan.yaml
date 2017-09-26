@@ -1,5 +1,5 @@
 name: Floorplan
-image: /local/custom_ui/floorplan/floorplan.svg
+image: /local/custom_ui/floorplan/floorplan2.svg
 stylesheet: /local/custom_ui/floorplan/floorplan.css
 hide_app_toolbar:
 groups:
@@ -13,3 +13,19 @@ groups:
         class: 'light-on'
       - state: 'off'
         class: 'light-off'
+  - name: Cameras
+      entities:
+        - camera.frontporchnorth
+      states:
+        - state: 'idle'
+          class: 'camera-idle'
+  - name: Alarm Panel
+    entities:
+        - alarm_control_panel.house
+    states:
+      - state: 'armed_away'
+        class: 'alarm-armed'
+      - state: 'armed_home'
+        class: 'alarm-armed'
+      - state: 'disarmed'
+        class: 'alarm-disarmed'
