@@ -38,7 +38,7 @@ automation:
       - service: notify.slack
         data:
           message: 'Disarming Alarm - Someone is home'
-      - service: alarm_control_panel.disarm
+      - service: alarm_control_panel.alarm_disarm
         entity_id: alarm_control_panel.house
   - id: alarm_trigger_away
     alias: 'Trigger alarm while armed away'
