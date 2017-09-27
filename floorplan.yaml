@@ -29,3 +29,13 @@ groups:
         class: 'alarm-armed'
       - state: 'disarmed'
         class: 'alarm-disarmed'
+  - name: Switches
+    entities:
+        - switch.zone_front_yard__street
+        - switch.zone_front_yard__house
+        - switch.zone_back_yard
+    states:
+      - state: 'on'
+        class: 'doorbell-on'
+      - state: 'off'
+        class: 'doorbell-off'
