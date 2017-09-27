@@ -59,4 +59,4 @@ groups:
       - state: 'Online'
         class: 'squeezebox-on'
       - state: 'Offline'
-        class: 'squeezebox-on'
+        class: 'squeezebox-off'
