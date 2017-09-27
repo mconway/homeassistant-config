@@ -51,6 +51,9 @@ groups:
         class: 'light-off'
   - name: Sensors
     entities:
+      - sensor.camulos
+      - sensor.nodens
+      - sensor.taranis
       - sensor.xboxone
     states:
       - state: 'Online'
