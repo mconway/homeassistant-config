@@ -31,11 +31,29 @@ groups:
         class: 'alarm-disarmed'
   - name: Switches
     entities:
-        - switch.zone_front_yard__street
-        - switch.zone_front_yard__house
-        - switch.zone_back_yard
+      - switch.zone_front_yard__street
+      - switch.zone_front_yard__house
+      - switch.zone_back_yard
     states:
       - state: 'on'
         class: 'doorbell-on'
       - state: 'off'
         class: 'doorbell-off'
+  - name: Cover
+    entities:
+      - cover.garage_door
+    states:
+      - state: 'unknown'
+        class: 'warning-text'
+      - state: 'open'
+        class: 'light-on'
+      - state: 'closed'
+        class: 'light-off'
+  - name: Sensors
+    entities:
+      - sensor.xboxone
+    states:
+      - state: 'Online'
+        class: 'squeezebox-on'
+      - state: 'Offline'
+        class: 'squeezebox-on'
