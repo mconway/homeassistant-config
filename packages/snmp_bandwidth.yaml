@@ -31,14 +31,14 @@ sensor:
     sensors:
         internet_speed_in:
           friendly_name: 'Internet Speed IN'
-          value_template: '{{ ((states.input_slider.internet_traffic_delta_in.state | float ) / 1000000 ) | round(2) }}'
+          value_template: '{{ ((states.input_number.internet_traffic_delta_in.state | float ) / 1000000 ) | round(2) }}'
           unit_of_measurement: 'Mbps'
 
   - platform: template
     sensors:
         internet_speed_out:
           friendly_name: 'Internet Speed OUT'
-          value_template: '{{ ((states.input_slider.internet_traffic_delta_out.state | float ) / 1000000 ) | round(2) }}'
+          value_template: '{{ ((states.input_number.internet_traffic_delta_out.state | float ) / 1000000 ) | round(2) }}'
           unit_of_measurement: 'Mbps'
 
   - platform: statistics
@@ -49,7 +49,7 @@ sensor:
     name: 'WAN Traffic Out'
     entity_id: sensor.internet_speed_out
 
-input_slider:
+input_number:
   internet_traffic_delta_in:
     name: "Traffic IN Delta"
     initial: 0
@@ -69,9 +69,9 @@ automation:
       platform: state
       entity_id: sensor.snmp_wan_in
     action:
-      - service: input_slider.select_value
+      - service: input_number.select_value
         data_template:
-          entity_id: input_slider.internet_traffic_delta_in
+          entity_id: input_number.internet_traffic_delta_in
           value: '{{ ((trigger.to_state.state | int - trigger.from_state.state | int) * 8 ) / ( as_timestamp(trigger.to_state.last_updated) - as_timestamp(trigger.from_state.last_updated) ) }}'
   
   - id: snmp_monitor_traffic_out
@@ -80,9 +80,9 @@ automation:
       platform: state
       entity_id: sensor.snmp_wan_out
     action:
-      - service: input_slider.select_value
+      - service: input_number.select_value
         data_template:
-          entity_id: input_slider.internet_traffic_delta_out
+          entity_id: input_number.internet_traffic_delta_out
           value: '{{ ((trigger.to_state.state | int - trigger.from_state.state | int) * 8 ) / ( as_timestamp(trigger.to_state.last_updated) - as_timestamp(trigger.from_state.last_updated) ) }}'
 
 group:
