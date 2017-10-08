@@ -87,14 +87,6 @@ alert:
     can_acknowledge: true
     notifiers:
       - slack
-  alarm:
-    name: ":rotating_light: Alarm was triggered at {{ as_timestamp(states.alarm_control_panel.house.last_changed) | timestamp_custom('%D %-I:%M %P') }}!"
-    entity_id: alarm_control_panel.house
-    state: 'triggered'
-    repeat: 5
-    can_acknowledge: true
-    notifiers:
-      - slack
 
 recorder:
   db_url: !secret database_url
@@ -105,12 +97,6 @@ emulated_hue:
     - cover
     - script
     - climate
-
-alarm_control_panel:
-  - platform: manual_mqtt
-    name: House
-    state_topic: home/alarm
-    command_topic: home/alarm/set
 
 panel_custom:
   - name: floorplan

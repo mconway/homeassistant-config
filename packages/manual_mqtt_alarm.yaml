@@ -4,6 +4,12 @@ homeassistant:
       custom_ui_state_card: state-card-custom-ui
       state_card_custom_ui_secondary: state-card-custom_alarm
       
+alarm_control_panel:
+  - platform: manual_mqtt
+    name: House
+    state_topic: home/alarm
+    command_topic: home/alarm/set
+
 automation:
   - id: alarm_arm_away
     alias: 'Arm alarm when no one home'
@@ -61,6 +67,17 @@ automation:
         data_template:
           message: "Alarm was triggered at {{ as_timestamp(trigger.to_state.last_changed) | timestamp_custom('%D %-I:%M %P') }}!"
           title: "Alarm Triggered!"
+
+alert:
+  alarm:
+    name: ":rotating_light: Alarm was triggered at {{ as_timestamp(states.alarm_control_panel.house.last_changed) | timestamp_custom('%D %-I:%M %P') }}!"
+    entity_id: alarm_control_panel.house
+    state: 'triggered'
+    repeat: 5
+    can_acknowledge: true
+    notifiers:
+      - slack
+
 group:
   alarm_panel:
     name: Control
