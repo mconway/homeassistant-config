@@ -1,0 +1,43 @@
+automation:
+  - id: michaels_alarm1
+    alias: Michaels Alarm
+    trigger:
+      platform: time
+      at: '06:10:00'
+    action:
+      - service: light.turn_on
+        entity_id: light.michaels_side
+        data:
+          brightness_pct: 30
+          kelvin: 2700
+      - service: notify.slack
+        data_template: 
+          message: ':alarm_clock: Michaels Alarm 1'
+  - id: michaels_alarm2
+    alias: Michaels Alarm
+    trigger:
+      platform: time
+      at: '06:20:00'
+    action:
+      - service: light.turn_on
+        entity_id: light.michaels_side
+        data:
+          brightness_pct: 40
+          kelvin: 2700
+      - service: notify.slack
+        data_template: 
+          message: ':alarm_clock: Michaels Alarm 2'
+  - id: michaels_alarm3
+    alias: Michaels Alarm
+    trigger:
+      platform: time
+      at: '06:30:00'
+    action:
+      - service: light.turn_on
+        entity_id: light.michaels_side
+        data:
+          brightness_pct: 50
+          kelvin: 2700
+      - service: notify.slack
+        data_template: 
+          message: ':alarm_clock: Michaels Alarm 3'
