@@ -16,9 +16,10 @@ automation:
           message: ':alarm_clock: Michaels Alarm'
 
 input_datetime:
-  name: Alarm Clock
-  has_date: false
-  has_time: true
+  alarm_clock:
+    name: Alarm Clock
+    has_date: false
+    has_time: true
 
 group:
   alarm_clock:
