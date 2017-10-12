@@ -1,19 +1,19 @@
-#automation:
-#  - id: michaels_alarm
-#    alias: Michaels Alarm
-#    trigger:
-#      platform: time
-#      at: '{{ states.input_datetime.alarm_clock.state }}''
-#    action:
-#      - service: light.turn_on
-#        entity_id: light.michaels_side
-#        data:
-#          brightness_pct: 75
-#          kelvin: 2700
-#          transition: 18000 #30 minute transition
-#      - service: notify.slack
-#        data_template: 
-#          message: ':alarm_clock: Michaels Alarm'
+automation:
+  - id: michaels_alarm
+    alias: Michaels Alarm
+    trigger:
+      platform: time
+      at: '{{ states.input_datetime.alarm_clock.state }}'
+    action:
+      - service: light.turn_on
+        entity_id: light.michaels_side
+        data:
+          brightness_pct: 75
+          kelvin: 2700
+          transition: 18000 #30 minute transition
+      - service: notify.slack
+        data_template: 
+          message: ':alarm_clock: Michaels Alarm'
 
 input_datetime:
   alarm_clock:
