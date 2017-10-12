@@ -165,6 +165,7 @@ master_bedroom:
     - light.master_bedroom
     - light.marys_side
     - light.michaels_side
+    - sensor.tradfri_remote_control_2
 kids_bedroom:
   name: Kid's Bedrooms
   view: no
@@ -184,6 +185,7 @@ back_room_lights:
     - light.back_room
     - light.back_room_1
     - light.back_room_2
+    - sensor.tradfri_remote_control
 back_room_devices:
   name: Devices
   view: no
