@@ -20,6 +20,9 @@ input_datetime:
     name: Alarm Clock
     has_date: false
     has_time: true
+    hour: 6
+    minute: 15
+    second: 0
 
 group:
   alarm_clock:
