@@ -174,3 +174,6 @@
   monitored_conditions:
     - us
 - platform: season
+- platform: haveibeenpwned
+  email:
+    - !secret email_address
