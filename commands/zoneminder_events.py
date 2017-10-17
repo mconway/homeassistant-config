@@ -3,6 +3,7 @@ try:
     import argparse
     import json
     import requests
+    from datetime import datetime, timedelta
     from slacker import Slacker
 except Exception as e:
     print("EXCEPTION: %s" % e)
@@ -25,7 +26,7 @@ def main():
             password = args.password
             slack_key = args.key
 
-
+        #log in to web service
         data = {"username": username, "password": password, "view": view, "action": "login"}
         session = requests.Session()
         request = session.post(host + '/zm/index.php', params=data)
@@ -34,7 +35,12 @@ def main():
             print("Server is Offline")
             exit(1)
         else:
-            response = session.get(host + '/zm/api/events.json')
+            #create a time string to query against (fixes issue with returning only 100 results)
+            timeminus5mins = datetime.now() - timedelta(minutes=5)
+            dateString = format(timeminus5mins, "%Y-%m-%d %H:%M:%S")
+            print(dateString)
+            #get events based on time
+            response = session.get(host + '/zm/api/events/index/StartTime >=:%s.json' % dateString)
             jsonData = response.json()
             events = sorted(jsonData['events'], key=lambda event: event['Event']['Id'], reverse=True)
             
