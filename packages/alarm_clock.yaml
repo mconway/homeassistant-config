@@ -3,7 +3,7 @@ automation:
     alias: Michaels Alarm
     trigger:
       platform: template
-      value_template: '{{ as_timestamp(states.sensor.date__time.state) | timestamp_custom("%H:%M:00") == states.input_datetime.alarm_clock.state }}'
+      value_template: '{{ as_timestamp(states.sensor.date__time.last_updated) | timestamp_custom("%H:%M:00") == states.input_datetime.alarm_clock.state }}'
     action:
       - service: light.turn_on
         entity_id: light.michaels_side
