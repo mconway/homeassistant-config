@@ -158,6 +158,7 @@ today:
   entities:
     - sensor.date
     - sensor.time
+    - sensor.date__time
 master_bedroom:
   name: Master Bedroom
   view: no
