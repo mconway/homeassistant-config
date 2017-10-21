@@ -105,6 +105,17 @@ panel_custom:
     url_path: floorplan
     config: !include floorplan.yaml
 
+influxdb:
+  host: !secret influxdb_host
+  username: !secret influxdb_username
+  password: !secret influxdb_password
+  database: !secret influxdb_database
+  tags:
+    instance: prod
+    source: taranis
+  tags_attributes:
+    - friendly_name
+
 ##########################################################################
 #                               Includes                                ##
 ##########################################################################
