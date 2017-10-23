@@ -147,11 +147,11 @@ systeminfo:
   name: System Information
   view: no
   entities:
-    - sensor.ram_free
+    - sensor.ram_available
     - sensor.disk_free_
     - sensor.last_boot
     - sensor.since_last_boot
-    - sensor.cpu_use
+    - sensor.cpu_used
 today:
   name: Today
   view: no
