@@ -5,6 +5,8 @@ automation:
       platform: template
       value_template: '{{ as_timestamp(states.sensor.date__time.last_updated) | timestamp_custom("%H:%M:00") == states.input_datetime.alarm_clock.state }}'
     action:
+      - service: automation.turn_off
+        entity_id: automation.michaels_morning_light_temp
       - service: light.turn_on # first set the light to 1% for a gradual fade-in
         entity_id: light.michaels_side
         data:
@@ -24,17 +26,22 @@ automation:
     alias: Reset Michael's Alarm
     trigger:
       platform: template
-      value_template: '{{ (as_timestamp(states.sensor.date__time.last_updated) + 3600) | timestamp_custom("%H:%M:00") == states.input_datetime.alarm_clock.state }}'
+      value_template: '{{ (as_timestamp(states.sensor.date__time.last_updated) - 3600) | timestamp_custom("%H:%M:00") == states.input_datetime.alarm_clock.state }}'
     condition:
       condition: and
       conditions:
+#not sure if these are needed now?
+#        - condition: template
+#          value_template: '{{ states.light.marys_side.state != "off" }}'
         - condition: template
-          value_template: '{{ states.light.marys_side.state != "off"}}'
+          value_template: '{{ states.light.michaels_side.state != "on" }}'
         - condition: template
-          value_template: '{{ states.light.michaels_side.state != "on"}}'
+          value_template: '{{ states.automation.michaels_morning_light_temp != "on" }}'
     action:
       - service: light.turn_off
         entity_id: light.michaels_side
+      - service: automation.turn_off
+        entity_id: automation.michaels_morning_light_temp
       - service: notify.slack
         data_template: 
           message: ':alarm_clock: Resetting Michaels Alarm, 60 Minutes have elapsed'
