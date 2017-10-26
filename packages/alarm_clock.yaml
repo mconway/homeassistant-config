@@ -34,7 +34,7 @@ automation:
 #        - condition: template
 #          value_template: '{{ states.light.marys_side.state != "off" }}'
         - condition: template
-          value_template: '{{ states.light.michaels_side.state != "on" }}'
+          value_template: '{{ states.light.michaels_side.state == "on" }}'
         - condition: template
           value_template: '{{ states.automation.michaels_morning_light_temp != "on" }}'
     action:
