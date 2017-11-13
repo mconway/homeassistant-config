@@ -1,3 +1,0 @@
-- platform: rainmachine
-  ip_address: !secret rainmachine_ip
-  password: !secret rainmachine_password

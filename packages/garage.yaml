@@ -1,0 +1,68 @@
+cover: 
+  - platform: mqtt
+    name: "Garage Door"
+    state_topic: "garage/door/1/status"
+    command_topic: "garage/door/1/action"
+    payload_open: "OPEN"
+    payload_close: "CLOSE"
+    payload_stop: "STATE"
+
+alert:
+  garage_door:
+    name: Garage has been open since {{ as_timestamp(states.cover.garage_door.last_changed) | timestamp_custom('%D %-I:%M %P') }}
+    entity_id: cover.garage_door
+    state: 'open'
+    repeat: 30
+    can_acknowledge: true
+    notifiers:
+      - slack
+
+rest_command:
+  garage_icon:
+    url: 'http://fand:8123/api/states/group.garagetab'
+    method: post
+    payload: '{"attributes": {"entity_id": ["cover.garage_door", "media_player.roku_2_xd__12g2d0036416"], "friendly_name": "Garage", "hidden": true, "icon": "mdi:garage-open", "order": 3, "view": true}, "entity_id": "group.garagetab", "last_changed": "2017-02-08T12:56:03.848224+00:00", "last_updated":"2017-02-08T23:35:14.887961+00:00", "state": "open"}'
+
+switch:
+  - platform: rainmachine
+    ip_address: !secret rainmachine_ip
+    password: !secret rainmachine_password
+
+group:
+  garage_devices:
+    name: Devices
+    view: no
+    entities:
+      - sensor.roku
+  irrigation:
+    name: Irrigation
+    view: no
+    icon: mdi:water-pump
+    entities:
+      - switch.program_morning
+      - switch.program_midday
+      - switch.program_evening
+      - switch.zone_front_yard__street
+      - switch.zone_front_yard__house
+      - switch.zone_back_yard
+  irrigation_unused:
+    name: Unused Irrigation Zones
+    view: no
+    entities:
+      - switch.zone_zone_4
+      - switch.zone_zone_5
+      - switch.zone_zone_6
+      - switch.zone_zone_7
+      - switch.zone_zone_8
+
+automation:
+  - id: garage_door_notification
+    alias: Garage Door
+    trigger:
+      platform: state
+      entity_id: cover.garage_door
+    action:
+      - service: notify.slack
+        data_template:
+          message: ':parking: The garage door is {{ trigger.to_state.state }}'
+      - service: shell_command.set_master_garage_state

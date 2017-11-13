@@ -82,11 +82,6 @@ configtab:
 ###############################################################
 ###### Groups 
 ###############################################################
-garage_devices:
-  name: Devices
-  view: no
-  entities:
-    - sensor.roku
 office_devices:
   name: Devices
   view: no
@@ -193,26 +188,6 @@ back_room_devices:
   entities:
     - sensor.wii
     - sensor.xboxone
-irrigation:
-  name: Irrigation
-  view: no
-  icon: mdi:water-pump
-  entities:
-    - switch.program_morning
-    - switch.program_midday
-    - switch.program_evening
-    - switch.zone_front_yard__street
-    - switch.zone_front_yard__house
-    - switch.zone_back_yard
-irrigation_unused:
-  name: Unused Irrigation Zones
-  view: no
-  entities:
-    - switch.zone_zone_4
-    - switch.zone_zone_5
-    - switch.zone_zone_6
-    - switch.zone_zone_7
-    - switch.zone_zone_8
 ups_monitor:
   name: UPS Stats
   view: no

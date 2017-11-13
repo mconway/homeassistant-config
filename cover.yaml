@@ -1,7 +1,0 @@
-- platform: mqtt
-  name: "Garage Door"
-  state_topic: "garage/door/1/status"
-  command_topic: "garage/door/1/action"
-  payload_open: "OPEN"
-  payload_close: "CLOSE"
-  payload_stop: "STATE"

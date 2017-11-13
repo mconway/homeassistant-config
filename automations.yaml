@@ -34,16 +34,6 @@
     service: notify.slack
     data:
       message: 'There is a new Home Assistant release available.'
-- id: garage_door_notification
-  alias: Garage Door
-  trigger:
-    platform: state
-    entity_id: cover.garage_door
-  action:
-    - service: notify.slack
-      data_template:
-        message: ':parking: The garage door is {{ trigger.to_state.state }}'
-    - service: shell_command.set_master_garage_state
 - id: startup_notification
   alias: Start Up
   trigger:
