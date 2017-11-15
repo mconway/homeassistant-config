@@ -40,7 +40,7 @@ automation:
     action:
       - service: light.turn_off
         entity_id: light.michaels_side
-      - service: automation.turn_off
+      - service: automation.turn_on
         entity_id: automation.michaels_morning_light_temp
       - service: notify.slack
         data_template: 
