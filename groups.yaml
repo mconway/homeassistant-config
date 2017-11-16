@@ -66,9 +66,11 @@ configtab:
   view: yes
   entities:
     - group.all_scripts
+    - group.update_configuration
     - group.systeminfo
     - group.all_automations
     - mqtt_eventstream.initialized
+
 #default_view:
 #  view: yes
 #  name: Home

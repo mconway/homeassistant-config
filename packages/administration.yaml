@@ -1,0 +1,12 @@
+input_boolean:
+  restart_on_config_update:
+    name: Restart after config files updated
+    initial: on
+    icon: mdi:restart
+
+group:
+  update_configuration:
+    name: Update Configuration
+    entities:
+      - script.update_config
+      - input_boolean.restart_on_config_update
