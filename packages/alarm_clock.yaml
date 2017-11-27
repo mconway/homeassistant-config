@@ -26,7 +26,7 @@ automation:
     alias: Reset Michael's Alarm
     trigger:
       platform: template
-      value_template: '{{ (as_timestamp(states.sensor.date__time.last_updated) - (states.input_number.reset_alarm_offset.state | int)*60 )) | timestamp_custom("%H:%M:00") == states.input_datetime.alarm_clock.state }}'
+      value_template: '{{ (as_timestamp(states.sensor.date__time.last_updated) - 3600 )) | timestamp_custom("%H:%M:00") == states.input_datetime.alarm_clock.state }}'
     condition:
       condition: and
       conditions:
