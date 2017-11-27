@@ -1,0 +1,19 @@
+climate:
+  platform: radiotherm
+  host: !secret thermostat_ip
+  hold_temp: False
+
+automation:
+  - id: notify_thermostat_change
+    alias: Notify Thermostat Change
+    trigger:
+      platform: template
+      entity_id: climate.home
+      value_template: '{{ states.climate.home.attributes.temperature }}'
+    condition:
+      - condition: template
+        value_template: '{{ trigger.from_state.attributes.temperature != trigger.to_state.attributes.temperature }}'
+    action:
+      service: notify_slack
+      data_template: 
+        message: ':fire: Thermostate changed (From {{ trigger.from_state.attributes.temperature }} to {{ trigger.to_state.attributes.temperature }})'

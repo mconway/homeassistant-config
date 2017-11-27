@@ -34,11 +34,6 @@ media_player:
 
 tradfri:
 
-climate:
-  platform: radiotherm
-  host: !secret thermostat_ip
-  hold_temp: False
-
 device_tracker:
   - platform: asuswrt
     host: !secret router_ip
