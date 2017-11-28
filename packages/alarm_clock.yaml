@@ -44,7 +44,7 @@ automation:
         entity_id: automation.michaels_morning_light_temp
       - service: notify.slack
         data_template: 
-          message: ':alarm_clock: Resetting Michaels Alarm, 60 Minutes have elapsed'
+          message: ':alarm_clock: Resetting Michaels Alarm, {{ states.input_number.reset_alarm_offset.state | int }} Minutes have elapsed'
 
 input_datetime:
   alarm_clock:
