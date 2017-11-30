@@ -28,6 +28,7 @@ frontend:
       primary-color: amber
     darkred: !include themes/darkred.yaml
     darkcyan: !include themes/darkcyan.yaml
+  javascript_version: latest
 
 media_player:
   platform: plex
