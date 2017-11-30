@@ -63,8 +63,8 @@ kindle836d4dc5b:
 
 android1b27fe99b8b39bc3:
   name: Mary's Phone
-  mac: EC:1F:72:14:94:A7
-  picture: 
+  mac: EC:1F:72:29:C4:2E
+  picture: mdi:android
   track: true
   hide_if_away: false
 
@@ -84,10 +84,11 @@ aibell:
 
 goibniu_goibniu:
   name: Michael
-  mac: EC:1F:72:29:C4:2E
+  mac: 74:A5:28:5E:B8:9A
   picture: 
   track: true
   hide_if_away: false
+  icon: mdi:android
 
 wii:
   name: Wii
@@ -124,13 +125,6 @@ donn:
   picture:
   track: false
 
-maponos:
-  hide_if_away: false
-  mac: BC:AE:C5:70:9D:74
-  name: Maponos
-  picture:
-  track: true
-
 amc020z5z78lq0tfj7:
   hide_if_away: false
   mac: 9C:8E:CD:08:EA:2B
@@ -147,14 +141,6 @@ gwb072bf279e35:
   track: false
   vendor: Murata Manufacturing Co., Ltd.
 
-fn9cvf2t:
-  hide_if_away: false
-  mac: 34:F3:9A:BE:40:10
-  name: FN9CVF2-T
-  picture:
-  track: false
-  vendor: unknown
-
 tap7013014s:
   hide_if_away: false
   icon:
@@ -166,7 +152,7 @@ tap7013014s:
 
 taranis:
   hide_if_away: false
-  icon:
+  icon: mdi:linux
   mac: 60:45:CB:64:32:7C
   name: taranis
   picture:
@@ -195,7 +181,79 @@ esp_1be0cd:
   hide_if_away: false
   icon:
   mac: A0:20:A6:1B:E0:CD
-  name: ESP 1BE0CD
+  name: Garage Door
   picture:
   track: true
   vendor: Espressif Inc.
+
+amazone586deb83:
+  hide_if_away: false
+  icon:
+  mac: 88:71:E5:0E:B6:08
+  name: amazon-e586deb83
+  picture:
+  track: false
+  vendor: Amazon Technologies Inc.
+
+android34f1ae123944e8f2:
+  hide_if_away: false
+  icon:
+  mac: 58:67:1A:11:5C:6E
+  name: android-34f1ae123944e8f2
+  picture:
+  track: false
+  vendor: Barnes&Noble
+
+031731660953t:
+  hide_if_away: false
+  icon:
+  mac: 98:5F:D3:42:80:0E
+  name: 031731660953-T
+  picture:
+  track: false
+  vendor: Microsoft Corporation
+
+xboxsystemos_2:
+  hide_if_away: false
+  icon:
+  mac: 30:59:B7:4B:65:7B
+  name: Xbox Wired
+  picture:
+  track: false
+  vendor: unknown
+
+amazoncd6d51eed:
+  hide_if_away: false
+  icon:
+  mac: 74:75:48:79:F1:BE
+  name: amazon-cd6d51eed
+  picture:
+  track: false
+  vendor: Amazon Technologies Inc.
+
+cliffordsiphone:
+  hide_if_away: false
+  icon:
+  mac: 68:EF:43:2F:40:EE
+  name: CliffordsiPhone
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+staceysiphone:
+  hide_if_away: false
+  icon:
+  mac: A4:F1:E8:2B:71:6E
+  name: Staceys-iPhone
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+fand:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:53:F2:88
+  name: Fand Wired 
+  picture:
+  track: false
+  vendor: Raspberry Pi Foundation
