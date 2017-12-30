@@ -1,7 +1,8 @@
 climate:
   platform: honeywell
   username: !secret thermostat_username
-  username: !secret thermostat_password
+  password: !secret thermostat_password
+  region: us
   scan_interval: 60
 
 automation:
