@@ -1,7 +1,8 @@
 climate:
-  platform: radiotherm
-  host: !secret thermostat_ip
-  hold_temp: False
+  platform: honeywell
+  username: !secret thermostat_username
+  username: !secret thermostat_password
+  scan_interval: 60
 
 automation:
   - id: notify_thermostat_change
