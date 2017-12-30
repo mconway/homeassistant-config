@@ -1,0 +1,18 @@
+homeassistant:
+  customize:
+    sensor.3d_printer_status:
+      friendly_name: '3D Printer Status'
+      icon: mdi:printer-3d
+
+sensor:
+  - platform: rest
+    name: 3D Printer Status
+    resource: http://artemis/rr_status?type=1
+    value_template: '{{ value_json.status }}'
+
+group:
+  3dprinter:
+    name: Artemis
+    view: no
+    entities:
+      - sensor.3d_printer_status
