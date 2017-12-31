@@ -14,13 +14,13 @@ sensor:
   - platform: template
     sensors:
       head_temp_current:
-        value_template: '{{ states.sensor.3d_printer_status.attributes.temps["head"]["current"] }}'
+        value_template: '{{ states.sensor.3d_printer_status.attributes.temps.head.current }}'
       head_temp_active:
-        value_template: '{{ states.sensor.3d_printer_status.attributes.temps["head"]["active"] }}'
+        value_template: '{{ states.sensor.3d_printer_status.attributes.temps.head.active }}'
       bed_temp_current:
-        value_template: '{{ states.sensor.3d_printer_status.attributes.temps["bed"]["current"] }}'
+        value_template: '{{ states.sensor.3d_printer_status.attributes.temps.bed.current }}'
       bed_temp_active:
-        value_template: '{{ states.sensor.3d_printer_status.attributes.temps["bed"]["active"] }}'
+        value_template: '{{ states.sensor.3d_printer_status.attributes.temps.bed.active }}'
 
 group:
   3dprinter:
