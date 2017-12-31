@@ -1,12 +1,12 @@
 homeassistant:
   customize:
-    sensor.3d_printer_status:
+    sensor.duet_status:
       friendly_name: '3D Printer Status'
       icon: mdi:printer-3d
 
 sensor:
   - platform: rest
-    name: 3D Printer Status
+    name: Duet Status
     resource: http://artemis/rr_status?type=1
     value_template: '{{ value_json.status }}'
     json_attributes:
@@ -14,20 +14,20 @@ sensor:
   - platform: template
     sensors:
       head_temp_current:
-        value_template: '{{ states.sensor.3d_printer_status.attributes.temps.head.current }}'
+        value_template: '{{ states.sensor.duet_status.attributes.temps.head.current }}'
       head_temp_active:
-        value_template: '{{ states.sensor.3d_printer_status.attributes.temps.head.active }}'
+        value_template: '{{ states.sensor.duet_status.attributes.temps.head.active }}'
       bed_temp_current:
-        value_template: '{{ states.sensor.3d_printer_status.attributes.temps.bed.current }}'
+        value_template: '{{ states.sensor.duet_status.attributes.temps.bed.current }}'
       bed_temp_active:
-        value_template: '{{ states.sensor.3d_printer_status.attributes.temps.bed.active }}'
+        value_template: '{{ states.sensor.duet_status.attributes.temps.bed.active }}'
 
 group:
   3dprinter:
     name: Artemis
     view: no
     entities:
-      - sensor.3d_printer_status
+      - sensor.duet_status
       - sensor.head_temp_current
       - sensor.head_temp_active
       - sensor.bed_temp_current
