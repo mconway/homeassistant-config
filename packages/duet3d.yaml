@@ -9,6 +9,11 @@ sensor:
     name: 3D Printer Status
     resource: http://artemis/rr_status?type=1
     value_template: '{{ value_json.status }}'
+    json_attributes:
+      - temps.bed.current
+      - temps.bed.active
+      - temps.head.current
+      - temps.head.active
 
 group:
   3dprinter:
