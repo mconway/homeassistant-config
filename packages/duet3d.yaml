@@ -10,10 +10,17 @@ sensor:
     resource: http://artemis/rr_status?type=1
     value_template: '{{ value_json.status }}'
     json_attributes:
-      - temps.bed.current
-      - temps.bed.active
-      - temps.head.current
-      - temps.head.active
+      - temps
+  - platform: template
+    sensors:
+      head_temp_current:
+        value_template: '{{ states.sensor.3d_printer_status.attributes.temps["head"]["current"] }}'
+      head_temp_active:
+        value_template: '{{ states.sensor.3d_printer_status.attributes.temps["head"]["active"] }}'
+      bed_temp_current:
+        value_template: '{{ states.sensor.3d_printer_status.attributes.temps["bed"]["current"] }}'
+      bed_temp_active:
+        value_template: '{{ states.sensor.3d_printer_status.attributes.temps["bed"]["active"] }}'
 
 group:
   3dprinter:
@@ -21,3 +28,7 @@ group:
     view: no
     entities:
       - sensor.3d_printer_status
+      - sensor.head_temp_current
+      - sensor.head_temp_active
+      - sensor.bed_temp_current
+      - sensor.bed_temp_active
