@@ -32,3 +32,15 @@ group:
       - sensor.head_temp_active
       - sensor.bed_temp_current
       - sensor.bed_temp_active
+
+automation:
+  - id: print_finished
+    alias: Print Finished
+    trigger:
+      platform: state
+      entity_id: sensor.duet_status
+      from: 'P'
+    action:
+      - service: notify.slack
+        data_template: 
+          message: ':printer: 3D Print is Finished'
