@@ -41,10 +41,10 @@ xboxsystemos:
   hide_if_away: false
 
 thermostat5e30f4:
-  name: Thermostat
+  name: RadioThermostat
   mac: 44:A7:CF:5E:30:F4
   picture: 
-  track: true
+  track: false
   hide_if_away: false
 
 np12g2d0036416:
@@ -298,7 +298,7 @@ dc68eb5a2d02:
   hide_if_away: false
   icon:
   mac: DC:68:EB:5A:2D:02
-  name: dc68eb5a2d02
+  name: Switch
   picture:
   track: true
   vendor: Nintendo Co.,Ltd
@@ -319,13 +319,13 @@ artemis:
   name: artemis
   picture:
   track: true
-  vendor: unknown
+  vendor: SeeMeCNC
 
 gateway93eccb:
   hide_if_away: false
   icon:
   mac: 00:D0:2D:93:EC:CB
-  name: Gateway93ECCB
+  name: Honeywell
   picture:
   track: true
   vendor: ADEMCO
@@ -334,7 +334,7 @@ amazon968f3e93b:
   hide_if_away: false
   icon:
   mac: 4C:EF:C0:5C:4D:B2
-  name: amazon-968f3e93b
+  name: AidensEcho
   picture:
   track: true
   vendor: Amazon Technologies Inc.
