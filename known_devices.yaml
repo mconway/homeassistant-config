@@ -257,3 +257,84 @@ fand:
   picture:
   track: false
   vendor: Raspberry Pi Foundation
+
+ec1f721494a7:
+  hide_if_away: false
+  icon:
+  mac: EC:1F:72:14:94:A7
+  name: ec1f721494a7
+  picture:
+  track: false
+  vendor: SAMSUNG ELECTRO-MECHANICS(THAILAND)
+
+obi200:
+  hide_if_away: false
+  icon:
+  mac: 9C:AD:EF:62:8C:1D
+  name: OBi200
+  picture:
+  track: false
+  vendor: Obihai Technology, Inc.
+
+android60445b0c1cf0ce73:
+  hide_if_away: false
+  icon:
+  mac: 2C:60:0C:09:56:F3
+  name: android-60445b0c1cf0ce73
+  picture:
+  track: false
+  vendor: unknown
+
+corb:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:27:26:89
+  name: corb
+  picture:
+  track: true
+  vendor: unknown
+
+dc68eb5a2d02:
+  hide_if_away: false
+  icon:
+  mac: DC:68:EB:5A:2D:02
+  name: dc68eb5a2d02
+  picture:
+  track: true
+  vendor: Nintendo Co.,Ltd
+
+nodens_2:
+  hide_if_away: false
+  icon:
+  mac: 70:54:D2:0D:B0:F5
+  name: Nodens
+  picture:
+  track: true
+  vendor: unknown
+
+artemis:
+  hide_if_away: false
+  icon:
+  mac: 2C:3A:E8:0B:1D:FA
+  name: artemis
+  picture:
+  track: true
+  vendor: unknown
+
+gateway93eccb:
+  hide_if_away: false
+  icon:
+  mac: 00:D0:2D:93:EC:CB
+  name: Gateway93ECCB
+  picture:
+  track: true
+  vendor: ADEMCO
+
+amazon968f3e93b:
+  hide_if_away: false
+  icon:
+  mac: 4C:EF:C0:5C:4D:B2
+  name: amazon-968f3e93b
+  picture:
+  track: true
+  vendor: Amazon Technologies Inc.
