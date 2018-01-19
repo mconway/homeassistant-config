@@ -43,25 +43,7 @@
     - service: notify.slack
       data:
         message: ":white_check_mark: Home Assistant is now Running.\n@bishop is online. :robot_face:"
-- id: front_porch_motion_notifications
-  alias: Front Porch Motion
-  trigger: 
-    platform: state
-    entity_id: sensor.frontporchnorth_events
-  condition:
-    condition: template
-    value_template: '{{ trigger.from_state.state < trigger.to_state.state }}'
-  action:
-    - service: shell_command.get_latest_zm_event
-- id: front_door_motion_notification
-  alias: Front Door Motion
-  trigger: 
-    platform: state
-    entity_id: sensor.fand_events
-  action:
-    - service: notify.slack
-      data_template: 
-        message: ':door: New motion event at Front Door (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }}'
+
 - id: lights_off_midnight
   alias: Lights Out At Midnight
   trigger:
