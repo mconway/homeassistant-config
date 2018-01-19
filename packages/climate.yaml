@@ -4,6 +4,8 @@ climate:
   password: !secret thermostat_password
   region: us
   scan_interval: 60
+  cool_away_temperature: 80
+  heat_away_temperature: 60
 
 automation:
   - id: notify_thermostat_change
@@ -18,3 +20,35 @@ automation:
       service: notify.slack
       data_template: 
         message: ':fire: Thermostat changed (From {{ trigger.from_state.attributes.temperature }} to {{ trigger.to_state.attributes.temperature }})'
+  - id: climate_away
+    alias: Climate Away
+    trigger:
+      platform: state
+      entity_id: group.people
+      to: 'not_home'
+      for:
+        hours: 0
+        minutes: 30
+        seconds: 0
+    action:
+      - service: climate.set_away_mode
+        data:
+          entity_id: climate.home
+          away_mode: 'on'
+      - service: notify.slack
+        data:
+         message: ':fire: House empty for 30 minutes, setting thermostat to Away mode'
+  - id: climate_home
+    alias: Climate Home
+    trigger:
+      platform: state
+      entity_id: group.people
+      to: 'home'
+    action:
+      - service: climate.set_away_mode
+        data:
+          entity_id: climate.home
+          away_mode: 'off'
+      - service: notify.slack
+        data:
+         message: ':fire: Disabling thermostat away mode'
