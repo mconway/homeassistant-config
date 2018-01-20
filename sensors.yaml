@@ -127,20 +127,6 @@
 #  name: "Goibniu"
 #  unit_of_measurement: "%"
 #  value_template: '{{value_json.batt }}'
-- platform: darksky
-  api_key: !secret forecast_api_key
-  monitored_conditions:
-    - summary
-    - precip_type
-    - precip_intensity
-    - precip_probability
-    - temperature
-    - apparent_temperature
-    - wind_speed
-    - wind_bearing
-    - humidity
-    - icon
-    - pressure
 - platform: systemmonitor
   resources:
     - type: disk_free
@@ -170,8 +156,3 @@
     - timeleft
     - battv
     - tonbatt
-- platform: airvisual
-  api_key: !secret airvisual_api_key
-  monitored_conditions:
-    - us
-- platform: season
