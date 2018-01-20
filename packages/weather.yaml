@@ -532,3 +532,11 @@ automation:
           {% else %}
             error
           {% endif %}
+
+group:
+  weather_card_forecast:
+    name: Forecast
+    view: no
+    icon: mdi:sun
+    entities:
+      - sensor.weather_daily_summary
