@@ -58,7 +58,7 @@ sensor:
           {% endif %}    
       forecast_monday:
         friendly_name: 'Monday'
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_daily_high_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_1.state|round(0)}}%
           {% elif is_state("sensor.weekday_number", "1") %}
@@ -76,7 +76,7 @@ sensor:
           {% else %}
             error
           {% endif %}
-        icon_template:
+        icon_template: >-
           {% if is_state("sensor.forecast_monday_icon", "clear-day") %}
             mdi:weather-sunny
           {% elif is_state("sensor.forecast_monday_icon", "clear-night") %}
@@ -101,7 +101,7 @@ sensor:
             error
           {% endif %}
       forecast_monday_icon:
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_icon_1.state}}
           {% elif is_state("sensor.weekday_number", "1") %}
@@ -121,7 +121,7 @@ sensor:
           {% endif %}
       forecast_tuesday:
         friendly_name: 'Tuesday'
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_daily_high_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_2.state|round(0)}}%
           {% elif is_state("sensor.weekday_number", "1") %}
@@ -139,7 +139,7 @@ sensor:
           {% else %}
             error
           {% endif %}
-        icon_template:
+        icon_template: >-
           {% if is_state("sensor.forecast_tuesday_icon", "clear-day") %}
             mdi:weather-sunny
           {% elif is_state("sensor.forecast_tuesday_icon", "clear-night") %}
@@ -164,7 +164,7 @@ sensor:
             error
           {% endif %}
       forecast_tuesday_icon:
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_icon_2.state}}
           {% elif is_state("sensor.weekday_number", "1") %}
@@ -184,7 +184,7 @@ sensor:
           {% endif %}
       forecast_wednesday:
         friendly_name: 'Wednesday'
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_daily_high_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_3.state|round(0)}}%
           {% elif is_state("sensor.weekday_number", "1") %}
@@ -202,7 +202,7 @@ sensor:
           {% else %}
             error
           {% endif %}
-        icon_template:
+        icon_template: >-
           {% if is_state("sensor.forecast_wednesday_icon", "clear-day") %}
             mdi:weather-sunny
           {% elif is_state("sensor.forecast_wednesday_icon", "clear-night") %}
@@ -227,7 +227,7 @@ sensor:
             error
           {% endif %}
       forecast_wednesday_icon:
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_icon_3.state}}
           {% elif is_state("sensor.weekday_number", "1") %}
@@ -247,7 +247,7 @@ sensor:
           {% endif %}
       forecast_thursday:
         friendly_name: 'Thursday'
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_daily_high_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_4.state|round(0)}}%
           {% elif is_state("sensor.weekday_number", "1") %}
@@ -265,7 +265,7 @@ sensor:
           {% else %}
             error
           {% endif %}
-        icon_template:
+        icon_template: >-
           {% if is_state("sensor.forecast_thursday_icon", "clear-day") %}
             mdi:weather-sunny
           {% elif is_state("sensor.forecast_thursday_icon", "clear-night") %}
@@ -290,7 +290,7 @@ sensor:
             error
           {% endif %}
       forecast_thursday_icon:
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_icon_4.state}}
           {% elif is_state("sensor.weekday_number", "1") %}
@@ -310,7 +310,7 @@ sensor:
           {% endif %} 
       forecast_friday:
         friendly_name: 'Friday'
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_daily_high_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_5.state|round(0)}}%
           {% elif is_state("sensor.weekday_number", "1") %}
@@ -328,7 +328,7 @@ sensor:
           {% else %}
             error
           {% endif %}
-        icon_template:
+        icon_template: >-
           {% if is_state("sensor.forecast_friday_icon", "clear-day") %}
             mdi:weather-sunny
           {% elif is_state("sensor.forecast_friday_icon", "clear-night") %}
@@ -353,7 +353,7 @@ sensor:
             error
           {% endif %}
       forecast_friday_icon:
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_icon_5.state}}
           {% elif is_state("sensor.weekday_number", "1") %}
@@ -373,7 +373,7 @@ sensor:
           {% endif %}
       forecast_saturday:
         friendly_name: 'Saturday'
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_daily_high_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_6.state|round(0)}}%
           {% elif is_state("sensor.weekday_number", "1") %}
@@ -391,7 +391,7 @@ sensor:
           {% else %}
             error
           {% endif %} 
-        icon_template:
+        icon_template: >-
           {% if is_state("sensor.forecast_saturday_icon", "clear-day") %}
             mdi:weather-sunny
           {% elif is_state("sensor.forecast_saturday_icon", "clear-night") %}
@@ -416,7 +416,7 @@ sensor:
             error
           {% endif %}
       forecast_saturday_icon:
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_icon_6.state}}
           {% elif is_state("sensor.weekday_number", "1") %}
@@ -436,7 +436,7 @@ sensor:
           {% endif %}             
       forecast_sunday:
         friendly_name: 'Sunday'
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_daily_high_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_7.state|round(0)}}%
           {% elif is_state("sensor.weekday_number", "1") %}
@@ -454,7 +454,7 @@ sensor:
           {% else %}
             error
           {% endif %}
-        icon_template:
+        icon_template: >-
           {% if is_state("sensor.forecast_sunday_icon", "clear-day") %}
             mdi:weather-sunny
           {% elif is_state("sensor.forecast_sunday_icon", "clear-night") %}
@@ -479,7 +479,7 @@ sensor:
             error
           {% endif %}
       forecast_sunday_icon:
-        value_template:
+        value_template: >
           {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_icon_7.state}}
           {% elif is_state("sensor.weekday_number", "1") %}
