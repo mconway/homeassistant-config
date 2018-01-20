@@ -30,9 +30,9 @@ sensor:
     sensors:
       forecast_today:
         friendly_name: "Today's Forecast"
-        value_template:
+        value_template: >
           {{states.sensor.dark_sky_daily_high_temperature.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability.state|round(0)}}%
-        icon_template:
+        icon_template: >-
           {% if is_state("sensor.dark_sky_icon", "clear-day") %}
             mdi:weather-sunny
           {% elif is_state("sensor.dark_sky_icon", "clear-night") %}
