@@ -514,7 +514,7 @@ automation:
       data_template:
         object_id: weather_card_forecast
         name: "Forecast"
-        entities:
+        entities: >
           {% if is_state("sensor.weekday_number", "1") %}
             sensor.weather_daily_summary, sensor.forecast_tuesday, sensor.forecast_wednesday, sensor.forecast_thursday, sensor.forecast_friday, sensor.forecast_saturday, sensor.forecast_sunday, sensor.forecast_monday
           {% elif is_state("sensor.weekday_number", "2") %}
