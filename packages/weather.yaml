@@ -31,10 +31,6 @@ sensor:
   - platform: season
   - platform: template
     sensors:
-      day:
-        value_template: "{{ now().day }}"
-      weekday_number:
-        value_template: "{{ now().isoweekday() }}"
       weekday:
         friendly_name: 'Weekday'
         value_template: '{{ now().strftime("%A") }}'
@@ -67,7 +63,7 @@ sensor:
             error
           {% endif %}    
       forecast_first:
-        friendly_name: 'Tomorrow'
+        friendly_name: '{{ now().strftime("%A") }}'
         value_template: >          
           {{states.sensor.dark_sky_daily_high_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_1.state|round(0)}}%
         icon_template: >-
