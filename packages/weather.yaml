@@ -63,7 +63,7 @@ sensor:
             error
           {% endif %}    
       forecast_first:
-        friendly_name: '{{ now().strftime("%A") }}'
+        friendly_name: 'Tomorrow' #{{ (as_timestamp(now()) + (86400)) | timestamp_custom("%A", True) }}
         value_template: >          
           {{states.sensor.dark_sky_daily_high_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_1.state|round(0)}}%
         icon_template: >-
@@ -94,7 +94,7 @@ sensor:
         value_template: "{{states.sensor.dark_sky_icon_1.state}}"
     
       forecast_second:
-        friendly_name: 'Second'
+        friendly_name: 'Second' #{{ (as_timestamp(now()) + (86400) *2) | timestamp_custom("%A", True) }}
         value_template: >          
           {{states.sensor.dark_sky_daily_high_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_2.state|round(0)}}%
         icon_template: >-
@@ -125,7 +125,7 @@ sensor:
         value_template: "{{states.sensor.dark_sky_icon_2.state}}"
                  
       forecast_third:
-        friendly_name: 'Third'
+        friendly_name: 'Third' #{{ (as_timestamp(now()) + (86400) *3) | timestamp_custom("%A", True) }}
         value_template: >          
           {{states.sensor.dark_sky_daily_high_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_3.state|round(0)}}%
         icon_template: >-
@@ -156,7 +156,7 @@ sensor:
         value_template: "{{states.sensor.dark_sky_icon_3.state}}"
         
       forecast_fourth:
-        friendly_name: 'Fourth'
+        friendly_name: 'Fourth' #{{ (as_timestamp(now()) + (86400) *4) | timestamp_custom("%A", True) }}
         value_template: >          
           {{states.sensor.dark_sky_daily_high_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_4.state|round(0)}}%
         icon_template: >-
@@ -187,7 +187,7 @@ sensor:
         value_template: "{{states.sensor.dark_sky_icon_4.state}}"
 
       forecast_fifth:
-        friendly_name: 'Fifth'
+        friendly_name: 'Fifth' #{{ (as_timestamp(now()) + (86400) *5) | timestamp_custom("%A", True) }}
         value_template: >
           {{states.sensor.dark_sky_daily_high_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_5.state|round(0)}}%
         icon_template: >-
@@ -218,7 +218,7 @@ sensor:
         value_template: "{{states.sensor.dark_sky_icon_5.state}}"
            
       forecast_sixth:
-        friendly_name: 'Sixth'
+        friendly_name: 'Sixth' #{{ (as_timestamp(now()) + (86400) *6) | timestamp_custom("%A", True) }}
         value_template: >          
             {{states.sensor.dark_sky_daily_high_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_6.state|round(0)}}%
         icon_template: >-
@@ -249,7 +249,7 @@ sensor:
         value_template: "{{states.sensor.dark_sky_icon_6.state}}"
 
       forecast_seventh:
-        friendly_name: 'Seventh'
+        friendly_name: 'Seventh' #{{ (as_timestamp(now()) + (86400) *7) | timestamp_custom("%A", True) }}
         value_template: >
             {{states.sensor.dark_sky_daily_high_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_7.state|round(0)}}%
         icon_template: >-
@@ -303,7 +303,6 @@ group:
     view: no
     icon: mdi:sun
     entities:
-      - sensor.weather_daily_summary
       - sensor.forecast_first
       - sensor.forecast_second
       - sensor.forecast_third

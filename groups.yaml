@@ -39,6 +39,7 @@ environmentalstab:
   entities:
     - group.today
     - group.weather
+    - group.weather_card_forecast
     - group.air_quality
     - group.internet
     - group.snmp_monitor
