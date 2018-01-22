@@ -34,24 +34,7 @@ sensor:
         value_template: "{{ now().isoweekday() }}"
       weekday:
         friendly_name: 'Weekday'
-        value_template: >-
-          {% if is_state("sensor.weekday_number", "7") %}
-            Sunday
-          {% elif is_state("sensor.weekday_number", "1") %}
-            Monday
-          {% elif is_state("sensor.weekday_number", "2") %}
-            Tuesday
-          {% elif is_state("sensor.weekday_number", "3") %}
-            Wednesday
-          {% elif is_state("sensor.weekday_number", "4") %}
-            Thursday
-          {% elif is_state("sensor.weekday_number", "5") %}
-            Friday
-          {% elif is_state("sensor.weekday_number", "6") %}
-            Saturday
-          {% else %}
-            error
-          {% endif %}
+        value_template: "{{ now().strftime("%A") }}"
       forecast_today:
         friendly_name: "Today's Forecast"
         value_template: >
@@ -80,215 +63,103 @@ sensor:
           {% else %}
             error
           {% endif %}    
-      forecast_monday:
-        friendly_name: 'Monday'
+      forecast_first:
+        friendly_name: 'Tomorrow'
         value_template: >          
-          {% if is_state("sensor.weekday_number", "7") %}
-            {{states.sensor.dark_sky_daily_high_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_1.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_daily_high_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_7.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_daily_high_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_6.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_daily_high_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_5.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_daily_high_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_4.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_daily_high_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_3.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_daily_high_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_2.state|round(0)}}%
-          {% else %}
-            error
-          {% endif %}
+          {{states.sensor.dark_sky_daily_high_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_1.state|round(0)}}%
         icon_template: >-
-          {% if is_state("sensor.forecast_monday_icon", "clear-day") %}
+          {% if is_state("sensor.forecast_first_icon", "clear-day") %}
             mdi:weather-sunny
-          {% elif is_state("sensor.forecast_monday_icon", "clear-night") %}
+          {% elif is_state("sensor.forecast_first_icon", "clear-night") %}
             mdi:weather-night
-          {% elif is_state("sensor.forecast_monday_icon", "cloudy") %}
+          {% elif is_state("sensor.forecast_first_icon", "cloudy") %}
             mdi:weather-cloudy   
-          {% elif is_state("sensor.forecast_monday_icon", "rain") %}
+          {% elif is_state("sensor.forecast_first_icon", "rain") %}
             mdi:weather-pouring        
-          {% elif is_state("sensor.forecast_monday_icon", "sleet") %}
+          {% elif is_state("sensor.forecast_first_icon", "sleet") %}
             mdi:weather-snowy-rain
-          {% elif is_state("sensor.forecast_monday_icon", "snow") %}
+          {% elif is_state("sensor.forecast_first_icon", "snow") %}
             mdi:weather-snowy
-          {% elif is_state("sensor.forecast_monday_icon", "wind") %}
+          {% elif is_state("sensor.forecast_first_icon", "wind") %}
             mdi:weather-windy
-          {% elif is_state("sensor.forecast_monday_icon", "fog") %}
+          {% elif is_state("sensor.forecast_first_icon", "fog") %}
             mdi:weather-fog
-          {% elif is_state("sensor.forecast_monday_icon", "partly-cloudy-day") %}
+          {% elif is_state("sensor.forecast_first_icon", "partly-cloudy-day") %}
             mdi:weather-partlycloudy
-          {% elif is_state("sensor.forecast_monday_icon", "partly-cloudy-night") %}
+          {% elif is_state("sensor.forecast_first_icon", "partly-cloudy-night") %}
             mdi:weather-partlycloudy            
           {% else %}
             error
           {% endif %}
-      forecast_monday_icon:
-        value_template: >
-          {% if is_state("sensor.weekday_number", "7") %}
-            {{states.sensor.dark_sky_icon_1.state}}
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_icon_7.state}}
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_icon_6.state}}
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_icon_5.state}}
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_icon_4.state}}
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_icon_3.state}}
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_icon_2.state}}
-          {% else %}
-            error
-          {% endif %}         
-      forecast_tuesday:
-        friendly_name: 'Tuesday'
+      forecast_first_icon:
+        value_template: "{{states.sensor.dark_sky_icon_1.state}}"
+    
+      forecast_second:
+        friendly_name: 'Second'
         value_template: >          
-          {% if is_state("sensor.weekday_number", "7") %}
-            {{states.sensor.dark_sky_daily_high_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_2.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_daily_high_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_1.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_daily_high_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_7.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_daily_high_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_6.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_daily_high_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_5.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_daily_high_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_4.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_daily_high_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_3.state|round(0)}}%
-          {% else %}
-            error
-          {% endif %}
+          {{states.sensor.dark_sky_daily_high_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_2.state|round(0)}}%
         icon_template: >-
-          {% if is_state("sensor.forecast_tuesday_icon", "clear-day") %}
+          {% if is_state("sensor.forecast_second_icon", "clear-day") %}
             mdi:weather-sunny
-          {% elif is_state("sensor.forecast_tuesday_icon", "clear-night") %}
+          {% elif is_state("sensor.forecast_second_icon", "clear-night") %}
             mdi:weather-night
-          {% elif is_state("sensor.forecast_tuesday_icon", "cloudy") %}
+          {% elif is_state("sensor.forecast_second_icon", "cloudy") %}
             mdi:weather-cloudy   
-          {% elif is_state("sensor.forecast_tuesday_icon", "rain") %}
+          {% elif is_state("sensor.forecast_second_icon", "rain") %}
             mdi:weather-pouring        
-          {% elif is_state("sensor.forecast_tuesday_icon", "sleet") %}
+          {% elif is_state("sensor.forecast_second_icon", "sleet") %}
             mdi:weather-snowy-rain 
-          {% elif is_state("sensor.forecast_tuesday_icon", "snow") %}
+          {% elif is_state("sensor.forecast_second_icon", "snow") %}
             mdi:weather-snowy
-          {% elif is_state("sensor.forecast_tuesday_icon", "wind") %}
+          {% elif is_state("sensor.forecast_second_icon", "wind") %}
             mdi:weather-windy
-          {% elif is_state("sensor.forecast_tuesday_icon", "fog") %}
+          {% elif is_state("sensor.forecast_second_icon", "fog") %}
             mdi:weather-fog
-          {% elif is_state("sensor.forecast_tuesday_icon", "partly-cloudy-day") %}
+          {% elif is_state("sensor.forecast_second_icon", "partly-cloudy-day") %}
             mdi:weather-partlycloudy
-          {% elif is_state("sensor.forecast_tuesday_icon", "partly-cloudy-night") %}
+          {% elif is_state("sensor.forecast_second_icon", "partly-cloudy-night") %}
             mdi:weather-partlycloudy            
           {% else %}
             error
           {% endif %}
-      forecast_tuesday_icon:
-        value_template: >
-          {% if is_state("sensor.weekday_number", "7") %}
-            {{states.sensor.dark_sky_icon_2.state}}
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_icon_1.state}}
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_icon_7.state}}
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_icon_6.state}}
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_icon_5.state}}
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_icon_4.state}}
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_icon_3.state}}
-          {% else %}
-            error
-          {% endif %}                   
-      forecast_wednesday:
-        friendly_name: 'Wednesday'
+      forecast_second_icon:
+        value_template: "{{states.sensor.dark_sky_icon_2.state}}"
+                 
+      forecast_third:
+        friendly_name: 'Third'
         value_template: >          
-          {% if is_state("sensor.weekday_number", "7") %}
-            {{states.sensor.dark_sky_daily_high_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_3.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_daily_high_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_2.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_daily_high_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_1.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_daily_high_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_7.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_daily_high_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_6.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_daily_high_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_5.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_daily_high_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_4.state|round(0)}}%
-          {% else %}
-            error
-          {% endif %}
+          {{states.sensor.dark_sky_daily_high_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_3.state|round(0)}}%
         icon_template: >-
-          {% if is_state("sensor.forecast_wednesday_icon", "clear-day") %}
+          {% if is_state("sensor.forecast_third_icon", "clear-day") %}
             mdi:weather-sunny
-          {% elif is_state("sensor.forecast_wednesday_icon", "clear-night") %}
+          {% elif is_state("sensor.forecast_third_icon", "clear-night") %}
             mdi:weather-night
-          {% elif is_state("sensor.forecast_wednesday_icon", "cloudy") %}
+          {% elif is_state("sensor.forecast_third_icon", "cloudy") %}
             mdi:weather-cloudy   
-          {% elif is_state("sensor.forecast_wednesday_icon", "rain") %}
+          {% elif is_state("sensor.forecast_third_icon", "rain") %}
             mdi:weather-pouring        
-          {% elif is_state("sensor.forecast_wednesday_icon", "sleet") %}
+          {% elif is_state("sensor.forecast_third_icon", "sleet") %}
             mdi:weather-snowy-rain 
-          {% elif is_state("sensor.forecast_wednesday_icon", "snow") %}
+          {% elif is_state("sensor.forecast_third_icon", "snow") %}
             mdi:weather-snowy
-          {% elif is_state("sensor.forecast_wednesday_icon", "wind") %}
+          {% elif is_state("sensor.forecast_third_icon", "wind") %}
             mdi:weather-windy
-          {% elif is_state("sensor.forecast_wednesday_icon", "fog") %}
+          {% elif is_state("sensor.forecast_third_icon", "fog") %}
             mdi:weather-fog
-          {% elif is_state("sensor.forecast_wednesday_icon", "partly-cloudy-day") %}
+          {% elif is_state("sensor.forecast_third_icon", "partly-cloudy-day") %}
             mdi:weather-partlycloudy
-          {% elif is_state("sensor.forecast_wednesday_icon", "partly-cloudy-night") %}
+          {% elif is_state("sensor.forecast_third_icon", "partly-cloudy-night") %}
             mdi:weather-partlycloudy
           {% else %}
             error
           {% endif %}
-      forecast_wednesday_icon:
-        value_template: >
-          {% if is_state("sensor.weekday_number", "7") %}
-            {{states.sensor.dark_sky_icon_3.state}}
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_icon_2.state}}
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_icon_1.state}}
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_icon_7.state}}
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_icon_6.state}}
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_icon_5.state}}
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_icon_4.state}}
-          {% else %}
-            error
-          {% endif %}           
-      forecast_thursday:
-        friendly_name: 'Thursday'
+      forecast_third_icon:
+        value_template: "{{states.sensor.dark_sky_icon_3.state}}"
+        
+      forecast_fourth:
+        friendly_name: 'Fourth'
         value_template: >          
-          {% if is_state("sensor.weekday_number", "7") %}
-            {{states.sensor.dark_sky_daily_high_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_4.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_daily_high_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_3.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_daily_high_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_2.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_daily_high_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_1.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_daily_high_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_7.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_daily_high_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_6.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_daily_high_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_5.state|round(0)}}%
-          {% else %}
-            error
-          {% endif %}
+          {{states.sensor.dark_sky_daily_high_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_4.state|round(0)}}%
         icon_template: >-
           {% if is_state("sensor.forecast_thursday_icon", "clear-day") %}
             mdi:weather-sunny
@@ -313,171 +184,75 @@ sensor:
           {% else %}
             error
           {% endif %}
-      forecast_thursday_icon:
+      forecast_fourth_icon:
+        value_template: "{{states.sensor.dark_sky_icon_4.state}}"
+
+      forecast_fifth:
+        friendly_name: 'Fifth'
         value_template: >
-          {% if is_state("sensor.weekday_number", "7") %}
-            {{states.sensor.dark_sky_icon_4.state}}
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_icon_3.state}}
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_icon_2.state}}
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_icon_1.state}}
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_icon_7.state}}
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_icon_6.state}}
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_icon_5.state}}
-          {% else %}
-            error
-          {% endif %} 
-      forecast_friday:
-        friendly_name: 'Friday'
-        value_template: >          
-          {% if is_state("sensor.weekday_number", "7") %}
-            {{states.sensor.dark_sky_daily_high_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_5.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_daily_high_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_4.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_daily_high_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_3.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_daily_high_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_2.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_daily_high_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_1.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_daily_high_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_7.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_daily_high_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_6.state|round(0)}}%
-          {% else %}
-            error
-          {% endif %}
+          {{states.sensor.dark_sky_daily_high_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_5.state|round(0)}}%
         icon_template: >-
-          {% if is_state("sensor.forecast_friday_icon", "clear-day") %}
+          {% if is_state("sensor.forecast_fifth_icon", "clear-day") %}
             mdi:weather-sunny
-          {% elif is_state("sensor.forecast_friday_icon", "clear-night") %}
+          {% elif is_state("sensor.forecast_fifth_icon", "clear-night") %}
             mdi:weather-night
-          {% elif is_state("sensor.forecast_friday_icon", "cloudy") %}
+          {% elif is_state("sensor.forecast_fifth_icon", "cloudy") %}
             mdi:weather-cloudy   
-          {% elif is_state("sensor.forecast_friday_icon", "rain") %}
+          {% elif is_state("sensor.forecast_fifth_icon", "rain") %}
             mdi:weather-pouring        
-          {% elif is_state("sensor.forecast_friday_icon", "sleet") %}
+          {% elif is_state("sensor.forecast_fifth_icon", "sleet") %}
             mdi:weather-snowy-rain 
-          {% elif is_state("sensor.forecast_friday_icon", "snow") %}
+          {% elif is_state("sensor.forecast_fifth_icon", "snow") %}
             mdi:weather-snowy
-          {% elif is_state("sensor.forecast_friday_icon", "wind") %}
+          {% elif is_state("sensor.forecast_fifth_icon", "wind") %}
             mdi:weather-windy
-          {% elif is_state("sensor.forecast_friday_icon", "fog") %}
+          {% elif is_state("sensor.forecast_fifth_icon", "fog") %}
             mdi:weather-fog
-          {% elif is_state("sensor.forecast_friday_icon", "partly-cloudy-day") %}
+          {% elif is_state("sensor.forecast_fifth_icon", "partly-cloudy-day") %}
             mdi:weather-partlycloudy
-          {% elif is_state("sensor.forecast_friday_icon", "partly-cloudy-night") %}
+          {% elif is_state("sensor.forecast_fifth_icon", "partly-cloudy-night") %}
             mdi:weather-partlycloudy
           {% else %}
             error
           {% endif %}
-      forecast_friday_icon:
-        value_template: >
-          {% if is_state("sensor.weekday_number", "7") %}
-            {{states.sensor.dark_sky_icon_5.state}}
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_icon_4.state}}
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_icon_3.state}}
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_icon_2.state}}
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_icon_1.state}}
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_icon_7.state}}
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_icon_6.state}}
-          {% else %}
-            error
-          {% endif %}           
-      forecast_saturday:
-        friendly_name: 'Saturday'
+      forecast_fifth_icon:
+        value_template: "{{states.sensor.dark_sky_icon_5.state}}"
+           
+      forecast_sixth:
+        friendly_name: 'Sixth'
         value_template: >          
-          {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_daily_high_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_6.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_daily_high_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_5.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_daily_high_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_4.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_daily_high_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_3.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_daily_high_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_2.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_daily_high_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_1.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_daily_high_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_7.state|round(0)}}%
-          {% else %}
-            error
-          {% endif %} 
         icon_template: >-
-          {% if is_state("sensor.forecast_saturday_icon", "clear-day") %}
+          {% if is_state("sensor.forecast_sixth_icon", "clear-day") %}
             mdi:weather-sunny
-          {% elif is_state("sensor.forecast_saturday_icon", "clear-night") %}
+          {% elif is_state("sensor.forecast_sixth_icon", "clear-night") %}
             mdi:weather-night
-          {% elif is_state("sensor.forecast_saturday_icon", "cloudy") %}
+          {% elif is_state("sensor.forecast_sixth_icon", "cloudy") %}
             mdi:weather-cloudy   
-          {% elif is_state("sensor.forecast_saturday_icon", "rain") %}
+          {% elif is_state("sensor.forecast_sixth_icon", "rain") %}
             mdi:weather-pouring        
-          {% elif is_state("sensor.forecast_saturday_icon", "sleet") %}
+          {% elif is_state("sensor.forecast_sixth_icon", "sleet") %}
             mdi:weather-snowy-rain  
-          {% elif is_state("sensor.forecast_saturday_icon", "snow") %}
+          {% elif is_state("sensor.forecast_sixth_icon", "snow") %}
             mdi:weather-snowy
-          {% elif is_state("sensor.forecast_saturday_icon", "wind") %}
+          {% elif is_state("sensor.forecast_sixth_icon", "wind") %}
             mdi:weather-windy
-          {% elif is_state("sensor.forecast_saturday_icon", "fog") %}
+          {% elif is_state("sensor.forecast_sixth_icon", "fog") %}
             mdi:weather-fog
-          {% elif is_state("sensor.forecast_saturday_icon", "partly-cloudy-day") %}
+          {% elif is_state("sensor.forecast_sixth_icon", "partly-cloudy-day") %}
             mdi:weather-partlycloudy
-          {% elif is_state("sensor.forecast_saturday_icon", "partly-cloudy-night") %}
+          {% elif is_state("sensor.forecast_sixth_icon", "partly-cloudy-night") %}
             mdi:weather-partlycloudy
           {% else %}
             error
           {% endif %}
-      forecast_saturday_icon:
+      forecast_sixth_icon:
+        value_template: "{{states.sensor.dark_sky_icon_6.state}}"
+
+      forecast_seventh:
+        friendly_name: 'Seventh'
         value_template: >
-          {% if is_state("sensor.weekday_number", "7") %}
-            {{states.sensor.dark_sky_icon_6.state}}
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_icon_5.state}}
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_icon_4.state}}
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_icon_3.state}}
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_icon_2.state}}
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_icon_1.state}}
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_icon_7.state}}
-          {% else %}
-            error
-          {% endif %}             
-      forecast_sunday:
-        friendly_name: 'Sunday'
-        value_template: >          
-          {% if is_state("sensor.weekday_number", "7") %}
             {{states.sensor.dark_sky_daily_high_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_7.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_daily_high_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_6.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_6.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_daily_high_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_5.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_5.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_daily_high_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_4.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_daily_high_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_3.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_3.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_daily_high_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_2.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_2.state|round(0)}}%
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_daily_high_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_1.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_1.state|round(0)}}%
-          {% else %}
-            error
-          {% endif %}
         icon_template: >-
           {% if is_state("sensor.forecast_sunday_icon", "clear-day") %}
             mdi:weather-sunny
@@ -502,60 +277,8 @@ sensor:
           {% else %}
             error
           {% endif %}
-      forecast_sunday_icon:
-        value_template: >
-          {% if is_state("sensor.weekday_number", "7") %}
-            {{states.sensor.dark_sky_icon_7.state}}
-          {% elif is_state("sensor.weekday_number", "1") %}
-            {{states.sensor.dark_sky_icon_6.state}}
-          {% elif is_state("sensor.weekday_number", "2") %}
-            {{states.sensor.dark_sky_icon_5.state}}
-          {% elif is_state("sensor.weekday_number", "3") %}
-            {{states.sensor.dark_sky_icon_4.state}}
-          {% elif is_state("sensor.weekday_number", "4") %}
-            {{states.sensor.dark_sky_icon_3.state}}
-          {% elif is_state("sensor.weekday_number", "5") %}
-            {{states.sensor.dark_sky_icon_2.state}}
-          {% elif is_state("sensor.weekday_number", "6") %}
-            {{states.sensor.dark_sky_icon_1.state}}
-          {% else %}
-            error
-          {% endif %}
-
-automation:
-  - alias: Set Forecast Weather Card
-    trigger:
-      - platform: time
-        hours: '/3'
-        minutes: 0
-        seconds: 00
-      - platform: homeassistant
-        event: start
-      - platform: state
-        entity_id: sensor.weekday_number 
-    action:
-      service: group.set
-      data_template:
-        object_id: weather_card_forecast
-        name: "Forecast"
-        entities: >
-          {% if is_state("sensor.weekday_number", "1") %}
-            sensor.weather_daily_summary, sensor.forecast_tuesday, sensor.forecast_wednesday, sensor.forecast_thursday, sensor.forecast_friday, sensor.forecast_saturday, sensor.forecast_sunday, sensor.forecast_monday
-          {% elif is_state("sensor.weekday_number", "2") %}
-            sensor.weather_daily_summary, sensor.forecast_wednesday, sensor.forecast_thursday, sensor.forecast_friday, sensor.forecast_saturday, sensor.forecast_sunday, sensor.forecast_monday, sensor.forecast_tuesday
-          {% elif is_state("sensor.weekday_number", "3") %}
-            sensor.weather_daily_summary, ensor.forecast_thursday, sensor.forecast_friday, sensor.forecast_saturday, sensor.forecast_sunday, sensor.forecast_monday, sensor.forecast_tuesday, sensor.forecast_wednesday
-          {% elif is_state("sensor.weekday_number", "4") %}
-            sensor.weather_daily_summary, sensor.forecast_friday, sensor.forecast_saturday, sensor.forecast_sunday, sensor.forecast_monday, sensor.forecast_tuesday, sensor.forecast_wednesday, sensor.forecast_thursday       
-          {% elif is_state("sensor.weekday_number", "5") %}
-            sensor.weather_daily_summary, sensor.forecast_saturday, sensor.forecast_sunday, sensor.forecast_monday, sensor.forecast_tuesday, sensor.forecast_wednesday, sensor.forecast_thursday, sensor.forecast_friday      
-          {% elif is_state("sensor.weekday_number", "6") %}
-            sensor.weather_daily_summary, sensor.forecast_sunday, sensor.forecast_monday, sensor.forecast_tuesday, sensor.forecast_wednesday, sensor.forecast_thursday, sensor.forecast_friday, sensor.forecast_saturday
-          {% elif is_state("sensor.weekday_number", "7") %}
-            sensor.weather_daily_summary, sensor.forecast_monday, sensor.forecast_tuesday, sensor.forecast_wednesday, sensor.forecast_thursday, sensor.forecast_friday, sensor.forecast_saturday, sensor.forecast_sunday
-          {% else %}
-            error
-          {% endif %}
+      forecast_seventh_icon:
+        value_template: "{{states.sensor.dark_sky_icon_7.state}}"
 
 group:
   weather_card_forecast:
@@ -564,3 +287,10 @@ group:
     icon: mdi:sun
     entities:
       - sensor.weather_daily_summary
+      - sensor.forecast_first
+      - sensor.forecast_second
+      - sensor.forecast_third
+      - sensor.forecast_fourth
+      - sensor.forecast_fifth
+      - sensor.forecast_sixth
+      - sensor.forecast_seventh
