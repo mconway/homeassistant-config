@@ -253,25 +253,25 @@ sensor:
         value_template: >
             {{states.sensor.dark_sky_daily_high_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_7.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_7.state|round(0)}}%
         icon_template: >-
-          {% if is_state("sensor.forecast_sunday_icon", "clear-day") %}
+          {% if is_state("sensor.forecast_seventh_icon", "clear-day") %}
             mdi:weather-sunny
-          {% elif is_state("sensor.forecast_sunday_icon", "clear-night") %}
+          {% elif is_state("sensor.forecast_seventh_icon", "clear-night") %}
             mdi:weather-night
-          {% elif is_state("sensor.forecast_sunday_icon", "cloudy") %}
+          {% elif is_state("sensor.forecast_seventh_icon", "cloudy") %}
             mdi:weather-cloudy   
-          {% elif is_state("sensor.forecast_sunday_icon", "rain") %}
+          {% elif is_state("sensor.forecast_seventh_icon", "rain") %}
             mdi:weather-pouring        
-          {% elif is_state("sensor.forecast_sunday_icon", "sleet") %}
+          {% elif is_state("sensor.forecast_seventh_icon", "sleet") %}
             mdi:weather-snowy-rain 
-          {% elif is_state("sensor.forecast_sunday_icon", "snow") %}
+          {% elif is_state("sensor.forecast_seventh_icon", "snow") %}
             mdi:weather-snowy
-          {% elif is_state("sensor.forecast_sunday_icon", "wind") %}
+          {% elif is_state("sensor.forecast_seventh_icon", "wind") %}
             mdi:weather-windy
-          {% elif is_state("sensor.forecast_sunday_icon", "fog") %}
+          {% elif is_state("sensor.forecast_seventh_icon", "fog") %}
             mdi:weather-fog
-          {% elif is_state("sensor.forecast_sunday_icon", "partly-cloudy-day") %}
+          {% elif is_state("sensor.forecast_seventh_icon", "partly-cloudy-day") %}
             mdi:weather-partlycloudy
-          {% elif is_state("sensor.forecast_sunday_icon", "partly-cloudy-night") %}
+          {% elif is_state("sensor.forecast_seventh_icon", "partly-cloudy-night") %}
             mdi:weather-partlycloudy
           {% else %}
             error

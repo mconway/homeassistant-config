@@ -14,5 +14,3 @@ switch.program*:
   icon: mdi:code-braces
 switch.zone*:
   icon: mdi:water
-sensor.dark_sky*:
-  hidden: true
