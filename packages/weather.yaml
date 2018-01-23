@@ -160,25 +160,25 @@ sensor:
         value_template: >          
           {{states.sensor.dark_sky_daily_high_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_daily_low_temperature_4.state|round(0)}}°/{{states.sensor.dark_sky_precip_probability_4.state|round(0)}}%
         icon_template: >-
-          {% if is_state("sensor.forecast_thursday_icon", "clear-day") %}
+          {% if is_state("sensor.forecast_fourth_icon", "clear-day") %}
             mdi:weather-sunny
-          {% elif is_state("sensor.forecast_thursday_icon", "clear-night") %}
+          {% elif is_state("sensor.forecast_fourth_icon", "clear-night") %}
             mdi:weather-night            
-          {% elif is_state("sensor.forecast_thursday_icon", "cloudy") %}
+          {% elif is_state("sensor.forecast_fourth_icon", "cloudy") %}
             mdi:weather-cloudy   
-          {% elif is_state("sensor.forecast_thursday_icon", "rain") %}
+          {% elif is_state("sensor.forecast_fourth_icon", "rain") %}
             mdi:weather-pouring        
-          {% elif is_state("sensor.forecast_thursday_icon", "sleet") %}
+          {% elif is_state("sensor.forecast_fourth_icon", "sleet") %}
             mdi:weather-snowy-rain 
-          {% elif is_state("sensor.forecast_thursday_icon", "snow") %}
+          {% elif is_state("sensor.forecast_fourth_icon", "snow") %}
             mdi:weather-snowy
-          {% elif is_state("sensor.forecast_thursday_icon", "wind") %}
+          {% elif is_state("sensor.forecast_fourth_icon", "wind") %}
             mdi:weather-windy
-          {% elif is_state("sensor.forecast_thursday_icon", "fog") %}
+          {% elif is_state("sensor.forecast_fourth_icon", "fog") %}
             mdi:weather-fog
-          {% elif is_state("sensor.forecast_thursday_icon", "partly-cloudy-day") %}
+          {% elif is_state("sensor.forecast_fourth_icon", "partly-cloudy-day") %}
             mdi:weather-partlycloudy
-          {% elif is_state("sensor.forecast_thursday_icon", "partly-cloudy-night") %}
+          {% elif is_state("sensor.forecast_fourth_icon", "partly-cloudy-night") %}
             mdi:weather-partlycloudy
           {% else %}
             error
