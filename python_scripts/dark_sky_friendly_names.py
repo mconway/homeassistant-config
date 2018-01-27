@@ -30,7 +30,7 @@ if triggeredEntity is None:
         # Set states
         hass.states.set(entity_id, newState, {
             'friendly_name': "{} ({}/{})".format(newDay, forecastdate.month, forecastdate.day),
-            'entity_picture': newEntityPicture,
+            #'entity_picture': newEntityPicture,
         })
 else:
     state = hass.states.get(triggeredEntity)
@@ -46,5 +46,5 @@ else:
     # Set states
     hass.states.set(triggeredEntity, newState, {
         'friendly_name': "{} ({}/{})".format(newDay, forecastdate.month, forecastdate.day),
-        'entity_picture': newEntityPicture,
+        #'entity_picture': newEntityPicture,
     })
