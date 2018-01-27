@@ -151,16 +151,19 @@
     - service: notify.slack
       data_template: 
         message: ':bulb: Michaels Side Day (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }})'
+
 - id: ui_day_mode
   alias: 'Set light theme for the day'
   initial_state: True
   trigger:
     - platform: sun
       event: 'sunrise'
+    - platform: homeassistant
+      event: start
   action:
     - service: frontend.set_theme
       data:
-        name: default
+        name: midnight
 - id: ui_night_mode
   alias: 'Set dark theme for the night'
   initial_state: True
@@ -171,6 +174,7 @@
     - service: frontend.set_theme
       data:
         name: darkred
+        
 - id: office_light_on_at_dusk
   alias: 'Turn on the office light at dusk'
   trigger:
