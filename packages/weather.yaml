@@ -1,3 +1,8 @@
+homeassistant:
+  customize:
+    group.weather_tab:
+      order: 1
+
 sensor:
   - platform: darksky
     api_key: !secret forecast_api_key
@@ -299,7 +304,15 @@ automation:
           entityid: '{{trigger.entity_id}}'
 
 group:
-  weather:
+  weather_tab:
+    name: Weather
+    icon: mdi:weather-sunset
+    view: yes
+    entities:
+    - group.weather_info
+    - group.weather_forecast
+    - group.air_quality
+  weather_info:
     name: Weather
     view: no
     entities:
@@ -317,7 +330,7 @@ group:
       - sensor.dark_sky_wind_bearing
       - sensor.dark_sky_cloud_cover
       - sensor.dark_sky_humidity
-  weather_card_forecast:
+  weather_forecast:
     name: Forecast
     view: no
     icon: mdi:sun
