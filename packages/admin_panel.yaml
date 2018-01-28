@@ -15,22 +15,28 @@ homeassistant:
         color_off: '#BBBEC2'
         entities:
           # Favorites
-          - entity: script.reload_config
-            icon: mdi:recycle
+          - entity: script.restart_ha
+            icon: mdi:restart
             column: 1
             row: 1
-          - entity: script.restart_ha
-            icon: mdi:format-vertical-align-bottom
+          - entity: script.update_config
+            icon: mdi:update
             column: 2
             row: 1
-          - entity: script.update_config
-            label: 25m
+          - entity: script.reload_config
+            icon: mdi:recycle
             column: 3
             row: 1
-          - entity: script.restart_ha
-            label: 2h
+          - entity: script.upgrade_ha
+            icon: mdi:robot
             column: 4
             row: 1
+
+          #second row
+          - entity: sensor.taranis
+            icon: mdi:linux
+            column: 1
+            row: 2
 
 script:
   remote_control:
