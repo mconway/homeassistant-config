@@ -44,7 +44,7 @@ device_tracker:
     host: !secret router_ip
     username: !secret asus_username
     password: !secret asus_password
-    protocol: telnet
+    protocol: ssh
     track_new_devices: False
   - platform: owntracks
 
