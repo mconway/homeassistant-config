@@ -11,6 +11,7 @@ sensor:
     value_template: '{{ value_json.status }}'
     json_attributes:
       - temps
+      - fractionPrinted
   - platform: template
     sensors:
       head_temp_current:
