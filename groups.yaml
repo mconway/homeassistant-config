@@ -24,6 +24,7 @@ officetab:
     - group.office_devices
     - group.office_lights
     - group.camera_fand
+    - group.3dprinter
 bedroomstab:
   name: Bedrooms
   icon: mdi:hotel
