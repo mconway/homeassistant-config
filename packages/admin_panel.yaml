@@ -1,0 +1,43 @@
+homeassistant:
+  customize:
+  # Control Panel
+    script.remote_control:
+      custom_ui_state_card: state-card-tiles
+      config:
+        columns: 7
+        row_height: 75px
+        column_width: 62px
+        gap: 15px
+        color: '#555B65'
+        color_on: '#D5D619'
+        #color_on: 'var(--primary-color)'
+        #color_on: '#262B38'
+        color_off: '#BBBEC2'
+        entities:
+          # Favorites
+          - entity: script.reload_config
+            icon: mdi:recycle
+            column: 1
+            row: 1
+          - entity: script.restart_ha
+            icon: mdi:format-vertical-align-bottom
+            column: 2
+            row: 1
+          - entity: script.update_config
+            label: 25m
+            column: 3
+            row: 1
+          - entity: script.restart_ha
+            label: 2h
+            column: 4
+            row: 1
+
+script:
+  remote_control:
+    sequence:
+
+group:
+  remote_control:
+    name: Control Panel
+    entities:
+      - script.remote_control
