@@ -31,6 +31,8 @@ group:
     view: no
     entities:
       - sensor.duet_status
+      - group.3dprintstats
+  3dprintstats:
       - sensor.head_temp_current
       - sensor.head_temp_active
       - sensor.bed_temp_current
