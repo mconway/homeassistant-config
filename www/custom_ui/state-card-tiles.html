@@ -90,7 +90,7 @@ version: 20180121
     computeClass(hass, entity) {
       var domain = entity.entity.split('.')[0];
       if (domain === 'script') return '';
-      return (hass.states[entity.entity].state === 'on') ? 'on' : 'off';
+      return (hass.states[entity.entity].state === 'on' || hass.states[entity.entity].state === 'Online') ? 'on' : 'off';
     }
   
     computeStyle (entity) {
