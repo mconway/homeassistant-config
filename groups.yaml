@@ -157,6 +157,7 @@ office_people:
   view: no
   entities:
     - sensor.steam_76561197993153035
+    - sensor.phoenixrising03
 back_room_lights:
   name: Back Room Lights
   view: no
