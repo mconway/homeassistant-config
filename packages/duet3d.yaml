@@ -7,7 +7,7 @@ homeassistant:
 sensor:
   - platform: rest
     name: Duet Status
-    resource: http://artemis/rr_status?type=1
+    resource: http://artemis/rr_status?type=3
     value_template: '{{ value_json.status }}'
     json_attributes:
       - temps
@@ -21,6 +21,8 @@ sensor:
         value_template: '{{ states.sensor.duet_status.attributes.temps.bed.current }}'
       bed_temp_active:
         value_template: '{{ states.sensor.duet_status.attributes.temps.bed.active }}'
+      print_percentage:
+        value_template: '{{ states.sensor.duet_status.attributes.fractionPrinted }}%'
 
 group:
   3dprinter:
@@ -32,6 +34,7 @@ group:
       - sensor.head_temp_active
       - sensor.bed_temp_current
       - sensor.bed_temp_active
+      - sensor.print_percentage
 
 automation:
   - id: print_finished
