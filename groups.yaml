@@ -172,6 +172,7 @@ back_room_devices:
   entities:
     - sensor.wii
     - sensor.xboxone
+    - sensor.nintendoswitch
 ups_monitor:
   name: UPS Stats
   view: no

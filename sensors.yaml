@@ -93,6 +93,14 @@
         {% else %}
           Offline
         {%- endif %}
+    nintendoswitch:
+      friendly_name: "Nintendo Switch"
+      value_template: >-
+        {% if is_state("device_tracker.dc68eb5a2d02", "home") %}
+          Online
+        {% else %}
+          Offline
+        {%- endif %}
     wii:
       friendly_name: "Wii"
       value_template: >-

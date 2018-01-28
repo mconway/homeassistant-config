@@ -9,7 +9,7 @@ homeassistant:
         column_width: 62px
         gap: 15px
         color: '#555B65'
-        color_on: '#D5D619'
+        color_on: '#00CC33'
         #color_on: 'var(--primary-color)'
         #color_on: '#262B38'
         color_off: '#BBBEC2'
@@ -20,11 +20,11 @@ homeassistant:
             column: 1
             row: 1
           - entity: script.update_config
-            icon: mdi:update
+            icon: mdi:git
             column: 2
             row: 1
           - entity: script.reload_config
-            icon: mdi:recycle
+            icon: mdi:upgrade
             column: 3
             row: 1
           - entity: script.upgrade_ha
@@ -37,6 +37,22 @@ homeassistant:
             icon: mdi:linux
             column: 1
             row: 2
+          - entity: sensor.camulos
+            icon: mdi:windows
+            column: 1
+            row: 2
+          - entity: sensor.xboxone
+            icon: mdi:xbox
+            column: 5
+            row: 2
+          - entity: sensor.nintendoswitch
+            icon: mdi:nintendo-switch
+            column: 6
+            row: 2
+          - entity: sensor.wii
+            icon: mdi:wii
+            column: 7
+            row: 2 
 
 script:
   remote_control:
