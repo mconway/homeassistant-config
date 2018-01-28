@@ -145,6 +145,10 @@
   api_key: !secret steam_api_key
   accounts:
     - !secret mike_steam_id
+- platform: xbox_live
+  api_key: !secret xbox_api_key
+  xuid:
+    - !secret xbox_mike_uid
 - platform: apcupsd
   resources:
     - model
