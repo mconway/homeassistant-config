@@ -28,7 +28,7 @@ homeassistant:
             column: 3
             row: 1
           - entity: script.upgrade_ha
-            icon: mdi:robot
+            icon: mdi:home-assistant
             column: 4
             row: 1
 
