@@ -7,7 +7,7 @@ homeassistant:
         columns: 7
         row_height: 75px
         column_width: 62px
-        gap: 15px
+        gap: 10px
         color: '#555B65'
         color_on: '#00CC33'
         #color_on: 'var(--primary-color)'
@@ -24,7 +24,7 @@ homeassistant:
             column: 2
             row: 1
           - entity: script.reload_config
-            icon: mdi:upgrade
+            icon: mdi:update
             column: 3
             row: 1
           - entity: script.upgrade_ha
@@ -39,19 +39,19 @@ homeassistant:
             row: 2
           - entity: sensor.camulos
             icon: mdi:windows
-            column: 1
+            column: 2
             row: 2
           - entity: sensor.xboxone
             icon: mdi:xbox
-            column: 5
+            column: 4
             row: 2
           - entity: sensor.nintendoswitch
             icon: mdi:nintendo-switch
-            column: 6
+            column: 5
             row: 2
           - entity: sensor.wii
             icon: mdi:wii
-            column: 7
+            column: 6
             row: 2 
 
 script:
