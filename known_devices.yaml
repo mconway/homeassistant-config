@@ -219,7 +219,7 @@ xboxsystemos_2:
   mac: 30:59:B7:4B:65:7B
   name: Xbox Wired
   picture:
-  track: false
+  track: true
   vendor: unknown
 
 amazoncd6d51eed:
