@@ -74,6 +74,8 @@ notify:
 
 recorder:
   db_url: !secret database_url
+  purge_interval: 1
+  purge_keep_days: 14
 
 emulated_hue:
   exposed_domains:
