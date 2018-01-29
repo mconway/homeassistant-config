@@ -32,28 +32,6 @@ homeassistant:
             column: 4
             row: 1
 
-          #second row
-          - entity: sensor.taranis
-            icon: mdi:linux
-            column: 1
-            row: 2
-          - entity: sensor.camulos
-            icon: mdi:windows
-            column: 2
-            row: 2
-          - entity: sensor.xboxone
-            icon: mdi:xbox
-            column: 4
-            row: 2
-          - entity: sensor.nintendoswitch
-            icon: mdi:nintendo-switch
-            column: 5
-            row: 2
-          - entity: sensor.wii
-            icon: mdi:wii
-            column: 6
-            row: 2 
-
 script:
   admin_control:
     sequence:

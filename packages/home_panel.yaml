@@ -24,7 +24,7 @@ homeassistant:
             column: 2
             row: 1
 
-          - entity: light.backroom
+          - entity: light.back_room
             icon: mdi:lightbulb
             column: 5
             row: 1
@@ -78,6 +78,7 @@ group:
   default_view:
     name: Default
     icon: mdi:home
+    view: yes
     entities:
       - group.home_control
   home_control:

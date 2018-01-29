@@ -20,6 +20,7 @@ officetab:
   icon: mdi:monitor
   view: yes
   entities:
+    - group.admin_control
     - group.office_people
     - group.office_devices
     - group.office_lights
