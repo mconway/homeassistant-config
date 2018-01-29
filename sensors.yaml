@@ -112,7 +112,7 @@
     xboxone:
       friendly_name: "Xbox One"
       value_template: >-
-        {%- if is_state("device_tracker.xboxsystemos", "home") %}
+        {%- if is_state("device_tracker.xboxsystemos_2", "home") %}
           Online
         {% else %}
           Offline
