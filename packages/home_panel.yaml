@@ -17,19 +17,23 @@ homeassistant:
           # lights
           - entity: light.master_bedroom
             icon: mdi:lightbulb
+            label: Master
             column: 1
             row: 1
           - entity: light.kids_rooms
             icon: mdi:lightbulb
+            label: kids
             column: 2
             row: 1
 
           - entity: light.back_room
             icon: mdi:lightbulb
+            label: Back Room
             column: 5
             row: 1
           - entity: light.office
             icon: mdi:castle
+            label: office
             column: 6
             row: 1
 
