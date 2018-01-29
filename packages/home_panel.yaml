@@ -1,7 +1,7 @@
 homeassistant:
   customize:
   # Control Panel
-    script.admin_control:
+    script.home_control:
       custom_ui_state_card: state-card-tiles
       config:
         columns: 7
@@ -14,22 +14,23 @@ homeassistant:
         #color_on: '#262B38'
         color_off: '#BBBEC2'
         entities:
-          # Favorites
-          - entity: script.restart_ha
-            icon: mdi:restart
+          # lights
+          - entity: light.master_bedroom
+            icon: mdi:lightbulb
             column: 1
             row: 1
-          - entity: script.update_config
-            icon: mdi:git
+          - entity: light.kids_rooms
+            icon: mdi:lightbulb
             column: 2
             row: 1
-          - entity: script.reload_config
-            icon: mdi:update
-            column: 3
+
+          - entity: light.backroom
+            icon: mdi:lightbulb
+            column: 5
             row: 1
-          - entity: script.upgrade_ha
-            icon: mdi:robot
-            column: 4
+          - entity: light.office
+            icon: mdi:castle
+            column: 6
             row: 1
 
           #second row
@@ -41,6 +42,7 @@ homeassistant:
             icon: mdi:windows
             column: 2
             row: 2
+
           - entity: sensor.xboxone
             icon: mdi:xbox
             column: 4
@@ -53,13 +55,32 @@ homeassistant:
             icon: mdi:wii
             column: 6
             row: 2 
+          
+          #row 4
+          - entity: automation.michaels_alarm
+            icon: mdi:alarm
+            column: 1
+            row: 4
+          - entity: sensor.ups_status
+            icon: mdi:battery-charging
+            column: 3
+            row: 4
+          - entity: sensor.home
+            icon: mdi:home
+            column: 6
+            row: 4
 
 script:
-  admin_control:
+  home_control:
     sequence:
 
 group:
-  admin_control:
-    name: Admin Panel
+  default_view:
+    name: Default
+    icon: mdi:home
     entities:
-      - script.admin_control
+      - group.home_control
+  home_control:
+    name: Control Panel
+    entities:
+      - script.home_control
