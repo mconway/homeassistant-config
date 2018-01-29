@@ -67,6 +67,7 @@ homeassistant:
             row: 4
           - entity: sensor.home
             icon: mdi:home
+            label_state: sensor.home
             column: 6
             row: 4
 
