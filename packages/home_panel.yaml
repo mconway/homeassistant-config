@@ -129,9 +129,9 @@ group:
     name: Devices
     icon: mdi:owl
     entities:
-      -script.device_tiles
+      - script.device_tiles
   people_tiles:
     name: People
     icon: mdi:human-handsup
     entities:
-      script.people_tiles
+      - script.people_tiles
