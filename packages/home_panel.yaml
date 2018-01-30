@@ -35,47 +35,83 @@ homeassistant:
             icon: mdi:castle
             column: 6
             row: 1
-
-          #second row
-          - entity: sensor.taranis
-            icon: mdi:linux
-            column: 1
-            row: 2
-          - entity: sensor.camulos
-            icon: mdi:windows
-            column: 2
-            row: 2
-
-          - entity: sensor.xboxone
-            icon: mdi:xbox
-            column: 4
-            row: 2
-          - entity: sensor.nintendoswitch
-            icon: mdi:nintendo-switch
-            column: 5
-            row: 2
-          - entity: sensor.wii
-            icon: mdi:wii
-            column: 6
-            row: 2 
           
           #row 4
           - entity: automation.michaels_alarm
             icon: mdi:alarm
             column: 1
-            row: 4
+            row: 2
           - entity: sensor.ups_status
             icon: mdi:battery-charging
             column: 3
-            row: 4
+            row: 2
           - entity: sensor.home
             icon: mdi:home
             label_state: sensor.home
             column: 6
-            row: 4
+            row: 2
+    script.device_tiles:
+      custom_ui_state_card: state-card-tiles
+      config:
+        columns: 7
+        row_height: 75px
+        column_width: 62px
+        gap: 15px
+        color: '#555B65'
+        color_on: '#00CC33'
+        #color_on: 'var(--primary-color)'
+        #color_on: '#262B38'
+        color_off: '#BBBEC2'
+        entities:
+          - entity: sensor.taranis
+            icon: mdi:linux
+            column: 1
+            row: 1
+          - entity: sensor.camulos
+            icon: mdi:windows
+            column: 2
+            row: 1
+
+          - entity: sensor.xboxone
+            icon: mdi:xbox
+            column: 4
+            row: 1
+          - entity: sensor.nintendoswitch
+            icon: mdi:nintendo-switch
+            column: 5
+            row: 1
+          - entity: sensor.wii
+            icon: mdi:wii
+            column: 6
+            row: 1 
+    script.people_tiles:
+      custom_ui_state_card: state-card-tiles
+      config:
+        columns: 7
+        row_height: 75px
+        column_width: 62px
+        gap: 15px
+        color: '#555B65'
+        color_on: '#00CC33'
+        #color_on: 'var(--primary-color)'
+        #color_on: '#262B38'
+        color_off: '#BBBEC2'
+        entities:
+          - entity: device_tracker.android1b27fe99b8b39bc3
+            icon: mdi:human-female
+            column: 1
+            row: 1
+          - entity: sensor.goibiniu_goibiniu
+            icon: mdi:windows
+            column: 2
+            row: 1
 
 script:
   home_control:
+    sequence:
+  device_tiles:
+    sequence:
+  people_tiles:
     sequence:
 
 group:
@@ -89,3 +125,13 @@ group:
     name: Control Panel
     entities:
       - script.home_control
+  device_tiles:
+    name: Devices
+    icon: mdi:owl
+    entities:
+      -script.device_tiles
+  people_tiles:
+    name: People
+    icon: mdi:human-handsup
+    entities:
+      script.people_tiles

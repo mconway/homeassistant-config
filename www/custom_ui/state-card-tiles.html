@@ -36,7 +36,7 @@ version: 20180121
               <iron-icon icon='[[entity.icon]]'></iron-icon>
             </template>
             <template is='dom-if' if='[[!entity.label_state]]'>
-              [[entity.label]]
+              <p>[[entity.label]]</p>
             </template>
             <template is='dom-if' if='[[entity.label_state]]'>
               [[computeLabelState(hass, entity.label_state)]]
@@ -90,7 +90,7 @@ version: 20180121
     computeClass(hass, entity) {
       var domain = entity.entity.split('.')[0];
       if (domain === 'script') return '';
-      return (hass.states[entity.entity].state === 'on' || hass.states[entity.entity].state === 'Online') ? 'on' : 'off';
+      return (hass.states[entity.entity].state === 'on' || hass.states[entity.entity].state === 'Online' | hass.states[entity.entity].state === 'home') ? 'on' : 'off';
     }
   
     computeStyle (entity) {
