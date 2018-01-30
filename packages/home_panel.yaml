@@ -101,8 +101,8 @@ homeassistant:
             icon: mdi:human-female
             column: 1
             row: 1
-          - entity: sensor.goibiniu_goibiniu
-            icon: mdi:windows
+          - entity: device_tracker.goibniu_goibniu
+            icon: mdi:human-male
             column: 2
             row: 1
 
@@ -121,6 +121,8 @@ group:
     view: yes
     entities:
       - group.home_control
+      - group.device_tiles
+      - group.people_tiles
   home_control:
     name: Control Panel
     entities:
