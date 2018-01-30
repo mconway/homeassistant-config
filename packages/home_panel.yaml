@@ -17,7 +17,7 @@ homeassistant:
           # lights
           - entity: light.master_bedroom
             icon: mdi:lightbulb
-            label: M Br
+            label: M
             column: 1
             row: 1
           - entity: light.kids_rooms
@@ -28,7 +28,7 @@ homeassistant:
 
           - entity: light.back_room
             icon: mdi:lightbulb
-            label: "\nBack Room"
+            label: "Back"
             column: 5
             row: 1
           - entity: light.office
