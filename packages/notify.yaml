@@ -6,6 +6,12 @@ notify:
   - platform: kodi
     name: kodi
     host: taranis
+  - platform: group
+    name: default_group
+    services:
+      - service: slack
+      - service: kodi
+      - service: notify
 
 mycroft:
   host: !secret mycroft_ip
