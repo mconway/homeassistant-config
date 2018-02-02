@@ -1,0 +1,11 @@
+notify:
+  - platform: slack
+    name: slack
+    api_key: !secret slack_api_key
+    default_channel: '#home-automation'
+  - platform: kodi
+    name: kodi
+    host: taranis
+
+mycroft:
+  host: !secret mycroft_ip

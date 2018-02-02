@@ -63,15 +63,6 @@ mqtt_eventstream:
   publish_topic: home/master
   subscribe_topic: home/slave
 
-notify:
-  - platform: slack
-    name: slack
-    api_key: !secret slack_api_key
-    default_channel: '#home-automation'
-  - platform: kodi
-    name: kodi
-    host: taranis
-
 recorder:
   db_url: !secret database_url
   purge_interval: 1
