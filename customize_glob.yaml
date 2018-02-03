@@ -15,6 +15,7 @@ switch.program*:
 switch.zone*:
   icon: mdi:water
 automation.*:
+  custom_ui_state_card: state-card-custom-ui
   extra_data_template: >-
     if(!attributes.last_triggered)return null;
     var t,s=(new Date()-new Date(attributes.last_triggered))/1e3;
