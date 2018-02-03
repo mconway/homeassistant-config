@@ -64,3 +64,6 @@ automation:
       - service: notify.slack
         data_template: 
           message: ':door: New motion event at Front Door (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }}'
+      - service: notify.notify
+        data_template:
+          message: "Motion has been detected at the Front Door"
