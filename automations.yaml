@@ -13,7 +13,7 @@
     platform: state
     entity_id: device_tracker.android1b27fe99b8b39bc3
   action:
-    service: notify.slack
+    service: notify.default_group
     data:
       message: ':house: Mary is {{ states("device_tracker.android1b27fe99b8b39bc3") }}'
 - id: presence_people
@@ -22,9 +22,10 @@
     platform: state
     entity_id: group.people
   action:
-    service: notify.slack
+    service: notify.default_group
     data:
       message: ':house: Someone is {{ states("group.people") }}'
+
 - id: update_notifications
   alias: Update notifications
   trigger:
@@ -34,6 +35,7 @@
     service: notify.slack
     data:
       message: 'There is a new Home Assistant release available.'
+
 - id: startup_notification
   alias: Start Up
   trigger:
