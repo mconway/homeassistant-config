@@ -49,7 +49,7 @@ device_tracker:
   - platform: owntracks
 
 mqtt:
-  broker: fand
+  broker: taranis
   port: 1883
   client_id: ha-host
   keepalive: 60
