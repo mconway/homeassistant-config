@@ -20,12 +20,12 @@ officetab:
   icon: mdi:monitor
   view: yes
   entities:
-    - group.admin_control
     - group.office_people
     - group.office_devices
     - group.office_lights
     - group.camera_fand
     - group.3dprinter
+    - group.office_automations
 bedroomstab:
   name: Bedrooms
   icon: mdi:hotel
@@ -194,3 +194,12 @@ air_quality:
     - sensor.us_air_quality_index
     - sensor.us_air_pollution_level
     - sensor.us_main_pollutant
+office_automations:
+  name: Automations
+  view: no
+  entities:
+    - automation.print_started
+    - automation.print_finished
+    - automatiion.game_mood_lighting
+    - automation.restore_office_lighting
+    - automation.office_light_on_at_dusk

@@ -50,3 +50,13 @@ automation:
       - service: notify.slack
         data_template: 
           message: ':printer: 3D Print is Finished'
+  - id: print_started
+    alias: Print Started
+    trigger:
+      platform: state
+      entity_id: sensor.duet_status
+      from: 'I'
+    action:
+      - service: notify.slack
+        data_template: 
+          message: ':printer: 3D Print has Started'
