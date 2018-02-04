@@ -200,6 +200,6 @@ office_automations:
   entities:
     - automation.print_started
     - automation.print_finished
-    - automatiion.game_mood_lighting
+    - automation.game_mood_lighting
     - automation.restore_office_lighting
-    - automation.office_light_on_at_dusk
+    - automation.turn_on_the_office_light_at_dusk
