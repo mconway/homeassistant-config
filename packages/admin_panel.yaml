@@ -59,7 +59,7 @@ script:
   - admin_control:
       sequence:
 
-shell_commands:
+shell_command:
   - upgrade_ha: 'bash /config/commands/update_ha.sh'
   - update_configs_from_repo: 'cd /config && git pull origin master > /config/command.log'
   - git_push: 'cd /config && git commit -am "{{ states.input_text.git_message.state }}" && git push origin master'
