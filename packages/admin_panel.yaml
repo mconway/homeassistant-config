@@ -1,52 +1,52 @@
 homeassistant:
   customize:
-    - input_text.git_message:
+    input_text.git_message:
       icon: mdi:pencil
-    - script.upgrade_ha:
+    script.upgrade_ha:
       icon: mdi:home-assistant
-    - script.github_push:
+    script.github_push:
       icon: mdi:github-circle
-    - script.restart_ha:
+    script.restart_ha:
       icon: mdi:restart
-    - script.update_config:
+    script.update_config:
       icon: mdi:git
-    - script.reload_config:
+    script.reload_config:
       icon: mdi:update
 
   # Control Panel Tiles
-    - script.admin_control:
-        custom_ui_state_card: state-card-tiles
-        config:
-          columns: 7
-          row_height: 75px
-          column_width: 62px
-          gap: 15px
-          color: '#555B65'
-          color_on: '#00CC33'
-          #color_on: 'var(--primary-color)'
-          #color_on: '#262B38'
-          color_off: '#BBBEC2'
-          entities:
-            # Favorites
-            - entity: script.restart_ha
-              icon: mdi:restart
-              column: 1
-              row: 1
-            - entity: script.update_config
-              icon: mdi:git
-              column: 2
-              row: 1
-            - entity: script.reload_config
-              icon: mdi:update
-              column: 3
-              row: 1
-            - entity: script.upgrade_ha
-              icon: mdi:home-assistant
-              column: 4
-              row: 1
+    script.admin_control:
+      custom_ui_state_card: state-card-tiles
+      config:
+        columns: 7
+        row_height: 75px
+        column_width: 62px
+        gap: 15px
+        color: '#555B65'
+        color_on: '#00CC33'
+        #color_on: 'var(--primary-color)'
+        #color_on: '#262B38'
+        color_off: '#BBBEC2'
+        entities:
+          # Favorites
+          - entity: script.restart_ha
+            icon: mdi:restart
+            column: 1
+            row: 1
+          - entity: script.update_config
+            icon: mdi:git
+            column: 2
+            row: 1
+          - entity: script.reload_config
+            icon: mdi:update
+            column: 3
+            row: 1
+          - entity: script.upgrade_ha
+            icon: mdi:home-assistant
+            column: 4
+            row: 1
 
 input_text:
-  - git_message:
+  git_message:
     name: Commit Message
     initial: Update Known Hosts - Push from Local
 
