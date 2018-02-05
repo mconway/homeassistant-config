@@ -59,9 +59,11 @@ group:
     name: Admin Panel
     entities:
       - script.admin_control
+    order: 1
   maintenance_actions:
     name: Maintenance
     view: no
+    order: 2
     entities:
       - script.update_config
       - script.upgrade_ha
