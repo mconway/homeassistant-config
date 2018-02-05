@@ -1,0 +1,10 @@
+alias: Push Configs
+sequence:
+- event: LOGBOOK_ENTRY
+  event_data:
+    name: EVENT
+    message: "Pushing config"
+- service: notify.slack
+  data:
+    message: "Pushing latest configuration files to git repo" #at {{ states('sensor.date__time') }}
+- service: shell_command.git_push

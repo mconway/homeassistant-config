@@ -1,6 +1,19 @@
 homeassistant:
   customize:
-  # Control Panel
+  - input_text.git_message:
+     icon: mdi:pencil
+  - script.upgrade_ha:
+      icon: mdi:home-assistant
+  - script.github_push:
+      icon: mdi:github-circle
+  - script.restart_ha:
+      icon: mdi:restart
+  - script.update_config:
+      icon: mdi:git
+  - script.reload_config:
+      icon: mdi:update
+
+  # Control Panel Tiles
     script.admin_control:
       custom_ui_state_card: state-card-tiles
       config:
@@ -32,12 +45,37 @@ homeassistant:
             column: 4
             row: 1
 
+input_text:
+  git_message:
+    name: Commit Message
+    initial: Update Known Hosts - Push from Local
+
 script:
-  admin_control:
-    sequence:
+  - update_config: !include ../scripts/update_config.yaml
+  - upgrade_ha: !include ../scripts/upgrade_ha.yaml
+  - restart_ha: !include ../scripts/restart_ha.yaml
+  - reload_config: !include ../scripts/reload_config.yaml
+  - git_push: !include ../scripts/git_push.yaml
+  - admin_control:
+      sequence:
+
+shell_commands:
+  upgrade_ha: 'bash /config/commands/update_ha.sh'
+  update_configs_from_repo: 'cd /config && git pull origin master > /config/command.log'
+  git_push: 'cd /config && git commit -am "{{ states.input_text.git_message.state }}" && git push origin master'
 
 group:
   admin_control:
     name: Admin Panel
     entities:
       - script.admin_control
+  maintenance_actions:
+    name: Maintenance
+    view: no
+    entities:
+      - script.update_config
+      - script.upgrade_ha
+      - script.restart_ha
+      - script.reload_config
+      - input_text.git_message
+      - script.git_push
