@@ -1,17 +1,17 @@
 homeassistant:
   customize:
     - input_text.git_message:
-        icon: mdi:pencil
+      icon: mdi:pencil
     - script.upgrade_ha:
-        icon: mdi:home-assistant
+      icon: mdi:home-assistant
     - script.github_push:
-        icon: mdi:github-circle
+      icon: mdi:github-circle
     - script.restart_ha:
-        icon: mdi:restart
+      icon: mdi:restart
     - script.update_config:
-        icon: mdi:git
+      icon: mdi:git
     - script.reload_config:
-        icon: mdi:update
+      icon: mdi:update
 
   # Control Panel Tiles
     - script.admin_control:
@@ -46,7 +46,7 @@ homeassistant:
               row: 1
 
 input_text:
-  git_message:
+  - git_message:
     name: Commit Message
     initial: Update Known Hosts - Push from Local
 
@@ -60,16 +60,16 @@ script:
       sequence:
 
 shell_commands:
-  upgrade_ha: 'bash /config/commands/update_ha.sh'
-  update_configs_from_repo: 'cd /config && git pull origin master > /config/command.log'
-  git_push: 'cd /config && git commit -am "{{ states.input_text.git_message.state }}" && git push origin master'
+  - upgrade_ha: 'bash /config/commands/update_ha.sh'
+  - update_configs_from_repo: 'cd /config && git pull origin master > /config/command.log'
+  - git_push: 'cd /config && git commit -am "{{ states.input_text.git_message.state }}" && git push origin master'
 
 group:
-  admin_control:
+  - admin_control:
     name: Admin Panel
     entities:
       - script.admin_control
-  maintenance_actions:
+  - maintenance_actions:
     name: Maintenance
     view: no
     entities:
