@@ -65,11 +65,11 @@ shell_commands:
   - git_push: 'cd /config && git commit -am "{{ states.input_text.git_message.state }}" && git push origin master'
 
 group:
-  - admin_control:
+  admin_control:
     name: Admin Panel
     entities:
       - script.admin_control
-  - maintenance_actions:
+  maintenance_actions:
     name: Maintenance
     view: no
     entities:
