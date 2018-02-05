@@ -12,6 +12,10 @@ homeassistant:
       icon: mdi:git
     script.reload_config:
       icon: mdi:update
+    group.admin_control:
+      order: 1
+    group.maintenance_actions:
+      order: 2
 
   # Control Panel Tiles
     script.admin_control:
@@ -59,11 +63,9 @@ group:
     name: Admin Panel
     entities:
       - script.admin_control
-    order: 1
   maintenance_actions:
     name: Maintenance
     view: no
-    order: 2
     entities:
       - script.update_config
       - script.upgrade_ha
