@@ -51,13 +51,8 @@ input_text:
     initial: Update Known Hosts - Push from Local
 
 script:
-  - update_config: !include ../scripts/update_config.yaml
-  - upgrade_ha: !include ../scripts/upgrade_ha.yaml
-  - restart_ha: !include ../scripts/restart_ha.yaml
-  - reload_config: !include ../scripts/reload_config.yaml
-  - git_push: !include ../scripts/git_push.yaml
-  - admin_control:
-      sequence:
+  admin_control:
+    sequence:
 
 group:
   admin_control:

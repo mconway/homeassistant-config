@@ -1,1 +1,6 @@
 change_garage_icon: !include scripts/change_garage_icon.yaml
+update_config: !include scripts/update_config.yaml
+upgrade_ha: !include scripts/upgrade_ha.yaml
+restart_ha: !include scripts/restart_ha.yaml
+reload_config: !include scripts/reload_config.yaml
+git_push: !include scripts/git_push.yaml
