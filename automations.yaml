@@ -3,6 +3,9 @@
   trigger:
     platform: state
     entity_id: device_tracker.goibniu_goibniu
+  condition:
+    - condition: template
+      value_template: '{{ trigger.from_state.state != trigger.to_state.state }}'
   action:
     service: notify.default_group
     data:
