@@ -103,6 +103,7 @@ homeassistant:
             row: 1
           - entity: device_tracker.goibniu_goibniu
             icon: mdi:human-male
+            label_state: sensor.battery_goibniu
             column: 2
             row: 1
 
