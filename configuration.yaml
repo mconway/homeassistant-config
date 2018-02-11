@@ -32,6 +32,7 @@ frontend:
     darkred: !include themes/darkred.yaml
     darkcyan: !include themes/darkcyan.yaml
     midnight: !include themes/midnight.yaml
+    vintage: !include themes/vintage.yaml
   javascript_version: latest
 
 media_player:
