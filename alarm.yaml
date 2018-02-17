@@ -50,7 +50,7 @@ immediate:
 
 ##Sensors in this group start the clock (pending_time) when tripped before the alarm is activated in 'Away' mode
 delayed:
-#  - binary_sensor.kitchen_multi_sensor_sensor
+  - cover.garage_door
 #  - binary_sensor.hall_multi_sensor_sensor
 #  - binary_sensor.toilet_multi_sensor_sensor
 #  - binary_sensor.front_door_sensor
