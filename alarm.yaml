@@ -46,7 +46,7 @@ triggered_colour: 'red'
 ############# SENSOR GROUPS ########################
 ##Sensors in this group tigger the alarm immediately
 immediate:
-  - cover.garage
+  - cover.garage_door
 
 ##Sensors in this group start the clock (pending_time) when tripped before the alarm is activated in 'Away' mode
 delayed:
