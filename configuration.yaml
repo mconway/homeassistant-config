@@ -64,6 +64,9 @@ mqtt_eventstream:
   publish_topic: home/master
   subscribe_topic: home/slave
 
+alarm_control_panel: !include alarm.yaml
+panel_custom: !include panel_custom.yaml
+
 recorder:
   db_url: !secret database_url
   purge_interval: 1
