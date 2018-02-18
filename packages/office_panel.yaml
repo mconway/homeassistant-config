@@ -1,0 +1,77 @@
+homeassistant:
+  customize:
+  # Control Panel
+    script.office_device_tiles:
+      custom_ui_state_card: state-card-tiles
+      config:
+        columns: 7
+        row_height: 75px
+        column_width: 62px
+        gap: 15px
+        color: '#555B65'
+        color_on: '#00CC33'
+        #color_on: 'var(--primary-color)'
+        #color_on: '#262B38'
+        color_off: '#BBBEC2'
+        entities:
+          - entity: sensor.taranis
+            icon: mdi:linux
+            column: 1
+            row: 1
+          - entity: sensor.camulos
+            icon: mdi:windows
+            column: 2
+            row: 1
+          - entity: sensor.nodens
+            icon: mdi:power
+            column: 3
+            row: 1
+          - entity: device_tracker.artemis
+            icon: mdi:printer-3d
+            label_state: sensor.print_percentage
+            column: 4
+            row: 1
+          - entity: sensor.lugus
+            icon: mdi:printer
+            column: 5
+            row: 1
+          - entity: sensor.nintendoswitch
+            icon: mdi:nintendo-switch
+            column: 6
+            row: 1
+
+    script.office_people_tiles:
+      custom_ui_state_card: state-card-tiles
+      config:
+        columns: 7
+        row_height: 75px
+        column_width: 62px
+        gap: 15px
+        color: '#555B65'
+        color_on: '#00CC33'
+        #color_on: 'var(--primary-color)'
+        #color_on: '#262B38'
+        color_off: '#BBBEC2'
+        entities:
+          - entity: sensor.steam_76561197993153035
+            icon: mdi:steam
+            column: 1
+            row: 1
+
+script:
+  office_device_tiles:
+    sequence:
+  office_people_tiles:
+    sequence:
+
+group:
+  office_device_tiles:
+    name: Devices
+    icon: mdi:owl
+    entities:
+      - script.office_device_tiles
+  office_people_tiles:
+    name: People
+    icon: mdi:human-handsup
+    entities:
+      - script.office_people_tiles
