@@ -39,6 +39,10 @@ media_player:
   platform: plex
 
 tradfri:
+  host: !secret tradfri_host
+
+apcupsd:
+  host: taranis
 
 device_tracker:
   - platform: asuswrt
@@ -221,4 +225,3 @@ discovery:
 logbook:
 config:
 python_script:
-apcupsd:
