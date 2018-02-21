@@ -220,6 +220,7 @@ shell_command: !include shell_commands.yaml
 conversation:
 updater:
 sun:
+map:
 history:
 discovery:
 logbook:
