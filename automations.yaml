@@ -205,5 +205,5 @@
   action:
     - service: notify.slack
       data_template: 
-        message: ':warning: New device discovered on network as {now()}'
+        message: ':warning: New device discovered on network at {{now()}}'
 
