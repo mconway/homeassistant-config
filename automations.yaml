@@ -14,11 +14,11 @@
   alias: Mary's Presence
   trigger:
     platform: state
-    entity_id: device_tracker.android1b27fe99b8b39bc3
+    entity_id: device_tracker.androidbef3f8fe91bdecb1
   action:
     service: notify.default_group
     data:
-      message: ':house: Mary is {{ states("device_tracker.android1b27fe99b8b39bc3") }}'
+      message: ':house: Mary is {{ states("device_tracker.androidbef3f8fe91bdecb1") }}'
 - id: presence_people
   alias: Presence
   trigger:

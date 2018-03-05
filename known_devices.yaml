@@ -62,7 +62,7 @@ kindle836d4dc5b:
   hide_if_away: false
 
 android1b27fe99b8b39bc3:
-  name: Mary's Phone
+  name: Galaxy S6 - Mary
   mac: EC:1F:72:29:C4:2E
   picture: mdi:android
   track: true
@@ -145,7 +145,7 @@ tap7013014s:
   hide_if_away: false
   icon:
   mac: 50:F5:DA:6C:15:E8
-  name: Amazon tap
+  name: Amazon Tap
   picture:
   track: true
   vendor: Amazon Technologies Inc.
@@ -195,11 +195,11 @@ amazone586deb83:
   track: false
   vendor: Amazon Technologies Inc.
 
-android34f1ae123944e8f2:
+nook:
   hide_if_away: false
   icon:
   mac: 58:67:1A:11:5C:6E
-  name: android-34f1ae123944e8f2
+  name: Nook
   picture:
   track: false
   vendor: Barnes&Noble
@@ -221,15 +221,6 @@ xboxsystemos_2:
   picture:
   track: true
   vendor: unknown
-
-amazoncd6d51eed:
-  hide_if_away: false
-  icon:
-  mac: 74:75:48:79:F1:BE
-  name: amazon-cd6d51eed
-  picture:
-  track: false
-  vendor: Amazon Technologies Inc.
 
 cliffordsiphone:
   hide_if_away: false
@@ -258,15 +249,6 @@ fand:
   track: false
   vendor: Raspberry Pi Foundation
 
-ec1f721494a7:
-  hide_if_away: false
-  icon:
-  mac: EC:1F:72:14:94:A7
-  name: ec1f721494a7
-  picture:
-  track: false
-  vendor: SAMSUNG ELECTRO-MECHANICS(THAILAND)
-
 obi200:
   hide_if_away: false
   icon:
@@ -275,15 +257,6 @@ obi200:
   picture:
   track: false
   vendor: Obihai Technology, Inc.
-
-android60445b0c1cf0ce73:
-  hide_if_away: false
-  icon:
-  mac: 2C:60:0C:09:56:F3
-  name: android-60445b0c1cf0ce73
-  picture:
-  track: false
-  vendor: unknown
 
 corb:
   hide_if_away: false
@@ -316,7 +289,7 @@ artemis:
   hide_if_away: false
   icon:
   mac: 2C:3A:E8:0B:1D:FA
-  name: artemis
+  name: Artemis
   picture:
   track: true
   vendor: SeeMeCNC
@@ -338,56 +311,12 @@ amazon968f3e93b:
   picture:
   track: true
   vendor: Amazon Technologies Inc.
-a8d0e5dd27f0:
-  hide_if_away: false
-  icon:
-  mac: A8:D0:E5:DD:27:F0
-  name: a8d0e5dd27f0
-  picture:
-  track: false
-  vendor: Juniper Networks
-
-782bcb3379ab:
-  hide_if_away: false
-  icon:
-  mac: 78:2B:CB:33:79:AB
-  name: 782bcb3379ab
-  picture:
-  track: false
-  vendor: Dell Inc.
-
-5c5eabd63201:
-  hide_if_away: false
-  icon:
-  mac: 5C:5E:AB:D6:32:01
-  name: 5c5eabd63201
-  picture:
-  track: false
-  vendor: unknown
-
-goibniu_goibniu_:
-  hide_if_away: false
-  icon:
-  mac:
-  name: goibniu
-  picture:
-  track: false
-  vendor:
-
-5c5eabd63202:
-  hide_if_away: false
-  icon:
-  mac: 5C:5E:AB:D6:32:02
-  name: 5c5eabd63202
-  picture:
-  track: false
-  vendor: unknown
 
 androidbef3f8fe91bdecb1:
   hide_if_away: false
   icon:
   mac: D0:04:01:76:2D:44
-  name: android-bef3f8fe91bdecb1
+  name: Mary - Moto X4
   picture:
-  track: false
+  track: true
   vendor: Motorola Mobility LLC, a Lenovo Company

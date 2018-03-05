@@ -124,7 +124,7 @@ people:
   name: People
   view: no
   entities:
-    - device_tracker.android1b27fe99b8b39bc3
+    - device_tracker.androidbef3f8fe91bdecb1
     - device_tracker.goibniu_goibniu
 systeminfo:
   name: System Information
