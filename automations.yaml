@@ -196,3 +196,14 @@
   action:
     service: light.turn_on
     entity_id: light.office
+
+- id: new_device_on_network
+  alias: New Device On Network
+  trigger:
+    platform: event
+    event_type: device_tracker_new_device
+  action:
+    - service: notify.slack
+      data_template: 
+        message: ':warning: New device discovered on network as {now()}'
+
