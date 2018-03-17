@@ -220,41 +220,8 @@ homeassistant:
         row_height: 54px      
         gap: 8px              
         entities:
-          - entity: lock.1fl_deadbolt_door_main
-            label: Front
-            icon: mdi:door
-            column: 1
-            column_span: 2
-            row: 1             
-            row_span: 1          
-            color:  'hsl(0, 0%, 80%)'    #grey    
-            color_off: 'hsl(37, 96%, 48%)'  #orange
-            color_on:  'hsl(0, 0%, 80%)'    #grey 
-
-          - entity: lock.1fl_deadbolt_door_kitchen
-            label: Kitchen
-            icon: mdi:door
-            column: 3
-            column_span: 2
-            row: 1            
-            row_span: 1          
-            color:  'hsl(0, 0%, 80%)'    #grey    
-            color_off: 'hsl(37, 96%, 48%)'  #orange
-            color_on:  'hsl(0, 0%, 80%)'    #grey  
-
-          - entity: lock.1fl_deadbolt_door_garage
-            label: Garage
-            icon: mdi:door
-            column: 5
-            column_span: 2
-            row: 1             
-            row_span: 1          
-            color:  'hsl(0, 0%, 80%)'    #grey    
-            color_off: 'hsl(37, 96%, 48%)'  #orange
-            color_on:  'hsl(0, 0%, 80%)'    #grey 
-
           - entity: cover.garage_door
-            label: "Garage Lift"
+            label: "Garage"
             icon: mdi:garage
             more_info: cover.garage_door
             column: 1              
