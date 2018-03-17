@@ -165,9 +165,9 @@ homeassistant:
             text_color_off: 'hsl(0, 0%, 0%)'    #black
             icon_size: 12px
 
-          - entity: sensor.dark_sky_pressure
-            label_template: "return parseInt(state) + 'mbar'"
-            icon: mdi:weather-sunny
+          - entity: sensor.dark_sky_wind_speed
+            label_template: sensor.dark_sky_wind_speed
+            icon: mdi:weather-windy
             #more_info: history_graph.brightness
             column: 5
             column_span: 2
@@ -181,10 +181,10 @@ homeassistant:
             text_color_off: 'hsl(0, 0%, 0%)'    #black
             icon_size: 12px
 
-          - entity: sensor.dark_sky_wind_speed
-            label_state: sensor.dark_sky_wind_speed
+          - entity: sensor.dark_sky_daily_summary
+            label_state: sensor.dark_sky_daily_summary
             #icon_template: "return 'mdi:' + entities['sensor.weather_icon'].state;"
-            #label_sec_template: "return parseInt(entities['sensor.weather_daily_low_temperature'].state) + 'ºF to ' + parseInt(entities['sensor.weather_daily_high_temperature'].state) + 'ºF'"
+            label_sec_template: "return parseInt(entities['sensor.dark_sky_daily_low_temperature'].state) + 'ºF to ' + parseInt(entities['sensor.dark_sky_daily_high_temperature'].state) + 'ºF'"
             column: 1
             column_span: 6
             row: 2            
