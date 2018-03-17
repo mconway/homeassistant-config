@@ -127,16 +127,16 @@ homeassistant:
     input_text.weather_information_tiles:
       custom_ui_state_card: state-card-tiles
       config:
-        columns: 8           
+        columns: 6           
         row_height: 35px      
         gap: 0px              
         color: 'hsl(192, 96%, 48%)'
         text_size: '0.85em'
         entities:
-          - entity: sensor.average_temperature
+          - entity: sensor.dark_sky_daily_high_temperature
             label_template: "return parseInt(state) + 'ºF'"
             icon: mdi:thermometer
-            more_info: history_graph.temperature
+            #more_info: history_graph.temperature
             column: 1
             column_span: 2
             row: 1            
@@ -149,10 +149,10 @@ homeassistant:
             text_color_off: 'hsl(0, 0%, 0%)'    #black
             icon_size: 12px
 
-          - entity: sensor.average_humidity
+          - entity: sensor.dark_sky_precip_probability
             label_template: "return parseInt(state) + '%'"
             icon: mdi:weather-rainy
-            more_info: history_graph.humidity
+            #more_info: history_graph.humidity
             column: 3
             column_span: 2
             row: 1              
@@ -165,10 +165,10 @@ homeassistant:
             text_color_off: 'hsl(0, 0%, 0%)'    #black
             icon_size: 12px
 
-          - entity: sensor.average_illuminance
-            label_template: "return parseInt(state) + '%'"
+          - entity: sensor.dark_sky_pressure
+            label_template: "return parseInt(state) + 'mbar'"
             icon: mdi:weather-sunny
-            more_info: history_graph.brightness
+            #more_info: history_graph.brightness
             column: 5
             column_span: 2
             row: 1             
@@ -181,27 +181,12 @@ homeassistant:
             text_color_off: 'hsl(0, 0%, 0%)'    #black
             icon_size: 12px
 
-          - entity: binary_sensor.hallway_thermostat_fan  
-            label_state: climate.hallway
-            icon: mdi:fan
-            column: 7              
-            column_span: 2
-            row: 1              
-            row_span: 1
-            color: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
-            color_on: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
-            color_off: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
-            text_color: 'hsl(0, 0%, 0%)'    #black
-            text_color_on: 'hsl(0, 0%, 0%)'    #black
-            text_color_off: 'hsl(0, 0%, 0%)'    #black
-            icon_size: 12px
-
-          - entity: sensor.weather_hourly_summary
-            label_state: sensor.weather_hourly_summary
-            icon_template: "return 'mdi:' + entities['sensor.weather_icon'].state;"
-            label_sec_template: "return parseInt(entities['sensor.weather_daily_low_temperature'].state) + 'ºF to ' + parseInt(entities['sensor.weather_daily_high_temperature'].state) + 'ºF'"
+          - entity: sensor.dark_sky_wind_speed
+            label_state: sensor.dark_sky_wind_speed
+            #icon_template: "return 'mdi:' + entities['sensor.weather_icon'].state;"
+            #label_sec_template: "return parseInt(entities['sensor.weather_daily_low_temperature'].state) + 'ºF to ' + parseInt(entities['sensor.weather_daily_high_temperature'].state) + 'ºF'"
             column: 1
-            column_span: 8
+            column_span: 6
             row: 2            
             row_span: 3          
             color: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
