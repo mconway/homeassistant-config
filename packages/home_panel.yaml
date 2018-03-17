@@ -222,7 +222,8 @@ script:
     sequence:
 
 input_text:
-  name: dummy_tiles_information
+  dummy_tiles_information:
+    name: Weather
 
 group:
   default_view:
