@@ -87,25 +87,42 @@ homeassistant:
     script.people_tiles:
       custom_ui_state_card: state-card-tiles
       config:
-        columns: 7
-        row_height: 75px
+        columns: 6
+        row_height: 54px
         column_width: 62px
-        gap: 15px
-        color: '#555B65'
-        color_on: '#00CC33'
-        #color_on: 'var(--primary-color)'
-        #color_on: '#262B38'
-        color_off: '#BBBEC2'
+        gap: 8px
+        color: 'hsl(192, 96%, 48%)'
         entities:
-          - entity: device_tracker.android1b27fe99b8b39bc3
-            icon: mdi:human-female
-            column: 1
-            row: 1
           - entity: device_tracker.goibniu_goibniu
             icon: mdi:human-male
-            label_state: sensor.battery_goibniu
-            column: 2
+            label_state: device_tracker.goibniu_goibniu
+            column: 1
+            column_span: 3
             row: 1
+            row_span: 2
+            color: 'hsl(0, 100%, 100%)'
+            color_on: 'hsl(0, 100%, 100%)'
+            color_off: 'hsl(0, 100%, 100%)'
+            text_size: '1.2em'
+            label_sec_state: sensor.battery_goibniu
+            text_sec_color: "#eee"
+            text_sec_size: '0.7em'
+            more_info: device_tracker.goibniu_goibniu
+
+          - entity: device_tracker.android1b27fe99b8b39bc3
+            icon: mdi:human-female
+            column: 4
+            column_span: 3
+            row: 1
+            row_span: 2
+            color: 'hsl(0, 100%, 100%)'
+            color_on: 'hsl(0, 100%, 100%)'
+            color_off: 'hsl(0, 100%, 100%)'
+            text_size: '1.2em'
+            label_sec_state: "Mary"
+            text_sec_color: "#eee"
+            text_sec_size: '0.7em'
+            more_info: device_tracker.android1b27fe99b8b39bc3
 
 script:
   home_control:
@@ -121,9 +138,10 @@ group:
     icon: mdi:home
     view: yes
     entities:
+      - group.people_tiles
       - group.home_control
       - group.device_tiles
-      - group.people_tiles
+
   home_control:
     name: Control Panel
     entities:
