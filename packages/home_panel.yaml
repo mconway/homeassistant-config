@@ -6,7 +6,6 @@ homeassistant:
       config:
         columns: 7
         row_height: 75px
-        column_width: 62px
         gap: 15px
         color: '#555B65'
         color_on: '#00CC33'
@@ -55,7 +54,6 @@ homeassistant:
       config:
         columns: 7
         row_height: 75px
-        column_width: 62px
         gap: 15px
         color: '#555B65'
         color_on: '#00CC33'
