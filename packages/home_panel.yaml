@@ -94,7 +94,7 @@ homeassistant:
         color: 'hsl(192, 96%, 48%)'
         entities:
           - entity: device_tracker.goibniu_goibniu
-            icon: mdi:human-male
+            image: !secret mike_profile_pic
             label_state: device_tracker.goibniu_goibniu
             column: 1
             column_span: 3
