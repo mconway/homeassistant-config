@@ -229,8 +229,7 @@ group:
     icon: mdi:home
     view: yes
     entities:
-      - script.people_tiles
-      - script.weather_information_tiles
+      - group.people_tiles
       - group.home_control
       - group.device_tiles
 
@@ -248,3 +247,4 @@ group:
     icon: mdi:human-handsup
     entities:
       - script.people_tiles
+      - script.weather_information_tiles
