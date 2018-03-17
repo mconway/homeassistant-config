@@ -223,7 +223,6 @@ script:
 
 input_text:
   dummy_tiles_information:
-    name: Weather
 
 group:
   default_view:
