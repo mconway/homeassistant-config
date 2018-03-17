@@ -89,7 +89,6 @@ homeassistant:
       config:
         columns: 6
         row_height: 54px
-        column_width: 62px
         gap: 8px
         color: 'hsl(192, 96%, 48%)'
         entities:
