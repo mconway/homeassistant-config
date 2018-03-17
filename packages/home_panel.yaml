@@ -124,7 +124,7 @@ homeassistant:
             text_sec_size: '0.7em'
             more_info: device_tracker.android1b27fe99b8b39bc3
 
-    script.weather_information_tiles:
+    input_text.weather_information_tiles:
       custom_ui_state_card: state-card-tiles
       config:
         columns: 8           
@@ -213,6 +213,67 @@ homeassistant:
             text_sec_color: 'hsl(0, 0%, 0%)'    #black
             icon_size: 12px
 
+    input_text.dummy_tiles_security:
+      custom_ui_state_card: state-card-tiles
+      config:
+        columns: 6           
+        row_height: 54px      
+        gap: 8px              
+        entities:
+          - entity: lock.1fl_deadbolt_door_main
+            label: Front
+            icon: mdi:door
+            column: 1
+            column_span: 2
+            row: 1             
+            row_span: 1          
+            color:  'hsl(0, 0%, 80%)'    #grey    
+            color_off: 'hsl(37, 96%, 48%)'  #orange
+            color_on:  'hsl(0, 0%, 80%)'    #grey 
+
+          - entity: lock.1fl_deadbolt_door_kitchen
+            label: Kitchen
+            icon: mdi:door
+            column: 3
+            column_span: 2
+            row: 1            
+            row_span: 1          
+            color:  'hsl(0, 0%, 80%)'    #grey    
+            color_off: 'hsl(37, 96%, 48%)'  #orange
+            color_on:  'hsl(0, 0%, 80%)'    #grey  
+
+          - entity: lock.1fl_deadbolt_door_garage
+            label: Garage
+            icon: mdi:door
+            column: 5
+            column_span: 2
+            row: 1             
+            row_span: 1          
+            color:  'hsl(0, 0%, 80%)'    #grey    
+            color_off: 'hsl(37, 96%, 48%)'  #orange
+            color_on:  'hsl(0, 0%, 80%)'    #grey 
+
+          - entity: cover.garage_door
+            label: "Garage Lift"
+            icon: mdi:garage
+            more_info: cover.garage_door
+            column: 1              
+            column_span: 6     
+            row: 2            
+            row_span: 1  
+            color: 'hsl(0, 0%, 80%)'    #grey        
+            color_on: 'hsl(37, 96%, 48%)'  #orange
+            color_off: 'hsl(0, 0%, 80%)'    #gr
+            label_sec_template: "return state + ' for ' + state_time;"
+            text_sec_color: "#eee"
+            text_sec_size: '0.7em'
+
+input_text:
+  dummy_tiles_security:
+    name: Security
+  weather_information_tiles:
+    name: Weather
+
 script:
   home_control:
     sequence:
@@ -247,4 +308,5 @@ group:
     icon: mdi:human-handsup
     entities:
       - script.people_tiles
-      - script.weather_information_tiles
+      - input_text.weather_information_tiles
+      - input_text.dummy_tiles_security
