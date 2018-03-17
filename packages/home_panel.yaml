@@ -124,6 +124,95 @@ homeassistant:
             text_sec_size: '0.7em'
             more_info: device_tracker.android1b27fe99b8b39bc3
 
+    input_text.dummy_tiles_information:
+      custom_ui_state_card: state-card-tiles
+      config:
+        columns: 8           
+        row_height: 35px      
+        gap: 0px              
+        color: 'hsl(192, 96%, 48%)'
+        text_size: '0.85em'
+        entities:
+          - entity: sensor.average_temperature
+            label_template: "return parseInt(state) + 'ºF'"
+            icon: mdi:thermometer
+            more_info: history_graph.temperature
+            column: 1
+            column_span: 2
+            row: 1            
+            row_span: 1          
+            color: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            color_on: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            color_off: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            text_color: 'hsl(0, 0%, 0%)'    #black
+            text_color_on: 'hsl(0, 0%, 0%)'    #black
+            text_color_off: 'hsl(0, 0%, 0%)'    #black
+            icon_size: 12px
+
+          - entity: sensor.average_humidity
+            label_template: "return parseInt(state) + '%'"
+            icon: mdi:weather-rainy
+            more_info: history_graph.humidity
+            column: 3
+            column_span: 2
+            row: 1              
+            row_span: 1          
+            color: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            color_on: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            color_off: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            text_color: 'hsl(0, 0%, 0%)'    #black
+            text_color_on: 'hsl(0, 0%, 0%)'    #black
+            text_color_off: 'hsl(0, 0%, 0%)'    #black
+            icon_size: 12px
+
+          - entity: sensor.average_illuminance
+            label_template: "return parseInt(state) + '%'"
+            icon: mdi:weather-sunny
+            more_info: history_graph.brightness
+            column: 5
+            column_span: 2
+            row: 1             
+            row_span: 1          
+            color: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            color_on: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            color_off: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            text_color: 'hsl(0, 0%, 0%)'    #black
+            text_color_on: 'hsl(0, 0%, 0%)'    #black
+            text_color_off: 'hsl(0, 0%, 0%)'    #black
+            icon_size: 12px
+
+          - entity: binary_sensor.hallway_thermostat_fan  
+            label_state: climate.hallway
+            icon: mdi:fan
+            column: 7              
+            column_span: 2
+            row: 1              
+            row_span: 1
+            color: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            color_on: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            color_off: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            text_color: 'hsl(0, 0%, 0%)'    #black
+            text_color_on: 'hsl(0, 0%, 0%)'    #black
+            text_color_off: 'hsl(0, 0%, 0%)'    #black
+            icon_size: 12px
+
+          - entity: sensor.weather_hourly_summary
+            label_state: sensor.weather_hourly_summary
+            icon_template: "return 'mdi:' + entities['sensor.weather_icon'].state;"
+            label_sec_template: "return parseInt(entities['sensor.weather_daily_low_temperature'].state) + 'ºF to ' + parseInt(entities['sensor.weather_daily_high_temperature'].state) + 'ºF'"
+            column: 1
+            column_span: 8
+            row: 2            
+            row_span: 3          
+            color: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            color_on: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            color_off: 'hsla(0, 0%, 98%, 0)'    #whitetransparent
+            text_color: 'hsl(0, 0%, 0%)'    #black
+            text_color_on: 'hsl(0, 0%, 0%)'    #black
+            text_color_off: 'hsl(0, 0%, 0%)'    #black
+            text_sec_color: 'hsl(0, 0%, 0%)'    #black
+            icon_size: 12px
+
 script:
   home_control:
     sequence:
@@ -132,13 +221,17 @@ script:
   people_tiles:
     sequence:
 
+input_text:
+  name: dummy_tiles_information
+
 group:
   default_view:
     name: Default
     icon: mdi:home
     view: yes
     entities:
-      - group.people_tiles
+      - script.people_tiles
+      - input_text.dummy_tiles_information
       - group.home_control
       - group.device_tiles
 
