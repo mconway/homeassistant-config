@@ -36,7 +36,7 @@ version: 20180121
               <iron-icon icon='[[entity.icon]]'></iron-icon>
             </template>
             <template is='dom-if' if='[[!entity.label_state]]'>
-              <br />[[entity.label]]
+              [[entity.label]]
             </template>
             <template is='dom-if' if='[[entity.label_state]]'>
               [[computeLabelState(hass, entity.label_state)]]
