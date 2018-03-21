@@ -163,7 +163,7 @@ homeassistant:
             icon_size: 12px
 
           - entity: sensor.dark_sky_wind_speed
-            label_template: sensor.dark_sky_wind_speed
+            label_template: "return parseFloat(state) + 'MPH'"
             icon: mdi:weather-windy
             #more_info: history_graph.brightness
             column: 5
