@@ -121,6 +121,38 @@ homeassistant:
             text_sec_size: '0.7em'
             more_info: device_tracker.android1b27fe99b8b39bc3
 
+          - entity: light.back_room
+            label: Back Room
+            icon: mdi:lightbulb-outline
+            column: 1              
+            column_span: 3         
+            row: 3             
+            row_span: 1          
+            color: 'hsl(192, 96%, 48%)'    #blue
+            color_on: 'hsl(37, 96%, 48%)'  #orange
+            color_off: 'hsl(192, 96%, 48%)'    #blue     
+            #secondary label
+            label_sec_template: "return state_time;"
+            text_sec_color: "#eee"
+            text_sec_size: '0.7em'
+            icon_size: 18px
+
+          - entity: light.kitchen
+            label: Kitchen
+            icon: mdi:lightbulb-outline
+            column: 4         
+            column_span: 3     
+            row: 3              
+            row_span: 1
+            color: 'hsl(192, 96%, 48%)'    #blue
+            color_on: 'hsl(37, 96%, 48%)'  #orange
+            color_off: 'hsl(192, 96%, 48%)'    #blue 
+            #secondary label
+            label_sec_template: "return entities['light.kitchen'].attributes.status;"
+            text_sec_color: "#eee"
+            text_sec_size: '0.7em'
+            text_sec_align: right  
+
           - entity: light.master_bedroom
             label: Master
             icon: mdi:lightbulb-outline  
@@ -137,7 +169,7 @@ homeassistant:
             text_sec_color: "#eee"
             text_sec_size: '0.7em'
 
-          - entity: light.back_room
+          - entity: light.kids_room
             label: Back Room
             icon: mdi:lightbulb-outline
             column: 3              
