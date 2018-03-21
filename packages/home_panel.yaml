@@ -12,29 +12,7 @@ homeassistant:
         #color_on: 'var(--primary-color)'
         #color_on: '#262B38'
         color_off: '#BBBEC2'
-        entities:
-          # lights
-          - entity: light.master_bedroom
-            icon: mdi:lightbulb
-            label: M
-            column: 1
-            row: 1
-          - entity: light.kids_rooms
-            icon: mdi:lightbulb
-            label: Kids
-            column: 2
-            row: 1
-
-          - entity: light.back_room
-            icon: mdi:lightbulb
-            label: "Back"
-            column: 5
-            row: 1
-          - entity: light.office
-            icon: mdi:castle
-            column: 6
-            row: 1
-          
+        entities:        
           #row 4
           - entity: automation.michaels_alarm
             icon: mdi:alarm
