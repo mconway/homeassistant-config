@@ -148,7 +148,7 @@ homeassistant:
             text_sec_size: '0.7em'
 
           - entity: light.kids_room
-            label: Back Room
+            label: Kids Rooms
             icon: mdi:lightbulb-outline
             column: 3              
             column_span: 2        
