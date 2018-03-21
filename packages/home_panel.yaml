@@ -85,7 +85,7 @@ homeassistant:
             more_info: device_tracker.goibniu_goibniu
 
           - entity: device_tracker.android1b27fe99b8b39bc3
-            icon: mdi:human-female
+            image: !secret mary_profile_pic
             column: 4
             column_span: 3
             row: 1
