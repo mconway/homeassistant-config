@@ -121,6 +121,53 @@ homeassistant:
             text_sec_size: '0.7em'
             more_info: device_tracker.android1b27fe99b8b39bc3
 
+          - entity: light.master_bedroom
+            label: First
+            icon: mdi:lightbulb-outline  
+            more_info: light.master_bedroom
+            column: 1              
+            column_span: 2      
+            row: 4      
+            row_span: 1         
+            color: 'hsl(0, 0%, 80%)'    #grey        
+            color_on: 'hsl(37, 96%, 48%)'  #orange
+            color_off: 'hsl(0, 0%, 80%)'    #grey 
+            icon_size: 18px
+            label_sec_template: "return state_time;"
+            text_sec_color: "#eee"
+            text_sec_size: '0.7em'
+
+          - entity: light.back_room
+            label: Second
+            icon: mdi:lightbulb-outline
+            column: 3              
+            column_span: 2        
+            row: 4             
+            row_span: 1          
+            color: 'hsl(0, 0%, 80%)'    #grey        
+            color_on: 'hsl(37, 96%, 48%)'  #orange
+            color_off: 'hsl(0, 0%, 80%)'    #grey 
+            icon_size: 18px  
+            label_sec_template: "return state_time;"
+            text_sec_color: "#eee"
+            text_sec_size: '0.7em'  
+
+          - entity: light.office
+            label: Third
+            icon: mdi:lightbulb-outline
+            column: 5              
+            column_span: 2        
+            row: 4            
+            row_span: 1      
+            color: 'hsl(0, 0%, 80%)'    #grey        
+            color_on: 'hsl(37, 96%, 48%)'  #orange
+            color_off: 'hsl(0, 0%, 80%)'    #grey  
+            icon_size: 18px
+            label_sec_template: "return state_time;"
+            text_sec_color: "#eee"
+            text_sec_size: '0.7em'
+
+
     input_text.weather_information_tiles:
       custom_ui_state_card: state-card-tiles
       config:
