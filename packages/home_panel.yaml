@@ -122,7 +122,7 @@ homeassistant:
             more_info: device_tracker.android1b27fe99b8b39bc3
 
           - entity: light.master_bedroom
-            label: First
+            label: Master
             icon: mdi:lightbulb-outline  
             more_info: light.master_bedroom
             column: 1              
@@ -138,7 +138,7 @@ homeassistant:
             text_sec_size: '0.7em'
 
           - entity: light.back_room
-            label: Second
+            label: Back Room
             icon: mdi:lightbulb-outline
             column: 3              
             column_span: 2        
@@ -153,7 +153,7 @@ homeassistant:
             text_sec_size: '0.7em'  
 
           - entity: light.office
-            label: Third
+            label: Office
             icon: mdi:lightbulb-outline
             column: 5              
             column_span: 2        
