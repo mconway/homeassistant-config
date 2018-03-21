@@ -86,6 +86,7 @@ homeassistant:
 
           - entity: device_tracker.android1b27fe99b8b39bc3
             image: !secret mary_profile_pic
+            label_state: device_tracker.android1b27fe99b8b39bc3
             column: 4
             column_span: 3
             row: 1
