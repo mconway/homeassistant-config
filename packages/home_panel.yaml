@@ -119,8 +119,8 @@ homeassistant:
             text_sec_size: '0.7em'
             icon_size: 18px
 
-          - entity: light.kitchen
-            label: Kitchen
+          - entity: switch.switch
+            label: Porch
             icon: mdi:lightbulb-outline
             column: 4         
             column_span: 3     
@@ -130,7 +130,7 @@ homeassistant:
             color_on: 'hsl(37, 96%, 48%)'  #orange
             color_off: 'hsl(192, 96%, 48%)'    #blue 
             #secondary label
-            label_sec_template: "return entities['light.kitchen'].attributes.status;"
+            label_sec_template: "return entities['switch.switch'].attributes.status;"
             text_sec_color: "#eee"
             text_sec_size: '0.7em'
             text_sec_align: right  
