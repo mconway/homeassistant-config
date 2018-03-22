@@ -47,7 +47,10 @@ homeassistant:
             icon: mdi:windows
             column: 2
             row: 1
-
+          - entity: sensor.nodens
+            icon: mdi:windows
+            column: 3
+            row: 1
           - entity: sensor.xboxone
             icon: mdi:xbox
             column: 4
@@ -178,7 +181,6 @@ homeassistant:
             text_sec_color: "#eee"
             text_sec_size: '0.7em'
 
-
     input_text.weather_information_tiles:
       custom_ui_state_card: state-card-tiles
       config:
@@ -304,16 +306,8 @@ group:
   home_control:
     name: Control Panel
     entities:
-      - script.home_control
-  device_tiles:
-    name: Devices
-    icon: mdi:owl
-    entities:
-      - script.device_tiles
-  people_tiles:
-    name: People
-    icon: mdi:human-handsup
-    entities:
       - script.people_tiles
       - input_text.weather_information_tiles
       - input_text.dummy_tiles_security
+      - script.device_tiles
+      - script.home_control
