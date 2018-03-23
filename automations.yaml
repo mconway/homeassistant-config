@@ -55,7 +55,9 @@
     platform: time
     at: '00:00:00'
   action:
-    service: light.turn_off
+    - service: light.turn_off
+    - service: switch.turn_off
+      entity_id: switch.switch
 - id: game_mood_lighting
   alias: Game Mood Lighting
   trigger:
