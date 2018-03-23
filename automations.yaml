@@ -196,8 +196,21 @@
       entity_id: sensor.camulos
       state: 'Online'
   action:
-    service: light.turn_on
-    entity_id: light.office
+    - service: light.turn_on
+      entity_id: light.office
+
+- id: lights_on_at_dusk
+  alias: 'Turn on the porch lights at dusk'
+  trigger:
+    - platform: sun
+      event: sunset
+  condition:
+    - condition: state
+      entity_id: switch.switch
+      state: 'off'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.switch
 
 - id: new_device_on_network
   alias: New Device On Network
