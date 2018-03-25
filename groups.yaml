@@ -61,7 +61,7 @@ cameratab:
   view: yes
   entities:
     - camera.garage
-    - group.camera_frontporchnorth
+    - group.camera_front_porch
 configtab:
   name: Config
   icon: mdi:settings

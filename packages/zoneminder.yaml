@@ -12,13 +12,13 @@ sensor:
     include_archived: false
 
 group:
-  camera_frontporchnorth:
+  camera_front_porch:
     name: Front Porch North
     view: no
     entities:
-      - sensor.frontporchnorth_status
-      - sensor.frontporchnorth_events
-      - camera.frontporchnorth
+      - sensor.front_porch_status
+      - sensor.front_porch_events
+      - camera.front_porch
   camera_garage:
     name: Garage
     view: no
@@ -49,7 +49,7 @@ automation:
     alias: Front Porch Motion
     trigger: 
       platform: state
-      entity_id: sensor.frontporchnorth_events
+      entity_id: sensor.front_porch_events
     condition:
       condition: template
       value_template: '{{ trigger.from_state.state < trigger.to_state.state }}'

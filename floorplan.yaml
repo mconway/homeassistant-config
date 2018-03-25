@@ -15,7 +15,7 @@ groups:
         class: 'light-off'
   - name: Cameras
     entities:
-      - camera.frontporchnorth
+      - camera.front_porch
     states:
       - state: 'idle'
         class: 'camera-idle'
