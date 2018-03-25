@@ -10,7 +10,7 @@ sensor:
         value_template: >-
           {%- if is_state("sensor.vision_zd2105us5_recessed_doorwindow_sensor_access_control", "23") %}
             Closed
-          {%- if is_state("sensor.vision_zd2105us5_recessed_doorwindow_sensor_access_control","22") %}
+          {%- elif is_state("sensor.vision_zd2105us5_recessed_doorwindow_sensor_access_control","22") %}
             Open
           {% else %}
             Unknown
