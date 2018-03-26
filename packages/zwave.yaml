@@ -8,7 +8,7 @@ sensor:
       front_door:
         friendly_name: "Front Door"
         value_template: >-
-          {%- if is_state("sensor.vision_zd2105us5_recessed_doorwindow_sensor_access_control", "23") %}
+          {%- if is_state("sensor.vision_zd2105us5_recessed_doorwindow_sensor_access_control", "23") or is_state("sensor.vision_zd2105us5_recessed_doorwindow_sensor_access_control","254") %}
             Closed
           {%- elif is_state("sensor.vision_zd2105us5_recessed_doorwindow_sensor_access_control","22") %}
             Open
