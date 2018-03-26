@@ -173,7 +173,7 @@
         if (!entity) { //|| DOMAIN_NO_TOGGLE.includes(entity.split('.')[0])
           return '';
         } else {
-          var state = hass.states[entity].state.lower();
+          var state = hass.states[entity].state.toLowerCase();
           var extraOffStates = ['offline','not_home'];
           return hass.states[entity] && (window.hassUtil.OFF_STATES.includes(state) || extraOffStates.includes(state)) ? 'off' : 'on';
         }
