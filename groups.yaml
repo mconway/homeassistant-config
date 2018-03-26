@@ -60,7 +60,7 @@ cameratab:
   icon: mdi:camcorder
   view: yes
   entities:
-    - camera.garage
+    - group.camera_driveway
     - group.camera_front_porch
 configtab:
   name: Config
