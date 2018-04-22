@@ -5,7 +5,7 @@
   window.CUSTOM_UI_LIST.push({
     name: 'Tiles custom state card',
     url: 'https://github.com/c727/home-assistant-tiles',
-    version: '20180401',
+    version: '20180420.2',
   });
 </script>
 
@@ -18,7 +18,7 @@
         grid-auto-rows: var(--tiles-row-height, 100px);
         grid-gap: var(--tiles-gap, 4px);
       }
-      paper-button {          
+      paper-button {
         box-shadow: none !important;
         margin: 0 !important;
         min-width: 30px;
@@ -83,7 +83,7 @@
 {
   const DOMAIN_SCRIPT = ['script', 'python_script'];
   const DOMAIN_SENSOR = ['sensor', 'binary_sensor', 'device_tracker'];
-  const DOMAIN_NO_ONOFF = DOMAIN_SCRIPT.concat('sensor', 'scene');
+  const DOMAIN_NO_ONOFF = DOMAIN_SCRIPT.concat('sensor', 'scene', 'weblink');
 
   const ON_STATES = ['on', 'open', 'locked', 'home'];
 
@@ -115,7 +115,7 @@
       if (config.columns != null) style['--tiles-columns'] = config.columns;
       if (config.column_width != null) style['--tiles-column-width'] = config.column_width;
       if (config.row_height != null) style['--tiles-row-height'] = config.row_height;
-      if (config.gap != null) style['--tiles-'] = config.gap;
+      if (config.gap != null) style['--tiles-gap'] = config.gap;
       if (config.color != null) style['--tiles-color'] = config.color;
       if (config.color_on != null) style['--tiles-color-on'] = config.color_on;
       if (config.color_off != null) style['--tiles-color-off'] = config.color_off;
@@ -172,7 +172,7 @@
       } else {
         var state = hass.states[entity].state.toLowerCase();
         var extraOffStates = ['offline','not_home'];
-        return hass.states[entity] && (window.hassUtil.OFF_STATES.includes(state) || extraOffStates.includes(state)) ? 'off' : 'on';
+        return hass.states[entity] && (window.hassUtil.OFF_STATES.includes(state) || extraOffStates.includes(state)) ? 'off' : 'on';      
       }
     }
 
@@ -189,7 +189,7 @@
       if (entity.text_color_on != null) style += ` --tiles-text-color-on: ${entity.text_color_on};`;
       if (entity.text_color_off != null) style += ` --tiles-text-color-off: ${entity.text_color_off};`;
       if (entity.text_size != null) style += ` --tiles-text-size: ${entity.text_size};`;
-      if (entity.text_uppercase != null) style += ' --tiles-text-transform: ' + (entity.text_uppercase ? 'uppercase' : 'none');
+      if (entity.text_uppercase != null) style += ` --tiles-text-transform: ${entity.text_uppercase ? 'uppercase' : 'none'};`;
       if (entity.text_sec_color != null) style += ` --tiles-text-sec-color: ${entity.text_sec_color};`;
       if (entity.text_sec_color_on != null) style += ` --tiles-text-sec-color-on: ${entity.text_sec_color_on};`;
       if (entity.text_sec_color_off != null) style += ` --tiles-text-sec-color-off: ${entity.text_sec_color_off};`;
@@ -209,7 +209,9 @@
       const entity_id = entity.entity;
       const stateDomain = entity_id.split('.')[0];
 
-      if (DOMAIN_SENSOR.includes(stateDomain) || entity.more_info) {
+      if (stateDomain === 'weblink') {
+        window.open(this.hass.states[entity_id].state, '_blank');
+      } else if (DOMAIN_SENSOR.includes(stateDomain) || entity.more_info) {
         this.fire('hass-more-info', { entityId: entity.more_info || entity_id });
       } else {
         let serviceDomain, service;
@@ -234,7 +236,7 @@
             case 'scene':
               serviceDomain = 'scene';
               service = 'turn_on';
-              break;        
+              break;
             default:
               serviceDomain = 'homeassistant';
               service = isOn ? 'turn_off' : 'turn_on';
