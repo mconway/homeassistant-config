@@ -188,11 +188,11 @@ panel_custom:
     sidebar_icon: mdi:home
     url_path: floorplan
     config: !include floorplan.yaml
- # - name: alarm
- #   sidebar_title: Alarm
- #   sidebar_icon: mdi:security-home
- #   config:
- #     alarmid: alarm_control_panel.house ## USE THE SAME ID AS USED IN YOUR ALARM.YAML
+  - name: alarm
+    sidebar_title: Alarm
+    sidebar_icon: mdi:security-home
+    config:
+      alarmid: alarm_control_panel.house ## USE THE SAME ID AS USED IN YOUR ALARM.YAML
 
 influxdb:
   host: !secret influxdb_host
