@@ -151,7 +151,7 @@ homeassistant:
             text_sec_color: "#eee"
             text_sec_size: '0.7em'
 
-          - entity: light.kids_room
+          - entity: light.kids_rooms
             label: Kids Rooms
             icon: mdi:lightbulb-outline
             column: 3              
@@ -166,7 +166,7 @@ homeassistant:
             text_sec_color: "#eee"
             text_sec_size: '0.7em'  
 
-          - entity: light.office
+          - entity: light.office_floor_lamp
             label: Office
             icon: mdi:lightbulb-outline
             column: 5              
