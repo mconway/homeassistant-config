@@ -4,9 +4,9 @@ homeassistant:
     script.home_control:
       custom_ui_state_card: state-card-tiles
       config:
-        columns: 7
-        row_height: 75px
-        gap: 15px
+        columns: 6
+        row_height: 54px
+        gap: 8px
         color: '#555B65'
         color_on: '#00CC33'
         #color_on: 'var(--primary-color)'
@@ -30,9 +30,9 @@ homeassistant:
     script.device_tiles:
       custom_ui_state_card: state-card-tiles
       config:
-        columns: 7
-        row_height: 75px
-        gap: 15px
+        columns: 6
+        row_height: 54px
+        gap: 8px
         color: '#555B65'
         color_on: '#00CC33'
         #color_on: 'var(--primary-color)'
