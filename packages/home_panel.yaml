@@ -12,32 +12,6 @@ homeassistant:
         #color_on: 'var(--primary-color)'
         #color_on: '#262B38'
         color_off: '#BBBEC2'
-        entities:        
-          #row 4
-          - entity: automation.michaels_alarm
-            icon: mdi:alarm
-            column: 1
-            row: 2
-          - entity: sensor.ups_status
-            icon: mdi:battery-charging
-            column: 3
-            row: 2
-          - entity: sensor.home
-            icon: mdi:home
-            label_state: sensor.home
-            column: 6
-            row: 2
-    script.device_tiles:
-      custom_ui_state_card: state-card-tiles
-      config:
-        columns: 6
-        row_height: 54px
-        gap: 8px
-        color: '#555B65'
-        color_on: '#00CC33'
-        #color_on: 'var(--primary-color)'
-        #color_on: '#262B38'
-        color_off: '#BBBEC2'
         entities:
           - entity: sensor.taranis
             icon: mdi:linux
@@ -63,6 +37,20 @@ homeassistant:
             icon: mdi:wii
             column: 6
             row: 1 
+          # row 2 - various other sensors.
+          - entity: automation.michaels_alarm
+            icon: mdi:alarm
+            column: 1
+            row: 2
+          - entity: sensor.ups_status
+            icon: mdi:battery-charging
+            column: 3
+            row: 2
+          - entity: sensor.home
+            icon: mdi:home
+            label_state: sensor.home
+            column: 6
+            row: 2
     script.people_tiles:
       custom_ui_state_card: state-card-tiles
       config:
@@ -301,7 +289,6 @@ group:
     entities:
       - group.people_tiles
       - group.home_control
-      - group.device_tiles
 
   home_control:
     name: Control Panel
@@ -309,5 +296,4 @@ group:
       - script.people_tiles
       - input_text.weather_information_tiles
       - input_text.dummy_tiles_security
-      - script.device_tiles
       - script.home_control
