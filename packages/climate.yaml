@@ -17,9 +17,12 @@ automation:
       condition: template
       value_template: '{{ trigger.from_state.attributes.temperature != trigger.to_state.attributes.temperature }}'
     action:
-      service: notify.slack
+      service: notify.default_group
       data_template: 
         message: ':fire: Thermostat changed (From {{ trigger.from_state.attributes.temperature }} to {{ trigger.to_state.attributes.temperature }})'
+        target: [
+          "448389226078273537"
+        ]
   - id: climate_away
     alias: Climate Away
     trigger:
@@ -35,9 +38,12 @@ automation:
         data:
           entity_id: climate.home
           away_mode: 'on'
-      - service: notify.slack
+      - service: notify.default_group
         data:
          message: ':fire: House empty for 30 minutes, setting thermostat to Away mode'
+         target: [
+            "448389226078273537"
+          ]
   - id: climate_home
     alias: Climate Home
     trigger:

@@ -26,4 +26,7 @@ automation:
       - service: notify.default_group
         data_template:
           message: "Front Door is {{ trigger.to_state.state }}"
+          target: [
+            "448389226078273537"
+          ]
     

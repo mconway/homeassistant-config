@@ -10,6 +10,9 @@
     service: notify.default_group
     data:
       message: ':house: Michael is {{ states("device_tracker.goibniu_goibniu") }}'
+      target: [
+        "448389226078273537"
+      ]
 - id: presence_mary
   alias: Mary's Presence
   trigger:
@@ -19,6 +22,9 @@
     service: notify.default_group
     data:
       message: ':house: Mary is {{ states("device_tracker.androidbef3f8fe91bdecb1") }}'
+      target: [
+        "448389226078273537"
+      ]
 - id: presence_people
   alias: Presence
   trigger:
@@ -28,6 +34,9 @@
     service: notify.default_group
     data:
       message: ':house: Someone is {{ states("group.people") }}'
+      target: [
+        "448389226078273537"
+      ]
 
 - id: update_notifications
   alias: Update notifications
@@ -45,9 +54,12 @@
     platform: homeassistant
     event: start
   action:
-    - service: notify.slack
+    - service: notify.default_group
       data:
         message: ":white_check_mark: Home Assistant is now Running.\n@bishop is online. :robot_face:"
+        target: [
+          "448389226078273537"
+        ]
 
 - id: lights_off_midnight
   alias: Lights Out At Midnight
