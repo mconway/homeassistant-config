@@ -4,6 +4,7 @@ notify:
     api_key: !secret slack_api_key
     default_channel: '#home-automation'
   - platform: discord
+    name: discord
     token: !secret discord_token
   - platform: kodi
     name: kodi
