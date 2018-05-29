@@ -5,7 +5,7 @@
   window.CUSTOM_UI_LIST.push({
     name: 'Tiles custom state card',
     url: 'https://github.com/c727/home-assistant-tiles',
-    version: '20180420.2',
+    version: '20180521',
   });
 </script>
 
@@ -85,9 +85,9 @@
   const DOMAIN_SENSOR = ['sensor', 'binary_sensor', 'device_tracker'];
   const DOMAIN_NO_ONOFF = DOMAIN_SCRIPT.concat('sensor', 'scene', 'weblink');
 
-  const ON_STATES = ['on', 'open', 'locked', 'home'];
+  const ON_STATES = ['on', 'open', 'locked', 'home', 'online'];
 
-  class StateCardTiles extends window.hassMixins.EventsMixin(Polymer.Element) {
+  class StateCardTiles extends Polymer.Element {
     static get is() { return 'state-card-tiles'; }
     static get properties() {
       return {
@@ -167,12 +167,11 @@
     }
 
     computeClass(hass, entity) {
-      if (!entity) { //|| DOMAIN_NO_ONOFF.includes(entity.split('.')[0])
+      if (!entity || DOMAIN_NO_ONOFF.includes(entity.split('.')[0])) {
         return '';
       } else {
         var state = hass.states[entity].state.toLowerCase();
-        var extraOffStates = ['offline','not_home'];
-        return hass.states[entity] && (window.hassUtil.OFF_STATES.includes(state) || extraOffStates.includes(state)) ? 'off' : 'on';      
+        return hass.states[entity] && ON_STATES.includes(state) ? 'on' : 'off';
       }
     }
 
@@ -245,6 +244,20 @@
         this.hass.callService(serviceDomain, service, data);
       }
       ev.stopPropagation();
+    }
+
+    fire(type, detail, options) {
+      options = options || {};
+      detail = (detail === null || detail === undefined) ? {} : detail;
+      const event = new Event(type, {
+        bubbles: options.bubbles === undefined ? true : options.bubbles,
+        cancelable: Boolean(options.cancelable),
+        composed: options.composed === undefined ? true : options.composed
+      });
+      event.detail = detail;
+      const node = options.node || this;
+      node.dispatchEvent(event);
+      return event;
     }
 
     stopPropagation(ev) {
