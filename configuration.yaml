@@ -33,7 +33,7 @@ frontend:
     darkcyan: !include themes/darkcyan.yaml
     midnight: !include themes/midnight.yaml
     vintage: !include themes/vintage.yaml
-  javascript_version: latest
+  javascript_version: auto
 
 media_player:
   platform: plex
