@@ -205,6 +205,12 @@ influxdb:
   tags_attributes:
     - friendly_name
 
+panel_iframe:
+  nodered:
+    title: 'Node Red'
+    icon: 'mdi:shuffle-variant'
+    url: 'http://taranis:1880'
+
 ##########################################################################
 #                               Includes                                ##
 ##########################################################################
