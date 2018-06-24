@@ -154,7 +154,7 @@ homeassistant:
             text_sec_color: "#eee"
             text_sec_size: '0.7em'  
 
-          - entity: light.office_floor_lamp
+          - entity: light.office
             label: Office
             icon: mdi:lightbulb-outline
             column: 5              
