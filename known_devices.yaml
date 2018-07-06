@@ -84,7 +84,7 @@ aibell:
 
 goibniu_goibniu:
   name: Michael
-  mac: 74:A5:28:5E:B8:9A
+  mac: AC:37:43:4E:FA:AD
   picture: 
   track: true
   hide_if_away: false
@@ -321,33 +321,6 @@ androidbef3f8fe91bdecb1:
   track: true
   vendor: Motorola Mobility LLC, a Lenovo Company
 
-a8d0e5dd27f0:
-  hide_if_away: false
-  icon:
-  mac: A8:D0:E5:DD:27:F0
-  name: a8d0e5dd27f0
-  picture:
-  track: false
-  vendor: unknown
-
-782bcb3379ab:
-  hide_if_away: false
-  icon:
-  mac: 78:2B:CB:33:79:AB
-  name: 782bcb3379ab
-  picture:
-  track: false
-  vendor: Dell Inc.
-
-desktop8056u8d:
-  hide_if_away: false
-  icon:
-  mac: 00:26:C7:68:4D:20
-  name: DESKTOP-8056U8D
-  picture:
-  track: false
-  vendor: Intel Corporate
-
 amc020mjn4ef2747gk:
   hide_if_away: false
   icon:
@@ -410,51 +383,6 @@ gears3b319:
   picture:
   track: false
   vendor: Samsung Electronics Co.,Ltd
-
-iphone:
-  hide_if_away: false
-  icon:
-  mac: B0:70:2D:E8:45:52
-  name: iPhone
-  picture:
-  track: false
-  vendor: Apple, Inc.
-
-00012e81b540:
-  hide_if_away: false
-  icon:
-  mac: 00:01:2E:81:B5:40
-  name: 00012e81b540
-  picture:
-  track: false
-  vendor: PC Partner Ltd.
-
-00012e81b53f:
-  hide_if_away: false
-  icon:
-  mac: 00:01:2E:81:B5:3F
-  name: 00012e81b53f
-  picture:
-  track: false
-  vendor: PC Partner Ltd.
-
-9801a721020f:
-  hide_if_away: false
-  icon:
-  mac: 98:01:A7:21:02:0F
-  name: 9801a721020f
-  picture:
-  track: false
-  vendor: Apple, Inc.
-
-ac37434efaad:
-  hide_if_away: false
-  icon:
-  mac: AC:37:43:4E:FA:AD
-  name: ac37434efaad
-  picture:
-  track: false
-  vendor: HTC Corporation
 
 b46bfcdcb5d6:
   hide_if_away: false
