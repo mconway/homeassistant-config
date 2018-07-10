@@ -3,6 +3,10 @@ homeassistant:
     group.weather_tab:
       order: 1
 
+weather:
+  - platform: darksky
+    api_key: !secret forecast_api_key
+
 sensor:
   - platform: darksky
     api_key: !secret forecast_api_key

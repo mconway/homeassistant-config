@@ -9,3 +9,5 @@ views:
         entity: camera.front_porch
       - type: picture-entity
         entity: camera.driveway
+      - type: weather-forecast
+        entity: weather.darksky
