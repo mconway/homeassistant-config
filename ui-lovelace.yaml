@@ -10,4 +10,4 @@ views:
       - type: picture-entity
         entity: camera.driveway
       - type: weather-forecast
-        entity: weather.darksky
+        entity: weather.dark_sky
