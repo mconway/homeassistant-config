@@ -5,7 +5,7 @@ views:
     # Name of the view. Will be used as the tooltip for tab icon
     name: Home
     cards:
-      - type: camera-preview
+      - type: picture-entity
         entity: camera.front_porch
-      - type: camera-preview
+      - type: picture-entity
         entity: camera.driveway
