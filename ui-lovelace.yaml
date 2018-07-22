@@ -12,7 +12,7 @@ views:
       - type: weather-forecast
         entity: weather.dark_sky
       - type: picture-elements
-        image: https://home.wiredbyte.com/s/kCLQMJjaZDK2imc
+        image: https://home.wiredbyte.com/s/kCLQMJjaZDK2imc/preview
         elements:
           - type: state-icon
             entity: sensor.memory_free
@@ -28,14 +28,17 @@ views:
               font-family: Trebuchet MS
               font-size: 90%
               font-weight: 550
+          - type: state-icon
+            entity: sensor.last_boot
+            style:
+              top: 80%
+              left: 50%
           - type: state-label
             entity: sensor.last_boot
             style:
-              top: 45%
+              top: 90%
               left: 50%
-              text-overflow: ellipsis
+              text-shadow: 2px 2px black
+              font-family: Trebuchet MS
               font-size: 90%
               font-weight: 550
-              font-family: Trebuchet MS
-              letter-spacing: 0.38px
-              text-shadow: 2px 2px black
