@@ -5,12 +5,30 @@ views:
     # Name of the view. Will be used as the tooltip for tab icon
     name: Home
     cards:
-      - type: picture-entity
-        entity: camera.front_porch
-      - type: picture-entity
-        entity: camera.driveway
+      - type: horizontal-stack
+        cards:
+          - type: picture-entity
+            entity: camera.front_porch
+          - type: picture-entity
+            entity: camera.driveway
+
+      - type: horizontal-stack
+        cards:
+          - type: picture-glance
+            image: !secret mike_profile_pic
+            title: Michael
+            entities:
+              - device_tracker.goibniu_goibniu
+              - sensor.battery_goibniu
+          - type: picture-glance
+            image: !secret mary_profile_pic
+            title: Michael
+            entities:
+              - device_tracker.android1b27fe99b8b39bc3
+
       - type: weather-forecast
         entity: weather.dark_sky
+        
       - type: picture-elements
         image: https://home.wiredbyte.com/s/kCLQMJjaZDK2imc/preview
         elements:
