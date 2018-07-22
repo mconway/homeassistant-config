@@ -42,3 +42,17 @@ views:
               font-family: Trebuchet MS
               font-size: 90%
               font-weight: 550
+          - type: state-icon
+            entity: sensor.disk_free_
+            style:
+              top: 80%
+              left: 66.6%
+          - type: state-label
+            entity: sensor.disk_free_
+            style:
+              top: 90%
+              left: 66.6%
+              text-shadow: 2px 2px black
+              font-family: Trebuchet MS
+              font-size: 90%
+              font-weight: 550
