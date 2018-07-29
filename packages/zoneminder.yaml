@@ -36,27 +36,3 @@ group:
 
 shell_command:
   get_latest_zm_event: 'python3 /config/commands/zoneminder_events.py --fromha=True'
-
-automation:
-  - id: front_porch_motion_notifications
-    alias: Front Porch Motion
-    trigger: 
-      platform: state
-      entity_id: sensor.front_porch_events
-    condition:
-      condition: template
-      value_template: '{{ trigger.from_state.state < trigger.to_state.state }}'
-    action:
-      - service: shell_command.get_latest_zm_event
-  - id: front_door_motion_notification
-    alias: Front Door Motion
-    trigger: 
-      platform: state
-      entity_id: sensor.fand_events
-    action:
-      - service: notify.slack
-        data_template: 
-          message: ':door: New motion event at Front Door (From {{ trigger.from_state.state }} to {{ trigger.to_state.state }}'
-      - service: notify.notify
-        data_template:
-          message: "Motion has been detected at the Front Door"

@@ -14,19 +14,4 @@ sensor:
             Open
           {% else %}
             Unknown
-          {% endif %}
-
-automation:
-  - id: front_door_state_change
-    alias: 'Front Door Events'
-    trigger:
-      - platform: state
-        entity_id: sensor.front_door
-    action:
-      - service: notify.default_group
-        data_template:
-          message: "Front Door is {{ trigger.to_state.state }}"
-          target: [
-            "448389226078273537"
-          ]
-    
+          {% endif %}    
