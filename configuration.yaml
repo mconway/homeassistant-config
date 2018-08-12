@@ -45,13 +45,8 @@ apcupsd:
   host: taranis
 
 device_tracker:
-  - platform: asuswrt
-    host: !secret router_ip
-    username: !secret asus_username
-    password: !secret asus_password
-    protocol: ssh
-    track_new_devices: False
   - platform: owntracks
+    track_new_devices: False
 
 mqtt:
   broker: taranis
