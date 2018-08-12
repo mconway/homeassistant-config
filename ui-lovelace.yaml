@@ -7,16 +7,20 @@ views:
     cards:
       - type: horizontal-stack
         cards:
-          - type: picture-glance
+          - type: picture-elements
             image: https://home.wiredbyte.com/s/88dDxDBjkkWzB9T/preview
             title: Michael
             style:
               width: 230px
               height: 230px
-            entities:
-              - device_tracker.goibniu_goibniu
-              - sensor.battery_goibniu
-          - type: picture-glance
+            elements:
+              - type: state-icon
+                entity: device_tracker.goibniu_goibniu
+              - type: state-icon
+                entity: sensor.battery_goibniu
+              - type: state-label
+                entity: sensor.battery_goibniu
+          - type: picture-elements
             image: https://home.wiredbyte.com/s/35c3ryFePnAKPSF/preview
             title: Mary
             style:
