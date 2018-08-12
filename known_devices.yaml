@@ -391,3 +391,11 @@ b46bfcdcb5d6:
   name: b46bfcdcb5d6
   picture:
   track: false
+
+aidenphone_aidenphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: aidenphone
+  picture:
+  track: false
