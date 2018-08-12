@@ -23,11 +23,9 @@ views:
           - type: picture-elements
             image: https://home.wiredbyte.com/s/35c3ryFePnAKPSF/preview
             title: Mary
-            style:
-              width: 230px
-              height: 230px
-            entities:
-              - device_tracker.android1b27fe99b8b39bc3
+            elements:
+              - type: state-icon
+                entity: device_tracker.android1b27fe99b8b39bc3
 
       - type: weather-forecast
         entity: weather.dark_sky
