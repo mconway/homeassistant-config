@@ -4,73 +4,82 @@ views:
   - tab_icon: mdi:home-assistant
     # Name of the view. Will be used as the tooltip for tab icon
     name: Home
+    panel: true
     cards:
       - type: horizontal-stack
         cards:
-          - type: picture-entity
-            entity: camera.front_porch
-          - type: picture-entity
-            entity: camera.driveway
-
-      - type: horizontal-stack
-        cards:
-          - type: picture-glance
+          - type: picture-element
             image: https://home.wiredbyte.com/s/kCLQMJjaZDK2imc/preview
-            title: Michael
-            entities:
-              - device_tracker.goibniu_goibniu
-              - sensor.battery_goibniu
-          - type: picture-glance
+            elements:
+              - type: state-badge
+                entity: sensor.front_door
+                
+          - type: horizontal-stack
+            cards:
+              - type: picture-entity
+                entity: camera.front_porch
+              - type: picture-entity
+                entity: camera.driveway
+
+          - type: horizontal-stack
+            cards:
+              - type: picture-glance
+                image: https://home.wiredbyte.com/s/kCLQMJjaZDK2imc/preview
+                title: Michael
+                entities:
+                  - device_tracker.goibniu_goibniu
+                  - sensor.battery_goibniu
+              - type: picture-glance
+                image: https://home.wiredbyte.com/s/kCLQMJjaZDK2imc/preview
+                title: Mary
+                entities:
+                  - device_tracker.android1b27fe99b8b39bc3
+
+          - type: weather-forecast
+            entity: weather.dark_sky
+
+          - type: picture-elements
             image: https://home.wiredbyte.com/s/kCLQMJjaZDK2imc/preview
-            title: Mary
-            entities:
-              - device_tracker.android1b27fe99b8b39bc3
-
-      - type: weather-forecast
-        entity: weather.dark_sky
-
-      - type: picture-elements
-        image: https://home.wiredbyte.com/s/kCLQMJjaZDK2imc/preview
-        elements:
-          - type: state-icon
-            entity: sensor.memory_free
-            style:
-              top: 80%
-              left: 33.3%
-          - type: state-label
-            entity: sensor.memory_free
-            style:
-              top: 90%
-              left: 33.3%
-              text-shadow: 2px 2px black
-              font-family: Trebuchet MS
-              font-size: 90%
-              font-weight: 550
-          - type: state-icon
-            entity: sensor.last_boot
-            style:
-              top: 80%
-              left: 50%
-          - type: state-label
-            entity: sensor.last_boot
-            style:
-              top: 90%
-              left: 50%
-              text-shadow: 2px 2px black
-              font-family: Trebuchet MS
-              font-size: 90%
-              font-weight: 550
-          - type: state-icon
-            entity: sensor.disk_free_
-            style:
-              top: 80%
-              left: 66.6%
-          - type: state-label
-            entity: sensor.disk_free_
-            style:
-              top: 90%
-              left: 66.6%
-              text-shadow: 2px 2px black
-              font-family: Trebuchet MS
-              font-size: 90%
-              font-weight: 550
+            elements:
+              - type: state-icon
+                entity: sensor.memory_free
+                style:
+                  top: 80%
+                  left: 33.3%
+              - type: state-label
+                entity: sensor.memory_free
+                style:
+                  top: 90%
+                  left: 33.3%
+                  text-shadow: 2px 2px black
+                  font-family: Trebuchet MS
+                  font-size: 90%
+                  font-weight: 550
+              - type: state-icon
+                entity: sensor.last_boot
+                style:
+                  top: 80%
+                  left: 50%
+              - type: state-label
+                entity: sensor.last_boot
+                style:
+                  top: 90%
+                  left: 50%
+                  text-shadow: 2px 2px black
+                  font-family: Trebuchet MS
+                  font-size: 90%
+                  font-weight: 550
+              - type: state-icon
+                entity: sensor.disk_free_
+                style:
+                  top: 80%
+                  left: 66.6%
+              - type: state-label
+                entity: sensor.disk_free_
+                style:
+                  top: 90%
+                  left: 66.6%
+                  text-shadow: 2px 2px black
+                  font-family: Trebuchet MS
+                  font-size: 90%
+                  font-weight: 550
