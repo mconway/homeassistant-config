@@ -138,6 +138,27 @@
           {% else %}
             mdi:battery-alert
           {% endif %}
+    battery_aiden:
+      friendly_name: Aiden Battery
+      # "entity_id:" ensures that this sensor will only update when your device tracker does.
+      entity_id: device_tracker.aidenphone_aidenphone
+      unit_of_measurement: '%'
+      value_template: >-
+          {%- if states.device_tracker.aidenphone_aidenphone.attributes.battery %}
+              {{ states.device_tracker.aidenphone_aidenphone.attributes.battery|round }}
+          {% else %}
+              {{ states.sensor.battery_aidenphone_aidenphone.state }}
+          {%- endif %}
+      icon_template: >
+          {% set battery_level = states.sensor.battery_aidenphone_aidenphone.state|default(0)|int %}
+          {% set battery_round = (battery_level / 10) |int * 10 %}
+          {% if battery_round >= 100 %}
+            mdi:battery
+          {% elif battery_round > 0 %}
+            mdi:battery-{{ battery_round }}
+          {% else %}
+            mdi:battery-alert
+          {% endif %}
         
 - platform: speedtest
   minute: 30
