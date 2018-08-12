@@ -10,12 +10,18 @@ views:
           - type: picture-glance
             image: https://home.wiredbyte.com/s/88dDxDBjkkWzB9T/preview
             title: Michael
+            style:
+              width: 230px
+              height: 230px
             entities:
               - device_tracker.goibniu_goibniu
               - sensor.battery_goibniu
           - type: picture-glance
             image: https://home.wiredbyte.com/s/35c3ryFePnAKPSF/preview
             title: Mary
+            style:
+              width: 230px
+              height: 230px
             entities:
               - device_tracker.android1b27fe99b8b39bc3
 
