@@ -19,11 +19,17 @@ views:
                 entity: device_tracker.goibniu_goibniu
                 style:
                   top: 93%
-                  left: 15%
+                  left: 25%
               - type: state-icon
                 entity: sensor.battery_goibniu
+                style:
+                  top: 93%
+                  left: 75%
               - type: state-label
                 entity: sensor.battery_goibniu
+                style:
+                  top: 93%
+                  left: 90%
           - type: picture-glance
             image: https://home.wiredbyte.com/s/35c3ryFePnAKPSF/preview
             title: Mary
