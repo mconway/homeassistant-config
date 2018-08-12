@@ -8,12 +8,12 @@ views:
     cards:
       - type: horizontal-stack
         cards:
-          - type: picture-element
+          - type: picture-elements
             image: https://home.wiredbyte.com/s/kCLQMJjaZDK2imc/preview
             elements:
               - type: state-badge
                 entity: sensor.front_door
-                
+
           - type: horizontal-stack
             cards:
               - type: picture-entity
