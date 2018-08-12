@@ -13,22 +13,22 @@ views:
               - type: state-icon
                 entity: device_tracker.goibniu_goibniu
                 style:
-                  top: 93%
+                  top: 90%
                   left: 10%
               - type: state-label
                 entity: device_tracker.goibniu_goibniu
                 style:
-                  top: 93%
-                  left: 25%
+                  top: 90%
+                  left: 30%
               - type: state-icon
                 entity: sensor.battery_goibniu
                 style:
-                  top: 93%
+                  top: 90%
                   left: 75%
               - type: state-label
                 entity: sensor.battery_goibniu
                 style:
-                  top: 93%
+                  top: 90%
                   left: 90%
           - type: picture-glance
             image: https://home.wiredbyte.com/s/35c3ryFePnAKPSF/preview
@@ -41,22 +41,22 @@ views:
               - type: state-icon
                 entity: device_tracker.aidenphone_aidenphone
                 style:
-                  top: 93%
+                  top: 90%
                   left: 10%
               - type: state-label
                 entity: device_tracker.aidenphone_aidenphone
                 style:
-                  top: 93%
-                  left: 25%
+                  top: 90%
+                  left: 30%
               - type: state-icon
-                entity: sensor.battery_aidenphone
+                entity: sensor.battery_aiden
                 style:
-                  top: 93%
+                  top: 90%
                   left: 75%
               - type: state-label
-                entity: sensor.battery_aidenphone
+                entity: sensor.battery_aiden
                 style:
-                  top: 93%
+                  top: 90%
                   left: 90%
 
       - type: weather-forecast
