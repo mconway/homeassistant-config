@@ -140,3 +140,12 @@ views:
           type: glance
           title: Steam
         show_empty: false
+    
+    - type: media-control
+      entity: media_player.aidens_room
+    - type: media-control
+      entity: media_player.lillys_room
+    - type: media-control
+      entity: media_player.master_bedroom
+    - type: media-control
+      entity: media_player.kitchen
