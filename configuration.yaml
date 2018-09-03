@@ -48,6 +48,12 @@ device_tracker:
   - platform: owntracks
     track_new_devices: False
 
+media_player:
+  - platform: alexa
+    email: !secret email_address
+    password: !secret amazon_password
+    url: "amazon.com"
+
 mqtt:
   broker: taranis
   port: 1883
