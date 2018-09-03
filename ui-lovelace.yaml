@@ -122,3 +122,21 @@ views:
         entities:
           - sensor.front_door_battery
           - sensor.siren_battery
+
+      - type: entity-filter
+        entities:
+          - sensor.steam_76561197993153035
+          - sensor.steam_76561198355581858
+          - sensor.steam_76561198402756271
+          - sensor.steam_76561198008190846
+        state_filter:
+          - 'online'
+          - 'busy'
+          - 'away'
+          - 'snooze'
+          - 'looking_to_trade'
+          - 'looking_to_play'
+        card:
+          type: glance
+          title: Steam
+        show_empty: false

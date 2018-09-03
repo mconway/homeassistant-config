@@ -195,6 +195,9 @@
   api_key: !secret steam_api_key
   accounts:
     - !secret mike_steam_id
+    - !secret mary_steam_id
+    - !secret aiden_steam_id
+    - !secret lilly_steam_id
 - platform: xbox_live
   api_key: !secret xbox_api_key
   xuid:
