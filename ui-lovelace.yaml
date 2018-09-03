@@ -36,7 +36,7 @@ views:
             entities:
               - device_tracker.android1b27fe99b8b39bc3
           - type: picture-elements
-            image: https://home.wiredbyte.com/s/B5CRpknfz62GCoG/preview
+            image: https://home.wiredbyte.com/s/B3zDH6TWYRWTRQ8/preview
             elements:
               - type: state-icon
                 entity: device_tracker.aidenphone_aidenphone
