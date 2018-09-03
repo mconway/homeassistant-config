@@ -116,3 +116,11 @@ views:
               entity: camera.front_porch
             - type: picture-entity
               entity: camera.driveway
+
+      - type: entity-filter
+        entities:
+          - sensor.front_door_battery
+          - sensor.siren_battery
+        card:
+          type: glance
+          title: Battery Levels
