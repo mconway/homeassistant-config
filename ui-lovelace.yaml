@@ -117,22 +117,8 @@ views:
             - type: picture-entity
               entity: camera.driveway
 
-      - type: entity-filter
+      - type: glance
+        title: Battery Levels
         entities:
           - sensor.front_door_battery
           - sensor.siren_battery
-        filter:
-          - "100"
-          - "90"
-          - "80"
-          - "70"
-          - "60"
-          - "50"
-          - "40"
-          - "30"
-          - "20"
-          - "10"
-          - "0"
-        card:
-          type: glance
-          title: Battery Levels
