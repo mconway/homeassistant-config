@@ -83,10 +83,6 @@ views:
                 entity: media_player.master_bedroom
               - type: media-control
                 entity: media_player.kitchen
-          - type: map
-            entities:
-              - device_tracker.goibniu_goibniu
-              - device_tracker.aidensphone_aidensphone
 
       - type: weather-forecast
         entity: weather.dark_sky
