@@ -87,6 +87,15 @@ views:
       - type: weather-forecast
         entity: weather.dark_sky
 
+      - type: entities
+        title: Lights
+        entities:
+          - light.office
+          - light.master_bedroom
+          - light.aidens_room
+          - light.lillys_room
+          - light.back_room
+
       - type: picture-elements
         image: https://home.wiredbyte.com/s/kCLQMJjaZDK2imc/preview
         elements:
