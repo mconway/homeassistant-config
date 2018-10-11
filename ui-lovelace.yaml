@@ -1,7 +1,7 @@
 name: My Awesome Home
 views:
     # Specify a tab_icon if you want the view tab to be an icon.
-  - tab_icon: mdi:home-assistant
+  - icon: mdi:home-assistant
     # Name of the view. Will be used as the tooltip for tab icon
     name: Home
     cards:
