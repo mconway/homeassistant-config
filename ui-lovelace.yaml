@@ -95,6 +95,14 @@ views:
           - light.aidens_room
           - light.lillys_room
           - light.back_room
+          - switch.switch
+
+      - type: entities
+        title: Sensors
+        entities:
+          - binary_sensor.dome_doorwindow_sensor_sensor
+          - sensor.front_door
+          - cover.garage_door
 
       - type: picture-elements
         image: https://home.wiredbyte.com/s/kCLQMJjaZDK2imc/preview
