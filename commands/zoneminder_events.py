@@ -5,6 +5,7 @@ try:
     import requests
     from datetime import datetime, timedelta
     from slacker import Slacker
+    import discord
 except Exception as e:
     print("EXCEPTION: %s" % e)
 
@@ -20,6 +21,7 @@ def main():
             username = secrets['zm_username']
             password = secrets['zm_password']
             slack_key = secrets['slack_api_key']
+            discord_key = secrets['discord_token']
         else:
             host = args.host
             username = args.username
@@ -59,8 +61,11 @@ def main():
             msg = "New event %s from %s: Frames - %d/%d @ %s for %s seconds. Score - %d\n%s" % (event['Event']['Id'], event['Event']['MonitorId'], int(event['Event']['AlarmFrames']), int(event['Event']['Frames']), event['Event']['StartTime'], event['Event']['Length'], int(event['Event']['AvgScore']), frameUrl)
             print(msg)
 
-            if(slack_key != None):
+            if(platform == "slack" and slack_key != None)
                 slack_message(msg, slack_key)
+            if(platform == "discord" and discord_key != None)
+                await async_send_message(msg, discord_key)
+
     except Exception as e:
         print("Error " + e)
 
@@ -77,6 +82,23 @@ def get_args():
     parser.add_argument("--key")
     parser.add_argument("--view", required=False, default="console")
     parser.add_argument("--fromha", required=False, default=False)
+    parser.add_argument("--platform", required=False, default="discord")
     return parser.parse_args()
+
+async def async_send_message(message, key)
+    discord_bot = discord.Client();
+
+    @discord_bot.event
+    async def on_ready():
+        try:
+            channelid="502662074913128448"
+            channel = discord.Object(id=channelid)
+            await discord_bot.send_message(channel, message)
+        except (discord.errors.HTTPException, discord.errors.NotFound) as error:
+            print(error)
+        await discord_bot.logout()
+        await discord_bot.close()
+    
+    await discord_bot.start(key)
 
 main()
