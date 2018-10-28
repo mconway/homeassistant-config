@@ -65,14 +65,7 @@ views:
                 title: Mary
                 entities:
                   - device_tracker.android1b27fe99b8b39bc3
-          - type: horizontal-stack
-            cards:
-            - type: horizontal-stack
-              cards:
-                - type: picture-entity
-                  entity: camera.front_porch
-                - type: picture-entity
-                  entity: camera.driveway
+
           - type: horizontal-stack
             cards:
               - type: media-control
@@ -107,19 +100,6 @@ views:
           - type: entity-button
             entity: switch.switch
 
-      - type: entities
-        title: Sensors
-        entities:
-          - binary_sensor.dome_doorwindow_sensor_sensor
-          - sensor.front_door
-          - cover.garage_door
-
-      - type: glance
-        title: Battery Levels
-        entities:
-          - sensor.front_door_battery
-          - sensor.siren_battery
-
       - type: entity-filter
         entities:
           - sensor.steam_76561197993153035
@@ -137,14 +117,9 @@ views:
           type: glance
           title: Steam
         show_empty: false
-      - type: alarm-panel
-        title: House Alarm
-        entity: alarm_control_panel.house
       - type: thermostat
         entity: climate.home
 
-
-    
   - icon: mdi:settings
     name: System Status
     cards:
@@ -242,4 +217,29 @@ views:
               font-family: Trebuchet MS
               font-size: 90%
               font-weight: 550
+
+  - icon: mdi:shield-outline
+    name: Security
+    cards:
+      - type: alarm-panel
+        title: House Alarm
+        entity: alarm_control_panel.house
+      - type: entities
+        title: Sensors
+        entities:
+          - binary_sensor.dome_doorwindow_sensor_sensor
+          - sensor.front_door
+          - cover.garage_door
+      - type: glance
+        title: Battery Levels
+        entities:
+          - sensor.front_door_battery
+          - sensor.siren_battery
+      - type: horizontal-stack
+          cards:
+            - type: picture-entity
+              entity: camera.front_porch
+            - type: picture-entity
+              entity: camera.driveway
+
       
