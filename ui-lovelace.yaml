@@ -236,10 +236,10 @@ views:
           - sensor.front_door_battery
           - sensor.siren_battery
       - type: horizontal-stack
-          cards:
-            - type: picture-entity
-              entity: camera.front_porch
-            - type: picture-entity
-              entity: camera.driveway
+        cards:
+          - type: picture-entity
+            entity: camera.front_porch
+          - type: picture-entity
+            entity: camera.driveway
 
       
