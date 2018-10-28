@@ -96,6 +96,16 @@ views:
           - light.lillys_room
           - light.back_room
           - switch.switch
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            entity: light.office
+          - type: entity-button
+            entity: light.back_room
+          - type: entity-button
+            entity: light.master_bedroom
+          - type: entity-button
+            entity: switch.switch
 
       - type: entities
         title: Sensors
@@ -127,6 +137,13 @@ views:
           type: glance
           title: Steam
         show_empty: false
+      - type: alarm-panel
+        title: House Alarm
+        entity: alarm_control_panel.alarm
+      - type: thermostat
+        entity: climate.home
+
+
     
   - icon: mdi:settings
     name: System Status
@@ -225,3 +242,4 @@ views:
               font-family: Trebuchet MS
               font-size: 90%
               font-weight: 550
+      

@@ -20,7 +20,6 @@ http:
 frontend:
   extra_html_url:
     - /local/custom_ui/state-card-custom-ui.html
-    - /local/custom_ui/state-card-custom_alarm.html
     - /local/custom_ui/state-card-tiles.html
   extra_html_url_es5:
     - /local/custom_ui/state-card-tiles_es5.html
@@ -66,8 +65,6 @@ mqtt:
 mqtt_eventstream:
   publish_topic: home/master
   subscribe_topic: home/slave
-
-alarm_control_panel: !include alarm.yaml
 
 recorder:
   db_url: !secret database_url
@@ -193,11 +190,6 @@ panel_custom:
     sidebar_icon: mdi:home
     url_path: floorplan
     config: !include floorplan.yaml
-  - name: alarm
-    sidebar_title: Alarm
-    sidebar_icon: mdi:security-home
-    config:
-      alarmid: alarm_control_panel.house ## USE THE SAME ID AS USED IN YOUR ALARM.YAML
 
 influxdb:
   host: !secret influxdb_host
