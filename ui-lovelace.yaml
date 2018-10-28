@@ -93,12 +93,16 @@ views:
         cards:
           - type: entity-button
             entity: light.office
+            tap_action: toggle
           - type: entity-button
             entity: light.back_room
+            tap_action: toggle
           - type: entity-button
             entity: light.master_bedroom
+            tap_action: toggle
           - type: entity-button
             entity: switch.switch
+            tap_action: toggle
 
       - type: entity-filter
         entities:
