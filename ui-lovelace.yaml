@@ -139,7 +139,7 @@ views:
         show_empty: false
       - type: alarm-panel
         title: House Alarm
-        entity: alarm_control_panel.alarm
+        entity: alarm_control_panel.house
       - type: thermostat
         entity: climate.home
 
