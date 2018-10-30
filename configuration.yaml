@@ -174,12 +174,13 @@ recorder:
 emulated_hue:
   advertise_ip: 10.10.1.77
   advertise_port: 8300
-  expose_by_default: false
+  expose_by_default: true
   exposed_domains:
     - light
     - cover
     - script
     - climate
+    - switch
   entities:
     switch.switch:
       name: "Front Porch Light"
