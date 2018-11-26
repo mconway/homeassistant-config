@@ -99,6 +99,7 @@ views:
             tap_action: toggle
           - type: entity-button
             entity: light.master_bedroom
+            name: Master
             tap_action: toggle
           - type: entity-button
             entity: switch.switch
