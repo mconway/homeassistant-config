@@ -43,6 +43,10 @@ apcupsd:
 device_tracker:
   - platform: owntracks
     track_new_devices: False
+  - platform: unifi
+    host: taranis
+    username: !secret unifi_username
+    password: !secret unifi_password
 
 media_player:
   - platform: plex
