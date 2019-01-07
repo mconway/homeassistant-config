@@ -34,6 +34,9 @@ frontend:
     vintage: !include themes/vintage.yaml
   javascript_version: auto
 
+lovelace:
+  mode: yaml
+
 tradfri:
   host: !secret tradfri_host
 
