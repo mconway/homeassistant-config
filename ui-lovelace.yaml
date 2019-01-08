@@ -98,8 +98,6 @@ views:
           - type: light
             entity: light.master_bedroom
             name: Master
-          - type: light
-            entity: switch.switch
 
       - type: entity-filter
         entities:
