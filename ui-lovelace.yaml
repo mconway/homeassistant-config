@@ -91,19 +91,15 @@ views:
           - switch.switch
       - type: horizontal-stack
         cards:
-          - type: entity-button
+          - type: light
             entity: light.office
-            tap_action: toggle
-          - type: entity-button
+          - type: light
             entity: light.back_room
-            tap_action: toggle
-          - type: entity-button
+          - type: light
             entity: light.master_bedroom
             name: Master
-            tap_action: toggle
-          - type: entity-button
+          - type: light
             entity: switch.switch
-            tap_action: toggle
 
       - type: entity-filter
         entities:
