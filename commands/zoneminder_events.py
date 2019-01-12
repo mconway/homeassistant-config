@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 try:
     import argparse
+    import asyncio
     import json
     import requests
     from datetime import datetime, timedelta
@@ -10,7 +11,7 @@ except Exception as e:
     print("EXCEPTION: %s" % e)
 
 def main():
-    try:
+    #try:
         args = get_args()
         view = args.view
 
@@ -27,12 +28,14 @@ def main():
             username = args.username
             password = args.password
             slack_key = args.key
+            discord_key = args.key
 
         #log in to web service
         data = {"username": username, "password": password, "view": view, "action": "login"}
         session = requests.Session()
         request = session.post(host + '/zm/index.php', params=data)
         response = request.content
+
         if response == b"null":
             print("Server is Offline")
             exit(1)
@@ -40,7 +43,7 @@ def main():
             #create a time string to query against (fixes issue with returning only 100 results)
             timeminus5mins = datetime.now() - timedelta(minutes=5)
             dateString = format(timeminus5mins, "%Y-%m-%d %H:%M:%S")
-            print(dateString)
+
             #get events based on time
             response = session.get(host + '/zm/api/events/index/StartTime >=:%s.json' % dateString)
             jsonData = response.json()
@@ -61,13 +64,13 @@ def main():
             msg = "New event %s from %s: Frames - %d/%d @ %s for %s seconds. Score - %d\n%s" % (event['Event']['Id'], event['Event']['MonitorId'], int(event['Event']['AlarmFrames']), int(event['Event']['Frames']), event['Event']['StartTime'], event['Event']['Length'], int(event['Event']['AvgScore']), frameUrl)
             print(msg)
 
-            if(platform == "slack" and slack_key != None)
+            if(args.platform == "slack" and slack_key != None):
                 slack_message(msg, slack_key)
-            if(platform == "discord" and discord_key != None)
-                await async_send_message(msg, discord_key)
+            if(args.platform == "discord" and discord_key != None):
+                async_send_message(msg, discord_key)
 
-    except Exception as e:
-        print("Error " + e)
+    #except Exception as e:
+        #print(e)
 
 def slack_message(msg, key):
     client = Slacker(key)
@@ -85,11 +88,15 @@ def get_args():
     parser.add_argument("--platform", required=False, default="discord")
     return parser.parse_args()
 
-async def async_send_message(message, key)
-    discord_bot = discord.Client();
+def async_send_message(message, key):
+    discord_bot = discord.Client()
 
     @discord_bot.event
     async def on_ready():
+        print('Logged in as')
+        print(discord_bot.user.name)
+        print('-------')
+
         try:
             channelid="502662074913128448"
             channel = discord.Object(id=channelid)
@@ -99,6 +106,6 @@ async def async_send_message(message, key)
         await discord_bot.logout()
         await discord_bot.close()
     
-    await discord_bot.start(key)
+    discord_bot.run(key)
 
 main()
