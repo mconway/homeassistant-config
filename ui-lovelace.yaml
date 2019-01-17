@@ -69,13 +69,15 @@ views:
           - type: horizontal-stack
             cards:
               - type: media-control
-                entity: media_player.aidens_room
-              - type: media-control
-                entity: media_player.lillys_room
-              - type: media-control
                 entity: media_player.master_bedroom
               - type: media-control
                 entity: media_player.kitchen
+          - type: horizontal-stack
+            cards:
+              - type: media-control
+                entity: media_player.aidens_room
+              - type: media-control
+                entity: media_player.lillys_room
 
       - type: weather-forecast
         entity: weather.dark_sky
@@ -89,6 +91,11 @@ views:
           - type: light
             entity: light.master_bedroom
             name: Master
+          - type: entity-button
+            entity: lock.kwikset_unknown_type0003_id0541_locked_2
+
+      - type: horizontal-stack
+        cards:
           - type: entity-button
             entity: lock.kwikset_unknown_type0003_id0541_locked_2
 
