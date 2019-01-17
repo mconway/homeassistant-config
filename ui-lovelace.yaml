@@ -89,6 +89,8 @@ views:
           - type: light
             entity: light.master_bedroom
             name: Master
+          - type: entity-button
+            name: lock.kwikset_unknown_type0003_id0541_locked_2
 
       - type: entity-filter
         entities:
