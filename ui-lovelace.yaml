@@ -91,8 +91,6 @@ views:
           - type: light
             entity: light.master_bedroom
             name: Master
-          - type: entity-button
-            entity: lock.kwikset_unknown_type0003_id0541_locked_2
 
       - type: horizontal-stack
         cards:
