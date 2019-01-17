@@ -192,13 +192,6 @@ emulated_hue:
     switch.switch:
       name: "Front Porch Light"
 
-panel_custom:
-  - name: floorplan
-    sidebar_title: Floorplan
-    sidebar_icon: mdi:home
-    url_path: floorplan
-    config: !include floorplan.yaml
-
 influxdb:
   host: !secret influxdb_host
   username: !secret influxdb_username
