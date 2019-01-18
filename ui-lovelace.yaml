@@ -96,6 +96,10 @@ views:
         entity: sensor.zooz_zse40_4in1_sensor_temperature_2
         name: Garage Temperature
         graph: line
+      - type: sensor
+        entity: sensor.zooz_zse40_4in1_sensor_luminance_2
+        name: Garage Light
+        graph: line
 
       - type: horizontal-stack
         cards:
