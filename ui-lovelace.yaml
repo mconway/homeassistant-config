@@ -92,6 +92,10 @@ views:
             entity: light.master_bedroom
             name: Master
 
+      - type: sensor
+        entity: sensor.zooz_zse40_4in1_sensor_temperature_2
+        name: Garage Temperature
+
       - type: horizontal-stack
         cards:
           - type: entity-button
