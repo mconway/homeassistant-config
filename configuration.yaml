@@ -35,7 +35,7 @@ frontend:
   javascript_version: auto
 
 lovelace:
-  mode: yaml
+  #mode: yaml
 
 tradfri:
   host: !secret tradfri_host
