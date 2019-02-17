@@ -21,6 +21,18 @@ sensor:
         unit_of_measurement: '%'
         entity_id: zwave.dome_siren
         device_class: battery
+      front_door_lock_battery: 
+        friendly_name: "Lock Battery"
+        value_template: '{{ states.zwave.kwikset_unknown_type0003_id0541_2.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        entity_id: zwave.kwikset_unknown_type0003_id0541_2
+        device_class: battery
+      garage_motion_battery: 
+        friendly_name: "Garage Motion Battery"
+        value_template: '{{ states.zwave.zooz_zse40_4in1_sensor_2.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        entity_id: zwave.zooz_zse40_4in1_sensor_2
+        device_class: battery
       siren_battery: 
         friendly_name: "Front Door Battery"
         value_template: '{{ states.zwave.vision_zd2105us5_recessed_doorwindow_sensor.attributes.battery_level }}'
