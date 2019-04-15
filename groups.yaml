@@ -131,7 +131,7 @@ systeminfo:
   view: no
   entities:
     - sensor.ram_available
-    -sensor.disk_free
+    - sensor.disk_free
     - sensor.last_boot
     - sensor.since_last_boot
     - sensor.cpu_used
