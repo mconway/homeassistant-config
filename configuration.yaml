@@ -35,13 +35,17 @@ frontend:
   javascript_version: auto
 
 lovelace:
-  mode: yaml
+  #mode: yaml
 
 tradfri:
   host: !secret tradfri_host
 
 apcupsd:
   host: taranis
+
+camera:
+  platform: generic
+  still_image_url: https://images.wsdot.wa.gov/nc/028vc04659.jpg
 
 device_tracker:
   - platform: owntracks
@@ -50,6 +54,7 @@ device_tracker:
     host: taranis
     username: !secret unifi_username
     password: !secret unifi_password
+    verify_ssl: false
 
 media_player:
   - platform: plex
