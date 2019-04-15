@@ -6,7 +6,7 @@ sequence:
     message: "Updating config"
 - service: notify.slack
   data:
-    message: ":recycle: Pulling latest configuration files from git repo" #at {{ states('sensor.date__time') }}
+    message: ":recycle: Pulling latest configuration files from git repo" #at {{ states('sensor.date_time') }}
 - service: shell_command.update_configs_from_repo
 - condition: state
   entity_id: input_boolean.restart_on_config_update

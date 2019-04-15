@@ -52,7 +52,7 @@ garagetab:
   entities:
     - cover.garage_door
     - group.garage_devices
-    - media_player.roku_2_xd__12g2d0036416
+    - media_player.roku_2_xd_12g2d0036416
     - group.camera_garage
     - group.irrigation
 cameratab:
@@ -131,7 +131,7 @@ systeminfo:
   view: no
   entities:
     - sensor.ram_available
-    - sensor.disk_free_
+    -sensor.disk_free
     - sensor.last_boot
     - sensor.since_last_boot
     - sensor.cpu_used
@@ -141,7 +141,7 @@ today:
   entities:
     - sensor.date
     - sensor.time
-    - sensor.date__time
+    - sensor.date_time
 master_bedroom:
   name: Master Bedroom
   view: no
