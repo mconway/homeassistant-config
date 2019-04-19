@@ -210,7 +210,7 @@ influxdb:
 
 speedtestdotnet:
   scan_interval: 
-    hour: 2
+    hours: 3
   monitored_conditions:
     - ping
     - download
