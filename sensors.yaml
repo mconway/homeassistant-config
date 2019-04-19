@@ -160,18 +160,6 @@
             mdi:battery-alert
           {% endif %}
         
-- platform: speedtest
-  minute: 30
-  hour:
-    - 0
-    - 6
-    - 12
-    - 18
-    - 21
-  monitored_conditions:
-    - ping
-    - download
-    - upload
 #- platform: mqtt#
 #  state_topic: "owntracks/goibniu/Goibniu"
 #  name: "Goibniu"

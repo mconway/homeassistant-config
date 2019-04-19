@@ -208,6 +208,14 @@ influxdb:
   tags_attributes:
     - friendly_name
 
+speedtestdotnet:
+  scan_interval: 
+    hour: 2
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
 panel_iframe:
   nodered:
     title: 'Node Red'
