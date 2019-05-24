@@ -190,7 +190,6 @@ emulated_hue:
   exposed_domains:
     - light
     - cover
-    - script
     - climate
     - switch
   entities:
