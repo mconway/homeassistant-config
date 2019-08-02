@@ -39,6 +39,7 @@ lovelace:
 
 tradfri:
   host: !secret tradfri_host
+  allow_tradfri_groups: true
 
 apcupsd:
   host: taranis
