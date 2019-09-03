@@ -27,6 +27,11 @@ sensor:
     host: !secret router_ip
     baseoid: 1.3.6.1.2.1.2.2.1.16.6
 
+  - platform: snmp
+    name: snmp_wan_port_speed
+    host: !secret router_ip
+    baseoid: 1.3.6.1.2.1.2.2.1.5.6
+
   - platform: template
     sensors:
         internet_speed_in:
@@ -39,6 +44,13 @@ sensor:
         internet_speed_out:
           friendly_name: 'Internet Speed OUT'
           value_template: '{{ ((states.input_number.internet_traffic_delta_out.state | float ) / 1000000 ) | round(2) }}'
+          unit_of_measurement: 'Mbps'
+
+  - platform: template
+    sensors:
+        wan_port_speed:
+          friendly_name: 'WAN Port Speed'
+          value_template: '{{ (( states.sensor.snmp_wan_port_speed.state | float) / 1000000 ) | round(0) }}'
           unit_of_measurement: 'Mbps'
 
   - platform: statistics
