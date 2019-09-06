@@ -18,13 +18,13 @@ sensor:
       office_window:
         friendly_name: "Office Window"
         value_template: >-
-        {%- if is_state("binary_sensor.dome_doorwindow_sensor_sensor","off") %}
-            Closed
-        {%- elif is_state("binary_sensor.dome_doorwindow_sensor_sensor","on") %}
-          Open
-        {% else %}
-          Unknown
-        {% endif %} 
+          {%- if is_state("binary_sensor.dome_doorwindow_sensor_sensor","off") %}
+              Closed
+          {%- elif is_state("binary_sensor.dome_doorwindow_sensor_sensor","on") %}
+            Open
+          {% else %}
+            Unknown
+          {% endif %} 
       siren_battery: 
         friendly_name: "Siren Battery"
         value_template: '{{ states.zwave.dome_siren.attributes.battery_level }}'
