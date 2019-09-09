@@ -75,14 +75,6 @@ aibell:
   track: true
   hide_if_away: false
 
-goibniu_goibniu:
-  name: Michael
-  mac: AC:37:43:4E:FA:AD
-  picture: 
-  track: true
-  hide_if_away: false
-  icon: mdi:android
-
 wii:
   name: Wii
   mac: 00:24:F3:DA:0C:35
