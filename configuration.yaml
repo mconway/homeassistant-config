@@ -48,9 +48,9 @@ camera:
   platform: generic
   still_image_url: https://images.wsdot.wa.gov/nc/028vc04659.jpg
 
+owntracks:
+
 device_tracker:
-  - platform: owntracks
-    track_new_devices: False
   - platform: unifi
     host: taranis
     username: !secret unifi_username
