@@ -32,7 +32,7 @@ frontend:
     darkcyan: !include themes/darkcyan.yaml
     midnight: !include themes/midnight.yaml
     vintage: !include themes/vintage.yaml
-    autumn: !include themes/autumn.yaml
+    #autumn: !include themes/autumn.yaml
   javascript_version: auto
 
 lovelace:
