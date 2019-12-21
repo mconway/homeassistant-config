@@ -13,9 +13,10 @@ homeassistant:
   customize_domain: {}
   customize_glob: !include customize_glob.yaml
   packages: !include_dir_named packages
+  auth_providers:
+    - type: homeassistant
 
 http:
-  api_password: !secret api_password
 
 frontend:
   extra_html_url:
@@ -187,7 +188,8 @@ recorder:
 
 emulated_hue:
   advertise_ip: 10.10.1.77
-  advertise_port: 8300
+  advertise_port: 80
+  listen_port: 80
   expose_by_default: true
   exposed_domains:
     - light
