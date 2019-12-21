@@ -7,7 +7,7 @@ homeassistant:
 sensor:
   - platform: rest
     name: Duet Status
-    resource: http://artemis/rr_status?type=3
+    resource: http://taranis:1880/duet3d
     value_template: '{{ value_json.status }}'
     json_attributes:
       - temps
@@ -37,26 +37,3 @@ group:
       - sensor.bed_temp_active
       - sensor.print_percentage
   3dprintstats:
-    
-
-automation:
-  - id: print_finished
-    alias: Print Finished
-    trigger:
-      platform: state
-      entity_id: sensor.duet_status
-      from: 'P'
-    action:
-      - service: notify.slack
-        data_template: 
-          message: ':printer: 3D Print is Finished'
-  - id: print_started
-    alias: Print Started
-    trigger:
-      platform: state
-      entity_id: sensor.duet_status
-      from: 'I'
-    action:
-      - service: notify.slack
-        data_template: 
-          message: ':printer: 3D Print has Started'
