@@ -52,13 +52,6 @@ camera:
 
 owntracks:
 
-device_tracker:
-  - platform: unifi
-    host: taranis
-    username: !secret unifi_username
-    password: !secret unifi_password
-    verify_ssl: false
-
 media_player:
   - platform: plex
   - platform: alexa
