@@ -330,9 +330,9 @@
   file_paths:
     - /config/home-assistant.log
 - platform: sql
+  db_url: !secret database_url
   queries:
     - name: Database Size
-      db_url: !secret database_url
       query: "SELECT table_schema 'DB Name', ROUND(SUM(data_length + index_length) / 1024 / 1024, 1) 'MB' FROM information_schema.tables WHERE table_schema='homeassistant' GROUP BY table_schema;"
       column: 'MB'
       unit_of_measurement: 'MB'
