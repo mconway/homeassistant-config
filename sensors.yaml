@@ -328,7 +328,7 @@
 # Misc System Sensors
 - platform: filesize
   file_paths:
-    - /config/home-assitant.log
+    - /config/home-assistant.log
 - platform: sql
   queries:
     - name: Database Size
