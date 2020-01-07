@@ -325,4 +325,16 @@
   name: current_version
   source: local
 
+# Misc System Sensors
+- platform: filesize
+  file_paths:
+    - /config/home-assitant.log
+- platform: sql
+  queries:
+    - name: Database Size
+      query: "SELECT table_schema "DB Name", ROUND(SUM(data_length + index_length) / 1024 / 1024, 1) "MB" FROM information_schema.tables WHERE table_schema='homeassitant' GROUP BY table_schema;"
+      column: 'MB'
+      unit_of_measurement: 'MB'
+- platform: dnsip
+
   
