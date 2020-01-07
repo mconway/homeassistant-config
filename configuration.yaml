@@ -15,7 +15,7 @@ homeassistant:
   packages: !include_dir_named packages
   auth_providers:
     - type: homeassistant
-  whitelist_extenal_dirs: 
+  whitelist_external_dirs: 
     - /config
 
 http:
