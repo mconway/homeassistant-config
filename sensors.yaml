@@ -328,7 +328,7 @@
 # Misc System Sensors
 - platform: filesize
   file_paths:
-    - /config/home-assistant.log
+    - home-assistant.log
 - platform: sql
   db_url: !secret database_url
   queries:
