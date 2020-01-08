@@ -50,23 +50,9 @@ sensor:
           {% set hours = ((time % 86400) / 3600) | int %}
           {% set days = (time / 86400) | int %}
             {%- if time < 60 -%}
-              Less than 1 min
+              < 1 min
               {%- else -%}
-              {%- if days > 0 -%}
-                {{ days }}d
-              {%- endif -%}
-              {%- if hours > 0 -%}
-                {%- if days > 0 -%}
-                  {{ ' ' }}
-                {%- endif -%}
-                {{ hours }}hr
-              {%- endif -%}
-              {%- if minutes > 0 -%}
-                {%- if days > 0 or hours > 0 -%}
-                  {{ ' ' }}
-                {%- endif -%}
-                {{ minutes }}min
-              {%- endif -%}
+              {{ days }}:{{ hours }}:{{ minutes }}
             {%- endif -%}
       ap_memory_percent:
         value_template: >-
