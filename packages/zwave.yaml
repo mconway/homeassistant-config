@@ -25,6 +25,10 @@ sensor:
           {% else %}
             Unknown
           {% endif %} 
+
+binary_sensor:
+  - platform: template
+    sensors:
       garage_motion:
         friendly_name: "Garage Motion"
         device_class: motion
