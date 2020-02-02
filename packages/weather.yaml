@@ -33,6 +33,7 @@ sensor:
       - temperature_min
       - temperature_max
       - daily_summary
+      - alerts
   - platform: airvisual
     api_key: !secret airvisual_api_key
     monitored_conditions:
