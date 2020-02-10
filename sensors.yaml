@@ -337,5 +337,6 @@
       column: 'MB'
       unit_of_measurement: 'MB'
 - platform: dnsip
+  resolver: 10.10.1.190
 
   
