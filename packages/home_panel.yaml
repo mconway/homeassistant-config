@@ -285,7 +285,6 @@ group:
   default_view:
     name: Default
     icon: mdi:home
-    view: yes
     entities:
       - group.people_tiles
       - group.home_control

@@ -31,12 +31,10 @@ rainmachine:
 group:
   garage_devices:
     name: Devices
-    view: no
     entities:
       - sensor.roku
   irrigation:
     name: Irrigation
-    view: no
     icon: mdi:water-pump
     entities:
       - switch.program_morning
@@ -47,7 +45,6 @@ group:
       - switch.zone_back_yard
   irrigation_unused:
     name: Unused Irrigation Zones
-    view: no
     entities:
       - switch.zone_zone_4
       - switch.zone_zone_5

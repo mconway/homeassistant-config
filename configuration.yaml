@@ -237,7 +237,7 @@ pi_hole:
 ##########################################################################
 sensor: !include sensors.yaml
 automation: !include automations.yaml
-group: !include groups.yaml
+#group: !include groups.yaml
 script: !include scripts.yaml
 shell_command: !include shell_commands.yaml
 
