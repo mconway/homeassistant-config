@@ -200,6 +200,7 @@ influxdb:
   username: !secret influxdb_username
   password: !secret influxdb_password
   database: !secret influxdb_database
+  port: 8096
   tags:
     instance: prod
     source: taranis
