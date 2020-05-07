@@ -46,51 +46,61 @@ sensor:
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.4.1
+    unit_of_measurement: "channel"
   - platform: snmp
     name: 'VAP 2 Channel'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.4.2
+    unit_of_measurement: "channel"
   - platform: snmp
     name: 'VAP 3 Channel'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.4.3
+    unit_of_measurement: "channel"
   - platform: snmp
     name: 'VAP 4 Channel'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.4.4
+    unit_of_measurement: "channel"
   - platform: snmp
     name: 'VAP 5 Channel'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.4.5
+    unit_of_measurement: "channel"
   - platform: snmp
     name: 'VAP 6 Channel'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.4.6
+    unit_of_measurement: "channel"
   - platform: snmp
     name: 'VAP 7 Channel'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.4.7
+    unit_of_measurement: "channel"
   - platform: snmp
     name: 'VAP 8 Channel'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.4.8
+    unit_of_measurement: "channel"
   - platform: snmp
     name: 'VAP 9 Channel'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.4.9
+    unit_of_measurement: "channel"
   - platform: snmp
     name: 'VAP 10 Channel'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.4.10
+    unit_of_measurement: "channel"
     
   - platform: snmp
     name: 'VAP 1 ESS'
@@ -148,51 +158,61 @@ sensor:
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.8.1
+    unit_of_measurement: "clients"
   - platform: snmp
     name: 'VAP 2 Clients'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.8.2
+    unit_of_measurement: "clients"
   - platform: snmp
     name: 'VAP 3 Clients'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.8.3
+    unit_of_measurement: "clients"
   - platform: snmp
     name: 'VAP 4 Clients'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.8.4
+    unit_of_measurement: "clients"
   - platform: snmp
     name: 'VAP 5 Clients'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.8.5
+    unit_of_measurement: "clients"
   - platform: snmp
     name: 'VAP 6 Clients'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.8.6
+    unit_of_measurement: "clients"
   - platform: snmp
     name: 'VAP 7 Clients'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.8.7
+    unit_of_measurement: "clients"
   - platform: snmp
     name: 'VAP 8 Clients'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.8.8
+    unit_of_measurement: "clients"
   - platform: snmp
     name: 'VAP 9 Clients'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.8.9
+    unit_of_measurement: "clients"
   - platform: snmp
     name: 'VAP 10 Clients'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.8.10
+    unit_of_measurement: "clients"
 
   - platform: snmp  
     name: 'VAP 1 Radio'
@@ -250,102 +270,122 @@ sensor:
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.1
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 2 RX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.2
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 3 RX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.3
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 4 RX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.4
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 5 RX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.5
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 6 RX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.6
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 7 RX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.7
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 8 RX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.8
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 9 RX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.9
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 10 RX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.10
+    unit_of_measurement: "bytes"
 
   - platform: snmp  
     name: 'VAP 1 TX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.1
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 2 TX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.2
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 3 TX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.3
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 4 TX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.4
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 5 TX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.5
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 6 TX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.6
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 7 TX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.7
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 8 TX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.8
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 9 TX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.9
+    unit_of_measurement: "bytes"
   - platform: snmp
     name: 'VAP 10 TX Bytes'
     host: !secret ap_ip
     community: 'public'
     baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.10
+    unit_of_measurement: "bytes"
 
     # Conversions
   - platform: template
