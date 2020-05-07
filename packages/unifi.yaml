@@ -300,53 +300,53 @@ sensor:
     name: 'VAP 1 TX Bytes'
     host: !secret ap_ip
     community: 'public'
-    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.1
+    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.1
   - platform: snmp
     name: 'VAP 2 TX Bytes'
     host: !secret ap_ip
     community: 'public'
-    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.2
+    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.2
   - platform: snmp
     name: 'VAP 3 TX Bytes'
     host: !secret ap_ip
     community: 'public'
-    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.3
+    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.3
   - platform: snmp
     name: 'VAP 4 TX Bytes'
     host: !secret ap_ip
     community: 'public'
-    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.4
+    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.4
   - platform: snmp
     name: 'VAP 5 TX Bytes'
     host: !secret ap_ip
     community: 'public'
-    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.5
+    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.5
   - platform: snmp
     name: 'VAP 6 TX Bytes'
     host: !secret ap_ip
     community: 'public'
-    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.6
+    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.6
   - platform: snmp
     name: 'VAP 7 TX Bytes'
     host: !secret ap_ip
     community: 'public'
-    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.7
+    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.7
   - platform: snmp
     name: 'VAP 8 TX Bytes'
     host: !secret ap_ip
     community: 'public'
-    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.8
+    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.8
   - platform: snmp
     name: 'VAP 9 TX Bytes'
     host: !secret ap_ip
     community: 'public'
-    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.9
+    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.9
   - platform: snmp
     name: 'VAP 10 TX Bytes'
     host: !secret ap_ip
     community: 'public'
-    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.10.10
-    
+    baseoid: 1.3.6.1.4.1.41112.1.6.1.2.1.16.10
+
     # Conversions
   - platform: template
     sensors:
