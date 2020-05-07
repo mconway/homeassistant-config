@@ -64,11 +64,11 @@ google-red-500: '#E45E65'
 google-green-500: '#39E949'
 
 ##Sidebar
-  sidebar-background-color: "var(--paper-listbox-background-color)"
-  sidebar-icon-color: "rgba(255, 255, 255, 0.70)"
-  sidebar-selected-icon-color: "var(--primary-color)"
-  sidebar-selected-text-color: "var(--primary-text-color)"
-  sidebar-text-color: "var(--primary-text-color)"
-  slider-bar-color: "var(--disabled-text-color)"
-  slider-color: "var(--primary-color)"
-  slider-secondary-color: "var(--light-primary-color)"
+sidebar-background-color: "var(--paper-listbox-background-color)"
+sidebar-icon-color: "rgba(255, 255, 255, 0.70)"
+sidebar-selected-icon-color: "var(--primary-color)"
+sidebar-selected-text-color: "var(--primary-text-color)"
+sidebar-text-color: "var(--primary-text-color)"
+slider-bar-color: "var(--disabled-text-color)"
+slider-color: "var(--primary-color)"
+slider-secondary-color: "var(--light-primary-color)"
