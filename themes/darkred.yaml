@@ -31,3 +31,12 @@
   secondary-text-color: "var(--primary-color)"
   table-row-background-color: "var(--paper-card-background-color)"
   table-row-alternative-background-color: "var(--sidebar-text_-_background)"
+  ##Sidebar
+  sidebar-background-color: "var(--paper-listbox-background-color)"
+  sidebar-icon-color: "rgba(255, 255, 255, 0.70)"
+  sidebar-selected-icon-color: "var(--primary-color)"
+  sidebar-selected-text-color: "var(--primary-text-color)"
+  sidebar-text-color: "var(--primary-text-color)"
+  slider-bar-color: "var(--disabled-text-color)"
+  slider-color: "var(--primary-color)"
+  slider-secondary-color: "var(--light-primary-color)"
