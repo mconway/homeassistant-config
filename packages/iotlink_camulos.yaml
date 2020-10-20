@@ -336,4 +336,4 @@ script:
       - service: mqtt.publish
         data:
           topic: "iotlink/wiredbyte/camulos/commands/run"
-          payload: '{ "command": "C:\\liquidctl-1.4.1-bin-windows-x86_64\\liquidctl.exe", "args": "set led1 color breathing ff0000", "path": "C:\\liquidctl-1.4.1-bin-windows-x86_64\\liquidctl.exe", "user": "", "visible": true, "fallback": true }'
+          payload: '{ "command": "C:\\liquidctl-1.4.1-bin-windows-x86_64\\liquidctl.exe", "args": "set led1 color breathing ff0000", "path": "", "user": "", "visible": true, "fallback": true }'
