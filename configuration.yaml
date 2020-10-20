@@ -41,6 +41,8 @@ frontend:
 lovelace:
   #mode: yaml
 
+mobile_app:
+
 tradfri:
   host: !secret tradfri_host
   allow_tradfri_groups: true
@@ -60,17 +62,6 @@ media_player:
     email: !secret email_address
     password: !secret amazon_password
     url: "amazon.com"
-
-mqtt:
-  broker: taranis
-  port: 1883
-  client_id: ha-host
-  keepalive: 60
-  username: !secret mqtt_username
-  password: !secret mqtt_password
-  birth_message:
-    topic: "hass/status"
-    payload: "online"
 
 mqtt_eventstream:
   publish_topic: home/master

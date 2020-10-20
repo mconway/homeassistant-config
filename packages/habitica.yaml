@@ -1,0 +1,3 @@
+habitica:
+    - api_user: !secret habitica_player1_user
+      api_key: !secret habitica_player1_key
