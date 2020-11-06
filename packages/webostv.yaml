@@ -3,7 +3,7 @@ webostv:
   name: Office TV
   service: wake_on_lan.send_magic_packet
     data:
-      mac: E4:75:DC:4D:0C:A1
+      mac: "E4:75:DC:4D:0C:A1"
       broadcast_address: 10.10.1.255
   customize:
     sources:
