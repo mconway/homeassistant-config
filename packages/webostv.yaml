@@ -11,4 +11,6 @@ webostv:
       - hulu
       - netflix
       - plex
-      - disney+
+      - disney +
+
+wake_on_lan:
