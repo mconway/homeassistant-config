@@ -1,0 +1,16 @@
+webostv:
+  host: 10.10.1.150
+  name: Office TV
+  turn_on_action:
+    service: wake_on_lan.send_magic_packet
+    data:
+        mac: "E4:75:DC:4D:0C:A1"
+        broadcast_address: 10.10.1.255
+  customize:
+    sources:
+      - hulu
+      - netflix
+      - plex
+      - disney +
+
+wake_on_lan:
