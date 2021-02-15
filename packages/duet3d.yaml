@@ -15,24 +15,12 @@ sensor:
   - platform: template
     sensors:
       head_temp_current:
-        value_template: '{{ states.sensor.duet_status.attributes.temps.heads.current[0] }}'
+        value_template: '{{ states.sensor.duet_status.attributes.temps.tools.active[0] }}'
       head_temp_active:
-        value_template: '{{ states.sensor.duet_status.attributes.temps.heads.active[0] }}'
+        value_template: '{{ states.sensor.duet_status.attributes.temps.tools.standby[0] }}'
       bed_temp_current:
         value_template: '{{ states.sensor.duet_status.attributes.temps.bed.current }}'
       bed_temp_active:
         value_template: '{{ states.sensor.duet_status.attributes.temps.bed.active }}'
       print_percentage:
         value_template: '{{ states.sensor.duet_status.attributes.fractionPrinted }}%'
-
-group:
-  3dprinter:
-    name: Artemis
-    entities:
-      - sensor.duet_status
-      - sensor.head_temp_current
-      - sensor.head_temp_active
-      - sensor.bed_temp_current
-      - sensor.bed_temp_active
-      - sensor.print_percentage
-  3dprintstats:

@@ -332,8 +332,10 @@ script:
 
   camulos_set_hue_color:
     alias: "Camulos - Set Hue Color"
+    variables:
+      pc_color: ff0000
     sequence:
       - service: mqtt.publish
         data:
           topic: "iotlink/wiredbyte/camulos/commands/run"
-          payload: '{ "command": "C:\\liquidctl-1.4.1-bin-windows-x86_64\\liquidctl.exe", "args": "set led1 color breathing ff0000", "path": "", "user": "", "visible": true, "fallback": true }'
+          payload: '{ "command": "C:\\liquidctl-1.4.1-bin-windows-x86_64\\liquidctl.exe", "args": "set led1 color breathing {{ pc_color }}", "path": "", "user": "", "visible": true, "fallback": true }'
