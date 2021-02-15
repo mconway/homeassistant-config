@@ -15,9 +15,9 @@ sensor:
   - platform: template
     sensors:
       head_temp_current:
-        value_template: '{{ states.sensor.duet_status.attributes.temps.tools.active[0] }}'
+        value_template: '{{ states.sensor.duet_status.attributes.temps.tools.active[0][0] }}'
       head_temp_active:
-        value_template: '{{ states.sensor.duet_status.attributes.temps.tools.standby[0] }}'
+        value_template: '{{ states.sensor.duet_status.attributes.temps.tools.standby[0][0] }}'
       bed_temp_current:
         value_template: '{{ states.sensor.duet_status.attributes.temps.bed.current }}'
       bed_temp_active:

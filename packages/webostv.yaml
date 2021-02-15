@@ -8,9 +8,10 @@ webostv:
         broadcast_address: 10.10.1.255
   customize:
     sources:
-      - hulu
-      - netflix
-      - plex
-      - disney +
+      - Hulu
+      - Netflix
+      - Plex
+      - HDMI 3
+      - HDMI 2
 
 wake_on_lan:
