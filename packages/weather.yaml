@@ -46,8 +46,8 @@ sensor:
     resource: https://api.weather.gov/alerts/active/count
     name: NWS Alert Count
     value_template: >
-      {% if value_json.zones.WAZ673 is defined %}
-        {{ value_json.zones.WAZ673 }}
+      {% if value_json.zones.WAC025 is defined %}
+        {{ value_json.zones.WAC025 }}
       {% else %}
         0
       {% endif %}
@@ -57,7 +57,7 @@ sensor:
     scan_interval: 60
       
   - platform: rest
-    resource: https://api.weather.gov/alerts/active?zone=WAZ673
+    resource: https://api.weather.gov/alerts/active?zone=WAC025
     name: NWS Alert Event
     value_template: >
       {% if value_json.features[0] is defined %}
