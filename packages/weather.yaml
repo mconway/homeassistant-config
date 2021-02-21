@@ -65,3 +65,9 @@ sensor:
       {% else %}
         None
       {% endif %}
+    json_attributes:
+        - features
+    headers:
+        User-Agent: Homeassistant
+        Accept: application/geo+json
+      scan_interval: 60
