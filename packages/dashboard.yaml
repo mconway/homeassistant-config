@@ -15,30 +15,31 @@
 #  scan_interval: 60
 
 ## Template Sensors ##
-- platform: template
-  sensors:
-    ## LOVELACE GREETING
-    dashboard_greeting:
-      value_template: >
-        {% if as_timestamp(now()) | timestamp_custom('%H') | int < 12 %} 
-          Good morning
-        {% elif as_timestamp(now()) | timestamp_custom('%H') | int < 17 %}
-          Good afternoon
-        {% else %}
-          Good evening
-        {% endif %}
-    dashboard_occupancy:
-      value_template: >
-        {% set people = '' -%}
-        {% if states("person.michael") != "home" -%}
-          {% set people = people + "Michael, " -%}
-        {% endif %}
-        {% if states("person.lilly") != "home" -%}
-          {% set people = people + "Lilly, " -%}
-        {% endif %}
-        {% if states("person.aiden") != "home" -%}
-          {% set people = people + "Aiden, " -%}
-        {% endif %}
-          {% set people = people[:-2] -%}
-          Not at home: {{ people }}
-        {% endif %}
+sensor:
+  - platform: template
+    sensors:
+      ## LOVELACE GREETING
+      dashboard_greeting:
+        value_template: >
+          {% if as_timestamp(now()) | timestamp_custom('%H') | int < 12 %} 
+            Good morning
+          {% elif as_timestamp(now()) | timestamp_custom('%H') | int < 17 %}
+            Good afternoon
+          {% else %}
+            Good evening
+          {% endif %}
+      dashboard_occupancy:
+        value_template: >
+          {% set people = '' -%}
+          {% if states("person.michael") != "home" -%}
+            {% set people = people + "Michael, " -%}
+          {% endif %}
+          {% if states("person.lilly") != "home" -%}
+            {% set people = people + "Lilly, " -%}
+          {% endif %}
+          {% if states("person.aiden") != "home" -%}
+            {% set people = people + "Aiden, " -%}
+          {% endif %}
+            {% set people = people[:-2] -%}
+            Not at home: {{ people }}
+          {% endif %}
