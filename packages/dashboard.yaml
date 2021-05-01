@@ -40,6 +40,4 @@ sensor:
           {% if states("person.aiden") != "home" -%}
             {% set people = people + "Aiden, " -%}
           {% endif %}
-            {% set people = people[:-2] -%}
-            Not at home: {{ people }}
-          {% endif %}
+          {% set people = people[:-2] -%}
