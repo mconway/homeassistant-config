@@ -1,0 +1,44 @@
+## Scrape Sensor ##
+#- platform: scrape
+#  name: Dashboard Weather
+#  resource: "https://darksky.net/forecast/COORDINATES_REDACTED/us12"
+#  select: "img"
+#  attribute: "src"
+#  index: 5
+#  scan_interval: 900
+
+## RESTful ##
+#- platform: rest
+#  name: Grocery Budget Balance
+#  resource: "https://api.youneedabudget.com/v1/budgets/a5e22b16-31cc-012b9a08c503/categories/333fa203-7515-d1ce-0a3b-adcde39828bc?access_token=REDACTED"
+#  value_template: "{{ value_json.data.category.balance | multiply(0.001) | round(2) }}"
+#  scan_interval: 60
+
+## Template Sensors ##
+- platform: template
+  sensors:
+    ## LOVELACE GREETING
+    dashboard_greeting:
+      value_template: >
+        {% if as_timestamp(now()) | timestamp_custom('%H') | int < 12 %} 
+          Good morning
+        {% elif as_timestamp(now()) | timestamp_custom('%H') | int < 17 %}
+          Good afternoon
+        {% else %}
+          Good evening
+        {% endif %}
+    dashboard_occupancy:
+      value_template: >
+        {% set people = '' -%}
+        {% if states("person.michael") != "home" -%}
+          {% set people = people + "Michael, " -%}
+        {% endif %}
+        {% if states("person.lilly") != "home" -%}
+          {% set people = people + "Lilly, " -%}
+        {% endif %}
+        {% if states("person.aiden") != "home" -%}
+          {% set people = people + "Aiden, " -%}
+        {% endif %}
+          {% set people = people[:-2] -%}
+          Not at home: {{ people }}
+        {% endif %}
