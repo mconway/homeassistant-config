@@ -7,38 +7,38 @@ counter:
     step: 1
 script:
   aiden_earn_point:
+    icon: hass:plus-thick
     sequence:
       - service: counter.increment
-        icon: hass:plus-thick
         data:
           entity_id: counter.aiden_chore_points
   aiden_spend_point:
+    icon: hass:minus-thick
     sequence:
       - service: counter.decrement
-        icon: hass:minus-thick
         data:
           entity_id: counter.aiden_chore_points
   aiden_reset_point:
+    icon: hass:backup-restore
     sequence:
       - service: counter.reset
-        icon: hass:backup-restore
         data:
           entity_id: counter.aiden_chore_points
   lilly_earn_point:
+    icon: hass:plus-thick
     sequence:
       - service: counter.increment
-        icon: hass:plus-thick
         data:
           entity_id: counter.lilly_chore_points
   lilly_spend_point:
+    icon: hass:minus-thick
     sequence:
       - service: counter.decrement
-        icon: hass:minus-thick
         data:
           entity_id: counter.lilly_chore_points
   lilly_reset_point:
+    icon: hass:backup-restore
     sequence:
       - service: counter.reset
-        icon: hass:backup-restore
         data:
           entity_id: counter.lilly_chore_points
