@@ -4,5 +4,5 @@ climate:
   password: !secret thermostat_password
   region: us
   scan_interval: 60
-  cool_away_temperature: 80
-  heat_away_temperature: 60
+  #cool_away_temperature: 80
+  #heat_away_temperature: 60

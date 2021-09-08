@@ -70,7 +70,6 @@ input_number:
 group:
   alarm_clock:
     name: Alarm Clock
-    view: no
     icon: mdi:alarm
     entities:
       - input_datetime.alarm_clock

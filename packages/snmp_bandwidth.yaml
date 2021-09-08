@@ -88,7 +88,6 @@ automation:
 group:
   snmp_monitor:
     name: Bandwith Monitoring
-    view: no
     entities:
       - sensor.internet_speed_in
       - sensor.internet_speed_out
@@ -96,7 +95,6 @@ group:
       - sensor.wan_traffic_out_mean
   snmp_raw_values:
     name: SNMP Raw Values
-    view: no
     entities:
       - sensor.snmp_wan_in
       - sensor.snmp_wan_out

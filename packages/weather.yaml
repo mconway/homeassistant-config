@@ -292,14 +292,12 @@ group:
   weather_tab:
     name: Weather
     icon: mdi:weather-sunset
-    view: yes
     entities:
     - group.weather_info
     - group.weather_forecast
     - group.air_quality
   weather_info:
     name: Weather
-    view: no
     entities:
       - sun.sun
       - sensor.moon
@@ -317,7 +315,6 @@ group:
       - sensor.dark_sky_humidity
   weather_forecast:
     name: Forecast
-    view: no
     icon: mdi:sun
     entities:
       - sensor.forecast_0

@@ -65,7 +65,6 @@ group:
       - script.admin_control
   maintenance_actions:
     name: Maintenance
-    view: no
     entities:
       - script.update_config
       - script.upgrade_ha

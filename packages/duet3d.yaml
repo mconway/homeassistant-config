@@ -28,7 +28,6 @@ sensor:
 group:
   3dprinter:
     name: Artemis
-    view: no
     entities:
       - sensor.duet_status
       - sensor.head_temp_current
