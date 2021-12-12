@@ -6,28 +6,125 @@
   action:
     service: notify.slack
     data:
-      message: 'There is a new Home Assistant release available.'
-
+      message: There is a new Home Assistant release available.
 - id: startup_notification
   alias: Start Up
   trigger:
     platform: homeassistant
     event: start
   action:
-    - service: notify.default_group
-      data:
-        message: ":white_check_mark: Home Assistant is now Running.\n@bishop is online. :robot_face:"
-        target: [
-          "448389226078273537"
-        ]
-        
+  - service: notify.default_group
+    data:
+      message: ':white_check_mark: Home Assistant is now Running.
+
+        @bishop is online. :robot_face:'
+      target:
+      - '448389226078273537'
 - id: new_device_on_network
   alias: New Device On Network
   trigger:
     platform: event
     event_type: device_tracker_new_device
   action:
-    - service: notify.slack
-      data_template: 
-        message: ':warning: New device discovered on network at {{now()}}'
-
+  - service: notify.slack
+    data_template:
+      message: ':warning: New device discovered on network at {{now()}}'
+- id: '1638819604857'
+  alias: Office Lights on Motion
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 15bd8e0df94480efdb1ca049a477eb0e
+    entity_id: binary_sensor.4_in_1_sensor_home_security_motion_detection
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 0
+  condition:
+  - type: is_illuminance
+    condition: device
+    device_id: 15bd8e0df94480efdb1ca049a477eb0e
+    entity_id: sensor.4_in_1_sensor_illuminance
+    domain: sensor
+    below: 50
+  action:
+  - service: light.turn_on
+    target:
+      device_id:
+      - b2fb2be005fea7448966c5527eb96267
+      - cc898b4d6eeadb4f276afcab001b584d
+  mode: single
+- id: '1638930339111'
+  alias: Turn on Patio Lights Wireless Switch
+  description: ''
+  trigger:
+  - platform: event
+    event_type: zwave_js_value_notification
+    event_data:
+      device_id: 0ec462247667f81f26301c4bbde91060
+      label: Scene 001
+      value: KeyPressed
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.multirelay
+  mode: single
+- id: '1638930579684'
+  alias: Turn off patio lights wireless switch
+  description: ''
+  trigger:
+  - platform: event
+    event_type: zwave_js_value_notification
+    event_data:
+      device_id: 0ec462247667f81f26301c4bbde91060
+      label: Scene 002
+      value: KeyPressed
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.multirelay
+  mode: single
+- id: '1639085432071'
+  alias: Motion-activated Light
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.4_in_1_sensor_home_security_motion_detection
+      light_target:
+        entity_id:
+        - light.office_left
+        - light.office_right
+      no_motion_wait: 300
+- id: '1639152671247'
+  alias: Front Porch Motion
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: a184662d302d4389e382e555f33e47a5
+    entity_id: binary_sensor.000_motion_alarm
+    domain: binary_sensor
+  condition: []
+  action:
+  - device_id: 6fe50131167e2a85a6886673c2b026e3
+    domain: select
+    entity_id: select.wled_preset
+    type: select_option
+    option: Doorbell
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  - device_id: 6fe50131167e2a85a6886673c2b026e3
+    domain: select
+    entity_id: select.wled_preset
+    type: select_option
+    option: Nightlight
+  mode: single

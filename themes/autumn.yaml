@@ -1,8 +1,11 @@
+autumn:
+# Background image
+  background-image: 'center / cover no-repeat url("/local/vintage-colors-blur.jpg") fixed'
 # Main colors that can be changed
-  primary-color: "#00bcd4"
+  primary-color: "#bd947e"
   disabled-text-color: "#545454"
   divider-color: "rgba(255, 255, 255, 0.12)"
-  paper-card-background-color: "#4e4e4e"
+  paper-card-background-color: "rgba(0, 0, 0, 0.58)"
   paper-grey-200: "#191919"
   paper-item-icon-color: "#d3d3d3"
   paper-listbox-background-color: "#202020"
@@ -27,12 +30,3 @@
   paper-toggle-button-checked-button-color: "var(--primary-color)"
   paper-toggle-button-checked-bar-color: "var(--light-primary-color)"
   paper-toggle-button-unchecked-bar-color: "var(--primary-text-color)"
-  ##Sidebar
-  sidebar-background-color: "var(--paper-listbox-background-color)"
-  sidebar-icon-color: "rgba(255, 255, 255, 0.70)"
-  sidebar-selected-icon-color: "var(--primary-color)"
-  sidebar-selected-text-color: "var(--primary-text-color)"
-  sidebar-text-color: "var(--primary-text-color)"
-  slider-bar-color: "var(--disabled-text-color)"
-  slider-color: "var(--primary-color)"
-  slider-secondary-color: "var(--light-primary-color)"

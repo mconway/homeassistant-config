@@ -32,4 +32,4 @@ group:
       - camera.corb
 
 shell_command:
-  get_latest_zm_event: 'python3 /config/commands/zoneminder_events.py --fromha=True'
+  get_latest_zm_event: 'python3 /config/commands/zoneminder_events.py --fromha=True --platform=discord'

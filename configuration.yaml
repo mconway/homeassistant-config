@@ -13,14 +13,16 @@ homeassistant:
   customize_domain: {}
   customize_glob: !include customize_glob.yaml
   packages: !include_dir_named packages
+  auth_providers:
+    - type: homeassistant
+  whitelist_external_dirs: 
+    - /config
 
-#http:
-#  api_password: !secret api_password
+http:
 
 frontend:
   extra_html_url:
     - /local/custom_ui/state-card-custom-ui.html
-    - /local/custom_ui/state-card-custom_alarm.html
     - /local/custom_ui/state-card-tiles.html
   extra_html_url_es5:
     - /local/custom_ui/state-card-tiles_es5.html
@@ -33,42 +35,30 @@ frontend:
     darkcyan: !include themes/darkcyan.yaml
     midnight: !include themes/midnight.yaml
     vintage: !include themes/vintage.yaml
+    #autumn: !include themes/autumn.yaml
   javascript_version: auto
 
-media_player:
-  platform: plex
+lovelace:
+  #mode: yaml
+
+mobile_app:
 
 tradfri:
   host: !secret tradfri_host
+  allow_tradfri_groups: true
 
 apcupsd:
   host: taranis
 
-device_tracker:
-  - platform: asuswrt
-    host: !secret router_ip
-    username: !secret asus_username
-    password: !secret asus_password
-    protocol: ssh
-    track_new_devices: False
-  - platform: owntracks
+camera:
+  platform: generic
+  still_image_url: https://images.wsdot.wa.gov/nc/028vc04659.jpg
 
-mqtt:
-  broker: taranis
-  port: 1883
-  client_id: ha-host
-  keepalive: 60
-  username: !secret mqtt_username
-  password: !secret mqtt_password
-  birth_message:
-    topic: "hass/status"
-    payload: "online"
+owntracks:
 
 mqtt_eventstream:
   publish_topic: home/master
   subscribe_topic: home/slave
-
-#alarm_control_panel: !include alarm.yaml
 
 recorder:
   db_url: !secret database_url
@@ -176,40 +166,56 @@ recorder:
       - sensor.us_main_pollutant
 
 emulated_hue:
+  advertise_ip: 10.10.1.77
+  advertise_port: 80
+  listen_port: 80
+  expose_by_default: true
   exposed_domains:
     - light
     - cover
-    - script
     - climate
-
-panel_custom:
-  - name: floorplan
-    sidebar_title: Floorplan
-    sidebar_icon: mdi:home
-    url_path: floorplan
-    config: !include floorplan.yaml
-  - name: alarm
-    sidebar_title: Alarm
-    sidebar_icon: mdi:security-home
-    config:
-      alarmid: alarm_control_panel.house ## USE THE SAME ID AS USED IN YOUR ALARM.YAML
+    - switch
+  entities:
+    switch.switch:
+      name: "Front Porch Light"
 
 influxdb:
   host: !secret influxdb_host
   username: !secret influxdb_username
   password: !secret influxdb_password
   database: !secret influxdb_database
+  port: 8096
   tags:
     instance: prod
     source: taranis
   tags_attributes:
     - friendly_name
 
+speedtestdotnet:
+  scan_interval: 
+    hours: 3
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
 panel_iframe:
   nodered:
     title: 'Node Red'
     icon: 'mdi:shuffle-variant'
     url: 'http://taranis:1880'
+
+person:
+
+zone:
+  - name: Work
+    latitude: 47.320380
+    longitude: -119.553150
+
+system_health:
+
+pi_hole:
+  - host: pi.hole
 
 ##########################################################################
 #                               Includes                                ##

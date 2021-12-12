@@ -6,5 +6,5 @@ sequence:
     message: "Pushing config"
 - service: notify.slack
   data:
-    message: "Pushing latest configuration files to git repo" #at {{ states('sensor.date__time') }}
+    message: "Pushing latest configuration files to git repo" #at {{ states('sensor.date_time') }}
 - service: shell_command.git_push

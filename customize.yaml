@@ -55,7 +55,9 @@ group.all_automations:
 group.all_scripts:
   friendly_name: Scripts
   hidden: false
-sensor.home:
-  hidden: true
 group.irrigation_unused:
   hidden: true
+switch.switch:
+  friendly_name: Porch Lights
+binary_sensor.dome_doorwindow_sensor_sensor:
+  friendly_name: Office Window

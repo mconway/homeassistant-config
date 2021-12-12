@@ -61,13 +61,6 @@ kindle836d4dc5b:
   track: true
   hide_if_away: false
 
-android1b27fe99b8b39bc3:
-  name: Galaxy S6 - Mary
-  mac: EC:1F:72:29:C4:2E
-  picture: mdi:android
-  track: true
-  hide_if_away: false
-
 damara:
   name: Damara
   mac: 4C:0B:BE:0D:20:7C
@@ -81,14 +74,6 @@ aibell:
   picture: 
   track: true
   hide_if_away: false
-
-goibniu_goibniu:
-  name: Michael
-  mac: AC:37:43:4E:FA:AD
-  picture: 
-  track: true
-  hide_if_away: false
-  icon: mdi:android
 
 wii:
   name: Wii
@@ -316,7 +301,7 @@ androidbef3f8fe91bdecb1:
   hide_if_away: false
   icon:
   mac: D0:04:01:76:2D:44
-  name: Mary - Moto X4
+  name: Mary
   picture:
   track: true
   vendor: Motorola Mobility LLC, a Lenovo Company
@@ -389,5 +374,45 @@ b46bfcdcb5d6:
   icon:
   mac: B4:6B:FC:DC:B5:D6
   name: b46bfcdcb5d6
+  picture:
+  track: false
+
+aidenphone_aidenphone:
+  hide_if_away: false
+  icon: mdi:android
+  mac: EC:1F:72:29:C4:2E
+  name: Aiden
+  picture:
+  track: true
+
+pixel_xl:
+  hide_if_away: false
+  icon:
+  mac:
+  name: Pixel XL
+  picture:
+  track: false
+
+amazon_4ff0fe75b:
+  hide_if_away: false
+  icon:
+  mac: 50:DC:E7:3F:B9:CC
+  name: amazon-4ff0fe75b
+  picture:
+  track: false
+
+00_24_e4_7c_ba_c6:
+  hide_if_away: false
+  icon:
+  mac: 00:24:E4:7C:BA:C6
+  name: 00 24 e4 7c ba c6
+  picture:
+  track: false
+
+windows_phone:
+  hide_if_away: false
+  icon:
+  mac: DC:3E:F8:F4:78:6C
+  name: Windows-Phone
   picture:
   track: false
