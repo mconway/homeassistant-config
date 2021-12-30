@@ -416,3 +416,24 @@ windows_phone:
   name: Windows-Phone
   picture:
   track: false
+
+mick:
+  name: mick
+  mac:
+  icon:
+  picture:
+  track: true
+
+aiden:
+  name: aiden
+  mac:
+  icon:
+  picture:
+  track: true
+
+lilly:
+  name: lilly
+  mac:
+  icon:
+  picture:
+  track: true
