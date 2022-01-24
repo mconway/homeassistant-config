@@ -488,91 +488,91 @@ views:
 
   - title: Office
     badges: []
-      cards:
-        - type: vertical-stack
+    cards:
+      - type: vertical-stack
+        cards:
+        - type: horizontal-stack
           cards:
-          - type: horizontal-stack
-            cards:
-              - type: custom:button-card
-                template: edge
+            - type: custom:button-card
+              template: edge
 
-              - type: 'custom:button-card'
-                template: chip_back
+            - type: 'custom:button-card'
+              template: chip_back
 
-              - type: 'custom:button-card'
-                template: chip_temperature
-                variables:
-                  ulm_chip_temperature_inside: sensor.4_in_1_sensor_air_temperature
+            - type: 'custom:button-card'
+              template: chip_temperature
+              variables:
+                ulm_chip_temperature_inside: sensor.4_in_1_sensor_air_temperature
 
-              - type: 'custom:button-card'
-                template: chip_power_consumption
-                variables:
-                  ulm_chip_electric_consumption: sensor.power_switch_electric_consumption_w
+            - type: 'custom:button-card'
+              template: chip_power_consumption
+              variables:
+                ulm_chip_electric_consumption: sensor.power_switch_electric_consumption_w
 
-              - type: custom:button-card
-                template: edge
+            - type: custom:button-card
+              template: edge
 
-          - type: horizontal-stack
-            cards:
-              - type: custom:button-card
-                template: edge
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: edge
 
-              - type: 'custom:button-card'
-                template: card_title
-                name: Office
-                label: >
-                  [[[
-                    return states['device_tracker.camulos'].state  
-                  ]]]
+            - type: 'custom:button-card'
+              template: card_title
+              name: Office
+              label: >
+                [[[
+                  return states['device_tracker.camulos'].state  
+                ]]]
 
-              - type: custom:button-card
-                template: edge
+            - type: custom:button-card
+              template: edge
 
 
-          - type: horizontal-stack
-            cards:
-              - type: custom:button-card
-                template: edge
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: edge
 
-              - type: 'custom:button-card'
-                template: card_light
-                entity: light.red_series_fan_light_switch_2
-                icon: mdi:ceiling-fan-light
-                name: Fan Light
+            - type: 'custom:button-card'
+              template: card_light
+              entity: light.red_series_fan_light_switch_2
+              icon: mdi:ceiling-fan-light
+              name: Fan Light
 
-              - type: 'custom:button-card'
-                template: card_light
-                entity: fan.red_series_fan_light_switch_2
-                icon: mdi:ceiling-fan
-                name: Fan
+            - type: 'custom:button-card'
+              template: card_light
+              entity: fan.red_series_fan_light_switch_2
+              icon: mdi:ceiling-fan
+              name: Fan
 
-              - type: 'custom:button-card'
-                template: card_power_outlet
-                variables:
-                  ulm_card_power_outlet_consumption_sensor: sensor.power_switch_electric_consumption_kwh 
-                entity: switch.power_switch
-                name: Artemis
-                icon: mdi:printer-3d
+            - type: 'custom:button-card'
+              template: card_power_outlet
+              variables:
+                ulm_card_power_outlet_consumption_sensor: sensor.power_switch_electric_consumption_kwh 
+              entity: switch.power_switch
+              name: Artemis
+              icon: mdi:printer-3d
 
-              - type: custom:button-card
-                template: edge
+            - type: custom:button-card
+              template: edge
 
-          - type: horizontal-stack
-            cards:
-              - type: custom:button-card
-                template: edge
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: edge
 
-              - type: 'custom:button-card'
-                template: card_light
-                entity: light.office
+            - type: 'custom:button-card'
+              template: card_light
+              entity: light.office
 
-              - type: 'custom:button-card'
-                template: custom_card_vncntdev_device_tracker
-                entity: device_tracker.camulos
+            - type: 'custom:button-card'
+              template: custom_card_vncntdev_device_tracker
+              entity: device_tracker.camulos
 
-              - type: 'custom:button-card'
-                template: card_light
-                entity: light.office_right
+            - type: 'custom:button-card'
+              template: card_light
+              entity: light.office_right
 
-              - type: custom:button-card
-                template: edge              
+            - type: custom:button-card
+              template: edge              
