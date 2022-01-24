@@ -44,7 +44,6 @@ sensor:
         value_template: "{{ (state_attr('sensor.usg_wan_out_stats_mean','change_rate')|float*8*(state_attr('sensor.usg_wan_out_stats_mean', 'sampling_size')-1)/1000000)|round(2) }}"
         unit_of_measurement: 'MBps'
         entity_id: sensor.usg_wan_out_stats_mean
-          - platform: template
       wan_port_speed:
         friendly_name: 'WAN Port Speed'
         value_template: '{{ (( states.sensor.snmp_wan_port_speed.state | float) / 1000000 ) | round(0) }}'
