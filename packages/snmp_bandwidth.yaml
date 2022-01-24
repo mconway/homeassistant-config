@@ -22,13 +22,13 @@ sensor:
 
   - platform: derivative
     name: 'USG WAN In Derivative'                      
-    entity_id: sensor.usg_wan_in     
+    source: sensor.usg_wan_in     
     unit_time: s
     unit: B 
 
   - platform: derivative                          
     name: 'USG WAN Out Derivative'                     
-    entity_id: sensor.usg_wan_out
+    source: sensor.usg_wan_out
     unit_time: s
     unit: B
 
