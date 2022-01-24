@@ -132,25 +132,24 @@ views:
 
               - type: custom:button-card
                 template: card_navigate
-                entity: binary_sensor.4_in_1_sensor_home_security_motion_detection
-                #show_entity_picture: true
-                #entity_picture: "/api/image/serve/b3a5a7eb77afde484cdc889b1b36f653/512x512"
                 variables:
                   ulm_card_navigate_title: Office
                   ulm_card_navigate_icon: mdi:sword-cross
                   ulm_card_navigate_path: /lovelace-minimalist/office
 
               - type: custom:button-card
-                template: vertical_buttons
-                entity: switch.in_wall_paddle
-                name: Patio
-                icon: mdi:string-lights
+                template: card_navigate
+                variables:
+                  ulm_card_navigate_title: Security
+                  ulm_card_navigate_icon: mdi:cctv
+                  ulm_card_navigate_path: /lovelace-minimalist/security
 
               - type: custom:button-card
-                template: vertical_buttons
-                entity: switch.in_wall_paddle
-                name: Patio
-                icon: mdi:string-lights
+                template: card_navigate
+                variables:
+                  ulm_card_navigate_title: Master Bedroom
+                  ulm_card_navigate_icon: mdi:bed-king-outline
+                  ulm_card_navigate_path: /lovelace-minimalist/master-bed
 
               - type: custom:button-card
                 template: edge
@@ -572,6 +571,17 @@ views:
           cards:
             - type: custom:button-card
               template: edge
+            - type: 'custom:button-card'
+              template: card_media_player_with_control
+              entity: media_player.office_tv
+              name: Office TV
+            - type: custom:button-card
+              template: edge
+
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: edge
 
             - type: 'custom:button-card'
               template: card_title
@@ -598,3 +608,67 @@ views:
         - type: 'custom:button-card'
           template: custom_card_vncntdev_device_tracker
           entity: device_tracker.012707403657_l
+
+  - title: Security
+    badges: []
+    path: security
+    cards:
+      - type: vertical-stack
+        cards:
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: edge
+
+            - type: 'custom:button-card'
+              template: chip_back
+              variables:
+                ulm_chip_back_path: /lovelace-minimalist/home
+
+            - type: 'custom:button-card'
+              template: chip_temperature
+              variables:
+                ulm_chip_temperature_inside: sensor.4_in_1_sensor_air_temperature
+                ulm_chip_temperature_outside: sensor.4_in_1_sensor_air_temperature
+                ulm_chip_temperature_weather: weather.home
+
+            - type: 'custom:button-card'
+              template: chip_power_consumption
+              variables:
+                ulm_chip_electric_consumption: sensor.power_switch_electric_consumption_kwh
+                ulm_chip_electric_price: ""
+
+            - type: custom:button-card
+              template: edge
+
+  - title: Master Bedroom
+    badges: []
+    path: master-bed
+    cards:
+      - type: vertical-stack
+        cards:
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: edge
+
+            - type: 'custom:button-card'
+              template: chip_back
+              variables:
+                ulm_chip_back_path: /lovelace-minimalist/home
+
+            - type: 'custom:button-card'
+              template: chip_temperature
+              variables:
+                ulm_chip_temperature_inside: sensor.4_in_1_sensor_air_temperature
+                ulm_chip_temperature_outside: sensor.4_in_1_sensor_air_temperature
+                ulm_chip_temperature_weather: weather.home
+
+            - type: 'custom:button-card'
+              template: chip_power_consumption
+              variables:
+                ulm_chip_electric_consumption: sensor.power_switch_electric_consumption_kwh
+                ulm_chip_electric_price: ""
+
+            - type: custom:button-card
+              template: edge
