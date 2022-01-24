@@ -596,13 +596,16 @@ views:
 
         - type: 'custom:button-card'
           template: custom_card_vncntdev_device_tracker
-          entity: device_tracker.taranis
+          entity: device_tracker.unifi_60_45_cb_64_32_7c_default
         - type: 'custom:button-card'
           template: custom_card_vncntdev_device_tracker
-          entity: device_tracker.balor     
+          entity: device_tracker.unifi_00_11_32_d8_3f_70_default     
         - type: 'custom:button-card'
           template: custom_card_vncntdev_device_tracker
           entity: device_tracker.boo     
         - type: 'custom:button-card'
           template: custom_card_vncntdev_device_tracker
-          entity: device_tracker.camulos               
+          entity: device_tracker.camulos
+        - type: 'custom:button-card'
+          template: custom_card_vncntdev_device_tracker
+          entity: device_tracker.wled_wled                    
