@@ -131,15 +131,14 @@ views:
                 template: edge
 
               - type: custom:button-card
-                template: vertical_buttons
+                template: card_navigate
                 entity: binary_sensor.4_in_1_sensor_home_security_motion_detection
                 #show_entity_picture: true
                 #entity_picture: "/api/image/serve/b3a5a7eb77afde484cdc889b1b36f653/512x512"
-                name: Office
-                icon: mdi:sword-cross
-                show_last_changed: true
-                action: navigate
-                navigation_path: /lovelace-minimalist/office
+                variables:
+                  ulm_card_navigate_title: Office
+                  ulm_card_navigate_icon: mdi:sword-cross
+                  ulm_card_navigate_path: /lovelace-minimalist/office
 
               - type: custom:button-card
                 template: vertical_buttons
@@ -488,6 +487,7 @@ views:
 
   - title: Office
     badges: []
+    path: office
     cards:
       - type: vertical-stack
         cards:
@@ -498,16 +498,21 @@ views:
 
             - type: 'custom:button-card'
               template: chip_back
+              variables:
+                ulm_chip_back_path: /lovelace-minimalist/home
 
             - type: 'custom:button-card'
               template: chip_temperature
               variables:
                 ulm_chip_temperature_inside: sensor.4_in_1_sensor_air_temperature
+                ulm_chip_temperature_outside: sensor.4_in_1_sensor_air_temperature
+                ulm_chip_temperature_weather: weather.home
 
             - type: 'custom:button-card'
               template: chip_power_consumption
               variables:
-                ulm_chip_electric_consumption: sensor.power_switch_electric_consumption_w
+                ulm_chip_electric_consumption: sensor.power_switch_electric_consumption_kwh
+                ulm_chip_electric_price: ""
 
             - type: custom:button-card
               template: edge
