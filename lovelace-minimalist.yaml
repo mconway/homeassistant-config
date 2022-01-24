@@ -594,4 +594,7 @@ views:
           entity: device_tracker.camulos
         - type: 'custom:button-card'
           template: custom_card_vncntdev_device_tracker
-          entity: device_tracker.wled_wled                    
+          entity: device_tracker.wled_wled   
+        - type: 'custom:button-card'
+          template: custom_card_vncntdev_device_tracker
+          entity: device_tracker.012707403657_l

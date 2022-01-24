@@ -1,10 +1,3 @@
-beansidhe:
-  name: BeanSidhe
-  mac: 4C:0B:BE:19:07:5E
-  picture: 
-  track: true
-  hide_if_away: false
-
 kindled683bed7e:
   name: Aiden's Kindle
   mac: 74:75:48:7B:F6:7C
@@ -50,13 +43,6 @@ np12g2d0036416:
 kindle836d4dc5b:
   name: Lilly's Kindle
   mac: 0C:47:C9:E2:91:90
-  picture: 
-  track: true
-  hide_if_away: false
-
-damara:
-  name: Damara
-  mac: 4C:0B:BE:0D:20:7C
   picture: 
   track: true
   hide_if_away: false
@@ -137,15 +123,6 @@ taranis:
   track: true
   vendor: ASUSTek COMPUTER INC.
 
-rainmachine:
-  hide_if_away: false
-  icon:
-  mac: A8:80:38:24:E5:A8
-  name: RainMachine
-  picture:
-  track: true
-  vendor: ShenZhen MovingComm Technology Co., Limited
-
 nodens:
   hide_if_away: false
   icon:
@@ -190,15 +167,6 @@ nook:
   picture:
   track: false
   vendor: Microsoft Corporation
-
-xboxsystemos_2:
-  hide_if_away: false
-  icon:
-  mac: 30:59:B7:4B:65:7B
-  name: Xbox Wired
-  picture:
-  track: true
-  vendor: unknown
 
 cliffordsiphone:
   hide_if_away: false
@@ -271,15 +239,6 @@ artemis:
   picture:
   track: true
   vendor: SeeMeCNC
-
-gateway93eccb:
-  hide_if_away: false
-  icon:
-  mac: 00:D0:2D:93:EC:CB
-  name: Honeywell
-  picture:
-  track: true
-  vendor: ADEMCO
 
 amazon968f3e93b:
   hide_if_away: false
