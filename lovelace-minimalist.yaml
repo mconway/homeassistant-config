@@ -580,4 +580,29 @@ views:
               entity: light.office_right
 
             - type: custom:button-card
-              template: edge              
+              template: edge     
+
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: edge
+
+            - type: 'custom:button-card'
+              template: card_title
+              name: Devices
+
+            - type: custom:button-card
+              template: edge
+
+        - type: 'custom:button-card'
+          template: custom_card_vncntdev_device_tracker
+          entity: device_tracker.taranis
+        - type: 'custom:button-card'
+          template: custom_card_vncntdev_device_tracker
+          entity: device_tracker.balor     
+        - type: 'custom:button-card'
+          template: custom_card_vncntdev_device_tracker
+          entity: device_tracker.boo     
+        - type: 'custom:button-card'
+          template: custom_card_vncntdev_device_tracker
+          entity: device_tracker.camulos               
