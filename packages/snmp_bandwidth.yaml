@@ -35,11 +35,11 @@ sensor:
   - platform: template
     sensors:
       internet_in_mbps:
-        value_template:  "{{ [((states('sensor.wan_in_der')|float(none)*8)/1000000)|round(2, default=none),0]|max }}"
+        value_template:  "{{ [((states('sensor.usg_wan_in_derivative')|float(none)*8)/1000000)|round(2, default=none),0]|max }}"
         unit_of_measurement: 'Mbps'
         entity_id: sensor.usg_wan_in_derivative
       internet_out_mbps:
-        value_template:  "{{ [((states('sensor.wan_out_der')|float(none)*8)/1000000)|round(2, default=none),0]|max }}"
+        value_template:  "{{ [((states('sensor.usg_wan_out_derivative')|float(none)*8)/1000000)|round(2, default=none),0]|max }}"
         unit_of_measurement: 'Mbps'
         entity_id: sensor.usg_wan_out_derivative
       wan_port_speed:
