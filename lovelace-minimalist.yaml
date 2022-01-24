@@ -11,8 +11,8 @@ ui_lovelace_minimalist: !include "custom_components/ui_lovelace_minimalist/lovel
 # Button cards location
 button_card_templates: !include_dir_merge_named "custom_components/ui_lovelace_minimalist/__ui_minimalist__/ulm_templates/"
 views:
-- title: Minimalist
-  path: lovelace-minimalist
+- title: Home
+  path: home
   badges: []
   cards:
     - type: vertical-stack
@@ -138,6 +138,8 @@ views:
               name: Office
               icon: mdi:sword-cross
               show_last_changed: true
+              action: navigate
+              navigation_path: /lovelace-minimalist/office
 
             - type: custom:button-card
               template: vertical_buttons
@@ -245,23 +247,6 @@ views:
         cards:
           - type: custom:button-card
             template: edge
-
-          #- type: 'custom:button-card'
-          #  template: card_battery
-#           variables:
-#            ulm_card_battery_attribute: battery_attribute
-          #  entity: sensor.4_in_1_sensor_battery_level
-
-          #- type: 'custom:button-card'
-          #  template: card_script
-          #  variables: 
-          #    ulm_card_script_title: Romantic lights
-          #    ulm_card_script_icon: 'mdi:candle'
-          #  tap_action:
-          #    action: call-service
-          #    service: script.turn_on
-          #    service_data: 
-          #      entity_id: script.romantic_livingroom_lights
 
           - type: 'custom:button-card'
             template: card_light
@@ -500,3 +485,94 @@ views:
                     entity_id: script.aiden_reset_point
           - type: custom:button-card
             template: edge
+
+- title: Office
+  badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: edge
+
+            - type: 'custom:button-card'
+              template: chip_back
+
+            - type: 'custom:button-card'
+              template: chip_temperature
+              variables:
+                ulm_chip_temperature_inside: sensor.4_in_1_sensor_air_temperature
+
+            - type: 'custom:button-card'
+              template: chip_power_consumption
+              variables:
+                ulm_chip_electric_consumption: sensor.power_switch_electric_consumption_w
+
+            - type: custom:button-card
+              template: edge
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+
+          - type: 'custom:button-card'
+            template: card_title
+            name: Office
+            label: >
+              [[[
+                return states['device_tracker.camulos'].state  
+              ]]]
+
+          - type: custom:button-card
+            template: edge
+
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+
+          - type: 'custom:button-card'
+            template: card_light
+            entity: light.red_series_fan_light_switch_2
+            icon: mdi:ceiling-fan-light
+            name: Fan Light
+
+          - type: 'custom:button-card'
+            template: card_light
+            entity: fan.red_series_fan_light_switch_2
+            icon: mdi:ceiling-fan
+            name: Fan
+
+          - type: 'custom:button-card'
+            template: card_power_outlet
+            variables:
+              ulm_card_power_outlet_consumption_sensor: sensor.power_switch_electric_consumption_kwh 
+            entity: switch.power_switch
+            name: Artemis
+            icon: mdi:printer-3d
+
+          - type: custom:button-card
+            template: edge
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+
+          - type: 'custom:button-card'
+            template: card_light
+            entity: light.office
+
+          - type: 'custom:button-card'
+            template: custom_card_vncntdev_device_tracker
+            entity: device_tracker.camulos
+
+          - type: 'custom:button-card'
+            template: card_light
+            entity: light.office_right
+
+          - type: custom:button-card
+            template: edge              
