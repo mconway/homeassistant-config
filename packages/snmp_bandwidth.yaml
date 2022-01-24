@@ -22,7 +22,8 @@ sensor:
 
   - platform: statistics
     name: 'USG WAN in Stats'                      
-    entity_id: sensor.usg_wan_in                  
+    entity_id: sensor.usg_wan_in     
+    state_characteristic: change             
     sampling_size: 4                              
     max_age:                                      
       hours: 24   
@@ -30,6 +31,7 @@ sensor:
   - platform: statistics                          
     name: 'USG WAN out Stats'                     
     entity_id: sensor.usg_wan_out
+    state_characteristic: change
     sampling_size: 4
     max_age:
       hours: 24
