@@ -542,22 +542,18 @@ views:
             - type: 'custom:button-card'
               template: card_light
               entity: light.red_series_fan_light_switch_2
-              icon: mdi:ceiling-fan-light
-              name: Fan Light
+              variables:
+                ulm_card_light_icon: mdi:ceiling-fan-light
+                ulm_card_light_name: Fan Light
+                ulm_card_light_enable_popup: true
 
             - type: 'custom:button-card'
               template: card_light
               entity: fan.red_series_fan_light_switch_2
-              icon: mdi:ceiling-fan
-              name: Fan
-
-            - type: 'custom:button-card'
-              template: card_power_outlet
               variables:
-                ulm_card_power_outlet_consumption_sensor: sensor.power_switch_electric_consumption_kwh 
-              entity: switch.power_switch
-              name: Artemis
-              icon: mdi:printer-3d
+                ulm_card_light_icon: mdi:ceiling-fan
+                ulm_card_light_name: Fan
+                ulm_card_light_enable_popup: true
 
             - type: custom:button-card
               template: edge
@@ -572,12 +568,12 @@ views:
               entity: light.office
 
             - type: 'custom:button-card'
-              template: custom_card_vncntdev_device_tracker
-              entity: device_tracker.camulos
-
-            - type: 'custom:button-card'
-              template: card_light
-              entity: light.office_right
+              template: card_power_outlet
+              variables:
+                ulm_card_power_outlet_consumption_sensor: sensor.power_switch_electric_consumption_kwh 
+              entity: switch.power_switch
+              name: Artemis
+              icon: mdi:printer-3d
 
             - type: custom:button-card
               template: edge     
