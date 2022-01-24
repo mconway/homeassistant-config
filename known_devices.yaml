@@ -19,13 +19,6 @@ b827eba0a711:
   track: false
   hide_if_away: false
 
-camulos:
-  name: Camulos
-  mac: 6C:62:6D:E9:9C:42
-  picture: 
-  track: true
-  hide_if_away: false
-
 raspberrypi:
   name: Fand
   mac: 80:1F:02:D3:C1:A2
@@ -433,6 +426,13 @@ aiden:
 
 lilly:
   name: lilly
+  mac:
+  icon:
+  picture:
+  track: true
+
+nexttracks:
+  name: nexttracks
   mac:
   icon:
   picture:
