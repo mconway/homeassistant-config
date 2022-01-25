@@ -1,36 +1,4 @@
-weather:
-  - platform: darksky
-    api_key: !secret forecast_api_key
-
 sensor:
-  - platform: darksky
-    api_key: !secret forecast_api_key
-    forecast:
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      - 7
-    monitored_conditions:
-      - summary
-      - precip_type
-      - precip_intensity
-      - precip_probability
-      - precip_accumulation
-      - temperature
-      - apparent_temperature
-      - wind_gust
-      - wind_speed
-      - wind_bearing
-      - humidity
-      - icon
-      - pressure
-      - temperature_low
-      - temperature_high
-      - daily_summary
-      - alerts
   - platform: airvisual
     api_key: !secret airvisual_api_key
     monitored_conditions:

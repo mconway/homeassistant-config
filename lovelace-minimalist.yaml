@@ -572,11 +572,8 @@ views:
             - type: custom:button-card
               template: edge
             - type: 'custom:button-card'
-              template: card_media_player_with_controls
-              #entity: media_player.office_tv
-              variables:
-                ulm_card_media_player_with_controls_name: "Office TV"
-                ulm_card_media_player_with_controls_entity: media_player.office_tv
+              template: card_media_player_with_control
+              entity: media_player.office_tv
               name: Office TV
             - type: custom:button-card
               template: edge
