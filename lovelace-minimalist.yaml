@@ -734,8 +734,7 @@ views:
 
             - type: 'custom:button-card'
               template: card_title
-              name: Master Bedroom
-
+              name: Living Room
             - type: custom:button-card
               template: edge
 
@@ -763,9 +762,19 @@ views:
             - type: custom:button-card
               template: edge
 
-        - type: 'custom:button-card'
-          template: card_light
-          entity: light.front_room
-          variables:
-            ulm_card_light_icon: mdi:floor-lamp
-            ulm_card_light_enable_popup: true
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: edge
+
+            - type: 'custom:button-card'
+              template: card_light
+              entity: light.front_room
+              variables:
+                ulm_card_light_icon: mdi:floor-lamp
+                ulm_card_light_enable_popup: true
+
+            - type: custom:button-card
+              template: edge
+
+        
