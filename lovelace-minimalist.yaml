@@ -763,9 +763,9 @@ views:
             - type: custom:button-card
               template: edge
 
-          - type: 'custom:button-card'
-              template: card_light
-              entity: light.front_room
-              variables:
-                ulm_card_light_icon: mdi:floor-lamp
-                ulm_card_light_enable_popup: true
+        - type: 'custom:button-card'
+            template: card_light
+            entity: light.front_room
+            variables:
+              ulm_card_light_icon: mdi:floor-lamp
+              ulm_card_light_enable_popup: true
