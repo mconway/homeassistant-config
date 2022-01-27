@@ -160,22 +160,25 @@ views:
                 template: edge
 
               - type: custom:button-card
-                template: vertical_buttons
-                entity: switch.in_wall_paddle
-                name: Patio
-                icon: mdi:string-lights
+                template: card_navigate
+                variables:
+                  ulm_card_navigate_title: Living Room
+                  ulm_card_navigate_icon: mdi:checkerboard
+                  ulm_card_navigate_path: /lovelace-minimalist/living-room
 
               - type: custom:button-card
-                template: vertical_buttons
-                entity: switch.in_wall_paddle
-                name: Patio
-                icon: mdi:string-lights
+                template: card_navigate
+                variables:
+                  ulm_card_navigate_title: Security
+                  ulm_card_navigate_icon: mdi:cctv
+                  ulm_card_navigate_path: /lovelace-minimalist/security
 
               - type: custom:button-card
-                template: vertical_buttons
-                entity: switch.in_wall_paddle
-                name: Patio
-                icon: mdi:string-lights
+                template: card_navigate
+                variables:
+                  ulm_card_navigate_title: Master Bedroom
+                  ulm_card_navigate_icon: mdi:bed-king-outline
+                  ulm_card_navigate_path: /lovelace-minimalist/master-bed
 
               - type: custom:button-card
                 template: edge
@@ -689,3 +692,80 @@ views:
 
             - type: custom:button-card
               template: edge
+
+
+
+  - title: Living Room
+    badges: []
+    path: living-room
+    cards:
+      - type: vertical-stack
+        cards:
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: edge
+
+            - type: 'custom:button-card'
+              template: chip_back
+              variables:
+                ulm_chip_back_path: /lovelace-minimalist/home
+
+            - type: 'custom:button-card'
+              template: chip_temperature
+              variables:
+                ulm_chip_temperature_inside: sensor.4_in_1_sensor_air_temperature
+                ulm_chip_temperature_outside: sensor.4_in_1_sensor_air_temperature
+                ulm_chip_temperature_weather: weather.home
+
+            - type: 'custom:button-card'
+              template: chip_power_consumption
+              variables:
+                ulm_chip_electric_consumption: sensor.power_switch_electric_consumption_kwh
+                ulm_chip_electric_price: ""
+
+            - type: custom:button-card
+              template: edge
+
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: edge
+
+            - type: 'custom:button-card'
+              template: card_title
+              name: Master Bedroom
+
+            - type: custom:button-card
+              template: edge
+
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: edge
+
+            - type: 'custom:button-card'
+              template: card_light
+              entity: light.ceiling_fan
+              variables:
+                ulm_card_light_icon: mdi:ceiling-fan-light
+                ulm_card_light_name: Fan Light
+                ulm_card_light_enable_popup: true
+
+            - type: 'custom:button-card'
+              template: card_light
+              entity: fan.ceiling_fan
+              variables:
+                ulm_card_light_icon: mdi:ceiling-fan
+                ulm_card_light_name: Fan
+                ulm_card_light_enable_popup: true
+
+            - type: custom:button-card
+              template: edge
+
+          - type: 'custom:button-card'
+              template: card_light
+              entity: light.front_room
+              variables:
+                ulm_card_light_icon: mdi:floor-lamp
+                ulm_card_light_enable_popup: true
