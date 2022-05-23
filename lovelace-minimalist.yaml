@@ -7,7 +7,7 @@
 ####################
 #button_card_templates: !include_dir_merge_named minimalist-templates/
 # For future use!
-ui_lovelace_minimalist: !include "custom_components/ui_lovelace_minimalist/lovelace/plugins/ui_lovelace_minimalist.yaml"
+#ui_lovelace_minimalist: !include "custom_components/ui_lovelace_minimalist/lovelace/plugins/ui_lovelace_minimalist.yaml"
 # Button cards location
 button_card_templates: !include_dir_merge_named "custom_components/ui_lovelace_minimalist/__ui_minimalist__/ulm_templates/"
 views:

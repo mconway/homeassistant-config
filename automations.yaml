@@ -128,3 +128,99 @@
     type: select_option
     option: Nightlight
   mode: single
+- id: '1643386656949'
+  alias: Alert when people are moving
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: person.aiden
+  condition: []
+  action:
+  - service: notify.mobile_app_mick_phone
+    data:
+      message: Aiden is {{ states('person.aiden') }}
+  mode: single
+- id: '1645651094797'
+  alias: Porch lights At Night
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: '0'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 5a7435e0f1a5bbd910259910b4545f69
+    entity_id: switch.in_wall_switch_on_off
+    domain: switch
+  mode: single
+- id: '1645651466135'
+  alias: Porch Lights at Dawn
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: '-1'
+  condition:
+  - condition: device
+    type: is_on
+    device_id: 5a7435e0f1a5bbd910259910b4545f69
+    entity_id: switch.in_wall_switch_on_off
+    domain: switch
+  action:
+  - type: turn_off
+    device_id: 5a7435e0f1a5bbd910259910b4545f69
+    entity_id: switch.in_wall_switch_on_off
+    domain: switch
+  mode: single
+- id: '1645657637978'
+  alias: Home Assistant Update Notification for Android
+  description: ''
+  use_blueprint:
+    path: fortepc/update-notif-for-android.yaml
+    input:
+      clickAction: https://my.home-assistant.io/redirect/supervisor/
+      delay: 0
+      notify_device: d44a65e14b193afb2db47daf3b963b5d
+- id: '1647213983200'
+  alias: Turn on Family Room Lights
+  description: ''
+  trigger:
+  - platform: event
+    event_type: zwave_js_value_notification
+    event_data:
+      device_id: e2944ecc71dba5d94ba234950d8d1db8
+      label: Scene 004
+      value: 0
+  condition: []
+  action:
+  - type: toggle
+    device_id: 3bef8ebed1eacf0854c67519d82d70e9
+    entity_id: light.family_room_left
+    domain: light
+  - type: toggle
+    device_id: cb91cae3981f7aa59b55f8c2c66f3a36
+    entity_id: light.family_room_right
+    domain: light
+  - type: toggle
+    device_id: c855cdf9937247a2015eecf94d6419a9
+    entity_id: light.family_room_middle
+    domain: light
+  mode: single
+- id: '1647214590168'
+  alias: Toggle Deck Lights Wired Switch
+  description: ''
+  trigger:
+  - platform: event
+    event_type: zwave_js_value_notification
+    event_data:
+      device_id: e2944ecc71dba5d94ba234950d8d1db8
+      label: Scene 001
+      value: 0
+  condition: []
+  action:
+  - service: switch.toggle
+    data: {}
+    target:
+      entity_id: switch.multirelay
+  mode: single
