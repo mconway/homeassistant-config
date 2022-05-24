@@ -1,12 +1,12 @@
-- id: update_notifications
-  alias: Update notifications
-  trigger:
-    platform: state
-    entity_id: updater.updater
-  action:
-    service: notify.slack
-    data:
-      message: There is a new Home Assistant release available.
+# - id: update_notifications
+#   alias: Update notifications
+#   trigger:
+#     platform: state
+#     entity_id: updater.updater
+#   action:
+#     service: notify.slack
+#     data:
+#       message: There is a new Home Assistant release available.
 - id: startup_notification
   alias: Start Up
   trigger:

@@ -141,7 +141,6 @@ shell_command: !include shell_commands.yaml
 ##                               Enables                                ##
 ##########################################################################
 conversation:
-updater:
 sun:
 map:
 history:
