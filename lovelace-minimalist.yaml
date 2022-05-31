@@ -29,9 +29,9 @@ views:
                 ulm_chip_temperature_outside: sensor.4_in_1_sensor_air_temperature
                 ulm_chip_temperature_weather: weather.home
 
-              - type: 'custom:button-card'
-                template: chip_alarm
-                entity: alarm_control_panel.alarmo
+            - type: 'custom:button-card'
+              template: chip_alarm
+              entity: alarm_control_panel.alarmo
 
             - type: custom:button-card
               template: edge
