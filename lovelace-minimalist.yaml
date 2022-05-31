@@ -25,9 +25,13 @@ views:
             - type: 'custom:button-card'
               template: chip_temperature
               variables:
-                ulm_chip_temperature_inside: sensor.4_in_1_sensor_air_temperature
-                ulm_chip_temperature_outside: sensor.4_in_1_sensor_air_temperature_2
+                ulm_chip_temperature_inside: climate.home
+                ulm_chip_temperature_outside: sensor.4_in_1_sensor_air_temperature
                 ulm_chip_temperature_weather: weather.home
+
+              - type: 'custom:button-card'
+                template: chip_alarm
+                entity: alarm_control_panel.alarmo
 
             - type: custom:button-card
               template: edge
@@ -496,7 +500,7 @@ views:
             - type: 'custom:button-card'
               template: chip_temperature
               variables:
-                ulm_chip_temperature_inside: sensor.4_in_1_sensor_air_temperature
+                ulm_chip_temperature_inside: climate.home
                 ulm_chip_temperature_outside: sensor.4_in_1_sensor_air_temperature
                 ulm_chip_temperature_weather: weather.home
 
@@ -714,15 +718,9 @@ views:
             - type: 'custom:button-card'
               template: chip_temperature
               variables:
-                ulm_chip_temperature_inside: sensor.4_in_1_sensor_air_temperature
-                ulm_chip_temperature_outside: sensor.4_in_1_sensor_air_temperature
+                ulm_chip_temperature_inside: climate.home
+                ulm_chip_temperature_outside: sensor.4_in_1_sensor_air_temperature_2
                 ulm_chip_temperature_weather: weather.home
-
-            - type: 'custom:button-card'
-              template: chip_power_consumption
-              variables:
-                ulm_chip_electric_consumption: sensor.power_switch_electric_consumption_kwh
-                ulm_chip_electric_price: ""
 
             - type: custom:button-card
               template: edge
