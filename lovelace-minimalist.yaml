@@ -664,6 +664,31 @@ views:
 
             - type: custom:button-card
               template: edge
+          - theme: Backend-selected
+
+        - type: custom:alarmo-card
+          entity: alarm_control_panel.alarmo
+        - show_state: true
+          show_name: true
+          camera_view: auto
+          type: picture-entity
+          entity: camera.front_porch_mediaprofile_channel1_mainstream
+          image: https://demo.home-assistant.io/stub_config/bedroom.png
+          camera_image: camera.front_porch_mediaprofile_channel1_mainstream
+        - show_state: true
+          show_name: true
+          camera_view: auto
+          type: picture-entity
+          entity: camera.driveway_mediaprofile_channel1_mainstream
+          image: https://demo.home-assistant.io/stub_config/bedroom.png
+          camera_image: camera.driveway_mediaprofile_channel1_mainstream
+        - show_state: true
+          show_name: true
+          camera_view: auto
+          type: picture-entity
+          entity: camera.patio_mediaprofile_channel1_mainstream
+          image: https://demo.home-assistant.io/stub_config/bedroom.png
+          camera_image: camera.patio_mediaprofile_channel1_mainstream
 
   - title: Master Bedroom
     badges: []
