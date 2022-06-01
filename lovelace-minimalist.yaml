@@ -664,7 +664,6 @@ views:
 
             - type: custom:button-card
               template: edge
-          - theme: Backend-selected
 
         - type: custom:alarmo-card
           entity: alarm_control_panel.alarmo
