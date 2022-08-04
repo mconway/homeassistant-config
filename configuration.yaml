@@ -25,13 +25,6 @@ frontend:
 
 lovelace:
   #mode: yaml
-  dashboards:
-    lovelace-minimalist:
-      mode: yaml
-      title: Minimalist
-      icon: mdi:cellphone
-      show_in_sidebar: true
-      filename: lovelace-minimalist.yaml
 
 mobile_app:
 
@@ -117,11 +110,6 @@ panel_iframe:
     url: 'http://taranis:1880'
 
 person:
-
-zone:
-  - name: Work
-    latitude: 47.320380
-    longitude: -119.553150
 
 system_health:
 
