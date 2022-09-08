@@ -5,6 +5,41 @@ counter:
   lilly_chore_points:
     initial: 0
     step: 1
+input_boolean:
+  sweep_kitchen_floor:
+    name: Kitchen Floor (Vacuum)
+  kitchen_island:
+    name: Kitchen Island Counter
+  dining_table:
+    name: Dinner Table
+  kitchen_garbage:
+    name: Kitchen Garbage
+  litter_box:
+    name: Litter Box
+  laundry_floor:
+    name: Laundry Room Floor (Vacuum)
+  kids_bathroom:
+    name: Kids' Bathroom
+  empty_dishwasher:
+    name: Empty Dishwasher
+  empty_drying_rack:
+    name: Empty Drying Rack
+  load_dishwasher:
+    name: Load Dishwasher
+  kitchen_sink_counter:
+    name: Kitchen Sink Counter (both sides)
+  kitchen_stove:
+    name: Clean Kitchen Stove
+  hand_wash_dishes:
+    name: Hand Wash Dishes
+  clean_bedroom_aiden:
+    name: Clean Bedroom
+  clean_bedroom_lilly:
+    name: Clean Bedroom
+  laundry_lilly:
+    name: Laundry
+  laundry_aiden:
+    name: Laundry
 script:
   aiden_earn_point:
     icon: hass:plus-thick
