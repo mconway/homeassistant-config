@@ -279,7 +279,6 @@
     - time
     - date
     - date_time
-- platform: moon
 - platform: steam_online
   api_key: !secret steam_api_key
   accounts:

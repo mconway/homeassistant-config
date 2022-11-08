@@ -43,8 +43,6 @@ sensor.dark_sky_icon:
   hidden: true
 sensor.dark_sky_pressure:
   hidden: true
-sensor.season:
-  icon: mdi:leaf
 sensor.wii:
   icon: mdi:wii
 sensor.xboxone:

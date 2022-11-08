@@ -38,9 +38,6 @@ device_tracker:
     ssl: true
     verify_ssl: false
 
-apcupsd:
-  host: taranis
-
 camera:
   platform: generic
   still_image_url: https://images.wsdot.wa.gov/nc/028vc04659.jpg
@@ -54,12 +51,10 @@ recorder:
       - alert
       - automation
       - sun
-      - seasons
       - input_number
       - input_boolean
       - zone
     entities:
-      - sensor.season
       - sensor.time
       - sensor.weekday
       - sensor.us_air_pollution_level
