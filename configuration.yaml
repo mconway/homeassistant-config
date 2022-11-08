@@ -19,6 +19,7 @@ homeassistant:
     - /config
 
 http:
+my:
 
 frontend:
   themes: !include_dir_merge_named themes
@@ -43,10 +44,6 @@ apcupsd:
 camera:
   platform: generic
   still_image_url: https://images.wsdot.wa.gov/nc/028vc04659.jpg
-
-mqtt_eventstream:
-  publish_topic: home/master
-  subscribe_topic: home/slave
 
 recorder:
   db_url: !secret database_url
@@ -94,20 +91,6 @@ influxdb:
     source: taranis
   tags_attributes:
     - friendly_name
-
-speedtestdotnet:
-  scan_interval: 
-    hours: 3
-  monitored_conditions:
-    - ping
-    - download
-    - upload
-
-panel_iframe:
-  nodered:
-    title: 'Node Red'
-    icon: 'mdi:shuffle-variant'
-    url: 'http://taranis:1880'
 
 person:
 
