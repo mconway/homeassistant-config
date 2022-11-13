@@ -114,15 +114,6 @@ tap7013014s:
   track: true
   vendor: Amazon Technologies Inc.
 
-taranis:
-  hide_if_away: false
-  icon: mdi:linux
-  mac: 60:45:CB:64:32:7C
-  name: taranis
-  picture:
-  track: true
-  vendor: ASUSTek COMPUTER INC.
-
 nodens:
   hide_if_away: false
   icon:

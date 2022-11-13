@@ -1,8 +1,0 @@
-sensor:
-  - platform: mqtt
-    name: razer_mouse
-    state_topic: lnxlink/camulos/monitor/stats/razer/mouse
-    unit_of_measurement: ''
-    icon: mdi:mouse
-    value_template: "{{ value_json.battery_level }}"
-    json_attributes_topic: lnxlink/camulos/monitor/stats/razer/mouse
