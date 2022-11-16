@@ -44,7 +44,7 @@ camera:
 
 recorder:
   db_url: !secret database_url
-  purge_interval: 1
+  auto_purge: true
   purge_keep_days: 14
   exclude:
     domains:
