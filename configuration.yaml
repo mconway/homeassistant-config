@@ -65,7 +65,6 @@ influxdb:
   api_version: 2
   ssl: false
   host: !secret influxdb_host
-  username: !secret influxdb_username
   token: !secret influxdb_password
   bucket: !secret influxdb_database
   organization: !secret influxdb_org
