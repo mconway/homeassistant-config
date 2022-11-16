@@ -39,8 +39,8 @@ device_tracker:
     verify_ssl: false
 
 camera:
-  platform: generic
-  still_image_url: https://images.wsdot.wa.gov/nc/028vc04659.jpg
+  - platform: generic
+    still_image_url: https://images.wsdot.wa.gov/nc/028vc04659.jpg
 
 recorder:
   db_url: !secret database_url
@@ -61,29 +61,17 @@ recorder:
       - sensor.us_air_quality_index
       - sensor.us_main_pollutant
 
-emulated_hue:
-  advertise_ip: 10.10.1.77
-  advertise_port: 80
-  listen_port: 80
-  expose_by_default: true
-  exposed_domains:
-    - light
-    - cover
-    - climate
-    - switch
-  entities:
-    switch.switch:
-      name: "Front Porch Light"
-
 influxdb:
+  api_version: 2
   host: !secret influxdb_host
   username: !secret influxdb_username
-  password: !secret influxdb_password
-  database: !secret influxdb_database
-  port: 8096
+  token: !secret influxdb_password
+  bucket: !secret influxdb_database
+  organization: !secret influxdb_org
+  port: 8086
   tags:
     instance: prod
-    source: taranis
+    source: microk8s
   tags_attributes:
     - friendly_name
 
@@ -107,6 +95,7 @@ shell_command: !include shell_commands.yaml
 ##                               Enables                                ##
 ##########################################################################
 conversation:
+backup:
 sun:
 map:
 history:
