@@ -63,6 +63,7 @@ recorder:
 
 influxdb:
   api_version: 2
+  ssl: false
   host: !secret influxdb_host
   username: !secret influxdb_username
   token: !secret influxdb_password
