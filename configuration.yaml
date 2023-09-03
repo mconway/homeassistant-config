@@ -9,6 +9,7 @@ homeassistant:
   unit_system: imperial 
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/Los_Angeles
+  country: US
   customize: !include customize.yaml
   customize_domain: {}
   customize_glob: !include customize_glob.yaml
@@ -68,7 +69,7 @@ influxdb:
   token: !secret influxdb_password
   bucket: !secret influxdb_database
   organization: !secret influxdb_org
-  port: 8086
+  port: 80
   tags:
     instance: prod
     source: microk8s
@@ -78,9 +79,6 @@ influxdb:
 person:
 
 system_health:
-
-pi_hole:
-  - host: pi.hole
 
 ##########################################################################
 #                               Includes                                ##

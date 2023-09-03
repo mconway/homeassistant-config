@@ -279,48 +279,44 @@
     - time
     - date
     - date_time
-- platform: steam_online
-  api_key: !secret steam_api_key
-  accounts:
-    - !secret mike_steam_id
-    - !secret mary_steam_id
-    - !secret aiden_steam_id
-    - !secret lilly_steam_id
-- platform: xbox_live
-  api_key: !secret xbox_api_key
-  xuid:
-    - !secret xbox_mike_uid
-- platform: apcupsd
-  resources:
-    - model
-    - status
-    - linev
-    - loadpct
-    - numxfers
-    - bcharge
-    - timeleft
-    - battv
-    - tonbatt
+# - platform: steam_online
+#   api_key: !secret steam_api_key
+#   accounts:
+#     - !secret mike_steam_id
+#     - !secret mary_steam_id
+#     - !secret aiden_steam_id
+#     - !secret lilly_steam_id
+# - platform: apcupsd
+#   resources:
+#     - model
+#     - status
+#     - linev
+#     - loadpct
+#     - numxfers
+#     - bcharge
+#     - timeleft
+#     - battv
+#     - tonbatt
 
 # Version checking Sensors
-- platform: version
-  name: latest_version
-  source: docker
-- platform: version
-  name: current_version
-  source: local
+# - platform: version
+#   name: latest_version
+  # source: docker
+# - platform: version
+#   name: current_version
+#   source: local
 
 # Misc System Sensors
-- platform: filesize
-  file_paths:
-    - /config/home-assistant.log
-- platform: sql
-  db_url: !secret database_url
-  queries:
-    - name: Database Size
-      query: "SELECT table_schema 'DB Name', ROUND(SUM(data_length + index_length) / 1024 / 1024, 1) 'MB' FROM information_schema.tables WHERE table_schema='homeassistant' GROUP BY table_schema;"
-      column: 'MB'
-      unit_of_measurement: 'MB'
-- platform: dnsip
-  resolver: 10.10.1.190
+# - platform: filesize
+#   file_paths:
+#     - /config/home-assistant.log
+# - platform: sql
+#   db_url: !secret database_url
+#   queries:
+#     - name: Database Size
+#       query: "SELECT table_schema 'DB Name', ROUND(SUM(data_length + index_length) / 1024 / 1024, 1) 'MB' FROM information_schema.tables WHERE table_schema='homeassistant' GROUP BY table_schema;"
+#       column: 'MB'
+#       unit_of_measurement: 'MB'
+# - platform: dnsip
+#   resolver: 10.10.1.190
 

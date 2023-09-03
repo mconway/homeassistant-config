@@ -1,8 +1,8 @@
-climate:
-  platform: honeywell
-  username: !secret thermostat_username
-  password: !secret thermostat_password
-  region: us
-  scan_interval: 60
+# climate:
+#   platform: honeywell
+#   username: !secret thermostat_username
+#   password: !secret thermostat_password
+#   region: us
+#   scan_interval: 60
   #cool_away_temperature: 80
   #heat_away_temperature: 60

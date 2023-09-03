@@ -1,8 +1,8 @@
 sensor:
-  - platform: airvisual
-    api_key: !secret airvisual_api_key
-    monitored_conditions:
-      - us
+  # - platform: airvisual
+  #   api_key: !secret airvisual_api_key
+  #   monitored_conditions:
+  #     - us
   - platform: template
     sensors:
       weekday:
