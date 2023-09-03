@@ -97,7 +97,6 @@ backup:
 sun:
 map:
 history:
-discovery:
 logbook:
 config:
 python_script:
