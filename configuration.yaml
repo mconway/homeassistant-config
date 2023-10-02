@@ -18,6 +18,8 @@ homeassistant:
     - type: homeassistant
   whitelist_external_dirs: 
     - /config
+  media_dirs:
+    media: /config/tmp
 
 http:
 my:
