@@ -19,7 +19,7 @@ homeassistant:
   whitelist_external_dirs: 
     - /config
   media_dirs:
-    media: /config/tmp
+    media: /config/www/tmp
 
 http:
 my:
